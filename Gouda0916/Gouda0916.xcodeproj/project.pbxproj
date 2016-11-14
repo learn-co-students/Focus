@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
-		11FCAA171DDA6E160072C46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA161DDA6E160072C46A /* ViewController.swift */; };
 		11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA181DDA6E170072C46A /* Main.storyboard */; };
 		11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */; };
 		11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA1E1DDA6E170072C46A /* Assets.xcassets */; };
 		11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */; };
+		11FCAA2A1DDA70650072C46A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA291DDA70650072C46A /* LogInViewController.swift */; };
+		11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2B1DDA70750072C46A /* MainViewController.swift */; };
+		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
+		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FCAA141DDA6E160072C46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11FCAA161DDA6E160072C46A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11FCAA191DDA6E170072C46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11FCAA1C1DDA6E170072C46A /* Gouda0916.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gouda0916.xcdatamodel; sourceTree = "<group>"; };
 		11FCAA1E1DDA6E170072C46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11FCAA211DDA6E170072C46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11FCAA231DDA6E170072C46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11FCAA291DDA70650072C46A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		11FCAA2B1DDA70750072C46A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
+		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
-				11FCAA161DDA6E160072C46A /* ViewController.swift */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
+				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
+				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
+				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
+				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
 				11FCAA1E1DDA6E170072C46A /* Assets.xcassets */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
 				11FCAA231DDA6E170072C46A /* Info.plist */,
@@ -139,9 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FCAA2A1DDA70650072C46A /* LogInViewController.swift in Sources */,
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
-				11FCAA171DDA6E160072C46A /* ViewController.swift in Sources */,
+				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
+				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
+				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
