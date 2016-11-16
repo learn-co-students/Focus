@@ -43,6 +43,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116A9DC21DDCD97C00437479 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		116A9DC31DDCD98600437479 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11FCAA181DDA6E170072C46A /* Main.storyboard */,
+				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		116A9DC41DDCD99100437479 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
+				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
+				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
+				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		116A9DC51DDCDC0800437479 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
+				11FCAA1E1DDA6E170072C46A /* Assets.xcassets */,
+				11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */,
+				11FCAA231DDA6E170072C46A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		11FCAA081DDA6E150072C46A = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +100,10 @@
 		11FCAA131DDA6E160072C46A /* Gouda0916 */ = {
 			isa = PBXGroup;
 			children = (
-				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
-				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
-				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
-				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
-				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
-				11FCAA181DDA6E170072C46A /* Main.storyboard */,
-				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
-				11FCAA1E1DDA6E170072C46A /* Assets.xcassets */,
-				11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */,
-				11FCAA231DDA6E170072C46A /* Info.plist */,
+				116A9DC21DDCD97C00437479 /* Model */,
+				116A9DC31DDCD98600437479 /* View */,
+				116A9DC41DDCD99100437479 /* Controller */,
+				116A9DC51DDCDC0800437479 /* Supporting Files */,
 			);
 			path = Gouda0916;
 			sourceTree = "<group>";
