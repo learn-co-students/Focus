@@ -13,6 +13,11 @@ class CreateGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 
