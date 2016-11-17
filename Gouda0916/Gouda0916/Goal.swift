@@ -13,9 +13,9 @@ class Goal {
     let goal: Double
     let timeframe: Int
     let dailyBudget: Double
-    let waysToSave: [String]
     let goalPurchase: String
     let userInput: [String:Any]
+    let waysToSave = "Lunch"
     var dayCounter = 1
     var currentAmountSaved = 0.0
     var alloctedDailyBudget: Double {
@@ -26,7 +26,6 @@ class Goal {
         self.goal = userInput["goal"] as! Double
         self.timeframe = userInput["timeframe"] as! Int
         self.dailyBudget = userInput["daily_budget"] as! Double
-        self.waysToSave = userInput["ways_to_save"] as! [String]
         self.goalPurchase = userInput["goal_purchase"] as! String
         self.userInput = userInput
         
