@@ -18,7 +18,7 @@
 		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
 		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
-		90B968A61DDE0F83005FBD8C /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info (2).plist */; };
+		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		90B968A51DDE0F83005FBD8C /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
+		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.release.xcconfig"; sourceTree = "<group>"; };
 		F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +86,7 @@
 				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
 				11FCAA1E1DDA6E170072C46A /* Assets.xcassets */,
 				11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */,
-				90B968A51DDE0F83005FBD8C /* GoogleService-Info (2).plist */,
+				90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */,
 				11FCAA231DDA6E170072C46A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -200,7 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90B968A61DDE0F83005FBD8C /* GoogleService-Info (2).plist in Resources */,
+				90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
