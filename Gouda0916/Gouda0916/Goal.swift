@@ -8,6 +8,40 @@
 
 import Foundation
 
+
 class Goal {
+    let goal: Double
+    let timeframe: Int
+    let dailyBudget: Double
+    let waysToSave: [String]
+    let goalPurchase: String
+    let userInput: [String:Any]
+    var dayCounter = 1
+    var currentAmountSaved = 0.0
     
+
+    var alloctedDailyBudget: Double {
+        return (goal - currentAmountSaved / Double(timeframe)) - dailyBudget
+    }
+    
+    init(userInput: [String:Any]) {
+        self.goal = userInput["goal"] as! Double
+        self.timeframe = userInput["timeframe"] as! Int
+        self.dailyBudget = userInput["daily_budget"] as! Double
+        self.waysToSave = userInput["ways_to_save"] as! [String]
+        self.goalPurchase = userInput["goal_purchase"] as! String
+        self.userInput = userInput
+        
+    }
+    
+    
+    func serializeGoalIntoDictionary() -> [String:Any] {
+        var serializedGoal: [String:Any] = userInput
+        
+        serializedGoal["day_counter"] = dayCounter
+        serializedGoal["current_amount_saved"] = currentAmountSaved
+        serializedGoal["allocated_daily_budget"] = alloctedDailyBudget
+        
+        return serializedGoal
+    }
 }
