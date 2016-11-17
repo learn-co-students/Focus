@@ -18,8 +18,6 @@ class Goal {
     let userInput: [String:Any]
     var dayCounter = 1
     var currentAmountSaved = 0.0
-    
-
     var alloctedDailyBudget: Double {
         return (goal - currentAmountSaved / Double(timeframe)) - dailyBudget
     }
@@ -33,7 +31,6 @@ class Goal {
         self.userInput = userInput
         
     }
-    
     
     func serializeGoalIntoDictionary() -> [String:Any] {
         var serializedGoal: [String:Any] = userInput
