@@ -8,18 +8,15 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 import FirebaseDatabase
 
+
 class MainViewController: UIViewController {
+    
+    let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
-    
-
 }
