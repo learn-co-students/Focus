@@ -17,6 +17,8 @@
 		11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2B1DDA70750072C46A /* MainViewController.swift */; };
 		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
 		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
+		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
+		90B968A61DDE0F83005FBD8C /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info (2).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		11FCAA2B1DDA70750072C46A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B968A51DDE0F83005FBD8C /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
+		E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.release.xcconfig"; sourceTree = "<group>"; };
+		F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,7 @@
 				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
 				11FCAA1E1DDA6E170072C46A /* Assets.xcassets */,
 				11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */,
+				90B968A51DDE0F83005FBD8C /* GoogleService-Info (2).plist */,
 				11FCAA231DDA6E170072C46A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -89,6 +97,8 @@
 			children = (
 				11FCAA131DDA6E160072C46A /* Gouda0916 */,
 				11FCAA121DDA6E160072C46A /* Products */,
+				4D1A70A6E88FBD725F3B4633 /* Pods */,
+				8F369A020F6DC6DC4F8B7EBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +121,23 @@
 			path = Gouda0916;
 			sourceTree = "<group>";
 		};
+		4D1A70A6E88FBD725F3B4633 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */,
+				E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F369A020F6DC6DC4F8B7EBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11FCAA261DDA6E170072C46A /* Build configuration list for PBXNativeTarget "Gouda0916" */;
 			buildPhases = (
+				F0D2DF8096033E1B50247CF2 /* [CP] Check Pods Manifest.lock */,
 				11FCAA0D1DDA6E160072C46A /* Sources */,
 				11FCAA0E1DDA6E160072C46A /* Frameworks */,
 				11FCAA0F1DDA6E160072C46A /* Resources */,
+				8D1F61183FF112E196F8EDCC /* [CP] Embed Pods Frameworks */,
+				25004908A1D8916F9C79AD91 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B968A61DDE0F83005FBD8C /* GoogleService-Info (2).plist in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
@@ -177,6 +208,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25004908A1D8916F9C79AD91 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D1F61183FF112E196F8EDCC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0D2DF8096033E1B50247CF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11FCAA0D1DDA6E160072C46A /* Sources */ = {
@@ -310,6 +389,7 @@
 		};
 		11FCAA271DDA6E170072C46A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
@@ -322,6 +402,7 @@
 		};
 		11FCAA281DDA6E170072C46A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
