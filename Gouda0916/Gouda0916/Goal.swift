@@ -14,26 +14,30 @@ class Goal {
     let timeframe: Int
     let dailyBudget: Double
     let goalPurchase: String
-    let userInput: [String:Any]
-    let waysToSave = "Lunch"
+    let waysToSave: String
     var dayCounter = 1
     var currentAmountSaved = 0.0
     var alloctedDailyBudget: Double {
         return (goal - currentAmountSaved / Double(timeframe)) - dailyBudget
     }
     
-    init(userInput: [String:Any]) {
-        self.goal = userInput["goal"] as! Double
-        self.timeframe = userInput["timeframe"] as! Int
-        self.dailyBudget = userInput["daily_budget"] as! Double
-        self.goalPurchase = userInput["goal_purchase"] as! String
-        self.userInput = userInput
+    init(goal: Double, timeframe: Int, dailyBudget: Double, goalPurchase: String, waysToSave: String) {
+        self.goal = goal
+        self.timeframe = timeframe
+        self.dailyBudget = dailyBudget
+        self.goalPurchase = goalPurchase
+        self.waysToSave = waysToSave
         
     }
     
-    func serializeGoalIntoDictionary() -> [String:Any] {
-        var serializedGoal: [String:Any] = userInput
+    func serializeGoalIntoDictionary() -> [String : Any] {
+        var serializedGoal: [String : Any] = [ : ]
         
+        serializedGoal["goal"] = goal
+        serializedGoal["timeframe"] = timeframe
+        serializedGoal["daily_budget"] = dailyBudget
+        serializedGoal["goal_purchase"] = goalPurchase
+        serializedGoal["ways_to_save"] = waysToSave
         serializedGoal["day_counter"] = dayCounter
         serializedGoal["current_amount_saved"] = currentAmountSaved
         serializedGoal["allocated_daily_budget"] = alloctedDailyBudget

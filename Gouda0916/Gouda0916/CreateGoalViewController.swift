@@ -9,15 +9,103 @@
 import UIKit
 
 class CreateGoalViewController: UIViewController {
+    var delegate: SaveGoalDelegate?
+    
+    
+    @IBOutlet weak var goalTextField: UITextField!
+    @IBOutlet weak var goalPurchaseTextField: UITextField!
+    @IBOutlet weak var timeframeTextField: UITextField!
+    @IBOutlet weak var waysToSaveTextField: UITextField!
+    @IBOutlet weak var dailyBudgetTextField: UITextField!
+    @IBOutlet weak var createButton: UIButton!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func backButtonClicked(_ sender: Any) {
+    //MARK: Tap IBActions
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func createButtonTapped(_ sender: UIButton) {
+        let goal = Double(goalTextField.text!)! //need to handle force unwrap in validation
+        let timeframe = Int(timeframeTextField.text!)! //need to handle force unwrap in validation
+        let dailyBudget = Double(dailyBudgetTextField.text!)! //need to handle force unwrap in validaton
+        let goalPurchase = goalPurchaseTextField.text!
+        let waysToSave = waysToSaveTextField.text!
+        let newGoal = Goal(goal: goal, timeframe: timeframe, dailyBudget: dailyBudget, goalPurchase: goalPurchase, waysToSave: waysToSave)
+        
+        delegate?.save(goal: newGoal)
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+
 }
+
+//MARK: Text Field Validation
+extension CreateGoalViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let validInput = checkForValidInputIn(textField: textField)
+        
+        if validInput {
+            //animate to confirm
+            checkIfAllTextFieldsAreValid()
+            //Activat button if all are avalid
+        } else {
+            //animate to deny
+        }
+    }
+    
+    func checkForValidInputIn(textField: UITextField) -> Bool {
+        var isValid = false
+        let userInput = textField.text
+        
+        switch textField {
+        case goalTextField, dailyBudgetTextField:
+            if let userInput = userInput {
+                let inputAsDouble = Double(userInput)
+                if inputAsDouble != nil {
+                    isValid = true
+                }
+            }
+        default:
+            break
+        }
+        
+        
+        return isValid
+    }
+    
+    func checkIfAllTextFieldsAreValid() {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
