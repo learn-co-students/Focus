@@ -16,18 +16,25 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet weak var timeframeTextField: UITextField!
     @IBOutlet weak var waysToSaveTextField: UITextField!
     @IBOutlet weak var dailyBudgetTextField: UITextField!
+    @IBOutlet weak var createButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
-    
-    
-    @IBAction func backButtonClicked(_ sender: Any) {
+    //MARK: Tap IBActions
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func createButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+
 }
 
 

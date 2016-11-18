@@ -567,7 +567,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <state key="normal" title="&lt;"/>
                                         <connections>
-                                            <action selector="backButtonClicked:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="iK5-Ib-4hf"/>
+                                            <action selector="backButtonTapped:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="P9h-cV-SES"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -583,8 +583,12 @@
                                 <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TK-ys-V0f">
-                                        <rect key="frame" x="164.5" y="18" width="46" height="30"/>
+                                        <rect key="frame" x="153.5" y="13" width="68" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="createButtonTapped:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="LF0-8z-SxB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -611,6 +615,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createButton" destination="7TK-ys-V0f" id="GdE-Fm-835"/>
                         <outlet property="dailyBudgetTextField" destination="bqP-Xt-RMz" id="KAA-oj-VZg"/>
                         <outlet property="goalPurchaseTextField" destination="vgs-9C-sbV" id="kmP-WM-gKO"/>
                         <outlet property="goalTextField" destination="O5K-7j-GtX" id="c56-lH-6U2"/>
