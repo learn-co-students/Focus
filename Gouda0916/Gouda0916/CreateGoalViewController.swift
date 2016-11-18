@@ -9,6 +9,7 @@
 import UIKit
 
 class CreateGoalViewController: UIViewController {
+    var delegate: SaveGoalDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
