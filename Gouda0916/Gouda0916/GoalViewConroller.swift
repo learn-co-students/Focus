@@ -11,11 +11,13 @@ import UIKit
 class GoalViewController: UIViewController {
     let store = DataStore.sharedInstance
     
+    @IBOutlet weak var goalTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func backButtonClicked(_ sender: UIButton) {
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -36,9 +38,10 @@ protocol SaveGoalDelegate {
 extension GoalViewController: SaveGoalDelegate {
     func save(goal: Goal) {
         store.goals.append(goal)
-        
+        goalTableView.reloadData()
     }
 }
+
 
 //MARK: Table View Delegate and Datasource
 extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,8 +54,8 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NEEDSIDENTIFIER!!!!")
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell")
+        cell?.textLabel?.text = store.goals[indexPath.row].goalPurchase
         return cell!
     }
     
