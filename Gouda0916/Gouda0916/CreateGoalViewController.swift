@@ -30,6 +30,8 @@ class CreateGoalViewController: UIViewController {
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+        //turn input into [string:any]
+        //
     }
     
     
