@@ -30,8 +30,8 @@ class Goal {
         
     }
     
-    func serializeGoalIntoDictionary() -> [String:Any] {
-        var serializedGoal: [String:Any] = [:]
+    func serializeGoalIntoDictionary() -> [String : Any] {
+        var serializedGoal: [String : Any] = [ : ]
         
         serializedGoal["goal"] = goal
         serializedGoal["timeframe"] = timeframe

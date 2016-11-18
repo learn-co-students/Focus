@@ -36,5 +36,24 @@ protocol SaveGoalDelegate {
 extension GoalViewController: SaveGoalDelegate {
     func save(goal: Goal) {
         store.goals.append(goal)
+        
     }
+}
+
+//MARK: Table View Delegate and Datasource
+extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return store.goals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NEEDSIDENTIFIER!!!!")
+        
+        return cell!
+    }
+    
 }

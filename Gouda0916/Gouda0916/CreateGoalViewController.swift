@@ -29,13 +29,16 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        //create a new goal
+        let goal = Double(goalTextField.text!)! //need to handle force unwrap in validation
+        let timeframe = Int(timeframeTextField.text!)! //need to handle force unwrap in validation
+        let dailyBudget = Double(dailyBudgetTextField.text!)! //need to handle force unwrap in validaton
+        let goalPurchase = goalPurchaseTextField.text!
+        let waysToSave = waysToSaveTextField.text!
+        let newGoal = Goal(goal: goal, timeframe: timeframe, dailyBudget: dailyBudget, goalPurchase: goalPurchase, waysToSave: waysToSave)
         
-        //add goal to singleton
-        //update goal table view
+        delegate?.save(goal: newGoal)
+        
         self.dismiss(animated: true, completion: nil)
-        
-        
     }
     
     
