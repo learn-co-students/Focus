@@ -16,7 +16,7 @@ class LogInViewController: UIViewController {
     
     
     // Mark: Constants
-    let loginToMain = "LoginToMain"
+    let loginToMain = "loginToMain"
     
     // Mark: Outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -57,14 +57,19 @@ class LogInViewController: UIViewController {
         let saveAction = UIAlertAction(title: "Save",
                                        style: .default) { action in
                                         
-                                        let emailField = alert.textFields![0]
-                                        let passwordField = alert.textFields![1]
+                                        guard let emailField = alert.textFields![0].text else { return }
+                                        guard let passwordField = alert.textFields![1].text else { return }
                                         
-                                        FIRAuth.auth()!.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
+                                        print(emailField, passwordField)
+                                        
+                                        
+                                        FIRAuth.auth()!.createUser(withEmail: emailField, password: passwordField, completion: { (user, error) in
+                                            
                                             if error == nil {
-                                                FIRAuth.auth()!.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                                                FIRAuth.auth()!.signIn(withEmail: emailField, password: passwordField)
                                             }
                                         })
+                                        
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
