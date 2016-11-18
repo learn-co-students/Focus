@@ -14,8 +14,8 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var goalPurchaseTextField: UITextField!
     @IBOutlet weak var timeframeTextField: UITextField!
-    @IBOutlet weak var dailyBudgetTextField: UITextField!
     @IBOutlet weak var waysToSaveTextField: UITextField!
+    @IBOutlet weak var dailyBudgetTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
