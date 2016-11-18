@@ -9,6 +9,7 @@
 import UIKit
 
 class GoalViewController: UIViewController {
+    let store = DataStore.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,4 +20,14 @@ class GoalViewController: UIViewController {
     }
     
     
+}
+
+protocol SaveGoalDelegate {
+    func save(goal: Goal)
+}
+
+extension GoalViewController: SaveGoalDelegate {
+    func save(goal: Goal) {
+        store.goals.append(goal)
+    }
 }
