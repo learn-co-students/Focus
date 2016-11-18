@@ -18,6 +18,7 @@
 		11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2B1DDA70750072C46A /* MainViewController.swift */; };
 		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
 		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
+		11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE917B1DDF4BE800E3EA4F /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		11FCAA2B1DDA70750072C46A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				117221261DDE2DE600A7A680 /* Goal.swift */,
+				11FE917B1DDF4BE800E3EA4F /* DataStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
+				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
