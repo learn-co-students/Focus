@@ -11,12 +11,14 @@ import UIKit
 class CreateGoalViewController: UIViewController {
     var delegate: SaveGoalDelegate?
     
+    
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var goalPurchaseTextField: UITextField!
     @IBOutlet weak var timeframeTextField: UITextField!
     @IBOutlet weak var waysToSaveTextField: UITextField!
     @IBOutlet weak var dailyBudgetTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
+
     
     
     override func viewDidLoad() {
