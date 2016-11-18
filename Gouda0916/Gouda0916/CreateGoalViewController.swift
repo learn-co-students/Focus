@@ -29,9 +29,13 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
+        //create a new goal
+        
+        //add goal to singleton
+        //update goal table view
         self.dismiss(animated: true, completion: nil)
-        //turn input into [string:any]
-        //
+        
+        
     }
     
     

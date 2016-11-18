@@ -14,18 +14,19 @@ class Goal {
     let timeframe: Int
     let dailyBudget: Double
     let goalPurchase: String
-    let waysToSave = "Lunch"
+    let waysToSave: String
     var dayCounter = 1
     var currentAmountSaved = 0.0
     var alloctedDailyBudget: Double {
         return (goal - currentAmountSaved / Double(timeframe)) - dailyBudget
     }
     
-    init(goal: Double, timeframe: Int, dailyBudget: Double, goalPurchase: String) {
+    init(goal: Double, timeframe: Int, dailyBudget: Double, goalPurchase: String, waysToSave: String) {
         self.goal = goal
         self.timeframe = timeframe
         self.dailyBudget = dailyBudget
         self.goalPurchase = goalPurchase
+        self.waysToSave = waysToSave
         
     }
     
@@ -36,10 +37,10 @@ class Goal {
         serializedGoal["timeframe"] = timeframe
         serializedGoal["daily_budget"] = dailyBudget
         serializedGoal["goal_purchase"] = goalPurchase
+        serializedGoal["ways_to_save"] = waysToSave
         serializedGoal["day_counter"] = dayCounter
         serializedGoal["current_amount_saved"] = currentAmountSaved
         serializedGoal["allocated_daily_budget"] = alloctedDailyBudget
-        
         
         return serializedGoal
     }
