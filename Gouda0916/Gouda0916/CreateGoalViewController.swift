@@ -37,4 +37,64 @@ class CreateGoalViewController: UIViewController {
 
 }
 
+//MARK: Text Field Validation
+extension CreateGoalViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let validInput = checkForValidInputIn(textField: textField)
+        
+        if validInput {
+            //animate to confirm
+            checkIfAllTextFieldsAreValid()
+            //Activat button if all are avalid
+        } else {
+            //animate to deny
+        }
+    }
+    
+    func checkForValidInputIn(textField: UITextField) -> Bool {
+        var isValid = false
+        let userInput = textField.text
+        
+        switch textField {
+        case goalTextField, dailyBudgetTextField:
+            if let userInput = userInput {
+                let inputAsDouble = Double(userInput)
+                if inputAsDouble != nil {
+                    isValid = true
+                }
+            }
+        default:
+            break
+        }
+        
+        
+        return isValid
+    }
+    
+    func checkIfAllTextFieldsAreValid() {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
