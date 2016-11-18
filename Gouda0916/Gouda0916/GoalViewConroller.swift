@@ -7,10 +7,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+
 
 class GoalViewController: UIViewController {
     
+    // MARK: Constants
+     var user: User!
+    
+    
     override func viewDidLoad() {
+        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
+        
         super.viewDidLoad()
     }
     
