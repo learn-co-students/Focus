@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
 		117221271DDE2DE600A7A680 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221261DDE2DE600A7A680 /* Goal.swift */; };
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
@@ -18,13 +19,14 @@
 		11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2B1DDA70750072C46A /* MainViewController.swift */; };
 		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
 		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
+		11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE917B1DDF4BE800E3EA4F /* DataStore.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
-		11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE917B1DDF4BE800E3EA4F /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGoalTableViewCell.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		117221261DDE2DE600A7A680 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,12 +40,12 @@
 		11FCAA2B1DDA70750072C46A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.release.xcconfig"; sourceTree = "<group>"; };
 		F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.debug.xcconfig"; sourceTree = "<group>"; };
-		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		116A9DC41DDCD99100437479 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
 				117221131DDD02D600A7A680 /* CreateGoalViewController.swift */,
 				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
@@ -276,6 +279,7 @@
 				117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */,
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
+				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
