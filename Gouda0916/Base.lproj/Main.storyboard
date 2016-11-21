@@ -360,25 +360,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-tq-ZdB" userLabel="TItleAndDetails">
-                                                    <rect key="frame" x="0.5" y="5.5" width="375" height="98.5"/>
+                                                    <rect key="frame" x="0.5" y="0.0" width="375" height="109.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thy-Fq-A1t" userLabel="GoalDetails">
-                                                            <rect key="frame" x="19" y="32.5" width="337.5" height="61"/>
+                                                            <rect key="frame" x="19" y="33" width="337.5" height="71"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Progress:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQL-qr-UXE">
-                                                                    <rect key="frame" x="0.0" y="3" width="129" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="3.5" width="129" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Progress:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTa-H9-wFV">
-                                                                    <rect key="frame" x="0.0" y="36.5" width="115" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="46" width="115" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Allowance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiF-hV-Joh">
-                                                                    <rect key="frame" x="212.5" y="3" width="125" height="21"/>
+                                                                    <rect key="frame" x="212.5" y="3.5" width="125" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -395,7 +395,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxW-cu-aFM">
-                                                            <rect key="frame" x="19" y="5" width="44" height="27.5"/>
+                                                            <rect key="frame" x="19" y="5.5" width="44" height="27.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -416,14 +416,13 @@
                                                 <constraint firstItem="EFB-tq-ZdB" firstAttribute="width" secondItem="jtO-Wn-fRZ" secondAttribute="width" id="CAq-Ge-4yB"/>
                                                 <constraint firstItem="EFB-tq-ZdB" firstAttribute="centerY" secondItem="jtO-Wn-fRZ" secondAttribute="centerY" id="MC1-f8-hsG"/>
                                                 <constraint firstItem="EFB-tq-ZdB" firstAttribute="centerX" secondItem="jtO-Wn-fRZ" secondAttribute="centerX" id="U6y-dJ-xEH"/>
-                                                <constraint firstItem="EFB-tq-ZdB" firstAttribute="height" secondItem="jtO-Wn-fRZ" secondAttribute="height" multiplier="0.9" id="abq-oW-Ito"/>
+                                                <constraint firstItem="EFB-tq-ZdB" firstAttribute="height" secondItem="jtO-Wn-fRZ" secondAttribute="height" id="abq-oW-Ito"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dailyAllowanceLabel" destination="OiF-hV-Joh" id="gLi-fg-YYT"/>
                                             <outlet property="daysProgressLabel" destination="qTa-H9-wFV" id="mE2-sx-Ui1"/>
                                             <outlet property="savingsProgressLabel" destination="PQL-qr-UXE" id="zTq-xI-I5H"/>
-                                            <outlet property="titleLabel" destination="GxW-cu-aFM" id="nMo-9o-eW3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
