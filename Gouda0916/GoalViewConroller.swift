@@ -42,6 +42,14 @@ protocol SaveGoalDelegate {
 extension GoalViewController: SaveGoalDelegate {
     func save(goal: Goal) {
         store.goals.append(goal)
+        
+        //Saving to coreData
+        let context = store.persistentContainer.viewContext
+        let entity = GoalData(context: context)
+        entity.goalAmount = goal.goal
+        entity.purchasGoal = goal.goalPurchase
+        store.saveContext()
+        
         goalTableView.reloadData()
     }
 }

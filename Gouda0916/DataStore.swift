@@ -15,6 +15,18 @@ class DataStore {
     private init() {}
     
     var goals: [Goal] = []
+    var goalDataEntities: [GoalData] = []
+    
+    func fetchData() {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<GoalData>(entityName: "GoalData")
+        do {
+            goalDataEntities = try context.fetch(fetchRequest)
+        }catch {
+            print("didnt get GoalData from fetch request")
+        }
+    }
+    
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

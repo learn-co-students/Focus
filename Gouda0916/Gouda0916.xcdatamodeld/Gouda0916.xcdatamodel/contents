@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GoalData" representedClassName="GoalData" syncable="YES" codeGenerationType="class">
+        <attribute name="currentAmountSaved" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dailyBudget" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dayCounter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goalAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchasGoal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeframe" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="waysToSave" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WayToSave" inverseName="goal" inverseEntity="WayToSave" syncable="YES"/>
+    </entity>
+    <entity name="WayToSave" representedClassName="WayToSave" syncable="YES" codeGenerationType="class">
+        <attribute name="way" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GoalData" inverseName="waysToSave" inverseEntity="GoalData" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GoalData" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="WayToSave" positionX="-54" positionY="36" width="128" height="75"/>
+    </elements>
 </model>
