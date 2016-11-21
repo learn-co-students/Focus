@@ -12,11 +12,12 @@ import FirebaseDatabase
 
 
 class MainViewController: UIViewController {
-    
+    let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        store.fetchData()
     }
 }
