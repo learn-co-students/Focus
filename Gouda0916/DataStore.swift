@@ -15,15 +15,14 @@ class DataStore {
     private init() {}
     
     var goals: [Goal] = []
-    var goalDataEntities: [GoalData] = []
     
     func fetchData() {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<GoalData>(entityName: "GoalData")
+        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
         do {
-            goalDataEntities = try context.fetch(fetchRequest)
+            goals = try context.fetch(fetchRequest)
         }catch {
-            print("didnt get GoalData from fetch request")
+            print("couldnt get goals from fetch request")
         }
     }
     

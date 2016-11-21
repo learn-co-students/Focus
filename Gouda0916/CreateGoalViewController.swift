@@ -9,8 +9,7 @@
 import UIKit
 
 class CreateGoalViewController: UIViewController {
-    var delegate: SaveGoalDelegate?
-    
+    let store = DataStore.sharedInstance
     
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var goalPurchaseTextField: UITextField!
@@ -19,8 +18,6 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet weak var dailyBudgetTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,10 +34,24 @@ class CreateGoalViewController: UIViewController {
         let goalPurchase = goalPurchaseTextField.text!
         let waysToSave = [waysToSaveTextField.text!]
         
-        let newGoal = Goal(goal: goal, timeframe: timeframe, dailyBudget: dailyBudget, goalPurchase: goalPurchase, waysToSave: waysToSave)
+        let context = store.persistentContainer.viewContext
+        let goalEntity = Goal(context: context)
+        goalEntity.goalAmount = goal
+        goalEntity.purchasGoal = goalPurchase
+        goalEntity.currentAmountSaved = 0.0
+        goalEntity.dayCounter = 0.0
+        goalEntity.dailyBudget = dailyBudget
+        goalEntity.timeframe = Double(timeframe)
         
-        delegate?.save(goal: newGoal)
+        for way in waysToSave {
+            let wayEntity = WayToSave(context: context)
+            wayEntity.way = way
+            goalEntity.addToWaysToSave(wayEntity)
+        }
         
+        store.saveContext()
+        store.goals.append(goalEntity)
+    
         
         self.dismiss(animated: true, completion: nil)
     }
