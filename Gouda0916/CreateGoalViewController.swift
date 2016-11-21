@@ -28,6 +28,7 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
+        //save to coreData and datastore
         let goal = Double(goalTextField.text!)! //need to handle force unwrap in validation
         let timeframe = Int(timeframeTextField.text!)! //need to handle force unwrap in validation
         let dailyBudget = Double(dailyBudgetTextField.text!)! //need to handle force unwrap in validaton
@@ -52,14 +53,11 @@ class CreateGoalViewController: UIViewController {
         store.saveContext()
         store.goals.append(goalEntity)
     
-        
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-
 }
+
+
 
 //MARK: Text Field Validation
 extension CreateGoalViewController: UITextFieldDelegate {
