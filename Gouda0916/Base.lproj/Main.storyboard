@@ -356,7 +356,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Byc-9p-Xwq" id="jtO-Wn-fRZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-tq-ZdB" userLabel="TItleAndDetails">
@@ -419,6 +419,12 @@
                                                 <constraint firstItem="EFB-tq-ZdB" firstAttribute="height" secondItem="jtO-Wn-fRZ" secondAttribute="height" multiplier="0.9" id="abq-oW-Ito"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dailyAllowanceLabel" destination="OiF-hV-Joh" id="gLi-fg-YYT"/>
+                                            <outlet property="daysProgressLabel" destination="qTa-H9-wFV" id="mE2-sx-Ui1"/>
+                                            <outlet property="savingsProgressLabel" destination="PQL-qr-UXE" id="zTq-xI-I5H"/>
+                                            <outlet property="titleLabel" destination="GxW-cu-aFM" id="nMo-9o-eW3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
