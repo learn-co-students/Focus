@@ -35,7 +35,8 @@ class CreateGoalViewController: UIViewController {
         let timeframe = Int(timeframeTextField.text!)! //need to handle force unwrap in validation
         let dailyBudget = Double(dailyBudgetTextField.text!)! //need to handle force unwrap in validaton
         let goalPurchase = goalPurchaseTextField.text!
-        let waysToSave = waysToSaveTextField.text!
+        let waysToSave = [waysToSaveTextField.text!]
+        
         let newGoal = Goal(goal: goal, timeframe: timeframe, dailyBudget: dailyBudget, goalPurchase: goalPurchase, waysToSave: waysToSave)
         
         delegate?.save(goal: newGoal)

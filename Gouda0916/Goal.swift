@@ -13,7 +13,7 @@ class Goal {
     let goal: Double
     let timeframe: Int
     let goalPurchase: String
-    let waysToSave: String
+    let waysToSave: [String]
     var dayCounter = 1
     var currentAmountSaved = 0.0
     let dailyBudget: Double
@@ -21,7 +21,7 @@ class Goal {
         return (goal / Double(timeframe)) - dailyBudget
     }
     
-    init(goal: Double, timeframe: Int, dailyBudget: Double, goalPurchase: String, waysToSave: String) {
+    init(goal: Double, timeframe: Int, dailyBudget: Double, goalPurchase: String, waysToSave: [String]) {
         self.goal = goal
         self.timeframe = timeframe
         self.dailyBudget = dailyBudget
