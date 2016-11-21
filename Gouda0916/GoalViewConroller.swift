@@ -17,15 +17,7 @@ class GoalViewController: UIViewController {
     
     @IBOutlet weak var goalTableView: UITableView!
     
-    // MARK: Constants
-     var user: User!
-    
     override func viewDidLoad() {
-        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
-            guard let user = user else { return }
-            self.user = User(authData: user)
-        }
-        
         super.viewDidLoad()
     }
     
