@@ -12,13 +12,13 @@ import Foundation
 class Goal {
     let goal: Double
     let timeframe: Int
-    let dailyBudget: Double
     let goalPurchase: String
     let waysToSave: String
     var dayCounter = 1
     var currentAmountSaved = 0.0
+    let dailyBudget: Double
     var alloctedDailyBudget: Double {
-        return (goal - currentAmountSaved / Double(timeframe)) - dailyBudget
+        return (goal / Double(timeframe)) - dailyBudget
     }
     
     init(goal: Double, timeframe: Int, dailyBudget: Double, goalPurchase: String, waysToSave: String) {

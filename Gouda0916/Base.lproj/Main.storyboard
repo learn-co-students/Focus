@@ -423,6 +423,7 @@
                                             <outlet property="dailyAllowanceLabel" destination="OiF-hV-Joh" id="gLi-fg-YYT"/>
                                             <outlet property="daysProgressLabel" destination="qTa-H9-wFV" id="mE2-sx-Ui1"/>
                                             <outlet property="savingsProgressLabel" destination="PQL-qr-UXE" id="zTq-xI-I5H"/>
+                                            <outlet property="titleLabel" destination="GxW-cu-aFM" id="RNv-C5-L7v"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

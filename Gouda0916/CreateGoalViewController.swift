@@ -40,6 +40,7 @@ class CreateGoalViewController: UIViewController {
         
         delegate?.save(goal: newGoal)
         
+        
         self.dismiss(animated: true, completion: nil)
     }
     
