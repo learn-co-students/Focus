@@ -10,13 +10,13 @@ import Foundation
 
 
 class Goal {
-    let goal: Double
-    let timeframe: Int
-    let goalPurchase: String
-    let waysToSave: [String]
+    var goal: Double
+    var timeframe: Int
+    var goalPurchase: String
+    var waysToSave: [String]
     var dayCounter = 1
     var currentAmountSaved = 0.0
-    let dailyBudget: Double
+    var dailyBudget: Double
     var alloctedDailyBudget: Double {
         return (goal / Double(timeframe)) - dailyBudget
     }
@@ -27,6 +27,16 @@ class Goal {
         self.dailyBudget = dailyBudget
         self.goalPurchase = goalPurchase
         self.waysToSave = waysToSave
+        
+    }
+    
+    convenience init (goalData: GoalData) {
+        let goalz = Double(goalData.goalAmount!)!
+        let timeframez = Int(goalData.timeframe!)!
+        let dailyBudgetz = Double(goalData.dailyBudget!)!
+        let goalPurchasez = goalData.purchasGoal!
+        let waysToSavez = goalData.waysToSave?.allObjects as! [String]
+        self.init(goal: goalz, timeframe: timeframez, dailyBudget: dailyBudgetz, goalPurchase: goalPurchasez, waysToSave: waysToSavez)
         
     }
     
