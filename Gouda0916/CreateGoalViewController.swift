@@ -68,15 +68,14 @@ class CreateGoalViewController: UIViewController {
 extension CreateGoalViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("text field did end edditing fired")
         let validInput = checkForValidInputIn(textField: textField)
         
         if validInput {
             textField.backgroundColor = .green
-            checkIfAllTextFieldsAreValid()
         } else {
             textField.backgroundColor = .red
         }
+        checkIfAllTextFieldsAreValid()
     }
     
     func checkForValidInputIn(textField: UITextField) -> Bool {
@@ -93,7 +92,9 @@ extension CreateGoalViewController: UITextFieldDelegate {
             }
             break
         case goalPurchaseTextField, waysToSaveTextField:
-            isValid = true
+            if userInput != "" {
+                isValid = true
+            }
             break
         default:
             break
@@ -108,6 +109,8 @@ extension CreateGoalViewController: UITextFieldDelegate {
             && timeframeTextField.backgroundColor == .green
             && waysToSaveTextField.backgroundColor == .green {
             createButton.isEnabled = true
+        } else {
+            createButton.isEnabled = false
         }
     }
 }
