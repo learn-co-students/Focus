@@ -25,6 +25,9 @@ class CreateGoalViewController: UIViewController {
         timeframeTextField.delegate = self
         waysToSaveTextField.delegate = self
         dailyBudgetTextField.delegate = self
+        
+        goalTextField.addTarget(self, action: #selector(checkForTextfieldEdit), for: UIControlEvents.editingChanged)
+        
         createButton.isEnabled = false
     }
     
@@ -76,6 +79,18 @@ extension CreateGoalViewController: UITextFieldDelegate {
             textField.backgroundColor = .red
         }
         checkIfAllTextFieldsAreValid()
+    }
+    
+    func checkForTextfieldEdit(_ textField: UITextField) {
+        let validInput = checkForValidInputIn(textField: textField)
+        
+        if validInput {
+            textField.backgroundColor = .green
+        } else {
+            textField.backgroundColor = .red
+        }
+        checkIfAllTextFieldsAreValid()
+
     }
     
     func checkForValidInputIn(textField: UITextField) -> Bool {
