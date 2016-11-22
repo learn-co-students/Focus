@@ -20,6 +20,12 @@ class CreateGoalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        goalTextField.delegate = self
+        goalPurchaseTextField.delegate = self
+        timeframeTextField.delegate = self
+        waysToSaveTextField.delegate = self
+        dailyBudgetTextField.delegate = self
+        createButton.isEnabled = false
     }
     
     //MARK: Tap IBActions
@@ -62,14 +68,14 @@ class CreateGoalViewController: UIViewController {
 extension CreateGoalViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        print("text field did end edditing fired")
         let validInput = checkForValidInputIn(textField: textField)
         
         if validInput {
-            //animate to confirm
+            textField.backgroundColor = .green
             checkIfAllTextFieldsAreValid()
-            //Activat button if all are avalid
         } else {
-            //animate to deny
+            textField.backgroundColor = .red
         }
     }
     
@@ -78,26 +84,33 @@ extension CreateGoalViewController: UITextFieldDelegate {
         let userInput = textField.text
         
         switch textField {
-        case goalTextField, dailyBudgetTextField:
+        case goalTextField, dailyBudgetTextField, timeframeTextField:
             if let userInput = userInput {
                 let inputAsDouble = Double(userInput)
                 if inputAsDouble != nil {
                     isValid = true
                 }
             }
+            break
+        case goalPurchaseTextField, waysToSaveTextField:
+            isValid = true
+            break
         default:
             break
         }
-        
-        
         return isValid
     }
     
     func checkIfAllTextFieldsAreValid() {
-        
+        if goalTextField.backgroundColor == .green
+            && goalPurchaseTextField.backgroundColor == .green
+            && dailyBudgetTextField.backgroundColor == .green
+            && timeframeTextField.backgroundColor == .green
+            && waysToSaveTextField.backgroundColor == .green {
+            createButton.isEnabled = true
+        }
     }
 }
-
 
 
 
