@@ -10,6 +10,7 @@ import UIKit
 
 class CreateGoalViewController: UIViewController {
     let store = DataStore.sharedInstance
+    var textFields: [UITextField] = []
     
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var goalPurchaseTextField: UITextField!
@@ -20,15 +21,17 @@ class CreateGoalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        goalTextField.delegate = self
-        goalPurchaseTextField.delegate = self
-        timeframeTextField.delegate = self
-        waysToSaveTextField.delegate = self
-        dailyBudgetTextField.delegate = self
-        
-        goalTextField.addTarget(self, action: #selector(checkForTextfieldEdit), for: UIControlEvents.editingChanged)
-        
+        addTextFieldsToArray()
+        setUpTextFieldsForEditing()
         createButton.isEnabled = false
+    }
+    
+    func addTextFieldsToArray() {
+        textFields.append(goalTextField)
+        textFields.append(goalPurchaseTextField)
+        textFields.append(timeframeTextField)
+        textFields.append(waysToSaveTextField)
+        textFields.append(dailyBudgetTextField)
     }
     
     //MARK: Tap IBActions
@@ -68,29 +71,31 @@ class CreateGoalViewController: UIViewController {
 
 
 //MARK: Text Field Validation
-extension CreateGoalViewController: UITextFieldDelegate {
+extension CreateGoalViewController {
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let validInput = checkForValidInputIn(textField: textField)
+    func setUpTextFieldsForEditing() {
         
-        if validInput {
-            textField.backgroundColor = .green
-        } else {
-            textField.backgroundColor = .red
+        for field in textFields {
+            field.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
         }
-        checkIfAllTextFieldsAreValid()
     }
     
-    func checkForTextfieldEdit(_ textField: UITextField) {
+    func checkForTextFieldEdit(_ textField: UITextField) {
         let validInput = checkForValidInputIn(textField: textField)
         
+        //changes text field color
         if validInput {
             textField.backgroundColor = .green
         } else {
             textField.backgroundColor = .red
         }
-        checkIfAllTextFieldsAreValid()
-
+        
+        //enables create button if all are valid, diables if any are invalid
+        if checkIfAllTextFieldsAreValid() {
+            createButton.isEnabled = true
+        } else {
+            createButton.isEnabled = false
+        }
     }
     
     func checkForValidInputIn(textField: UITextField) -> Bool {
@@ -105,28 +110,24 @@ extension CreateGoalViewController: UITextFieldDelegate {
                     isValid = true
                 }
             }
-            break
         case goalPurchaseTextField, waysToSaveTextField:
             if userInput != "" {
                 isValid = true
             }
-            break
         default:
             break
         }
         return isValid
     }
     
-    func checkIfAllTextFieldsAreValid() {
-        if goalTextField.backgroundColor == .green
-            && goalPurchaseTextField.backgroundColor == .green
-            && dailyBudgetTextField.backgroundColor == .green
-            && timeframeTextField.backgroundColor == .green
-            && waysToSaveTextField.backgroundColor == .green {
-            createButton.isEnabled = true
-        } else {
-            createButton.isEnabled = false
+    func checkIfAllTextFieldsAreValid() -> Bool {
+        var allValid = true
+        for field in textFields {
+            if field.backgroundColor == .red {
+                allValid = false
+            }
         }
+        return allValid
     }
 }
 
