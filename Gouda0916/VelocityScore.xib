@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VelocityScore" customModule="Gouda0916" customModuleProvider="target">
+            <connections>
+                <outlet property="backGroundCircleView" destination="9C8-es-5Hz" id="buz-8V-IlD"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="cR6-29-TP5"/>
+                <outlet property="shadowBackGroundCircleView" destination="qDJ-WI-SAK" id="Dt8-pr-3RS"/>
+                <outlet property="velocityScore" destination="ceJ-K4-1Ka" id="lCH-ye-spx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDJ-WI-SAK">
+                    <rect key="frame" x="124" y="8" width="126" height="126"/>
+                    <color key="backgroundColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qDJ-WI-SAK" secondAttribute="height" multiplier="1:1" id="M4x-E0-H3f"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C8-es-5Hz">
+                    <rect key="frame" x="124.5" y="8" width="126" height="126"/>
+                    <color key="backgroundColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9C8-es-5Hz" secondAttribute="height" multiplier="1:1" id="cUo-dx-vHA"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceJ-K4-1Ka">
+                    <rect key="frame" x="0.0" y="8" width="375" height="126"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="73"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocity Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqK-se-BgC" userLabel="Velocity Score Label">
+                    <rect key="frame" x="0.0" y="134" width="375" height="33"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                    <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ceJ-K4-1Ka" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="1qF-0I-76s"/>
+                <constraint firstItem="9C8-es-5Hz" firstAttribute="centerY" secondItem="ceJ-K4-1Ka" secondAttribute="centerY" id="8OP-dT-uJP"/>
+                <constraint firstItem="ceJ-K4-1Ka" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C0z-el-vGS"/>
+                <constraint firstItem="9C8-es-5Hz" firstAttribute="height" secondItem="ceJ-K4-1Ka" secondAttribute="height" id="Hxk-YS-1BF"/>
+                <constraint firstItem="qDJ-WI-SAK" firstAttribute="leading" secondItem="9C8-es-5Hz" secondAttribute="leading" id="JD7-3z-pha"/>
+                <constraint firstItem="cqK-se-BgC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N2V-yU-VfS"/>
+                <constraint firstItem="qDJ-WI-SAK" firstAttribute="width" secondItem="qDJ-WI-SAK" secondAttribute="height" multiplier="1:1" id="O1K-WR-cNs"/>
+                <constraint firstItem="ceJ-K4-1Ka" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="Pmp-3G-jgt"/>
+                <constraint firstItem="cqK-se-BgC" firstAttribute="top" secondItem="ceJ-K4-1Ka" secondAttribute="bottom" id="VoL-Wa-VtF"/>
+                <constraint firstItem="cqK-se-BgC" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="YNu-e1-87e"/>
+                <constraint firstItem="qDJ-WI-SAK" firstAttribute="bottom" secondItem="9C8-es-5Hz" secondAttribute="bottom" id="kNE-1Q-Dxi"/>
+                <constraint firstItem="cqK-se-BgC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.2" id="rrf-vG-yDL"/>
+                <constraint firstItem="cqK-se-BgC" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="sgK-QB-Cj7"/>
+                <constraint firstItem="qDJ-WI-SAK" firstAttribute="top" secondItem="9C8-es-5Hz" secondAttribute="top" id="uA1-SJ-o2o"/>
+                <constraint firstItem="9C8-es-5Hz" firstAttribute="centerX" secondItem="ceJ-K4-1Ka" secondAttribute="centerX" id="udb-Ot-6wp"/>
+                <constraint firstItem="qDJ-WI-SAK" firstAttribute="trailing" secondItem="9C8-es-5Hz" secondAttribute="trailing" id="wS9-7Y-aY4"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="45.5" y="-151.5"/>
+        </view>
+    </objects>
+</document>
