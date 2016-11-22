@@ -123,7 +123,7 @@ extension CreateGoalViewController {
     func checkIfAllTextFieldsAreValid() -> Bool {
         var allValid = true
         for field in textFields {
-            if field.backgroundColor == .red {
+            if field.backgroundColor != .green {
                 allValid = false
             }
         }
