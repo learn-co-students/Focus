@@ -52,7 +52,6 @@ class CreateGoalViewController: UIViewController {
         
         store.saveContext()
         store.goals.append(goalEntity)
-    
         self.dismiss(animated: true, completion: nil)
     }
 }
