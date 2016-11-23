@@ -14,7 +14,8 @@ import FirebaseDatabase
 extension Goal {
     
     var alloctedDailyBudget: Double? {
-        return (goalAmount / timeframe) - dailyBudget
+        let amountNeededPerDay = (goalAmount - currentAmountSaved) / timeframe
+        return dailyBudget - (amountNeededPerDay)
     }
     
     var waysToSaveAsStrings: [String] {
