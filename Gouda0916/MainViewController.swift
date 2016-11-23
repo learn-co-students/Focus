@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 
 class MainViewController: UIViewController {
+   
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     
@@ -20,4 +21,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         store.fetchData()
     }
+
 }
+

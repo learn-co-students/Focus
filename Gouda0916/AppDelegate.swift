@@ -10,19 +10,23 @@
 import UIKit
 import CoreData
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+   
     let store = DataStore.sharedInstance
     
     var window: UIWindow?
 
+    override init() {
+        super.init()
+        FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = false
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
-        FIRApp.configure()
-        
+
         store.fetchData()
         
         return true
