@@ -1,5 +1,5 @@
 //
-//  VelocityScore.swift
+//  VelocityScoreView.swift
 //  Gouda0916
 //
 //  Created by Michael Young on 11/22/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VelocityScore: UIView {
+class VelocityScoreView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var velocityScore: UILabel!
@@ -28,7 +28,7 @@ class VelocityScore: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("VelocityScore", owner: self, options: nil)
+        Bundle.main.loadNibNamed("VelocityScoreView", owner: self, options: nil)
     }
     
     func updateView() {
@@ -47,7 +47,7 @@ class VelocityScore: UIView {
         shadowBackGroundCircleView.layer.masksToBounds = false
         shadowBackGroundCircleView.layer.cornerRadius = 70
         shadowBackGroundCircleView.layer.shadowColor = UIColor.black.cgColor
-        shadowBackGroundCircleView.layer.shadowOpacity = 1
+        shadowBackGroundCircleView.layer.shadowOpacity = 0.6
         shadowBackGroundCircleView.layer.shadowRadius = CGFloat(5)
         shadowBackGroundCircleView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
