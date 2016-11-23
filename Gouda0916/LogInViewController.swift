@@ -62,8 +62,6 @@ class LogInViewController: UIViewController {
                         print("onClickSignIn: Another thype of error was returned: \(errorvalue). This error needs to be handled.")
                         
                         
-                        
-                        
                     }
                 }
             }
