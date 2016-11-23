@@ -13,12 +13,17 @@ import FirebaseDatabase
 
 
 class GoalViewController: UIViewController {
+    
     let store = DataStore.sharedInstance
     
     @IBOutlet weak var goalTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +35,7 @@ class GoalViewController: UIViewController {
     }
     
 }
+
 
 //MARK: Table View Delegate and Datasource
 extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
