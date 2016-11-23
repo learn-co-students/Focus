@@ -62,7 +62,7 @@ class LogInViewController: UIViewController {
     
     //Mark: Buttons
     @IBAction func loginButtonTouched(_ sender: AnyObject) {
-<<<<<<< HEAD
+        
         
         if let email = self.emailTextField.text {
             self.user1.email = email
@@ -88,128 +88,6 @@ class LogInViewController: UIViewController {
         }
     }
     
-    
-    
-                
-                @IBAction func forgotPasswordButtonTouched(_ sender: UIButton) {
-                }
-                
-                @IBAction func newUseButtonTouched(_ sender: UIButton) {
-                    let alert = UIAlertController(title: "Register",
-                                                  message: "Register",
-                                                  preferredStyle: .alert)
-                    
-                    let saveAction = UIAlertAction(title: "Save",
-                                                   style: .default) { action in
-                                                    
-                                                    guard let emailField = alert.textFields![0].text else { return }
-                                                    guard let passwordField = alert.textFields![1].text else { return }
-                                                    
-                                                    print(emailField, passwordField)
-                                                    
-                                                    
-                                                    FIRAuth.auth()!.createUser(withEmail: emailField, password: passwordField, completion: { (user, error) in
-                                                        
-                                                        if error == nil {
-                                                            FIRAuth.auth()!.signIn(withEmail: emailField, password: passwordField)
-                                                        }
-                                                    })
-                                                    
-                    }
-                    
-                    let cancelAction = UIAlertAction(title: "Cancel",
-                                                     style: .default)
-                    
-                    alert.addTextField { textEmail in
-                        textEmail.placeholder = "Enter your email"
-                    }
-                    
-                    alert.addTextField { textPassword in
-                        textPassword.isSecureTextEntry = true
-                        textPassword.placeholder = "Enter your password"
-                    }
-                    
-                    alert.addAction(saveAction)
-                    alert.addAction(cancelAction)
-                    
-                    present(alert, animated: true, completion: nil)
-                }
-                
-                
-                //Victoria Email enable
-                
-                var emailPopulated = false
-                var passwordPopulated = false
-                
-                
-                
-                func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-                    switch textField.tag {
-                    case 100:   // check to see if email has a value
-                        if self.emailTextField.text!.utf16.count > 0 {
-                            self.emailPopulated = true
-                        } else {
-                            self.emailPopulated = false
-                        }
-                        self.enableDisableSignIn()
-                    case 101: // verify password >= 6 characters
-                        if self.passwordTextField.text!.utf16.count > 0 {
-                            self.passwordPopulated = true
-                        } else {
-                            self.passwordPopulated = false
-                        }
-                        self.enableDisableSignIn()
-                    default: break
-                    }
-                    return true
-                }
-                
-                
-                func enableDisableSignIn(){
-                    if self.emailPopulated && self.passwordPopulated {
-                        self.loginButton.isEnabled = true
-                        self.loginButton.becomeFirstResponder()
-                        self.loginButton.alpha = 1.0
-                    } else {
-                        self.loginButton.isEnabled = false
-                        self.loginButton.alpha = 0.3
-                    }
-                }
-                
-                
-                func indicateError(fieldName textFieldWithError: UITextField){
-                    UIView.animate(withDuration: 1, animations: {
-                        textFieldWithError.backgroundColor = UIColor.red
-                        textFieldWithError.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-                    }, completion: { success in
-                        UIView.animate(withDuration: 1, animations: {  // reset control to original state
-                            textFieldWithError.backgroundColor = UIColor.white
-                            textFieldWithError.transform = CGAffineTransform(scaleX: 1.0, y:1.0)
-                        })
-                    })
-                    self.loginButton.isEnabled = false
-                    self.loginButton.alpha = 0.3
-                    
-                }
-            }
-            
-            
-            extension LogInViewController: UITextFieldDelegate {
-                
-                func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-                    if textField == emailTextField {
-                        passwordTextField.becomeFirstResponder()
-                    }
-                    if textField == passwordTextField {
-                        textField.resignFirstResponder()
-                    }
-                    return true
-                }
-=======
-        print("something obvious, but i dont know what")
-        FIRAuth.auth()!.signIn(withEmail: emailTextField.text!,
-                               password: passwordTextField.text!)
-    }
     
     @IBAction func forgotPasswordButtonTouched(_ sender: UIButton) {
     }
@@ -263,7 +141,61 @@ class LogInViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+//Victoria Email enable
 
+var emailPopulated = false
+var passwordPopulated = false
+
+
+
+func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    switch textField.tag {
+    case 100:   // check to see if email has a value
+        if self.emailTextField.text!.utf16.count > 0 {
+            self.emailPopulated = true
+        } else {
+            self.emailPopulated = false
+        }
+        self.enableDisableSignIn()
+    case 101: // verify password >= 6 characters
+        if self.passwordTextField.text!.utf16.count > 0 {
+            self.passwordPopulated = true
+        } else {
+            self.passwordPopulated = false
+        }
+        self.enableDisableSignIn()
+    default: break
+    }
+    return true
+}
+
+
+func enableDisableSignIn(){
+    if self.emailPopulated && self.passwordPopulated {
+        self.loginButton.isEnabled = true
+        self.loginButton.becomeFirstResponder()
+        self.loginButton.alpha = 1.0
+    } else {
+        self.loginButton.isEnabled = false
+        self.loginButton.alpha = 0.3
+    }
+}
+
+
+func indicateError(fieldName textFieldWithError: UITextField){
+    UIView.animate(withDuration: 1, animations: {
+        textFieldWithError.backgroundColor = UIColor.red
+        textFieldWithError.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+    }, completion: { success in
+        UIView.animate(withDuration: 1, animations: {  // reset control to original state
+            textFieldWithError.backgroundColor = UIColor.white
+            textFieldWithError.transform = CGAffineTransform(scaleX: 1.0, y:1.0)
+        })
+    })
+    self.loginButton.isEnabled = false
+    self.loginButton.alpha = 0.3
+    
+}
 
 extension LogInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -275,7 +207,6 @@ extension LogInViewController: UITextFieldDelegate {
         }
         return true
     }
->>>>>>> master
 }
 
 
