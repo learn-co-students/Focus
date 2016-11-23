@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 extension Goal {
     
-   
     var alloctedDailyBudget: Double? {
         return (goalAmount / timeframe) - dailyBudget
     }

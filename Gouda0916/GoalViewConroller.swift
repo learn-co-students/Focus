@@ -15,8 +15,6 @@ import FirebaseDatabase
 class GoalViewController: UIViewController {
     
     let store = DataStore.sharedInstance
-    let goalRef = FIRDatabase.database().reference(withPath: "goal")
-
     
     @IBOutlet weak var goalTableView: UITableView!
     
@@ -26,8 +24,6 @@ class GoalViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-            goalRef.observe(.value) { (snap: FIRDataSnapshot) in
-            }
     }
     
     override func viewWillAppear(_ animated: Bool) {

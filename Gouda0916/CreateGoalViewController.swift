@@ -14,7 +14,6 @@ class CreateGoalViewController: UIViewController {
     let store = DataStore.sharedInstance
     let ref =  FIRDatabase.database().reference()
     
-    
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var goalPurchaseTextField: UITextField!
     @IBOutlet weak var timeframeTextField: UITextField!
@@ -28,19 +27,14 @@ class CreateGoalViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        ref.observe(.value) { (snap: FIRDataSnapshot) in
-          //  self.goalTextField.text = (snap.value as AnyObject).description
-        }
     }
 
-    
     //MARK: Tap IBActions
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        
         //save to coreData and datastore
         let goal = Double(goalTextField.text!)! //need to handle force unwrap in validation
         let timeframe = Int(timeframeTextField.text!)! //need to handle force unwrap in validation
@@ -65,10 +59,9 @@ class CreateGoalViewController: UIViewController {
         
         store.saveContext()
         store.goals.append(goalEntity)
-        
-        
+   
         ref.child("goals").childByAutoId().setValue(goalEntity.serializeGoalIntoDictionary())
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 }
