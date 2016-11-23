@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
+
 
 extension Goal {
+    
+   
     var alloctedDailyBudget: Double? {
         return (goalAmount / timeframe) - dailyBudget
     }
@@ -22,7 +27,7 @@ extension Goal {
         }
         return array
     }
-    
+
     func serializeGoalIntoDictionary() -> [String : Any] {
         var serializedGoal: [String : Any] = [ : ]
         

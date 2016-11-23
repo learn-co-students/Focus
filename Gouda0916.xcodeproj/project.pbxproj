@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */; };
+		112179B81DE3A9B600CC3FF1 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112179B71DE3A9B600CC3FF1 /* Goal.swift */; };
 		1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalExtension.swift; sourceTree = "<group>"; };
+		112179B71DE3A9B600CC3FF1 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGoalTableViewCell.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +63,7 @@
 		116A9DC21DDCD97C00437479 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */,
+				112179B71DE3A9B600CC3FF1 /* Goal.swift */,
 				905278591DDF58CA0079E3DD /* User.swift */,
 				11FE917B1DDF4BE800E3EA4F /* DataStore.swift */,
 			);
@@ -279,7 +279,7 @@
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
-				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
+				112179B81DE3A9B600CC3FF1 /* Goal.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
