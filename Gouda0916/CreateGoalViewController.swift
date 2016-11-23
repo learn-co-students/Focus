@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class CreateGoalViewController: UIViewController {
     let store = DataStore.sharedInstance
+    let ref =  FIRDatabase.database().reference()
     var textFields: [UITextField] = []
     
     @IBOutlet weak var goalTextField: UITextField!
@@ -34,6 +37,10 @@ class CreateGoalViewController: UIViewController {
         textFields.append(dailyBudgetTextField)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     //MARK: Tap IBActions
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -64,6 +71,9 @@ class CreateGoalViewController: UIViewController {
         
         store.saveContext()
         store.goals.append(goalEntity)
+   
+        ref.child("goals").childByAutoId().setValue(goalEntity.serializeGoalIntoDictionary())
+
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -123,7 +133,7 @@ extension CreateGoalViewController {
     func checkIfAllTextFieldsAreValid() -> Bool {
         var allValid = true
         for field in textFields {
-            if field.backgroundColor == .red {
+            if field.backgroundColor != .green {
                 allValid = false
             }
         }
