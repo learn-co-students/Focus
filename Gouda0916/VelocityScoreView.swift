@@ -10,6 +10,8 @@ import UIKit
 
 class VelocityScoreView: UIView {
     
+    let velocity = Velocity()
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var velocityScore: UILabel!
     @IBOutlet weak var backGroundCircleView: UIView!
@@ -50,6 +52,7 @@ class VelocityScoreView: UIView {
         shadowBackGroundCircleView.layer.shadowOpacity = 0.6
         shadowBackGroundCircleView.layer.shadowRadius = CGFloat(5)
         shadowBackGroundCircleView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
     }
     
     
