@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,80 +20,162 @@
             <rect key="frame" x="0.0" y="0.0" width="585" height="256"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0/$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
-                    <rect key="frame" x="20" y="195" width="48" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
-                    <rect key="frame" x="76" y="195" width="52" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="allowance for Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AX-Ue-cVN">
-                    <rect key="frame" x="400" y="86" width="153" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
-                    <rect key="frame" x="20" y="144" width="25" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DaysComplete" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-3u-Si9">
-                    <rect key="frame" x="53" y="144" width="112" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0 goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xa-B3R">
-                    <rect key="frame" x="29" y="86" width="112" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTg-ch-vr8">
-                    <rect key="frame" x="465" y="30" width="90" height="58"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
-                    <rect key="frame" x="20" y="30" width="106" height="58"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO">
-                    <rect key="frame" x="20" y="224" width="281" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IH-qo-EbE" userLabel="Top Half">
+                    <rect key="frame" x="0.0" y="0.0" width="585" height="128"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
+                            <rect key="frame" x="14.5" y="19" width="105.5" height="58"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xa-B3R">
+                            <rect key="frame" x="22" y="77" width="66" height="22.5"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTg-ch-vr8">
+                            <rect key="frame" x="480.5" y="19" width="90" height="58"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily allowance for lunch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AX-Ue-cVN">
+                            <rect key="frame" x="352.5" y="77" width="218" height="23"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.67862259553102267" green="0.67503199978747219" blue="0.68221319127457303" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Wbp-mI-hGN" firstAttribute="centerY" secondItem="9IH-qo-EbE" secondAttribute="centerY" multiplier="0.75" id="LUB-QY-NpS"/>
+                        <constraint firstItem="XTg-ch-vr8" firstAttribute="trailing" secondItem="9IH-qo-EbE" secondAttribute="centerX" multiplier="1.95" id="ZCt-Ea-jVN"/>
+                        <constraint firstItem="0AX-Ue-cVN" firstAttribute="top" secondItem="XTg-ch-vr8" secondAttribute="bottom" id="b1h-qE-DNU"/>
+                        <constraint firstItem="XTg-ch-vr8" firstAttribute="centerY" secondItem="9IH-qo-EbE" secondAttribute="centerY" multiplier="0.75" id="feM-C7-iSi"/>
+                        <constraint firstItem="5Rg-Xa-B3R" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="leading" multiplier="1.5" id="fpE-6F-kY1"/>
+                        <constraint firstItem="0AX-Ue-cVN" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="hXM-o7-lZP"/>
+                        <constraint firstItem="Wbp-mI-hGN" firstAttribute="leading" secondItem="9IH-qo-EbE" secondAttribute="centerX" multiplier="0.05" id="w3c-Ci-dBQ"/>
+                        <constraint firstItem="5Rg-Xa-B3R" firstAttribute="top" secondItem="Wbp-mI-hGN" secondAttribute="bottom" id="z9c-Yf-VAv"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAr-W7-aof">
-                    <rect key="frame" x="20" y="172" width="281" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-52-6ln" userLabel="Progress Bars">
+                    <rect key="frame" x="0.0" y="128" width="439" height="128"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Complete" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-3u-Si9">
+                            <rect key="frame" x="22" y="20" width="117" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
+                            <rect key="frame" x="22" y="74" width="112" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E54-Sh-MAV" userLabel="Days Goal">
+                            <rect key="frame" x="22" y="41" width="395" height="16.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7r-h7-Xfx" userLabel="Days Complete">
+                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="16.5"/>
+                                    <color key="backgroundColor" red="0.42242146870000002" green="1" blue="0.60385605870000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
+                                    <rect key="frame" x="187" y="0.0" width="21" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.39777876109999999" green="0.49727344940000001" blue="0.54912467279999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="o7r-h7-Xfx" firstAttribute="width" secondItem="E54-Sh-MAV" secondAttribute="width" multiplier="0.1" id="E5w-hB-sOS"/>
+                                <constraint firstItem="o7r-h7-Xfx" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="OgT-JF-wxS"/>
+                                <constraint firstItem="Lqi-W2-TtL" firstAttribute="centerY" secondItem="E54-Sh-MAV" secondAttribute="centerY" id="VcY-bW-GKs"/>
+                                <constraint firstItem="Lqi-W2-TtL" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="bottom" id="XYC-ZT-ON9"/>
+                                <constraint firstItem="o7r-h7-Xfx" firstAttribute="leading" secondItem="E54-Sh-MAV" secondAttribute="leading" id="ZFW-eP-yeD"/>
+                                <constraint firstItem="Lqi-W2-TtL" firstAttribute="centerX" secondItem="E54-Sh-MAV" secondAttribute="centerX" id="fuj-g6-cVX"/>
+                                <constraint firstItem="o7r-h7-Xfx" firstAttribute="height" secondItem="E54-Sh-MAV" secondAttribute="height" id="jVc-bF-BOv"/>
+                                <constraint firstItem="Lqi-W2-TtL" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="y1E-Fh-qAE"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO" userLabel="Saving Goal">
+                            <rect key="frame" x="22" y="95" width="395" height="17"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0/$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
+                                    <rect key="frame" x="179.5" y="0.0" width="37.5" height="17"/>
+                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
+                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="17"/>
+                                    <color key="backgroundColor" red="0.42242146868807051" green="1" blue="0.60385605865361702" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.39777876113503863" green="0.49727344938374518" blue="0.54912467277486909" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="fSD-ZI-mib" firstAttribute="width" secondItem="Efx-PA-xAO" secondAttribute="width" multiplier="0.1" id="CCb-Kc-uob"/>
+                                <constraint firstItem="fSD-ZI-mib" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="Ent-iB-xUs"/>
+                                <constraint firstItem="S7l-44-cOu" firstAttribute="centerX" secondItem="Efx-PA-xAO" secondAttribute="centerX" id="Pbw-4A-DoM"/>
+                                <constraint firstItem="fSD-ZI-mib" firstAttribute="top" secondItem="Efx-PA-xAO" secondAttribute="top" id="VJE-5A-Q3S"/>
+                                <constraint firstItem="fSD-ZI-mib" firstAttribute="height" secondItem="Efx-PA-xAO" secondAttribute="height" id="ZJB-pA-vGq"/>
+                                <constraint firstItem="S7l-44-cOu" firstAttribute="top" secondItem="Efx-PA-xAO" secondAttribute="top" id="cXD-oa-J3Z"/>
+                                <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="bottom" id="htl-A6-IIf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.86272905759162311" green="0.86272905759162311" blue="0.86272905759162311" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Efx-PA-xAO" firstAttribute="leading" secondItem="JiR-52-6ln" secondAttribute="centerX" multiplier="0.1" id="EkI-HR-9hP"/>
+                        <constraint firstItem="r4P-3u-Si9" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="top" id="PUv-8Q-c9b"/>
+                        <constraint firstItem="E54-Sh-MAV" firstAttribute="width" secondItem="JiR-52-6ln" secondAttribute="width" multiplier="0.9" id="Wqf-Ui-hOx"/>
+                        <constraint firstItem="Efx-PA-xAO" firstAttribute="width" secondItem="JiR-52-6ln" secondAttribute="width" multiplier="0.9" id="Z9S-La-UMO"/>
+                        <constraint firstItem="E54-Sh-MAV" firstAttribute="bottom" secondItem="JiR-52-6ln" secondAttribute="centerY" multiplier="0.9" id="in4-ab-ZcD"/>
+                        <constraint firstItem="Efx-PA-xAO" firstAttribute="height" secondItem="JiR-52-6ln" secondAttribute="height" multiplier="0.13" id="jao-0n-VfM"/>
+                        <constraint firstItem="T2m-eG-q24" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="top" id="mdY-rX-peX"/>
+                        <constraint firstItem="T2m-eG-q24" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="nvt-rk-flL"/>
+                        <constraint firstItem="r4P-3u-Si9" firstAttribute="leading" secondItem="E54-Sh-MAV" secondAttribute="leading" id="sCH-Nb-JHA"/>
+                        <constraint firstItem="Efx-PA-xAO" firstAttribute="bottom" secondItem="JiR-52-6ln" secondAttribute="centerY" multiplier="1.75" id="ybO-CZ-15W"/>
+                        <constraint firstItem="E54-Sh-MAV" firstAttribute="leading" secondItem="JiR-52-6ln" secondAttribute="centerX" multiplier="0.1" id="yfg-ZB-bsT"/>
+                        <constraint firstItem="E54-Sh-MAV" firstAttribute="height" secondItem="JiR-52-6ln" secondAttribute="height" multiplier="0.13" id="zUg-QI-p9b"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-Cb-xZq">
-                    <rect key="frame" x="517" y="201" width="48" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
-                    <state key="normal" title="edit"/>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tso-XT-ooc" userLabel="Buttons">
+                    <rect key="frame" x="439" y="128" width="146" height="128"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-Cb-xZq">
+                            <rect key="frame" x="18.5" y="15.5" width="109.5" height="96"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                            <state key="normal" title="edit"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.77206724476439792" green="0.77206724476439792" blue="0.77206724476439792" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="MJI-Cb-xZq" firstAttribute="width" secondItem="tso-XT-ooc" secondAttribute="width" multiplier="0.75" id="1GR-hp-vrc"/>
+                        <constraint firstItem="MJI-Cb-xZq" firstAttribute="height" secondItem="tso-XT-ooc" secondAttribute="height" multiplier="0.75" id="Jyc-qN-utQ"/>
+                        <constraint firstItem="MJI-Cb-xZq" firstAttribute="centerY" secondItem="tso-XT-ooc" secondAttribute="centerY" id="W5B-W6-bOs"/>
+                        <constraint firstItem="MJI-Cb-xZq" firstAttribute="centerX" secondItem="tso-XT-ooc" secondAttribute="centerX" id="qAa-rV-ii0"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9IH-qo-EbE" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="3Jf-6b-DoT"/>
+                <constraint firstItem="9IH-qo-EbE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="5XQ-gJ-R7C"/>
+                <constraint firstItem="JiR-52-6ln" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="Dac-HJ-rGi"/>
+                <constraint firstItem="tso-XT-ooc" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="Huu-4p-gdj"/>
+                <constraint firstItem="tso-XT-ooc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="SFy-KS-zeC"/>
+                <constraint firstItem="JiR-52-6ln" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="VYG-yu-tXf"/>
+                <constraint firstItem="9IH-qo-EbE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WfD-ja-XRc"/>
+                <constraint firstItem="JiR-52-6ln" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="aKr-24-ZfY"/>
+                <constraint firstItem="tso-XT-ooc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.75" id="aRg-UP-Wpy"/>
+                <constraint firstItem="9IH-qo-EbE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="lgn-N5-GqA"/>
+                <constraint firstItem="tso-XT-ooc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="maC-k9-Fzh"/>
+                <constraint firstItem="JiR-52-6ln" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.75" id="tdF-kE-PJA"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="289.5" y="-108"/>
