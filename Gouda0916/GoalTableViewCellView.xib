@@ -32,27 +32,27 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IH-qo-EbE" userLabel="Top Half">
                     <rect key="frame" x="0.0" y="0.0" width="539" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Climbing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
                             <rect key="frame" x="13.5" y="17.5" width="377.5" height="40"/>
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xa-B3R">
-                            <rect key="frame" x="20.5" y="57.5" width="189" height="20"/>
-                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                            <rect key="frame" x="13.5" y="57.5" width="189" height="20"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="XTg-ch-vr8">
                             <rect key="frame" x="391" y="17.5" width="134.5" height="40"/>
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily allowance for lunch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="0AX-Ue-cVN">
-                            <rect key="frame" x="307.5" y="57.5" width="218" height="20"/>
-                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                            <rect key="frame" x="372.5" y="57.5" width="153" height="20"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -68,7 +68,7 @@
                         <constraint firstItem="Wbp-mI-hGN" firstAttribute="width" secondItem="9IH-qo-EbE" secondAttribute="width" multiplier="0.7" id="bDB-5q-fpC"/>
                         <constraint firstItem="5Rg-Xa-B3R" firstAttribute="height" secondItem="Wbp-mI-hGN" secondAttribute="height" multiplier="0.5" id="cAj-Yb-5xP"/>
                         <constraint firstItem="XTg-ch-vr8" firstAttribute="centerY" secondItem="9IH-qo-EbE" secondAttribute="centerY" multiplier="0.75" id="feM-C7-iSi"/>
-                        <constraint firstItem="5Rg-Xa-B3R" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="leading" multiplier="1.5" id="fpE-6F-kY1"/>
+                        <constraint firstItem="5Rg-Xa-B3R" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="leading" id="fpE-6F-kY1"/>
                         <constraint firstItem="0AX-Ue-cVN" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="hXM-o7-lZP"/>
                         <constraint firstItem="5Rg-Xa-B3R" firstAttribute="width" secondItem="Wbp-mI-hGN" secondAttribute="width" multiplier="0.5" id="ia6-4i-owU"/>
                         <constraint firstItem="XTg-ch-vr8" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="trailing" id="kcf-em-6aW"/>
@@ -77,7 +77,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="5"/>
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -102,6 +102,11 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7r-h7-Xfx" userLabel="Days Complete">
                                     <rect key="frame" x="0.0" y="0.0" width="1" height="13"/>
                                     <color key="backgroundColor" red="0.42242146870000002" green="1" blue="0.60385605870000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
                                     <rect key="frame" x="171" y="0.0" width="21" height="13"/>
@@ -121,6 +126,11 @@
                                 <constraint firstItem="o7r-h7-Xfx" firstAttribute="height" secondItem="E54-Sh-MAV" secondAttribute="height" id="jVc-bF-BOv"/>
                                 <constraint firstItem="Lqi-W2-TtL" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="y1E-Fh-qAE"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO" userLabel="Saving Goal">
                             <rect key="frame" x="20.5" y="74" width="363.5" height="13.5"/>
@@ -130,6 +140,11 @@
                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
                                     <rect key="frame" x="0.0" y="0.0" width="1" height="13.5"/>
@@ -146,6 +161,11 @@
                                 <constraint firstItem="S7l-44-cOu" firstAttribute="top" secondItem="Efx-PA-xAO" secondAttribute="top" id="cXD-oa-J3Z"/>
                                 <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="bottom" id="htl-A6-IIf"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.86272905759162311" green="0.86272905759162311" blue="0.86272905759162311" alpha="1" colorSpace="calibratedRGB"/>
@@ -165,7 +185,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="5"/>
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -187,7 +207,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="5"/>
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
