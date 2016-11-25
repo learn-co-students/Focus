@@ -15,13 +15,12 @@
                 <outlet property="allowanceAmountLabel" destination="XTg-ch-vr8" id="UlB-Gq-JnD"/>
                 <outlet property="allowanceDescriptionLabel" destination="0AX-Ue-cVN" id="fdU-Ze-jvf"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="dxi-6E-Sra"/>
-                <outlet property="daysGoalView" destination="E54-Sh-MAV" id="iNK-qS-s9H"/>
+                <outlet property="daysCompleteProgressBarConstraint" destination="Fl9-tM-8pL" id="UFO-KZ-LhN"/>
                 <outlet property="daysProgressLabel" destination="Lqi-W2-TtL" id="P37-Dl-sbY"/>
-                <outlet property="daysProgressView" destination="o7r-h7-Xfx" id="wvr-O8-O3s"/>
                 <outlet property="goalLabel" destination="5Rg-Xa-B3R" id="Yvz-n9-Ech"/>
-                <outlet property="savingsGoalView" destination="Efx-PA-xAO" id="kpT-KB-aZO"/>
+                <outlet property="savingGoalView" destination="Efx-PA-xAO" id="hlf-CW-8kk"/>
+                <outlet property="savingsProgressBarConstraint" destination="1wi-BR-0tV" id="YrC-pN-fYm"/>
                 <outlet property="savingsProgressLabel" destination="S7l-44-cOu" id="oqM-1T-btc"/>
-                <outlet property="savingsProgressView" destination="fSD-ZI-mib" id="GxM-eQ-5Eq"/>
                 <outlet property="titleLabel" destination="Wbp-mI-hGN" id="EyX-2F-pAu"/>
             </connections>
         </placeholder>
@@ -89,7 +88,7 @@
                             <rect key="frame" x="22" y="41" width="395" height="16.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7r-h7-Xfx" userLabel="Days Complete">
-                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="16.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1" height="16.5"/>
                                     <color key="backgroundColor" red="0.42242146870000002" green="1" blue="0.60385605870000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
@@ -101,7 +100,7 @@
                             </subviews>
                             <color key="backgroundColor" red="0.39777876109999999" green="0.49727344940000001" blue="0.54912467279999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="o7r-h7-Xfx" firstAttribute="width" secondItem="E54-Sh-MAV" secondAttribute="width" multiplier="0.1" id="E5w-hB-sOS"/>
+                                <constraint firstItem="o7r-h7-Xfx" firstAttribute="trailing" secondItem="E54-Sh-MAV" secondAttribute="leading" constant="1" id="Fl9-tM-8pL"/>
                                 <constraint firstItem="o7r-h7-Xfx" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="OgT-JF-wxS"/>
                                 <constraint firstItem="Lqi-W2-TtL" firstAttribute="centerY" secondItem="E54-Sh-MAV" secondAttribute="centerY" id="VcY-bW-GKs"/>
                                 <constraint firstItem="Lqi-W2-TtL" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="bottom" id="XYC-ZT-ON9"/>
@@ -121,13 +120,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
-                                    <rect key="frame" x="0.0" y="0.0" width="39.5" height="17"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1" height="17"/>
                                     <color key="backgroundColor" red="0.42242146868807051" green="1" blue="0.60385605865361702" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" red="0.39777876113503863" green="0.49727344938374518" blue="0.54912467277486909" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="fSD-ZI-mib" firstAttribute="width" secondItem="Efx-PA-xAO" secondAttribute="width" multiplier="0.1" id="CCb-Kc-uob"/>
+                                <constraint firstItem="fSD-ZI-mib" firstAttribute="trailing" secondItem="Efx-PA-xAO" secondAttribute="leading" constant="1" id="1wi-BR-0tV"/>
                                 <constraint firstItem="fSD-ZI-mib" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="Ent-iB-xUs"/>
                                 <constraint firstItem="S7l-44-cOu" firstAttribute="centerX" secondItem="Efx-PA-xAO" secondAttribute="centerX" id="Pbw-4A-DoM"/>
                                 <constraint firstItem="fSD-ZI-mib" firstAttribute="top" secondItem="Efx-PA-xAO" secondAttribute="top" id="VJE-5A-Q3S"/>
