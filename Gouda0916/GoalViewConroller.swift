@@ -49,11 +49,7 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        let goal = store.goals[indexPath.row]
-        cell.titleLabel.text = (goal.purchasGoal?.capitalized)
-        cell.savingsProgressLabel.text = "Savings Progress: \(goal.currentAmountSaved)"
-        cell.daysProgressLabel.text = "Days Progress: \(goal.dayCounter)/\(goal.timeframe)"
-        cell.dailyAllowanceLabel.text = "Daily Allowance: \(Int(goal.alloctedDailyBudget!))"
+        cell.goalCellView.goal = store.goals[indexPath.row]
         return cell
     }
 }

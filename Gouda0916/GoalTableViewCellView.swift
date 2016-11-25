@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class GoalTableViewCellView: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -44,10 +43,10 @@ class GoalTableViewCellView: UIView {
         Bundle.main.loadNibNamed("GoalTableViewCellView", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor)
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        contentView.rightAnchor.constraint(equalTo: self.rightAnchor)
-        contentView.leftAnchor.constraint(equalTo: self.leftAnchor)
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
     }
     
     func updateLabels() {
