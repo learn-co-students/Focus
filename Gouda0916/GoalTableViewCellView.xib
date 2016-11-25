@@ -169,6 +169,16 @@
                         <constraint firstItem="MJI-Cb-xZq" firstAttribute="centerX" secondItem="tso-XT-ooc" secondAttribute="centerX" id="qAa-rV-ii0"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-au-YA0" userLabel="Rounded Corners">
+                    <rect key="frame" x="0.0" y="0.0" width="585" height="256"/>
+                    <color key="backgroundColor" white="1" alpha="0.084164450354609927" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -179,11 +189,15 @@
                 <constraint firstItem="tso-XT-ooc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="SFy-KS-zeC"/>
                 <constraint firstItem="JiR-52-6ln" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="VYG-yu-tXf"/>
                 <constraint firstItem="9IH-qo-EbE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WfD-ja-XRc"/>
+                <constraint firstItem="h0i-au-YA0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XVS-kB-VXe"/>
+                <constraint firstItem="h0i-au-YA0" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="Z99-KT-e3m"/>
                 <constraint firstItem="JiR-52-6ln" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="aKr-24-ZfY"/>
                 <constraint firstItem="tso-XT-ooc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.75" id="aRg-UP-Wpy"/>
+                <constraint firstItem="h0i-au-YA0" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="jYp-jT-4FN"/>
                 <constraint firstItem="9IH-qo-EbE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="lgn-N5-GqA"/>
                 <constraint firstItem="tso-XT-ooc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="maC-k9-Fzh"/>
                 <constraint firstItem="JiR-52-6ln" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.75" id="tdF-kE-PJA"/>
+                <constraint firstItem="h0i-au-YA0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ubO-MD-ll2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

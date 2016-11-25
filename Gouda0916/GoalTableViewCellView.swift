@@ -8,11 +8,10 @@
 
 import UIKit
 
+@IBDesignable
 class GoalTableViewCellView: UIView {
     
     @IBOutlet var contentView: UIView!
-    
-   
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
@@ -24,21 +23,6 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var savingsProgressLabel: UILabel!
     @IBOutlet weak var daysCompleteProgressBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
-    
-    
-    
-    
-    func updateLabels() {
-        titleLabel.text = goal.purchasGoal!
-        goalLabel.text = "$\(goal.goalAmount)"
-        allowanceAmountLabel.text = "$\(goal.alloctedDailyBudget)"
-        allowanceDescriptionLabel.text = "daily allowance for \(goal.waysToSaveAsStrings[0])"
-        
-        daysProgressLabel.text = "\(goal.dayCounter)/\(goal.timeframe)"
-        savingsProgressLabel.text = "\(goal.currentAmountSaved)/\(goal.goalAmount)"
-        
-        
-    }
     
     var goal: Goal! {
         didSet {
@@ -66,7 +50,27 @@ class GoalTableViewCellView: UIView {
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor)
     }
     
-    
-
+    func updateLabels() {
+        titleLabel.text = goal.purchasGoal!
+        goalLabel.text = "$\(goal.goalAmount)"
+        allowanceAmountLabel.text = "$\(goal.alloctedDailyBudget)"
+        allowanceDescriptionLabel.text = "daily allowance for \(goal.waysToSaveAsStrings[0])"
+        
+        daysProgressLabel.text = "\(goal.dayCounter)/\(goal.timeframe)"
+        savingsProgressLabel.text = "\(goal.currentAmountSaved)/\(goal.goalAmount)"
+        daysCompleteProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
+        savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
+    }
 }
 
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+}
