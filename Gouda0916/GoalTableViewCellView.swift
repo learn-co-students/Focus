@@ -56,7 +56,7 @@ class GoalTableViewCellView: UIView {
         allowanceDescriptionLabel.text = "\(goal.waysToSaveAsStrings[0]) money"
         
         daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
-        savingsProgressLabel.text = "\(Int(goal.currentAmountSaved))/\(Int(goal.goalAmount))"
+        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
         daysCompleteProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
         savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
     }
