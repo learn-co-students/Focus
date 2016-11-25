@@ -12,7 +12,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoalTableViewCellView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
+                <outlet property="allowanceAmountLabel" destination="XTg-ch-vr8" id="UlB-Gq-JnD"/>
+                <outlet property="allowanceDescriptionLabel" destination="0AX-Ue-cVN" id="fdU-Ze-jvf"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="dxi-6E-Sra"/>
+                <outlet property="daysGoalView" destination="E54-Sh-MAV" id="iNK-qS-s9H"/>
+                <outlet property="daysProgressLabel" destination="Lqi-W2-TtL" id="P37-Dl-sbY"/>
+                <outlet property="daysProgressView" destination="o7r-h7-Xfx" id="wvr-O8-O3s"/>
+                <outlet property="goalLabel" destination="5Rg-Xa-B3R" id="Yvz-n9-Ech"/>
+                <outlet property="savingsGoalView" destination="Efx-PA-xAO" id="kpT-KB-aZO"/>
+                <outlet property="savingsProgressLabel" destination="S7l-44-cOu" id="oqM-1T-btc"/>
+                <outlet property="savingsProgressView" destination="fSD-ZI-mib" id="GxM-eQ-5Eq"/>
+                <outlet property="titleLabel" destination="Wbp-mI-hGN" id="EyX-2F-pAu"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -12,6 +12,22 @@ class GoalTableViewCellView: UIView {
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var allowanceAmountLabel: UILabel!
+    @IBOutlet weak var allowanceDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var daysGoalView: UIView!
+    @IBOutlet weak var daysProgressView: UIView!
+    @IBOutlet weak var daysProgressLabel: UILabel!
+    
+    @IBOutlet weak var savingsGoalView: UIView!
+    @IBOutlet weak var savingsProgressView: UIView!
+    @IBOutlet weak var savingsProgressLabel: UILabel!
+    
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
