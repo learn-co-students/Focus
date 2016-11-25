@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,19 +17,33 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="700" height="483"/>
+            <rect key="frame" x="0.0" y="0.0" width="655" height="387"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vwn-Jf-87Z">
-                    <rect key="frame" x="292" y="177" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SsP-yF-aoY">
+                    <rect key="frame" x="82" y="178.5" width="491" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start with something you want to save for." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjK-vl-4E9">
+                    <rect key="frame" x="167" y="86.5" width="321" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.76407735429870483" green="0.76003461697437302" blue="0.76812009162303663" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="mjK-vl-4E9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="Hwp-9o-ORq"/>
+                <constraint firstItem="SsP-yF-aoY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cRO-jf-PMh"/>
+                <constraint firstItem="mjK-vl-4E9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dcG-uf-3L0"/>
+                <constraint firstItem="SsP-yF-aoY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fOb-mw-mIe"/>
+                <constraint firstItem="SsP-yF-aoY" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="zQu-zh-Ekm"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="297" y="41.5"/>
+            <point key="canvasLocation" x="274.5" y="-6.5"/>
         </view>
     </objects>
 </document>
