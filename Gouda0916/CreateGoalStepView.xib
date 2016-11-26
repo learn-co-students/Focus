@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateGoalStepView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="qKk-7H-Oha"/>
+                <outlet property="label" destination="mjK-vl-4E9" id="QN4-DN-2R9"/>
+                <outlet property="textField" destination="SsP-yF-aoY" id="Nn5-Hn-d0e"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
