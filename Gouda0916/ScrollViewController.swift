@@ -15,7 +15,7 @@ class ScrollViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        purchaseGoal.textField.placeholder = "Helllooo"
+        purchaseGoal.textField.becomeFirstResponder()
         
         
     }
