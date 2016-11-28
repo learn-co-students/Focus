@@ -65,9 +65,8 @@
                                     <segue destination="p1Q-z2-jo0" kind="show" id="1B5-do-BbX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-SZ-vko">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-SZ-vko">
                                 <rect key="frame" x="321" y="226" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="x"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-97-qiv">
@@ -87,6 +86,7 @@
                             <constraint firstItem="Kon-v3-AuF" firstAttribute="width" secondItem="ZpL-vk-Zeu" secondAttribute="width" id="KA0-vQ-2lD"/>
                             <constraint firstItem="3B9-4f-z6m" firstAttribute="height" secondItem="ZpL-vk-Zeu" secondAttribute="height" id="L51-M4-ZCI"/>
                             <constraint firstItem="ZpL-vk-Zeu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="LVU-n6-0Y0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YQv-SZ-vko" secondAttribute="trailing" constant="8" id="Os3-vJ-kPg"/>
                             <constraint firstItem="WDb-2T-4k7" firstAttribute="height" secondItem="Kon-v3-AuF" secondAttribute="height" id="RGa-zp-e6H"/>
                             <constraint firstItem="utQ-gO-j2c" firstAttribute="leading" secondItem="Kon-v3-AuF" secondAttribute="leading" id="Rq3-1e-wYE"/>
                             <constraint firstItem="utQ-gO-j2c" firstAttribute="width" secondItem="Kon-v3-AuF" secondAttribute="width" multiplier="0.5" id="UHn-9v-xHt"/>
