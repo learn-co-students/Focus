@@ -15,6 +15,10 @@ class DataStore {
     private init() {}
     
     var goals: [Goal] = []
+    var userName = User()
+    
+    
+    
     
     func fetchData() {
         let context = persistentContainer.viewContext

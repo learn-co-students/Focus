@@ -12,8 +12,13 @@ import FirebaseDatabase
 
 struct User {
     
-    let uid: String
-    let email: String
+    var uid: String
+    var email: String
+    
+    init() {
+        self.email = ""
+        self.uid = ""
+    }
     
     init(authData: FIRUser) {
         uid = authData.uid
