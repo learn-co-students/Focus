@@ -10,10 +10,8 @@ import UIKit
 
 class CustomGoalCell: UITableViewCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var savingsProgressLabel: UILabel!
-    @IBOutlet weak var daysProgressLabel: UILabel!
-    @IBOutlet weak var dailyAllowanceLabel: UILabel!
+    @IBOutlet weak var goalCellView: GoalTableViewCellView!
+    
     
 }
 
