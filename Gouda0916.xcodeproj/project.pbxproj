@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */; };
 		1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */; };
+		114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */; };
+		114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
 		11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA181DDA6E170072C46A /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalExtension.swift; sourceTree = "<group>"; };
 		1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGoalTableViewCell.swift; sourceTree = "<group>"; };
+		114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalTableViewCellView.xib; sourceTree = "<group>"; };
+		114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCellView.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FCAA141DDA6E160072C46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			children = (
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
+				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
+				114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */,
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
@@ -231,6 +237,7 @@
 				90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */,
 				70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
+				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
 				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
@@ -297,6 +304,7 @@
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
+				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,

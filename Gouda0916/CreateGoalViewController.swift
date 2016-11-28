@@ -14,7 +14,10 @@ class CreateGoalViewController: UIViewController {
     let store = DataStore.sharedInstance
     let ref =  FIRDatabase.database().reference()
     var textFields: [UITextField] = []
+    var screenWidth = UIScreen.main.bounds.width
     
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var goalPurchaseTextField: UITextField!
     @IBOutlet weak var timeframeTextField: UITextField!
@@ -27,6 +30,10 @@ class CreateGoalViewController: UIViewController {
         addTextFieldsToArray()
         setUpTextFieldsForEditing()
         createButton.isEnabled = false
+        createAndAddGestureRecognizers()
+        textFields.first?.becomeFirstResponder()
+        
+        
     }
     
     func addTextFieldsToArray() {
@@ -47,10 +54,10 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        //save to coreData and datastore
-        let goal = Double(goalTextField.text!)! //need to handle force unwrap in validation
-        let timeframe = Int(timeframeTextField.text!)! //need to handle force unwrap in validation
-        let dailyBudget = Double(dailyBudgetTextField.text!)! //need to handle force unwrap in validaton
+        //Force unweap handled in validation
+        let goal = Double(goalTextField.text!)!
+        let timeframe = Int(timeframeTextField.text!)!
+        let dailyBudget = Double(dailyBudgetTextField.text!)!
         let goalPurchase = goalPurchaseTextField.text!
         let waysToSave = [waysToSaveTextField.text!]
         
@@ -78,6 +85,49 @@ class CreateGoalViewController: UIViewController {
     }
 }
 
+//MARK: Swipe Gestures and animation for goal steps
+extension CreateGoalViewController {
+    
+    func createAndAddGestureRecognizers() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeLeft.direction = .left
+        swipeRight.direction = .right
+        stackView.addGestureRecognizer(swipeLeft)
+        stackView.addGestureRecognizer(swipeRight)
+    }
+    
+    func swipe(sender: UISwipeGestureRecognizer) {
+        let index = Int((stackViewLeadingConstraint.constant * -1) / screenWidth)
+        let numOfStackSubViews = stackView.subviews.count
+        if index >= 0 && index < numOfStackSubViews - 1 {
+            if sender.direction == .left && textFields[index].backgroundColor == .green {
+                
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+                    self.stackViewLeadingConstraint.constant -= self.screenWidth
+                    self.view.layoutIfNeeded()
+                }, completion: { (success) in
+                    self.textFields[index + 1].becomeFirstResponder()
+                })
+            }
+        }
+        if index > 0 && index <= numOfStackSubViews {
+            if sender.direction == .right {
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+                    self.stackViewLeadingConstraint.constant += self.screenWidth
+                    self.view.layoutIfNeeded()
+                }, completion: { (success) in
+                    self.textFields[index - 1].becomeFirstResponder()
+                })
+            }
+        }
+        
+    }
+    
+    
+    
+}
+
 
 
 //MARK: Text Field Validation
@@ -99,8 +149,9 @@ extension CreateGoalViewController {
         } else {
             textField.backgroundColor = .red
         }
+        textField.backgroundColor?.withAlphaComponent(50)
         
-        //enables create button if all are valid, diables if any are invalid
+        //enables create button if all are valid, disables if any are invalid
         if checkIfAllTextFieldsAreValid() {
             createButton.isEnabled = true
         } else {
