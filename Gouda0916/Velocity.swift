@@ -9,7 +9,7 @@
 import Foundation
 
 class Velocity {
-    var tracker: [Int]!
+    var tracker: [Int] = [0]
     var velocityTrend: [String: Int] = [date: 0]
     
     static let date = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
@@ -18,7 +18,7 @@ class Velocity {
         var total: Int = 0
         var score = Int()
         
-        guard let tracker = tracker else { return 100 }
+        //guard let tracker = tracker else { return 100 }
         
         if tracker.count <= 3 {
             total = tracker.reduce(0, +)
@@ -35,8 +35,7 @@ class Velocity {
     }
     
     func updateVelocityTracker(points: Int) {
-        tracker?.append(points)
-        updateVelocityTrend(score: calculateScore())
+        tracker.append(points)
     }
     
     func updateVelocityTrend(score: Int) {

@@ -44,14 +44,15 @@ class VelocityScoreView: UIView {
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
         backGroundCircleView.layer.masksToBounds = true
-        backGroundCircleView.layer.cornerRadius = 70
+        backGroundCircleView.layer.cornerRadius = backGroundCircleView.frame.size.width / 2
         
         shadowBackGroundCircleView.layer.masksToBounds = false
-        shadowBackGroundCircleView.layer.cornerRadius = 70
+        shadowBackGroundCircleView.layer.cornerRadius = shadowBackGroundCircleView.frame.size.width / 2
         shadowBackGroundCircleView.layer.shadowColor = UIColor.black.cgColor
         shadowBackGroundCircleView.layer.shadowOpacity = 0.6
         shadowBackGroundCircleView.layer.shadowRadius = CGFloat(5)
         shadowBackGroundCircleView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
         
     }
     
