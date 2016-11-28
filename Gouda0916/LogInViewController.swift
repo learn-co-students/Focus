@@ -34,6 +34,7 @@ class LogInViewController: UIViewController {
         //set tags
         self.emailTextField.tag = 100
         self.passwordTextField.tag = 101
+       
         
         //set delegates
         self.emailTextField.delegate = self
