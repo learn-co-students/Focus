@@ -24,6 +24,10 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet weak var waysToSaveTextField: UITextField!
     @IBOutlet weak var dailyBudgetTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
+    
+    @IBOutlet weak var question1LeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var contentView: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,39 +97,36 @@ extension CreateGoalViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         swipeLeft.direction = .left
         swipeRight.direction = .right
-        stackView.addGestureRecognizer(swipeLeft)
-        stackView.addGestureRecognizer(swipeRight)
+        contentView.addGestureRecognizer(swipeLeft)
+        contentView.addGestureRecognizer(swipeRight)
     }
     
     func swipe(sender: UISwipeGestureRecognizer) {
-        let index = Int((stackViewLeadingConstraint.constant * -1) / screenWidth)
-        let numOfStackSubViews = stackView.subviews.count
-        if index >= 0 && index < numOfStackSubViews - 1 {
-            if sender.direction == .left && textFields[index].backgroundColor == .green {
-                
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                    self.stackViewLeadingConstraint.constant -= self.screenWidth * 0.6
-                    self.view.layoutIfNeeded()
-                }, completion: { (success) in
-                    self.textFields[index + 1].becomeFirstResponder()
-                })
-            }
-        }
-        if index > 0 && index <= numOfStackSubViews {
-            if sender.direction == .right {
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                    self.stackViewLeadingConstraint.constant += self.screenWidth * 0.6
-                    self.view.layoutIfNeeded()
-                }, completion: { (success) in
-                    self.textFields[index - 1].becomeFirstResponder()
-                })
-            }
-        }
         
+        if sender.direction == .left {
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+                self.question1LeadingConstraint.constant -= self.screenWidth * 0.75
+                self.view.layoutIfNeeded()
+            }, completion: { (success) in
+                self.textFields[index + 1].becomeFirstResponder()
+            })
+            
+        }
+        if sender.direction == .right {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+                self.question1LeadingConstraint.constant += self.screenWidth * 0.75
+                self.view.layoutIfNeeded()
+            }, completion: { (success) in
+                self.textFields[index - 1].becomeFirstResponder()
+            })
+        }
     }
     
-    
-    
+}
+
+
+
 }
 
 
