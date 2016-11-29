@@ -23,13 +23,6 @@ class GoalViewController: UIViewController {
         self.definesPresentationContext = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -40,7 +33,6 @@ class GoalViewController: UIViewController {
             destVC.goalsTableView = goalTableView
         }
     }
-    
 }
 
 

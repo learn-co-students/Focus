@@ -38,16 +38,14 @@ class CreateGoalViewController: UIViewController {
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
-        
-        
     }
     
     func setTextForNib() {
         whatAreYouSavingFor.label.text = "What are you saving for?"
         howMuchToSave.label.text = "How much do you want to save?"
-        howManyDays.label.text = "Number of days to save $$$"
+        howManyDays.label.text = "How many days do you have?"
         wayToSave.label.text = "What can you save money on?"
-        currentDailyBudget.label.text = "What do you usually sepend per day?"
+        currentDailyBudget.label.text = "What is you current daily budget?"
     }
     
     func addTextFieldsToArray() {
@@ -68,7 +66,7 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        //Force unweap handled in validation
+        //Force unwrap handled in validation
         let goal = Double(howMuchToSave.textField.text!)!
         let timeframe = Int(howManyDays.textField.text!)!
         let dailyBudget = Double(currentDailyBudget.textField.text!)!
@@ -161,11 +159,10 @@ extension CreateGoalViewController {
         
         //changes text field color
         if validInput {
-            textField.backgroundColor = .green
+            textField.textColor = UIColor.themeBlackColor
         } else {
-            textField.backgroundColor = .red
+            textField.textColor = .red
         }
-        textField.backgroundColor?.withAlphaComponent(50)
         
         //enables create button if all are valid, disables if any are invalid
         if checkIfAllTextFieldsAreValid() {
@@ -184,7 +181,9 @@ extension CreateGoalViewController {
             if let userInput = userInput {
                 let inputAsDouble = Double(userInput)
                 if inputAsDouble != nil {
-                    isValid = true
+                    if inputAsDouble! > 0.0 {
+                        isValid = true
+                    }
                 }
             }
         case whatAreYouSavingFor.textField, wayToSave.textField:
@@ -200,7 +199,7 @@ extension CreateGoalViewController {
     func checkIfAllTextFieldsAreValid() -> Bool {
         var allValid = true
         for field in textFields {
-            if field.backgroundColor != .green {
+            if field.textColor != UIColor.themeBlackColor {
                 allValid = false
             }
         }
