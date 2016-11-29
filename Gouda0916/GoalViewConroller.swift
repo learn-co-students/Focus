@@ -28,11 +28,17 @@ class GoalViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        goalTableView.reloadData()
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goalVCToCreateGoalVC" {
+            let destVC = segue.destination as! CreateGoalViewController
+            destVC.goalsTableView = goalTableView
+        }
     }
     
 }

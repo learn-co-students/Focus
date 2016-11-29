@@ -11,6 +11,8 @@ import UIKit
 class UserInputView: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
