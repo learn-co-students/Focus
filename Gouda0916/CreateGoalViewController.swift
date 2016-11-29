@@ -104,7 +104,7 @@ extension CreateGoalViewController {
             if sender.direction == .left && textFields[index].backgroundColor == .green {
                 
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                    self.stackViewLeadingConstraint.constant -= self.screenWidth
+                    self.stackViewLeadingConstraint.constant -= self.screenWidth * 0.6
                     self.view.layoutIfNeeded()
                 }, completion: { (success) in
                     self.textFields[index + 1].becomeFirstResponder()
@@ -114,7 +114,7 @@ extension CreateGoalViewController {
         if index > 0 && index <= numOfStackSubViews {
             if sender.direction == .right {
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                    self.stackViewLeadingConstraint.constant += self.screenWidth
+                    self.stackViewLeadingConstraint.constant += self.screenWidth * 0.6
                     self.view.layoutIfNeeded()
                 }, completion: { (success) in
                     self.textFields[index - 1].becomeFirstResponder()
