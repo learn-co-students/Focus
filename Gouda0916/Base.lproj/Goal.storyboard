@@ -27,6 +27,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-DZ-EqF" userLabel="HeaderView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kn8-uD-LmE">
+                                        <rect key="frame" x="172" y="4" width="30" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <segue destination="7gZ-XA-M5M" kind="presentation" identifier="goalVCToCreateGoalVC" id="UGg-5H-Goi"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-wY-o5j">
                                         <rect key="frame" x="149.5" y="15.5" width="76" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -53,14 +62,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39p-dl-0s8" userLabel="FooterView">
                                 <rect key="frame" x="0.0" y="608" width="375" height="66.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kn8-uD-LmE">
-                                        <rect key="frame" x="330" y="5" width="30" height="57"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <state key="normal" title="+"/>
-                                        <connections>
-                                            <segue destination="7gZ-XA-M5M" kind="presentation" identifier="goalVCToCreateGoalVC" id="UGg-5H-Goi"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-5W-gwC">
                                         <rect key="frame" x="149.5" y="18" width="76" height="30"/>
                                         <state key="normal" title="Scroll View"/>
@@ -69,8 +70,6 @@
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Kvz-5W-gwC" firstAttribute="centerX" secondItem="39p-dl-0s8" secondAttribute="centerX" id="XmA-tF-x7E"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kn8-uD-LmE" secondAttribute="trailing" constant="15" id="aMW-Ak-FbK"/>
-                                    <constraint firstItem="Kn8-uD-LmE" firstAttribute="centerY" secondItem="39p-dl-0s8" secondAttribute="centerY" id="m1Y-yq-ivF"/>
                                     <constraint firstItem="Kvz-5W-gwC" firstAttribute="centerY" secondItem="39p-dl-0s8" secondAttribute="centerY" id="orT-uE-wsq"/>
                                 </constraints>
                             </view>
@@ -158,49 +157,86 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8m-go-O0l">
-                                        <rect key="frame" x="109" y="15" width="157" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <rect key="frame" x="89.5" y="27.5" width="196.5" height="39.5"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOG-dz-XjX">
-                                        <rect key="frame" x="5" y="5" width="30" height="57"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <state key="normal" title="&lt;">
+                                        <rect key="frame" x="320" y="37" width="45" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="backButtonTapped:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="P9h-cV-SES"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tez-1I-nVX">
+                                        <rect key="frame" x="10" y="37" width="39" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="menu">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="vek-8J-pzN"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="q8m-go-O0l" firstAttribute="centerY" secondItem="ZQ3-kf-gx1" secondAttribute="centerY" id="IHD-Ls-9bu"/>
-                                    <constraint firstItem="NOG-dz-XjX" firstAttribute="leading" secondItem="ZQ3-kf-gx1" secondAttribute="leading" constant="5" id="OHt-PX-VOT"/>
-                                    <constraint firstItem="NOG-dz-XjX" firstAttribute="centerY" secondItem="ZQ3-kf-gx1" secondAttribute="centerY" id="jBf-Ru-VXG"/>
+                                    <constraint firstItem="tez-1I-nVX" firstAttribute="bottom" secondItem="ZQ3-kf-gx1" secondAttribute="bottom" id="2Un-jO-JI8"/>
+                                    <constraint firstItem="tez-1I-nVX" firstAttribute="leading" secondItem="ZQ3-kf-gx1" secondAttribute="leading" multiplier="1.1" constant="10" id="H3Q-Z6-9KX"/>
+                                    <constraint firstItem="q8m-go-O0l" firstAttribute="bottom" secondItem="ZQ3-kf-gx1" secondAttribute="bottom" id="IHD-Ls-9bu"/>
+                                    <constraint firstItem="NOG-dz-XjX" firstAttribute="trailing" secondItem="ZQ3-kf-gx1" secondAttribute="trailing" constant="-10" id="OHt-PX-VOT"/>
+                                    <constraint firstItem="NOG-dz-XjX" firstAttribute="bottom" secondItem="ZQ3-kf-gx1" secondAttribute="bottom" id="jBf-Ru-VXG"/>
                                     <constraint firstItem="q8m-go-O0l" firstAttribute="centerX" secondItem="ZQ3-kf-gx1" secondAttribute="centerX" id="zHx-kI-qaY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PR-vH-GrW" userLabel="Question1" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="47" y="167" width="281.5" height="167"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="171-Yj-8mr" userLabel="Question2" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="352" y="167" width="281.5" height="167"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5o-jI-3Wn" userLabel="Question3" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="657" y="167" width="282" height="167"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZA-cT-haa" userLabel="Question4" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="962.5" y="167" width="281.5" height="167"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DD-80-g7H" userLabel="Question5" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="1267.5" y="167" width="282" height="167"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwc-Hs-1Uo" userLabel="Create">
                                 <rect key="frame" x="1573" y="167" width="282" height="167"/>
@@ -218,6 +254,11 @@
                                     <constraint firstItem="0d7-HC-cqQ" firstAttribute="centerY" secondItem="bwc-Hs-1Uo" secondAttribute="centerY" id="cvc-cK-09S"/>
                                     <constraint firstItem="0d7-HC-cqQ" firstAttribute="centerX" secondItem="bwc-Hs-1Uo" secondAttribute="centerX" id="eGm-Fw-uqL"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-Iz-tf6" userLabel="spacing1">
                                 <rect key="frame" x="328.5" y="167" width="23.5" height="167"/>
@@ -240,7 +281,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.79895279255319152" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZQ3-kf-gx1" firstAttribute="centerX" secondItem="2hQ-01-AUH" secondAttribute="centerX" id="0iS-sc-SkS"/>
                             <constraint firstItem="bwc-Hs-1Uo" firstAttribute="width" secondItem="4DD-80-g7H" secondAttribute="width" id="5Ls-SZ-5aR"/>
