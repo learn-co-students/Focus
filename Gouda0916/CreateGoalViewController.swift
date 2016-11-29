@@ -25,8 +25,9 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet weak var dailyBudgetTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
     
-    @IBOutlet weak var question1LeadingConstraint: NSLayoutConstraint!
+    
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var questionOneLeadingConstraint: NSLayoutConstraint!
     
 
     override func viewDidLoad() {
@@ -106,7 +107,7 @@ extension CreateGoalViewController {
         if sender.direction == .left {
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                self.question1LeadingConstraint.constant -= self.screenWidth * 0.5
+                self.questionOneLeadingConstraint.constant -= self.screenWidth * 0.8125
                 self.view.layoutIfNeeded()
             }, completion: { (success) in
                 //self.textFields[index + 1].becomeFirstResponder()
@@ -115,7 +116,7 @@ extension CreateGoalViewController {
         }
         if sender.direction == .right {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                self.question1LeadingConstraint.constant += self.screenWidth * 0.5
+                self.questionOneLeadingConstraint.constant += self.screenWidth * 0.8125
                 self.view.layoutIfNeeded()
             }, completion: { (success) in
                 //self.textFields[index - 1].becomeFirstResponder()
