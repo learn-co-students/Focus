@@ -33,19 +33,19 @@ class CreateGoalViewController: UIViewController {
         super.viewDidLoad()
         addTextFieldsToArray()
         setUpTextFieldsForEditing()
-        createButton.isEnabled = false
+        //createButton.isEnabled = false
         createAndAddGestureRecognizers()
-        textFields.first?.becomeFirstResponder()
+        //textFields.first?.becomeFirstResponder()
         
         
     }
     
     func addTextFieldsToArray() {
-        textFields.append(goalTextField)
-        textFields.append(goalPurchaseTextField)
-        textFields.append(timeframeTextField)
-        textFields.append(waysToSaveTextField)
-        textFields.append(dailyBudgetTextField)
+//        textFields.append(goalTextField)
+//        textFields.append(goalPurchaseTextField)
+//        textFields.append(timeframeTextField)
+//        textFields.append(waysToSaveTextField)
+//        textFields.append(dailyBudgetTextField)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,27 +106,22 @@ extension CreateGoalViewController {
         if sender.direction == .left {
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                self.question1LeadingConstraint.constant -= self.screenWidth * 0.75
+                self.question1LeadingConstraint.constant -= self.screenWidth * 0.5
                 self.view.layoutIfNeeded()
             }, completion: { (success) in
-                self.textFields[index + 1].becomeFirstResponder()
+                //self.textFields[index + 1].becomeFirstResponder()
             })
             
         }
         if sender.direction == .right {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                self.question1LeadingConstraint.constant += self.screenWidth * 0.75
+                self.question1LeadingConstraint.constant += self.screenWidth * 0.5
                 self.view.layoutIfNeeded()
             }, completion: { (success) in
-                self.textFields[index - 1].becomeFirstResponder()
+                //self.textFields[index - 1].becomeFirstResponder()
             })
         }
     }
-    
-}
-
-
-
 }
 
 
