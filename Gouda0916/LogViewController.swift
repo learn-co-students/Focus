@@ -22,7 +22,7 @@ class LogViewController: UIViewController {
         
         guard let mcVC = masterController else { return }
         //view.addGestureRecognizer(mcVC.panGestureRecognizer())
-        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
     
     

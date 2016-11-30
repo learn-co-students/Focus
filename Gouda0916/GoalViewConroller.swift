@@ -31,12 +31,11 @@ class GoalViewController: UIViewController {
 
         guard let mcVC = masterController else { return }
         
-        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        view.addGestureRecognizer(mcVC.panGestureRecognizer())
         
        // view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
     override func viewWillAppear(_ animated: Bool) {
-            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         goalTableView.reloadData()
     }
     
