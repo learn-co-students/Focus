@@ -21,7 +21,8 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
     }
     
     

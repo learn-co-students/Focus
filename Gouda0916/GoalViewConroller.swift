@@ -15,18 +15,28 @@ import FirebaseDatabase
 class GoalViewController: UIViewController {
     
     let store = DataStore.sharedInstance
+    var masterController: SWRevealViewController!
     
     @IBOutlet weak var goalTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        masterController = revealViewController()
+
+
+        guard let mcVC = masterController else { return }
+        
+        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        
+       // view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
-    
     override func viewWillAppear(_ animated: Bool) {
+            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         goalTableView.reloadData()
     }
     

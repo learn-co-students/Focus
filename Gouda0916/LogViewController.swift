@@ -9,10 +9,24 @@
 import UIKit
 
 class LogViewController: UIViewController {
+    var masterController: SWRevealViewController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        masterController = revealViewController()
+        
+        guard let mcVC = masterController else { return }
+        //view.addGestureRecognizer(mcVC.panGestureRecognizer())
+        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+    }
+    
+    
+    
     
     @IBAction func backButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

@@ -12,19 +12,28 @@ import FirebaseDatabase
 
 
 class MainViewController: UIViewController {
-   
-    let store = DataStore.sharedInstance
-    let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     
+    let store = DataStore.sharedInstance
+    
+    let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
+    var masterController: SWRevealViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        store.fetchData()
         
-        
+     navigationController?.navigationBar.isHidden = true
+    
     }
-   
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        masterController = revealViewController()
+        
+               
+        guard let mcVC = masterController else { return }
+        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        //view.addGestureRecognizer(mcVC.panGestureRecognizer())
+    }
 }
 
 

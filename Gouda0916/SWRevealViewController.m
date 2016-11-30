@@ -1824,6 +1824,8 @@ const int FrontViewPositionNone = 0xff;
 
 - (SWRevealViewController*)revealViewController
 {
+    
+//    NSLog(@"view loading");
     UIViewController *parent = self;
     Class revealClass = [SWRevealViewController class];
     while ( nil != (parent = [parent parentViewController]) && ![parent isKindOfClass:revealClass] ) {}

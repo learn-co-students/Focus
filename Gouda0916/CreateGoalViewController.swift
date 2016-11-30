@@ -32,8 +32,7 @@ class CreateGoalViewController: UIViewController {
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
-        
-        
+     
     }
     
     func addTextFieldsToArray() {

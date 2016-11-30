@@ -30,11 +30,13 @@
 		70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BF91DE5F4CF00660564 /* Goal.storyboard */; };
 		70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */; };
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
+		909A04951DEDC8C00099BCB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909A04941DEDC8C00099BCB8 /* Settings.storyboard */; };
+		909A04971DEDCA200099BCB8 /* SettingsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
-		90DFD6401DEB87F0003CDF17 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */; };
 		90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */; };
 		90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */; };
-		90DFD64C1DEBA867003CDF17 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */; };
+		90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE84F91DEE1A2000673DD3 /* AppController.swift */; };
+		90FE84FC1DEE1A8400673DD3 /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE84FB1DEE1A8400673DD3 /* StoryboardID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,13 +65,15 @@
 		70FF8BFA1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Goal.storyboard; sourceTree = "<group>"; };
 		70FF8BFC1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Velocity.storyboard; sourceTree = "<group>"; };
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		909A04941DEDC8C00099BCB8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPanelViewController.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		90DFD6451DEBA4A2003CDF17 /* Gouda0916-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gouda0916-Bridging-Header.h"; sourceTree = "<group>"; };
 		90DFD6461DEBA4A3003CDF17 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
+		90FE84F91DEE1A2000673DD3 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		90FE84FB1DEE1A8400673DD3 /* StoryboardID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.release.xcconfig"; sourceTree = "<group>"; };
 		F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +98,7 @@
 				55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */,
 				70934DDA1DE4F8A300913625 /* Velocity.swift */,
 				11FE917B1DDF4BE800E3EA4F /* DataStore.swift */,
+				90FE84FB1DEE1A8400673DD3 /* StoryboardID.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -101,7 +106,6 @@
 		116A9DC31DDCD98600437479 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */,
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
@@ -109,6 +113,7 @@
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
+				909A04941DEDC8C00099BCB8 /* Settings.storyboard */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -117,14 +122,15 @@
 		116A9DC41DDCD99100437479 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */,
-				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
-				1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */,
+				90FE84F91DEE1A2000673DD3 /* AppController.swift */,
+				909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
-				117221131DDD02D600A7A680 /* CreateGoalViewController.swift */,
+				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
 				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
 				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
+				117221131DDD02D600A7A680 /* CreateGoalViewController.swift */,
 				90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */,
+				1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,7 +265,7 @@
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
 				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
-				90DFD6401DEB87F0003CDF17 /* Settings.storyboard in Resources */,
+				909A04951DEDC8C00099BCB8 /* Settings.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
 			);
@@ -326,19 +332,20 @@
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
+				909A04971DEDCA200099BCB8 /* SettingsPanelViewController.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
+				90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
-				90DFD64C1DEBA867003CDF17 /* SideBarTableViewController.swift in Sources */,
 				90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */,
 				55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */,
-
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
+				90FE84FC1DEE1A8400673DD3 /* StoryboardID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

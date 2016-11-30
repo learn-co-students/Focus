@@ -105,19 +105,22 @@ class LogInViewController: UIViewController {
     }
     
     
-    func handleSignIn() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                return
-            }
-        })
-    }
+//    func handleSignIn() {
+//        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+//        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+//            if error != nil {
+//                return
+//            }
+//        })
+//    }
     
     func signInUser(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                print("user couldn't login \(error)")
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .closeLoginVC, object: nil)
+                }
+                
                 return
             }
             print("user signed in")
@@ -204,16 +207,13 @@ class LogInViewController: UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
+
     
-    
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "loginSegue") {
-            let destinationViewController = segue.destination as! MainViewController
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "loginSegue") {
+//            let destinationViewController = segue.destination as! MainViewController
+//        }
+//    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool { return true }
     
