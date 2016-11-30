@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D3r-1k-js1">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,14 +20,14 @@
                         <viewControllerLayoutGuide type="bottom" id="qYt-Zo-NYW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eSv-Qz-yKF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-DZ-EqF" userLabel="HeaderView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="73.666666666666671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kn8-uD-LmE">
-                                        <rect key="frame" x="326.5" y="4" width="30" height="57"/>
+                                        <rect key="frame" x="363.66666666666669" y="7.6666666666666679" width="30" height="57"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,13 +37,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-wY-o5j">
-                                        <rect key="frame" x="140.5" y="14" width="95.5" height="39.5"/>
+                                        <rect key="frame" x="160" y="17.666666666666664" width="95.666666666666657" height="39.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
                                         <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-tV-nFx" userLabel="BackButton">
-                                        <rect key="frame" x="5" y="5" width="30" height="57"/>
+                                        <rect key="frame" x="5" y="8.6666666666666679" width="30" height="57"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <state key="normal" title="&lt;">
                                             <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,38 +63,25 @@
                                     <constraint firstItem="HLA-wY-o5j" firstAttribute="centerX" secondItem="WfY-DZ-EqF" secondAttribute="centerX" id="v40-CC-q9F"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hPZ-Qd-JkO">
-                                <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
-                                <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hPZ-Qd-JkO">
+                                <rect key="frame" x="0.0" y="73.666666666666686" width="414" height="662.33333333333326"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="110" id="Byc-9p-Xwq" customClass="CustomGoalCell" customModule="Gouda0916" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="100" id="Byc-9p-Xwq" customClass="CustomGoalCell" customModule="Gouda0916" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Byc-9p-Xwq" id="jtO-Wn-fRZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                        <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="Byc-9p-Xwq" id="jtO-Wn-fRZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7m-K7-vBO" customClass="GoalTableViewCellView" customModule="Gouda0916" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="5" width="357" height="104.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="0.0"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="goalCellView" destination="j7m-K7-vBO" id="kn5-K2-4as"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -109,14 +96,13 @@
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="centerX" secondItem="eSv-Qz-yKF" secondAttribute="centerX" id="IPO-Er-0Nf"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="width" secondItem="eSv-Qz-yKF" secondAttribute="width" id="SrP-6I-7FV"/>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="top" secondItem="WfY-DZ-EqF" secondAttribute="bottom" id="kxk-H4-zfM"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="hPZ-Qd-JkO" secondAttribute="bottom" id="o3j-BC-rsd"/>
+                            <constraint firstItem="hPZ-Qd-JkO" firstAttribute="bottom" secondItem="eSv-Qz-yKF" secondAttribute="bottomMargin" id="o3j-BC-rsd"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="top" secondItem="eSv-Qz-yKF" secondAttribute="top" id="us8-3q-uOA"/>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="trailing" secondItem="eSv-Qz-yKF" secondAttribute="trailing" id="xtI-oq-giI"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="height" secondItem="eSv-Qz-yKF" secondAttribute="height" multiplier="0.1" id="zcv-Nr-ULA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="goalCellView" destination="j7m-K7-vBO" id="GLl-sr-qoq"/>
                         <outlet property="goalTableView" destination="hPZ-Qd-JkO" id="yvn-Ja-bKR"/>
                     </connections>
                 </viewController>
@@ -133,20 +119,20 @@
                         <viewControllerLayoutGuide type="bottom" id="di4-9p-upy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2hQ-01-AUH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ3-kf-gx1" userLabel="HeaderView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="73.666666666666671"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8m-go-O0l">
-                                        <rect key="frame" x="89.5" y="27.5" width="196.5" height="39.5"/>
+                                        <rect key="frame" x="109" y="34" width="196.66666666666669" height="39.666666666666671"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOG-dz-XjX">
-                                        <rect key="frame" x="320" y="37" width="45" height="30"/>
+                                        <rect key="frame" x="359" y="43.666666666666671" width="45" height="30.000000000000014"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,7 +142,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tez-1I-nVX">
-                                        <rect key="frame" x="10" y="37" width="39" height="30"/>
+                                        <rect key="frame" x="10" y="43.666666666666671" width="39" height="30.000000000000014"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="menu">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -177,7 +163,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PR-vH-GrW" userLabel="Question1" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="47" y="167" width="281.5" height="167"/>
+                                <rect key="frame" x="51.666666666666657" y="184" width="310.66666666666663" height="184"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -186,7 +172,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="171-Yj-8mr" userLabel="Question2" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="352" y="167" width="281.5" height="167"/>
+                                <rect key="frame" x="387.99999999999994" y="184" width="310.66666666666657" height="184"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -195,7 +181,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5o-jI-3Wn" userLabel="Question3" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="657" y="167" width="282" height="167"/>
+                                <rect key="frame" x="724.66666666666674" y="184" width="311.00000000000023" height="184"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -204,7 +190,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZA-cT-haa" userLabel="Question4" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="962.5" y="167" width="281.5" height="167"/>
+                                <rect key="frame" x="1061.333333333333" y="184" width="310.66666666666674" height="184"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -213,7 +199,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DD-80-g7H" userLabel="Question5" customClass="UserInputView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="1267.5" y="167" width="282" height="167"/>
+                                <rect key="frame" x="1397.6666666666667" y="184" width="311" height="184"/>
                                 <color key="backgroundColor" red="0.73093383180000004" green="0.90701497139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -222,10 +208,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwc-Hs-1Uo" userLabel="Create">
-                                <rect key="frame" x="1573" y="167" width="282" height="167"/>
+                                <rect key="frame" x="1734.6666666666667" y="184" width="311" height="184"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-HC-cqQ">
-                                        <rect key="frame" x="113" y="68" width="56" height="30"/>
+                                        <rect key="frame" x="127.33333333333326" y="76.666666666666686" width="56" height="30"/>
                                         <state key="normal" title="CREATE"/>
                                         <connections>
                                             <action selector="createButtonTapped:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="vZj-pS-5tK"/>
@@ -244,23 +230,23 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-Iz-tf6" userLabel="spacing1">
-                                <rect key="frame" x="328.5" y="167" width="23.5" height="167"/>
+                                <rect key="frame" x="362.33333333333326" y="184" width="25.666666666666686" height="184"/>
                                 <color key="backgroundColor" red="1" green="0.051145056789999997" blue="0.1285303226" alpha="0.0" colorSpace="calibratedRGB"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6E-5d-uYF" userLabel="spacing2">
-                                <rect key="frame" x="633.5" y="167" width="23.5" height="167"/>
+                                <rect key="frame" x="698.66666666666663" y="184" width="26" height="184"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPo-V2-eS3" userLabel="spacing3">
-                                <rect key="frame" x="939" y="167" width="23.5" height="167"/>
+                                <rect key="frame" x="1035.6666666666667" y="184" width="25.666666666666515" height="184"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaR-8n-boM" userLabel="spacing4">
-                                <rect key="frame" x="1244" y="167" width="23.5" height="167"/>
+                                <rect key="frame" x="1372" y="184" width="25.666666666666742" height="184"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-bw-sCg" userLabel="spacing5">
-                                <rect key="frame" x="1549.5" y="167" width="23.5" height="167"/>
+                                <rect key="frame" x="1708.6666666666667" y="184" width="26" height="184"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
