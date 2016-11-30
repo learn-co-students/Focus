@@ -30,6 +30,8 @@
 		70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BF91DE5F4CF00660564 /* Goal.storyboard */; };
 		70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */; };
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
+		9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */; };
+		9052DE451DEF746100B8F67A /* HamburgerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */; };
 		909A04951DEDC8C00099BCB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909A04941DEDC8C00099BCB8 /* Settings.storyboard */; };
 		909A04971DEDCA200099BCB8 /* SettingsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
@@ -65,6 +67,8 @@
 		70FF8BFA1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Goal.storyboard; sourceTree = "<group>"; };
 		70FF8BFC1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Velocity.storyboard; sourceTree = "<group>"; };
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewController.swift; sourceTree = "<group>"; };
 		909A04941DEDC8C00099BCB8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPanelViewController.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -123,7 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				90FE84F91DEE1A2000673DD3 /* AppController.swift */,
+				9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */,
 				909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */,
+				9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
 				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
 				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
@@ -339,11 +345,13 @@
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */,
 				55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */,
+				9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
+				9052DE451DEF746100B8F67A /* HamburgerMenuViewController.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
 				90FE84FC1DEE1A8400673DD3 /* StoryboardID.swift in Sources */,
 			);

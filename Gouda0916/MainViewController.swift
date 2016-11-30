@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     let store = DataStore.sharedInstance
     
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
-    var masterController: SWRevealViewController!
+//    var masterController: SWRevealViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,10 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        masterController = revealViewController()
+//        masterController = revealViewController()
         
-               
-        guard let mcVC = masterController else { return }
-        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+//        guard let mcVC = masterController else { return }
+//        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         //view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
 }

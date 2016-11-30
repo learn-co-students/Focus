@@ -9,7 +9,7 @@
 import UIKit
 
 class LogViewController: UIViewController {
-    var masterController: SWRevealViewController!
+//    var masterController: SWRevealViewController!
     
     
     override func viewDidLoad() {
@@ -18,11 +18,11 @@ class LogViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        masterController = revealViewController()
+//        masterController = revealViewController()
         
-        guard let mcVC = masterController else { return }
+//        guard let mcVC = masterController else { return }
         //view.addGestureRecognizer(mcVC.panGestureRecognizer())
-        view.addGestureRecognizer(mcVC.panGestureRecognizer())
+//        view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
     
     

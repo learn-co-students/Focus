@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-final class AppController: UIViewController {
+final class MainContainerViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     var actingVC: UIViewController!
@@ -18,43 +18,36 @@ final class AppController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addNotificationObservers()
-        loadInitialViewController()
+//        loadInitialViewController()
     }
     
-}
-
-
 // MARK: - Notficiation Observers
-extension AppController {
-    
     func addNotificationObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeLoginVC, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeMainContainerVC, object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openMainVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openGoalVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openVelocityVC, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .unhideVC, object: nil)
     }
     
-}
-
-
-// MARK: - Loading VC's
-extension AppController {
-    
+//
+//// MARK: - Loading VC's
     func loadInitialViewController() {
         let id: StoryboardID = FIRAuth.auth()?.currentUser != nil ? .mainContainerVC : .loginVC
         self.actingVC = self.loadViewController(withID: id)
         self.add(viewController: self.actingVC, animated: true)
     }
-    
+//    
     func loadViewController(withID id: StoryboardID) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: id.rawValue)
     }
-    
-}
+//
+    }
+
 
 
 // MARK: - Displaying VC's
-extension AppController {
+extension MainContainerViewController {
     
     func add(viewController: UIViewController, animated: Bool = false) {
         self.addChildViewController(viewController)
@@ -73,14 +66,21 @@ extension AppController {
     
     func switchViewController(with notification: Notification) {
         switch notification.name {
-        case Notification.Name.closeLoginVC:
-            switchToViewController(with: .mainContainerVC)
-        case Notification.Name.closeMainContainerVC:
-            switchToViewController(with: .loginVC)
+       
+        case Notification.Name.openMainVC:
+            switchToViewController(with: .mainVC)
+            
+        case Notification.Name.openGoalVC:
+            switchToViewController(with: .goalVC)
+            
+            
+        case Notification.Name.openVelocityVC:
+            switchToViewController(with: .velocityVC)
+            
+            
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
         }
-        
     }
     
     private func switchToViewController(with id: StoryboardID) {
@@ -101,35 +101,6 @@ extension AppController {
         }
         
     }
-    
-    
-}
 
-
-// MARK: - Notification Extension
-extension Notification.Name {
-    
-    static let closeLoginVC = Notification.Name("close-login-view-controller")
-    static let closeAppContainerVC = Notification.Name("close-app-container-view-controller")
-    static let closeMainContainerVC = Notification.Name("close-main-container-view-controller")
-    
-    static let openMainVC = Notification.Name("open-main-view-controller")
-    static let openGoalVC = Notification.Name("open-goal-view-controller")
-    static let openVelocityVC = Notification.Name("open-velocity-view-controller")
-//    static let unhideBar = Notification.Name("open-velocity-view-controller")
-
-}
-
-
-// MARK: - UIView Extension
-extension UIView {
-    
-    func constrainEdges(to view: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-    
 }
 

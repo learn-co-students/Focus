@@ -15,7 +15,7 @@ import FirebaseDatabase
 class GoalViewController: UIViewController {
     
     let store = DataStore.sharedInstance
-    var masterController: SWRevealViewController!
+//    var masterController: SWRevealViewController!
     
     @IBOutlet weak var goalTableView: UITableView!
     
@@ -26,12 +26,11 @@ class GoalViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        masterController = revealViewController()
+//        masterController = revealViewController()
 
 
-        guard let mcVC = masterController else { return }
-        
-        view.addGestureRecognizer(mcVC.panGestureRecognizer())
+//        guard let mcVC = masterController else { return }
+//        view.addGestureRecognizer(mcVC.panGestureRecognizer())
         
        // view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
