@@ -24,9 +24,6 @@ class GoalViewController: UIViewController {
         super.viewDidLoad()
         self.definesPresentationContext = true
     }
-    override func viewDidAppear(_ animated: Bool) {
-        goalTableView.reloadData()
-    }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
