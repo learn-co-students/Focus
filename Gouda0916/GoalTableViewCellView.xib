@@ -17,6 +17,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="dxi-6E-Sra"/>
                 <outlet property="daysCompleteProgressBarConstraint" destination="Fl9-tM-8pL" id="UFO-KZ-LhN"/>
                 <outlet property="daysProgressLabel" destination="Lqi-W2-TtL" id="P37-Dl-sbY"/>
+                <outlet property="editButton" destination="MJI-Cb-xZq" id="M4I-3W-9Eh"/>
                 <outlet property="goalLabel" destination="5Rg-Xa-B3R" id="Yvz-n9-Ech"/>
                 <outlet property="savingGoalView" destination="Efx-PA-xAO" id="hlf-CW-8kk"/>
                 <outlet property="savingsProgressBarConstraint" destination="1wi-BR-0tV" id="YrC-pN-fYm"/>

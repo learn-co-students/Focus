@@ -23,6 +23,8 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var daysCompleteProgressBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var editButton: UIButton!
+    
     var goal: Goal! {
         didSet {
             updateLabels()

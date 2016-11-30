@@ -30,6 +30,8 @@ class CustomGoalCell: UITableViewCell {
             self.contentView.addSubview(customView)
         }
         
+        
+        
     }
     
     
