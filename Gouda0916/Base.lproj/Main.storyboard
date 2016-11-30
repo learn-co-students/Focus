@@ -126,107 +126,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-wF-9wT" userLabel="ProgressView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-wF-9wT" userLabel="ProgressView">
+                                <rect key="frame" x="0.0" y="118" width="375" height="529"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJw-01-RtX">
-                                        <rect key="frame" x="-0.5" y="83.5" width="375" height="167"/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
-                                        <state key="normal" title="Goal">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="02N-V4-vpn" kind="show" identifier="mainVCToGoalVC" id="hUf-RB-1ks"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFj-Zc-G3g">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-hZ-cbz">
-                                                <rect key="frame" x="131.5" y="0.0" width="112.5" height="67"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="31"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.27058823529999998" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7Q-ol-MEZ" customClass="ProgressBarView" customModule="Gouda0916" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="18"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="3ch-hZ-cbz" firstAttribute="height" secondItem="rFj-Zc-G3g" secondAttribute="height" id="GXy-9X-xla"/>
-                                            <constraint firstItem="3ch-hZ-cbz" firstAttribute="centerX" secondItem="rFj-Zc-G3g" secondAttribute="centerX" id="KTN-44-yzf"/>
-                                            <constraint firstItem="3ch-hZ-cbz" firstAttribute="centerY" secondItem="rFj-Zc-G3g" secondAttribute="centerY" id="mAM-Xt-4Oo"/>
-                                            <constraint firstItem="3ch-hZ-cbz" firstAttribute="width" secondItem="rFj-Zc-G3g" secondAttribute="width" multiplier="0.3" id="vau-P8-PH8"/>
+                                            <constraint firstAttribute="height" constant="18" id="26W-2u-X2L"/>
                                         </constraints>
                                     </view>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LRn-Lz-Sbj">
-                                        <rect key="frame" x="112" y="166" width="150" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </progressView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WJw-01-RtX" firstAttribute="width" secondItem="hKj-wF-9wT" secondAttribute="width" id="4Mz-b4-2qw"/>
-                                    <constraint firstItem="rFj-Zc-G3g" firstAttribute="top" secondItem="hKj-wF-9wT" secondAttribute="top" id="4ZK-IP-0dZ"/>
-                                    <constraint firstItem="rFj-Zc-G3g" firstAttribute="leading" secondItem="hKj-wF-9wT" secondAttribute="leading" id="MSh-fh-Dkk"/>
-                                    <constraint firstItem="WJw-01-RtX" firstAttribute="centerX" secondItem="hKj-wF-9wT" secondAttribute="centerX" id="NfK-F8-k1z"/>
-                                    <constraint firstItem="rFj-Zc-G3g" firstAttribute="height" secondItem="hKj-wF-9wT" secondAttribute="height" multiplier="0.2" id="Xqm-FQ-uMY"/>
-                                    <constraint firstItem="WJw-01-RtX" firstAttribute="centerY" secondItem="hKj-wF-9wT" secondAttribute="centerY" id="dq4-0o-wa4"/>
-                                    <constraint firstItem="WJw-01-RtX" firstAttribute="height" secondItem="hKj-wF-9wT" secondAttribute="height" multiplier="0.5" id="gUb-JJ-PXG"/>
-                                    <constraint firstAttribute="trailing" secondItem="rFj-Zc-G3g" secondAttribute="trailing" id="hda-Si-MjY"/>
+                                    <constraint firstItem="U7Q-ol-MEZ" firstAttribute="top" secondItem="hKj-wF-9wT" secondAttribute="top" constant="70" id="QdC-eU-3OU"/>
+                                    <constraint firstAttribute="trailing" secondItem="U7Q-ol-MEZ" secondAttribute="trailing" id="VZs-Ej-Dw3"/>
+                                    <constraint firstItem="U7Q-ol-MEZ" firstAttribute="leading" secondItem="hKj-wF-9wT" secondAttribute="leading" id="bg0-G7-nF1"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CK-Hz-MkA" userLabel="Velocity">
-                                <rect key="frame" x="0.0" y="334" width="375" height="167"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kl-4v-wbF" customClass="VelocityScoreView" customModule="Gouda0916" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovt-SU-a3A">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
-                                        <state key="normal">
-                                            <color key="titleColor" red="1" green="0.71372549019999998" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Mp4-Iy-Fad" kind="show" identifier="mainVCToLogVC" id="1XE-s3-wcc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.20392156862745098" green="0.58823529411764708" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="7Kl-4v-wbF" firstAttribute="leading" secondItem="3CK-Hz-MkA" secondAttribute="leading" id="JU5-ef-mHk"/>
-                                    <constraint firstAttribute="bottom" secondItem="7Kl-4v-wbF" secondAttribute="bottom" id="MDT-tz-kKc"/>
-                                    <constraint firstItem="7Kl-4v-wbF" firstAttribute="top" secondItem="3CK-Hz-MkA" secondAttribute="top" id="Ofe-hz-meD"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Kl-4v-wbF" secondAttribute="trailing" id="cTJ-vY-7Di"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-NO-cFJ" userLabel="Grey">
-                                <rect key="frame" x="0.0" y="501" width="375" height="167"/>
-                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Hvt-NO-cFJ" firstAttribute="centerX" secondItem="3CK-Hz-MkA" secondAttribute="centerX" id="0ix-Mq-W0U"/>
-                            <constraint firstItem="Hvt-NO-cFJ" firstAttribute="width" secondItem="3CK-Hz-MkA" secondAttribute="width" id="1vB-4r-IBT"/>
                             <constraint firstItem="hKj-wF-9wT" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" multiplier="0.5" id="DC0-bI-HHw"/>
                             <constraint firstItem="hKj-wF-9wT" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="NkY-6X-Iyz"/>
                             <constraint firstItem="hKj-wF-9wT" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="Pfz-2u-6Ad"/>
-                            <constraint firstItem="Hvt-NO-cFJ" firstAttribute="top" secondItem="3CK-Hz-MkA" secondAttribute="bottom" id="ciN-nd-fMm"/>
-                            <constraint firstItem="3CK-Hz-MkA" firstAttribute="height" secondItem="hKj-wF-9wT" secondAttribute="height" multiplier="0.5" id="dEd-SQ-KUh"/>
-                            <constraint firstItem="3CK-Hz-MkA" firstAttribute="width" secondItem="hKj-wF-9wT" secondAttribute="width" id="dfh-yO-ds2"/>
-                            <constraint firstItem="3CK-Hz-MkA" firstAttribute="top" secondItem="hKj-wF-9wT" secondAttribute="bottom" id="gnL-To-kQO"/>
-                            <constraint firstItem="3CK-Hz-MkA" firstAttribute="centerX" secondItem="hKj-wF-9wT" secondAttribute="centerX" id="q5f-xh-FYF"/>
-                            <constraint firstItem="Hvt-NO-cFJ" firstAttribute="height" secondItem="3CK-Hz-MkA" secondAttribute="height" id="tPR-Au-1Oq"/>
                             <constraint firstItem="hKj-wF-9wT" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.5" id="zIJ-qv-MOd"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="976.79999999999995" y="6.746626686656672"/>
         </scene>
         <!--Goal-->
         <scene sceneID="NbO-Oi-Y5f">

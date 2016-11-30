@@ -24,6 +24,8 @@
 		11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE917B1DDF4BE800E3EA4F /* DataStore.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
 		55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */; };
+		55CE54C61DEF5975009524D0 /* ProgressBarDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54C51DEF5975009524D0 /* ProgressBarDraw.swift */; };
+		55CE54C81DEF59BE009524D0 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54C71DEF59BE009524D0 /* ProgressBarView.swift */; };
 		70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70934DD61DE4C51F00913625 /* VelocityScoreView.xib */; };
 		70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DD81DE4D04400913625 /* VelocityScoreView.swift */; };
 		70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DDA1DE4F8A300913625 /* Velocity.swift */; };
@@ -52,6 +54,8 @@
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		55CE54C51DEF5975009524D0 /* ProgressBarDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarDraw.swift; sourceTree = "<group>"; };
+		55CE54C71DEF59BE009524D0 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70934DD61DE4C51F00913625 /* VelocityScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VelocityScoreView.xib; sourceTree = "<group>"; };
 		70934DD81DE4D04400913625 /* VelocityScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelocityScoreView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		116A9DC31DDCD98600437479 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55CE54C51DEF5975009524D0 /* ProgressBarDraw.swift */,
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
@@ -99,6 +104,7 @@
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
+				55CE54C71DEF59BE009524D0 /* ProgressBarView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
+				55CE54C61DEF5975009524D0 /* ProgressBarDraw.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
@@ -317,6 +324,7 @@
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
+				55CE54C81DEF59BE009524D0 /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
