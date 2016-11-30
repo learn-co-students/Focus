@@ -12,6 +12,7 @@
 		114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */; };
 		114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
+		119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119161D61DEF99400085F979 /* EditGoalViewController.swift */; };
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
 		11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA181DDA6E170072C46A /* Main.storyboard */; };
 		11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 		114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalTableViewCellView.xib; sourceTree = "<group>"; };
 		114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCellView.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
+		119161D61DEF99400085F979 /* EditGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoalViewController.swift; sourceTree = "<group>"; };
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FCAA141DDA6E160072C46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FCAA191DDA6E170072C46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */,
+				119161D61DEF99400085F979 /* EditGoalViewController.swift */,
 				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
 				1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
@@ -340,13 +343,13 @@
 				90DFD64C1DEBA867003CDF17 /* SideBarTableViewController.swift in Sources */,
 				90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */,
 				55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */,
-
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
+				119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

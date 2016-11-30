@@ -317,5 +317,58 @@
             </objects>
             <point key="canvasLocation" x="3439" y="-360"/>
         </scene>
+        <!--Edit Goal View Controller-->
+        <scene sceneID="ZCH-Ka-m2q">
+            <objects>
+                <viewController id="9Yf-Zo-ulC" customClass="EditGoalViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XQI-xd-F3t"/>
+                        <viewControllerLayoutGuide type="bottom" id="hMM-wr-8Sq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZsK-Uc-qJJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tXt-dp-koq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8YL-HE-CFQ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editGoalCell" id="o0Q-Un-9Ph" customClass="EditGoalCustomCell" customModule="Gouda0916" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Yf-Zo-ulC" id="bo3-U0-Cn4"/>
+                                    <outlet property="delegate" destination="9Yf-Zo-ulC" id="Jsn-lw-suj"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tXt-dp-koq" firstAttribute="centerY" secondItem="ZsK-Uc-qJJ" secondAttribute="centerY" id="G4C-po-fFq"/>
+                            <constraint firstItem="tXt-dp-koq" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" id="cjL-7L-cYI"/>
+                            <constraint firstItem="tXt-dp-koq" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="i4j-Ja-3CD"/>
+                            <constraint firstItem="tXt-dp-koq" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="itc-S6-3bT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="optionsCollectionView" destination="tXt-dp-koq" id="mpW-ZQ-J3B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dhd-R0-zwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3438" y="376"/>
+        </scene>
     </scenes>
 </document>
