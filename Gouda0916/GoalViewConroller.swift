@@ -17,6 +17,7 @@ class GoalViewController: UIViewController {
     let store = DataStore.sharedInstance
     
     @IBOutlet weak var goalTableView: UITableView!
+    @IBOutlet weak var goalCellView: GoalTableViewCellView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
