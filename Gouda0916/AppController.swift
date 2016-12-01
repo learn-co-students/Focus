@@ -11,7 +11,7 @@ import Firebase
 
 
 final class AppController: UIViewController {
-    
+
     @IBOutlet weak var containerView: UIView!
     var actingVC: UIViewController!
     
@@ -20,25 +20,18 @@ final class AppController: UIViewController {
         addNotificationObservers()
         loadInitialViewController()
     }
-    
 }
-
 
 // MARK: - Notficiation Observers
 extension AppController {
-    
     func addNotificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeLoginVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeMainContainerVC, object: nil)
-
     }
-    
 }
-
 
 // MARK: - Loading VC's
 extension AppController {
-    
     func loadInitialViewController() {
         let id: StoryboardID = FIRAuth.auth()?.currentUser != nil ? .mainContainerVC : .loginVC
         self.actingVC = self.loadViewController(withID: id)
@@ -49,13 +42,10 @@ extension AppController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: id.rawValue)
     }
-    
 }
-
 
 // MARK: - Displaying VC's
 extension AppController {
-    
     func add(viewController: UIViewController, animated: Bool = false) {
         self.addChildViewController(viewController)
         containerView.addSubview(viewController.view)
@@ -80,7 +70,6 @@ extension AppController {
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
         }
-        
     }
     
     private func switchToViewController(with id: StoryboardID) {
@@ -99,37 +88,26 @@ extension AppController {
             existingVC?.removeFromParentViewController()
             self.actingVC.didMove(toParentViewController: self)
         }
-        
     }
-    
-    
 }
-
 
 // MARK: - Notification Extension
 extension Notification.Name {
-    
     static let closeLoginVC = Notification.Name("close-login-view-controller")
     static let closeAppContainerVC = Notification.Name("close-app-container-view-controller")
     static let closeMainContainerVC = Notification.Name("close-main-container-view-controller")
-    
     static let openMainVC = Notification.Name("open-main-view-controller")
     static let openGoalVC = Notification.Name("open-goal-view-controller")
     static let openVelocityVC = Notification.Name("open-velocity-view-controller")
-//    static let unhideBar = Notification.Name("open-velocity-view-controller")
-
+    static let unhideBar = Notification.Name("unhide-bar")
 }
-
 
 // MARK: - UIView Extension
 extension UIView {
-    
-    func constrainEdges(to view: UIView) {
+        func constrainEdges(to view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
-    
 }
-

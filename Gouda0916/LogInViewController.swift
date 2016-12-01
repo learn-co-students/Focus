@@ -138,7 +138,7 @@ class LogInViewController: UIViewController {
                 
                 FIRAuth.auth()!.signIn(withEmail: email, password: password) { (user, error) in
                     if error == nil {
-                        self.performSegue(withIdentifier: "loginSegue", sender: self.loginButton)
+                         NotificationCenter.default.post(name: .closeLoginVC, object: nil)
                     }
                     else if error != nil {
                         let nserror = error as! NSError
@@ -189,7 +189,7 @@ class LogInViewController: UIViewController {
                     }
                     self.signInUser(email: email, password: password)
                     OperationQueue.main.addOperation {
-                        self.performSegue(withIdentifier: "createAccount", sender: self)
+                        NotificationCenter.default.post(name: .closeLoginVC, object: nil)
                     }
                 })
             })

@@ -13,37 +13,26 @@ import FirebaseDatabase
 
 
 class GoalViewController: UIViewController {
-    
     let store = DataStore.sharedInstance
-//    var masterController: SWRevealViewController!
     
     @IBOutlet weak var goalTableView: UITableView!
     
+    @IBAction func MenuBtnPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: .unhideBar, object: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        masterController = revealViewController()
-
-
-//        guard let mcVC = masterController else { return }
-//        view.addGestureRecognizer(mcVC.panGestureRecognizer())
-        
-       // view.addGestureRecognizer(mcVC.panGestureRecognizer())
-    }
     override func viewWillAppear(_ animated: Bool) {
         goalTableView.reloadData()
     }
-    
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+//    @IBAction func backButtonTapped(_ sender: UIButton) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
 }
-
 
 //MARK: Table View Delegate and Datasource
 extension GoalViewController: UITableViewDelegate, UITableViewDataSource {

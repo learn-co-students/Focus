@@ -9,27 +9,26 @@
 import UIKit
 
 class LogViewController: UIViewController {
-//    var masterController: SWRevealViewController!
     
-    
+    @IBAction func MenuBtnPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: .unhideBar, object: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        masterController = revealViewController()
-        
 //        guard let mcVC = masterController else { return }
         //view.addGestureRecognizer(mcVC.panGestureRecognizer())
 //        view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
-    
-    
-    
-    
-    @IBAction func backButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+  
+//    @IBAction func backButtonClicked(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
 }

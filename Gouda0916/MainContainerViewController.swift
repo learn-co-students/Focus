@@ -15,44 +15,44 @@ final class MainContainerViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     var actingVC: UIViewController!
     
+    @IBOutlet weak var menu: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addNotificationObservers()
-//        loadInitialViewController()
+        loadInitialViewController()
+        menu.alpha = 0.0
     }
     
-// MARK: - Notficiation Observers
+    // MARK: - Notficiation Observers
     func addNotificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openMainVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openGoalVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openVelocityVC, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .unhideVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(unhideMenu), name: .unhideBar, object: nil)
     }
     
-//
-//// MARK: - Loading VC's
+    //// MARK: - Loading VC's
     func loadInitialViewController() {
-        let id: StoryboardID = FIRAuth.auth()?.currentUser != nil ? .mainContainerVC : .loginVC
+        let id: StoryboardID = .mainVC
         self.actingVC = self.loadViewController(withID: id)
         self.add(viewController: self.actingVC, animated: true)
     }
-//    
+    
     func loadViewController(withID id: StoryboardID) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: id.rawValue)
     }
-//
-    }
-
-
+}
 
 // MARK: - Displaying VC's
 extension MainContainerViewController {
-    
     func add(viewController: UIViewController, animated: Bool = false) {
         self.addChildViewController(viewController)
         containerView.addSubview(viewController.view)
         containerView.alpha = 0.0
+    
         viewController.view.frame = containerView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.didMove(toParentViewController: self)
@@ -64,9 +64,18 @@ extension MainContainerViewController {
         }) { _ in }
     }
     
+   func unhideMenu() {
+    print("ello")
+    UIView.animate(withDuration: 0.3) {
+         self.menu.alpha = 1.0
+    }
+   
+    }
+    
     func switchViewController(with notification: Notification) {
+        
         switch notification.name {
-       
+            
         case Notification.Name.openMainVC:
             switchToViewController(with: .mainVC)
             
@@ -76,7 +85,6 @@ extension MainContainerViewController {
             
         case Notification.Name.openVelocityVC:
             switchToViewController(with: .velocityVC)
-            
             
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
@@ -90,6 +98,7 @@ extension MainContainerViewController {
         addChildViewController(actingVC)
         add(viewController: actingVC)
         actingVC.view.alpha = 0.0
+        menu.alpha = 0.0
         
         UIView.animate(withDuration: 0.8, animations: {
             self.actingVC.view.alpha = 1.0
@@ -101,6 +110,7 @@ extension MainContainerViewController {
         }
         
     }
-
+    
+    
 }
 

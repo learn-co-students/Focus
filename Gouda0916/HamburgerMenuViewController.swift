@@ -9,38 +9,32 @@
 import UIKit
 
 class HamburgerMenuViewController: UIViewController {
+    
     @IBAction func velocityPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .openVelocityVC, object: nil)
-    }
+        NotificationCenter.default.post(name: .openVelocityVC, object: nil)}
     
     @IBAction func goalPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .openGoalVC, object: nil)
-    }
+        NotificationCenter.default.post(name: .openGoalVC, object: nil)}
     
     @IBAction func homePressed(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .openMainVC, object: nil)
-    }
-
+        NotificationCenter.default.post(name: .openMainVC, object: nil)}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+extension HamburgerMenuViewController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func add(viewController: UIViewController, animated: Bool = false) {
+        self.addChildViewController(viewController)
+       self.view.alpha = 0.0
+        viewController.didMove(toParentViewController: self)
+        
+        guard animated else { self.view.alpha = 1.0; return }
+        
+        UIView.transition(with: self.view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.view.alpha = 1.0
+        }) { _ in }
     }
-    */
-
 }
