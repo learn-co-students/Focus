@@ -32,8 +32,6 @@
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
 		9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */; };
 		9052DE451DEF746100B8F67A /* HamburgerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */; };
-		909A04951DEDC8C00099BCB8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909A04941DEDC8C00099BCB8 /* Settings.storyboard */; };
-		909A04971DEDCA200099BCB8 /* SettingsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
 		90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */; };
 		90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */; };
@@ -69,8 +67,6 @@
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
 		9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewController.swift; sourceTree = "<group>"; };
-		909A04941DEDC8C00099BCB8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPanelViewController.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		90DFD6451DEBA4A2003CDF17 /* Gouda0916-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gouda0916-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -117,7 +113,6 @@
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
-				909A04941DEDC8C00099BCB8 /* Settings.storyboard */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -128,7 +123,6 @@
 			children = (
 				90FE84F91DEE1A2000673DD3 /* AppController.swift */,
 				9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */,
-				909A04961DEDCA200099BCB8 /* SettingsPanelViewController.swift */,
 				9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
 				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
@@ -271,7 +265,6 @@
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
 				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
-				909A04951DEDC8C00099BCB8 /* Settings.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
 			);
@@ -338,7 +331,6 @@
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
-				909A04971DEDCA200099BCB8 /* SettingsPanelViewController.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
 				90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */,

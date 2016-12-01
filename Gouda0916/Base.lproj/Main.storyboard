@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D35-bb-mUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1279.2" y="-7.6461769115442282"/>
+            <point key="canvasLocation" x="-1015" y="5"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="-564"/>
+            <point key="canvasLocation" x="-146" y="-466"/>
         </scene>
         <!--Main Container View Controller-->
         <scene sceneID="Zzn-Sd-7gJ">
@@ -287,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832.8" y="305.39730134932535"/>
+            <point key="canvasLocation" x="1833" y="300"/>
         </scene>
         <!--Goal-->
         <scene sceneID="NbO-Oi-Y5f">
@@ -309,6 +309,10 @@
         <scene sceneID="U9X-gV-fkM">
             <objects>
                 <viewController storyboardIdentifier="hamburger-menu-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U6J-nt-BAL" customClass="HamburgerMenuViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6RJ-KG-GuZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rdx-Lq-RRb"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BcC-VE-oEZ">
                         <rect key="frame" x="0.0" y="0.0" width="131" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,7 +383,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nd1-Fa-rSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893.60000000000002" y="305.39730134932535"/>
+            <point key="canvasLocation" x="905" y="300"/>
         </scene>
     </scenes>
 </document>
