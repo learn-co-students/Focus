@@ -299,19 +299,11 @@
             </objects>
             <point key="canvasLocation" x="976.79999999999995" y="298.2008995502249"/>
         </scene>
-        <!--Goal-->
-        <scene sceneID="NbO-Oi-Y5f">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="goal-view-controller" storyboardName="Goal" id="02N-V4-vpn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jxf-CO-qeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1515" y="78"/>
-        </scene>
         <!--Velocity-->
         <scene sceneID="Woc-Ev-o8t">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="velocity-view-controller" storyboardName="Velocity" id="Mp4-Iy-Fad" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKA-Mk-vGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="velocity-view-controller" storyboardName="Velocity" id="Mp4-Iy-Fad" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="1532" y="398"/>
         </scene>

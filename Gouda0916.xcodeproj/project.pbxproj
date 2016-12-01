@@ -29,7 +29,6 @@
 		70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70934DD61DE4C51F00913625 /* VelocityScoreView.xib */; };
 		70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DD81DE4D04400913625 /* VelocityScoreView.swift */; };
 		70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DDA1DE4F8A300913625 /* Velocity.swift */; };
-		70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BF91DE5F4CF00660564 /* Goal.storyboard */; };
 		70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */; };
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
 		9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */; };
@@ -66,7 +65,6 @@
 		70934DD61DE4C51F00913625 /* VelocityScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VelocityScoreView.xib; sourceTree = "<group>"; };
 		70934DD81DE4D04400913625 /* VelocityScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelocityScoreView.swift; sourceTree = "<group>"; };
 		70934DDA1DE4F8A300913625 /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
-		70FF8BFA1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Goal.storyboard; sourceTree = "<group>"; };
 		70FF8BFC1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Velocity.storyboard; sourceTree = "<group>"; };
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
 				114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */,
-				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
 				11FEAF7E1DEDEE10003667AC /* UserInputView.swift */,
 				11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
@@ -271,7 +268,6 @@
 				11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
-				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
 			);
@@ -374,14 +370,6 @@
 				11FCAA211DDA6E170072C46A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		70FF8BF91DE5F4CF00660564 /* Goal.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70FF8BFA1DE5F4CF00660564 /* Base */,
-			);
-			name = Goal.storyboard;
 			sourceTree = "<group>";
 		};
 		70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */ = {
@@ -495,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flatiron.Gouda0916;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flatiron.Gouda0916;
 				PRODUCT_NAME = "$(TARGET_NAME)";
