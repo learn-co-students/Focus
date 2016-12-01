@@ -104,6 +104,7 @@
                     </view>
                     <connections>
                         <outlet property="goalTableView" destination="hPZ-Qd-JkO" id="yvn-Ja-bKR"/>
+                        <segue destination="9Yf-Zo-ulC" kind="presentation" identifier="toEditGoal" id="0p3-4l-5u5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPB-Ge-DnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -320,7 +321,7 @@
         <!--Edit Goal View Controller-->
         <scene sceneID="ZCH-Ka-m2q">
             <objects>
-                <viewController id="9Yf-Zo-ulC" customClass="EditGoalViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editGoal" id="9Yf-Zo-ulC" customClass="EditGoalViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XQI-xd-F3t"/>
                         <viewControllerLayoutGuide type="bottom" id="hMM-wr-8Sq"/>
@@ -368,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhd-R0-zwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3438" y="376"/>
+            <point key="canvasLocation" x="3438" y="355"/>
         </scene>
     </scenes>
 </document>

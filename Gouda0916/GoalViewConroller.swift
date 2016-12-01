@@ -29,6 +29,10 @@ class GoalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    static func editButtonTapped(_ sender: UIButton) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goalVCToCreateGoalVC" {
             let destVC = segue.destination as! CreateGoalViewController
@@ -50,14 +54,8 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        cell.initCustomViewWithFrame()
-        if let unwrappedView = cell.customView {
-            unwrappedView.goal = store.goals[indexPath.row]
-        } else {
-            print("couldnt get customView")
-        }
-        //cell.customView?.goal = store.goals[indexPath.row]
-        //cell.frame.width = cell.contentView.frame.width
+        cell.customView.goal = store.goals[indexPath.row]
+        cell.customView.editButton.tag = indexPath.row
         return cell
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class CustomGoalCell: UITableViewCell {
     
-    weak var customView: GoalTableViewCellView?
+    weak var customView: GoalTableViewCellView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,11 +30,13 @@ class CustomGoalCell: UITableViewCell {
             self.contentView.addSubview(customView)
         }
         
+        customView.editButton.addTarget(self, action: #selector(GoalViewController.editButtonTapped), for: UIControlEvents.touchUpInside)
         
-        
+    
     }
     
     
+
     
 }
 
