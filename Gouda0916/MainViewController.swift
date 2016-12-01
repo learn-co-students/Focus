@@ -31,14 +31,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        masterController = revealViewController()
-//        guard let mcVC = masterController else { return }
-//        view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        //view.addGestureRecognizer(mcVC.panGestureRecognizer())
-    }
 }
 
 

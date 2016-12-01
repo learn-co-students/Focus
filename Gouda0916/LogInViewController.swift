@@ -14,13 +14,12 @@ import FirebaseAuth
 
 class LogInViewController: UIViewController {
     
-    let store = DataStore.sharedInstance
-    
     // Mark: Constants
-    //    let loginToMain = "loginToMain"
+    let store = DataStore.sharedInstance
     var user1 = DataStore.sharedInstance.userName
     var emailPopulated = false
     var passwordPopulated = false
+    
     // Mark: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -30,11 +29,9 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
         //set tags
         self.emailTextField.tag = 100
         self.passwordTextField.tag = 101
-       
         
         //set delegates
         self.emailTextField.delegate = self
@@ -46,34 +43,22 @@ class LogInViewController: UIViewController {
         
         passwordTextField.isSecureTextEntry = true
         
-        //        print("** inside viewDidLoad(), self.emailPopulated: \(self.emailPopulated), self.passwordPopulated: \(self.passwordPopulated)")
-        
-        
-        
         FIRAuth.auth()!.addStateDidChangeListener() { auth, authenticatedEmail in
             if authenticatedEmail != nil {
                 guard let uid = authenticatedEmail?.uid else {return}
             }
-                
-                
             else if self.emailPopulated || self.passwordPopulated {
                 print("*** else if self.emailPopulated || self.passwordPopulated in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
             }
-                
             else {  // enters here when authenticatedEmail = nil
                 print("*** else in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
             }
-            
         }
-        
-    }// end of view did load
-    
-    
+    } // end of view did load
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
+
         /// to check if email & password are longer than however many characters
-        
         switch emailTextField.tag {
         case 100, 101:   // check to see if email has a value
             if self.emailTextField.text!.utf16.count > 0 && self.passwordTextField.text!.utf16.count > 0 {
@@ -90,9 +75,6 @@ class LogInViewController: UIViewController {
         return true
     }
     
-    
-    
-    
     func enableDisableSignIn(){
         if self.emailPopulated && self.passwordPopulated {
             self.loginButton.isEnabled = true
@@ -104,30 +86,17 @@ class LogInViewController: UIViewController {
         }
     }
     
-    
-//    func handleSignIn() {
-//        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-//        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-//            if error != nil {
-//                return
-//            }
-//        })
-//    }
-    
     func signInUser(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: .closeLoginVC, object: nil)
                 }
-                
                 return
             }
             print("user signed in")
         })
     }
-    
-    
     
     //Mark: Buttons
     @IBAction func loginButtonTouched(_ sender: AnyObject) {
@@ -138,7 +107,7 @@ class LogInViewController: UIViewController {
                 
                 FIRAuth.auth()!.signIn(withEmail: email, password: password) { (user, error) in
                     if error == nil {
-                         NotificationCenter.default.post(name: .closeLoginVC, object: nil)
+                        NotificationCenter.default.post(name: .closeLoginVC, object: nil)
                     }
                     else if error != nil {
                         let nserror = error as! NSError
@@ -207,15 +176,6 @@ class LogInViewController: UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
-
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if (segue.identifier == "loginSegue") {
-//            let destinationViewController = segue.destination as! MainViewController
-//        }
-//    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool { return true }
     
     func indicateError(fieldName textFieldWithError: UITextField){
         UIView.animate(withDuration: 1, animations: {
@@ -229,14 +189,17 @@ class LogInViewController: UIViewController {
         })
         self.loginButton.isEnabled = false
         self.loginButton.alpha = 0.3
-        
     }
-    
-    
 }
 
-
 extension LogInViewController: UITextFieldDelegate {
+    
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        print("TextField did end editing method called")
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
@@ -251,6 +214,6 @@ extension LogInViewController: UITextFieldDelegate {
 
 
 
-
+//did finish editing or did end editing 
 
 

@@ -21,10 +21,6 @@ class LogViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        masterController = revealViewController()
-//        guard let mcVC = masterController else { return }
-        //view.addGestureRecognizer(mcVC.panGestureRecognizer())
-//        view.addGestureRecognizer(mcVC.panGestureRecognizer())
     }
   
 //    @IBAction func backButtonClicked(_ sender: Any) {
