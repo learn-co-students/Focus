@@ -11,6 +11,7 @@ import UIKit
 class CustomGoalCell: UITableViewCell {
     
     weak var customView: GoalTableViewCellView!
+    weak var delegate: GoalViewController?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,9 +31,14 @@ class CustomGoalCell: UITableViewCell {
             self.contentView.addSubview(customView)
         }
         
-        customView.editButton.addTarget(self, action: #selector(GoalViewController.editButtonTapped), for: UIControlEvents.touchUpInside)
+        customView.editButton.addTarget(self, action: #selector(buttonTapped), for: UIControlEvents.touchUpInside)
         
     
+    }
+    
+    func buttonTapped(_ sender: UIButton) {
+        delegate?.editButtonTapped()
+        print("index of button in table view: \(customView.editButton.tag)")
     }
     
     

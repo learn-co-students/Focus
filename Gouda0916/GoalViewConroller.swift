@@ -29,8 +29,8 @@ class GoalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    static func editButtonTapped(_ sender: UIButton) {
-        
+    func editButtonTapped() {
+        performSegue(withIdentifier: "toEditGoal", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +39,7 @@ class GoalViewController: UIViewController {
             destVC.goalsTableView = goalTableView
         }
     }
+    
 }
 
 
@@ -56,6 +57,7 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
         cell.customView.goal = store.goals[indexPath.row]
         cell.customView.editButton.tag = indexPath.row
+        cell.delegate = self
         return cell
     }
     

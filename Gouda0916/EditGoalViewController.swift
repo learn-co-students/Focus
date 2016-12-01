@@ -16,6 +16,12 @@ class EditGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
