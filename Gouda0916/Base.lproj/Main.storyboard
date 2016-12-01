@@ -126,32 +126,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-wF-9wT" userLabel="ProgressView">
-                                <rect key="frame" x="0.0" y="118" width="375" height="529"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7Q-ol-MEZ" customClass="ProgressBarView" customModule="Gouda0916" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="375" height="18"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="26W-2u-X2L"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="U7Q-ol-MEZ" firstAttribute="top" secondItem="hKj-wF-9wT" secondAttribute="top" constant="70" id="QdC-eU-3OU"/>
-                                    <constraint firstAttribute="trailing" secondItem="U7Q-ol-MEZ" secondAttribute="trailing" id="VZs-Ej-Dw3"/>
-                                    <constraint firstItem="U7Q-ol-MEZ" firstAttribute="leading" secondItem="hKj-wF-9wT" secondAttribute="leading" id="bg0-G7-nF1"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-s5-cwc">
+                                <rect key="frame" x="67" y="165" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hKj-wF-9wT" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" multiplier="0.5" id="DC0-bI-HHw"/>
-                            <constraint firstItem="hKj-wF-9wT" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="NkY-6X-Iyz"/>
-                            <constraint firstItem="hKj-wF-9wT" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="Pfz-2u-6Ad"/>
-                            <constraint firstItem="hKj-wF-9wT" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.5" id="zIJ-qv-MOd"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
