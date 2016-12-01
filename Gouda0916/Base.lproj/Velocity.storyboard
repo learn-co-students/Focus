@@ -23,13 +23,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tkc-NZ-UVI">
-                                <rect key="frame" x="0.0" y="67" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="553"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8T-sQ-eX3" customClass="VelocityScoreView" customModule="Gouda0916" customModuleProvider="target">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCM-XR-vTV">
                                                 <rect key="frame" x="169" y="82" width="38" height="21"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCM-XR-vTV">
+                                                <rect key="frame" x="169" y="81" width="38" height="21"/>
+>>>>>>> master
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -42,10 +49,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfd-R1-FGX">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="185" width="375" height="184"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2I-MV-fyf">
                                                 <rect key="frame" x="160" y="82" width="56" height="21"/>
+=======
+                                        <rect key="frame" x="0.0" y="184" width="375" height="185"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2I-MV-fyf">
+                                                <rect key="frame" x="160" y="83" width="56" height="21"/>
+>>>>>>> master
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -58,7 +72,11 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXb-9y-ws3">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="369" width="375" height="185"/>
+=======
+                                        <rect key="frame" x="0.0" y="369" width="375" height="184"/>
+>>>>>>> master
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tj1-CU-vfq">
                                                 <rect key="frame" x="157" y="82" width="62" height="21"/>
@@ -79,7 +97,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhd-7q-IdU">
+<<<<<<< HEAD
                                         <rect key="frame" x="140" y="16" width="95" height="36"/>
+=======
+                                        <rect key="frame" x="141" y="15" width="95" height="36"/>
+>>>>>>> master
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,7 +124,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-o7-Pt4" userLabel="FooterView">
+<<<<<<< HEAD
                                 <rect key="frame" x="-1" y="601" width="376" height="66"/>
+=======
+                                <rect key="frame" x="0.0" y="600" width="375" height="67"/>
+>>>>>>> master
                                 <color key="backgroundColor" red="0.40841024609999999" green="1" blue="0.670647298" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

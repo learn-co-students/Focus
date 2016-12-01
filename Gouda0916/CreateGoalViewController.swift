@@ -14,33 +14,50 @@ class CreateGoalViewController: UIViewController {
     let store = DataStore.sharedInstance
     let ref =  FIRDatabase.database().reference()
     var textFields: [UITextField] = []
+    var index = 0
     var screenWidth = UIScreen.main.bounds.width
+    weak var goalsTableView: UITableView?
     
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var stackViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var goalTextField: UITextField!
-    @IBOutlet weak var goalPurchaseTextField: UITextField!
-    @IBOutlet weak var timeframeTextField: UITextField!
-    @IBOutlet weak var waysToSaveTextField: UITextField!
-    @IBOutlet weak var dailyBudgetTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
+    
+    @IBOutlet weak var whatAreYouSavingFor: UserInputView!
+    @IBOutlet weak var howMuchToSave: UserInputView!
+    @IBOutlet weak var howManyDays: UserInputView!
+    @IBOutlet weak var wayToSave: UserInputView!
+    @IBOutlet weak var currentDailyBudget: UserInputView!
+    
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var questionOneLeadingConstraint: NSLayoutConstraint!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTextForNib()
         addTextFieldsToArray()
         setUpTextFieldsForEditing()
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
+<<<<<<< HEAD
      
+=======
+    }
+    
+    func setTextForNib() {
+        whatAreYouSavingFor.label.text = "What are you saving for?"
+        howMuchToSave.label.text = "How much do you want to save?"
+        howManyDays.label.text = "How many days do you have?"
+        wayToSave.label.text = "What can you save money on?"
+        currentDailyBudget.label.text = "What is you current daily budget?"
+>>>>>>> master
     }
     
     func addTextFieldsToArray() {
-        textFields.append(goalTextField)
-        textFields.append(goalPurchaseTextField)
-        textFields.append(timeframeTextField)
-        textFields.append(waysToSaveTextField)
-        textFields.append(dailyBudgetTextField)
+        textFields.append(whatAreYouSavingFor.textField)
+        textFields.append(howMuchToSave.textField)
+        textFields.append(howManyDays.textField)
+        textFields.append(wayToSave.textField)
+        textFields.append(currentDailyBudget.textField)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,12 +70,12 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: UIButton) {
-        //Force unweap handled in validation
-        let goal = Double(goalTextField.text!)!
-        let timeframe = Int(timeframeTextField.text!)!
-        let dailyBudget = Double(dailyBudgetTextField.text!)!
-        let goalPurchase = goalPurchaseTextField.text!
-        let waysToSave = [waysToSaveTextField.text!]
+        //Force unwrap handled in validation
+        let goal = Double(howMuchToSave.textField.text!)!
+        let timeframe = Int(howManyDays.textField.text!)!
+        let dailyBudget = Double(currentDailyBudget.textField.text!)!
+        let goalPurchase = whatAreYouSavingFor.textField.text!
+        let waysToSave = [wayToSave.textField.text!]
         
         let context = store.persistentContainer.viewContext
         let goalEntity = Goal(context: context)
@@ -79,7 +96,8 @@ class CreateGoalViewController: UIViewController {
         store.goals.append(goalEntity)
    
         ref.child("goals").childByAutoId().setValue(goalEntity.serializeGoalIntoDictionary())
-
+        
+        goalsTableView?.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -92,39 +110,40 @@ extension CreateGoalViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         swipeLeft.direction = .left
         swipeRight.direction = .right
-        stackView.addGestureRecognizer(swipeLeft)
-        stackView.addGestureRecognizer(swipeRight)
+        contentView.addGestureRecognizer(swipeLeft)
+        contentView.addGestureRecognizer(swipeRight)
     }
     
     func swipe(sender: UISwipeGestureRecognizer) {
-        let index = Int((stackViewLeadingConstraint.constant * -1) / screenWidth)
-        let numOfStackSubViews = stackView.subviews.count
-        if index >= 0 && index < numOfStackSubViews - 1 {
-            if sender.direction == .left && textFields[index].backgroundColor == .green {
+        
+        if index < textFields.count {
+            if sender.direction == .left {
                 
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                    self.stackViewLeadingConstraint.constant -= self.screenWidth
+                    self.questionOneLeadingConstraint.constant -= self.screenWidth * 0.8125
                     self.view.layoutIfNeeded()
                 }, completion: { (success) in
-                    self.textFields[index + 1].becomeFirstResponder()
+                    self.index += 1
+                    if self.index < self.textFields.count {
+                        self.textFields[self.index].becomeFirstResponder()
+                    }
                 })
-            }
-        }
-        if index > 0 && index <= numOfStackSubViews {
-            if sender.direction == .right {
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
-                    self.stackViewLeadingConstraint.constant += self.screenWidth
-                    self.view.layoutIfNeeded()
-                }, completion: { (success) in
-                    self.textFields[index - 1].becomeFirstResponder()
-                })
+                
             }
         }
         
+        if index > 0 {
+            if sender.direction == .right {
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+                    self.questionOneLeadingConstraint.constant += self.screenWidth * 0.8125
+                    self.view.layoutIfNeeded()
+                }, completion: { (success) in
+                    self.index -= 1
+                    self.textFields[self.index].becomeFirstResponder()
+                })
+            }
+        }
     }
-    
-    
-    
 }
 
 
@@ -144,11 +163,10 @@ extension CreateGoalViewController {
         
         //changes text field color
         if validInput {
-            textField.backgroundColor = .green
+            textField.textColor = UIColor.themeBlackColor
         } else {
-            textField.backgroundColor = .red
+            textField.textColor = .red
         }
-        textField.backgroundColor?.withAlphaComponent(50)
         
         //enables create button if all are valid, disables if any are invalid
         if checkIfAllTextFieldsAreValid() {
@@ -163,14 +181,16 @@ extension CreateGoalViewController {
         let userInput = textField.text
         
         switch textField {
-        case goalTextField, dailyBudgetTextField, timeframeTextField:
+        case howMuchToSave.textField, currentDailyBudget.textField, howManyDays.textField:
             if let userInput = userInput {
                 let inputAsDouble = Double(userInput)
                 if inputAsDouble != nil {
-                    isValid = true
+                    if inputAsDouble! > 0.0 {
+                        isValid = true
+                    }
                 }
             }
-        case goalPurchaseTextField, waysToSaveTextField:
+        case whatAreYouSavingFor.textField, wayToSave.textField:
             if userInput != "" {
                 isValid = true
             }
@@ -183,7 +203,7 @@ extension CreateGoalViewController {
     func checkIfAllTextFieldsAreValid() -> Bool {
         var allValid = true
         for field in textFields {
-            if field.backgroundColor != .green {
+            if field.textColor != UIColor.themeBlackColor {
                 allValid = false
             }
         }

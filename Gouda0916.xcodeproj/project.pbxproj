@@ -22,6 +22,8 @@
 		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
 		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
 		11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE917B1DDF4BE800E3EA4F /* DataStore.swift */; };
+		11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */; };
+		11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEAF7E1DEDEE10003667AC /* UserInputView.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
 		55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */; };
 		70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70934DD61DE4C51F00913625 /* VelocityScoreView.xib */; };
@@ -57,6 +59,8 @@
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputView.xib; sourceTree = "<group>"; };
+		11FEAF7E1DEDEE10003667AC /* UserInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 		55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70934DD61DE4C51F00913625 /* VelocityScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VelocityScoreView.xib; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
 				114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */,
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
+				11FEAF7E1DEDEE10003667AC /* UserInputView.swift */,
+				11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
@@ -262,6 +268,7 @@
 				70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */,
 				90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */,
 				70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */,
+				11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
 				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
@@ -326,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FCAA2A1DDA70650072C46A /* LogInViewController.swift in Sources */,
+				11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */,
 				117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */,
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
