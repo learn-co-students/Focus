@@ -38,9 +38,6 @@ class CreateGoalViewController: UIViewController {
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
-<<<<<<< HEAD
-     
-=======
     }
     
     func setTextForNib() {
@@ -49,7 +46,6 @@ class CreateGoalViewController: UIViewController {
         howManyDays.label.text = "How many days do you have?"
         wayToSave.label.text = "What can you save money on?"
         currentDailyBudget.label.text = "What is you current daily budget?"
->>>>>>> master
     }
     
     func addTextFieldsToArray() {
