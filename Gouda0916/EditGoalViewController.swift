@@ -10,10 +10,15 @@ import Foundation
 import UIKit
 
 class EditGoalViewController: UIViewController {
+    var goal: Goal!
     
+    
+    @IBOutlet weak var goalView: GoalTableViewCellView!
     @IBOutlet weak var optionsCollectionView: UICollectionView!
     
-    var textForOptions = ["Set As Active Goal", "Saving Goal", "Savings For", "Saving On", "Timeframe", "Daily Budget?", "Delete"]
+    
+    
+    var textForOptions = ["Set As Active Goal", "Saving Goal", "Savings For", "Saving On", "Timeframe", "Daily Budget", "Delete"]
     
     
     //Collection View Cell Size and Spacing
@@ -27,6 +32,9 @@ class EditGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLayout()
+        goalView.goal = self.goal
+        goalView.editButton.isHidden = true
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -57,10 +65,10 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     func configureLayout () {
         
         let screenWidth = UIScreen.main.bounds.width
-        let desiredSpacing: CGFloat = 15
+        let desiredSpacing: CGFloat = 5
         let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
         let itemWidth = (screenWidth - (whiteSpace * desiredSpacing)) / numberOfCellsPerRow
-        let itemHeight = itemWidth
+        let itemHeight = itemWidth / 2
         
         spacing = desiredSpacing
         sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)

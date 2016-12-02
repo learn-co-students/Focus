@@ -36,7 +36,7 @@ class CustomGoalCell: UITableViewCell {
     }
     
     func buttonTapped(_ sender: UIButton) {
-        delegate?.editButtonTapped()
+        delegate?.editButtonTapped(withIndex: sender.tag)
         print("index of button in table view: \(customView.editButton.tag)")
     }
     

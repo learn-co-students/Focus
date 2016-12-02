@@ -330,9 +330,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-Np-Fpw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-Np-Fpw" userLabel="HeaderView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="73.333333333333329"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Goal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-je-REW">
+                                        <rect key="frame" x="131.66666666666669" y="17" width="151.00000000000006" height="40"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jy-ru-icK">
                                         <rect key="frame" x="8" y="1.3333333333333357" width="31" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -344,12 +350,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="eoY-je-REW" firstAttribute="centerX" secondItem="Qco-Np-Fpw" secondAttribute="centerX" id="362-1F-9zn"/>
                                     <constraint firstItem="6Jy-ru-icK" firstAttribute="centerY" secondItem="Qco-Np-Fpw" secondAttribute="centerY" id="Eqd-5j-ZRW"/>
+                                    <constraint firstItem="eoY-je-REW" firstAttribute="centerY" secondItem="Qco-Np-Fpw" secondAttribute="centerY" id="Jhl-bN-gTP"/>
                                     <constraint firstItem="6Jy-ru-icK" firstAttribute="leading" secondItem="Qco-Np-Fpw" secondAttribute="leading" constant="8" id="zkw-Rf-kbX"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tXt-dp-koq">
-                                <rect key="frame" x="0.0" y="73.333333333333314" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="294" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8YL-HE-CFQ">
                                     <size key="itemSize" width="178" height="194"/>
@@ -387,20 +395,29 @@
                                     <outlet property="delegate" destination="9Yf-Zo-ulC" id="Jsn-lw-suj"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yP6-pW-8u1" userLabel="GoalView" customClass="GoalTableViewCellView" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="73.333333333333343" width="414" height="220.66666666666666"/>
+                                <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="47Y-2j-nZR"/>
+                            <constraint firstItem="tXt-dp-koq" firstAttribute="top" secondItem="yP6-pW-8u1" secondAttribute="bottom" id="7j6-kl-RhR"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.1" id="7wK-La-tsI"/>
+                            <constraint firstItem="yP6-pW-8u1" firstAttribute="centerX" secondItem="Qco-Np-Fpw" secondAttribute="centerX" id="A43-cO-Ud3"/>
+                            <constraint firstItem="yP6-pW-8u1" firstAttribute="top" secondItem="Qco-Np-Fpw" secondAttribute="bottom" id="HII-sk-fNd"/>
+                            <constraint firstItem="yP6-pW-8u1" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="P5h-o1-nxc"/>
+                            <constraint firstItem="yP6-pW-8u1" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.3" id="VCm-pm-Ibr"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" id="cjL-7L-cYI"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="i4j-Ja-3CD"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="itc-S6-3bT"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="top" secondItem="ZsK-Uc-qJJ" secondAttribute="top" id="psS-Jh-dPQ"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="uA1-J6-R94"/>
-                            <constraint firstItem="tXt-dp-koq" firstAttribute="top" secondItem="Qco-Np-Fpw" secondAttribute="bottom" id="x51-6Q-1hz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="goalView" destination="yP6-pW-8u1" id="HL8-q7-4GP"/>
                         <outlet property="optionsCollectionView" destination="tXt-dp-koq" id="mpW-ZQ-J3B"/>
                     </connections>
                 </viewController>

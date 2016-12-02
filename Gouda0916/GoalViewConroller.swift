@@ -17,6 +17,7 @@ class GoalViewController: UIViewController {
     let store = DataStore.sharedInstance
     var thereIsCellExpanded = false
     var selectedRowIndex = -1
+    var buttonTag = 0
     
     @IBOutlet weak var goalTableView: UITableView!
     
@@ -28,7 +29,8 @@ class GoalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func editButtonTapped() {
+    func editButtonTapped(withIndex tag: Int) {
+        buttonTag = tag
         performSegue(withIdentifier: "toEditGoal", sender: nil)
     }
     
@@ -36,6 +38,11 @@ class GoalViewController: UIViewController {
         if segue.identifier == "goalVCToCreateGoalVC" {
             let destVC = segue.destination as! CreateGoalViewController
             destVC.goalsTableView = goalTableView
+        }
+        
+        if segue.identifier == "toEditGoal" {
+            let destVC = segue.destination as! EditGoalViewController
+            destVC.goal = store.goals[buttonTag]
         }
     }
     
