@@ -32,7 +32,6 @@ class CustomGoalCell: UITableViewCell {
         }
         
         customView.editButton.addTarget(self, action: #selector(buttonTapped), for: UIControlEvents.touchUpInside)
-        
     
     }
     

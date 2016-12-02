@@ -22,7 +22,6 @@ class GoalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.definesPresentationContext = true
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
