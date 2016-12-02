@@ -1,5 +1,5 @@
 //
-//  CircularProgressBarCombinedView.swift
+//  TreatYourselfLandingView.swift
 //  Gouda0916
 //
 //  Created by Victoria Melendez on 12/1/16.
@@ -8,13 +8,14 @@
 
 import UIKit
 
+@IBDesignable
 
-class CircularProgressBarCombinedView: UIView {
+class TreatYourselfLandingView: UIView {
 
     override func draw(_ rect: CGRect) {
         
-    CircularProgressCombined.drawProgressVelocityCompilation()
+        TreatYourselfLanding.drawCanvas1()
         
-    
-    }
+            }
+
 }

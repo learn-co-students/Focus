@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="eMail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3B9-4f-z6m">
-                                <rect key="frame" x="16" y="226.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="227" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -36,7 +36,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kon-v3-AuF">
-                                <rect key="frame" x="16" y="346.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="347" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -44,14 +44,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utQ-gO-j2c">
-                                <rect key="frame" x="16" y="376.5" width="171.5" height="30"/>
+                                <rect key="frame" x="16" y="377" width="172" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
                                 <connections>
                                     <action selector="forgotPasswordButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A21-v6-hbi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDb-2T-4k7">
-                                <rect key="frame" x="187.5" y="376.5" width="171.5" height="30"/>
+                                <rect key="frame" x="187" y="377" width="172" height="30"/>
                                 <state key="normal" title="New user? SIGN UP"/>
                                 <connections>
                                     <action selector="newUseButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pqo-7v-JQ5"/>
@@ -65,13 +65,12 @@
                                     <segue destination="p1Q-z2-jo0" kind="show" id="1B5-do-BbX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-SZ-vko">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-SZ-vko">
                                 <rect key="frame" x="321" y="226" width="30" height="30"/>
                                 <state key="normal" title="x"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-97-qiv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-97-qiv">
                                 <rect key="frame" x="321" y="284" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="x"/>
                             </button>
                         </subviews>
@@ -85,18 +84,21 @@
                             <constraint firstItem="WDb-2T-4k7" firstAttribute="trailing" secondItem="Kon-v3-AuF" secondAttribute="trailing" id="DwN-H1-FPX"/>
                             <constraint firstItem="Kon-v3-AuF" firstAttribute="width" secondItem="ZpL-vk-Zeu" secondAttribute="width" id="KA0-vQ-2lD"/>
                             <constraint firstItem="3B9-4f-z6m" firstAttribute="height" secondItem="ZpL-vk-Zeu" secondAttribute="height" id="L51-M4-ZCI"/>
+                            <constraint firstItem="Ned-97-qiv" firstAttribute="top" secondItem="YQv-SZ-vko" secondAttribute="bottom" constant="28" id="LIE-8r-osN"/>
                             <constraint firstItem="ZpL-vk-Zeu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.9" id="LVU-n6-0Y0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YQv-SZ-vko" secondAttribute="trailing" constant="8" id="Os3-vJ-kPg"/>
                             <constraint firstItem="WDb-2T-4k7" firstAttribute="height" secondItem="Kon-v3-AuF" secondAttribute="height" id="RGa-zp-e6H"/>
                             <constraint firstItem="utQ-gO-j2c" firstAttribute="leading" secondItem="Kon-v3-AuF" secondAttribute="leading" id="Rq3-1e-wYE"/>
                             <constraint firstItem="utQ-gO-j2c" firstAttribute="width" secondItem="Kon-v3-AuF" secondAttribute="width" multiplier="0.5" id="UHn-9v-xHt"/>
                             <constraint firstItem="3B9-4f-z6m" firstAttribute="width" secondItem="ZpL-vk-Zeu" secondAttribute="width" id="V2n-eA-ULz"/>
+                            <constraint firstItem="YQv-SZ-vko" firstAttribute="baseline" secondItem="3B9-4f-z6m" secondAttribute="baseline" id="Y0E-kH-cmo"/>
                             <constraint firstItem="ZpL-vk-Zeu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y4H-dv-tuW"/>
                             <constraint firstItem="Kon-v3-AuF" firstAttribute="leading" secondItem="ZpL-vk-Zeu" secondAttribute="leading" id="ZdV-xV-Z6R"/>
                             <constraint firstItem="WDb-2T-4k7" firstAttribute="width" secondItem="Kon-v3-AuF" secondAttribute="width" multiplier="0.5" id="e0S-Av-frh"/>
                             <constraint firstItem="Kon-v3-AuF" firstAttribute="height" secondItem="ZpL-vk-Zeu" secondAttribute="height" id="iiV-zi-LcX"/>
                             <constraint firstItem="WDb-2T-4k7" firstAttribute="top" secondItem="Kon-v3-AuF" secondAttribute="bottom" id="mcf-cN-Haq"/>
                             <constraint firstItem="utQ-gO-j2c" firstAttribute="top" secondItem="Kon-v3-AuF" secondAttribute="bottom" id="peN-3a-Ofm"/>
+                            <constraint firstItem="YQv-SZ-vko" firstAttribute="leading" secondItem="Ned-97-qiv" secondAttribute="leading" id="qqb-2K-uj1"/>
                             <constraint firstItem="Kon-v3-AuF" firstAttribute="top" secondItem="ZpL-vk-Zeu" secondAttribute="bottom" multiplier="1.1" id="rl6-zN-O8n"/>
                             <constraint firstItem="3B9-4f-z6m" firstAttribute="bottom" secondItem="ZpL-vk-Zeu" secondAttribute="top" multiplier="0.9" id="tgy-Jw-cwO"/>
                         </constraints>
@@ -126,18 +128,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-s5-cwc">
-                                <rect key="frame" x="67" y="165" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="8" y="105" width="375" height="375"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="AFf-w5-KMZ"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" constant="15" id="CdR-8u-7eM"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="ifD-kr-yRN"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="mzX-Zm-jWw"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="nFF-gH-tl6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.79999999999995" y="6.746626686656672"/>
+            <point key="canvasLocation" x="981.60000000000002" y="56.221889055472268"/>
         </scene>
         <!--Goal-->
         <scene sceneID="NbO-Oi-Y5f">
@@ -157,6 +165,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZtW-0k-tG5"/>
+        <segue reference="1B5-do-BbX"/>
     </inferredMetricsTieBreakers>
 </document>

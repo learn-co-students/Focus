@@ -16,6 +16,7 @@ class DataStore {
     
     var goals: [Goal] = []
     var userName = User()
+    var progress: Float = 0
     
     
     
