@@ -39,29 +39,4 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
-
-    @IBAction func failButtonTouched(_ sender: Any) {
-        velocity.updateVelocityTracker(points: 0)
-        failButton.isEnabled = false
-        sucessButton.isEnabled = false
-
-        updateFailSuccessLabel(status: "Do Better Tomorrow")
-
-    }
-
-    @IBAction func successButtonTouched(_ sender: Any) {
-        failButton.isEnabled = false
-        sucessButton.isEnabled = false
-
-        velocity.tracker.append(10)
-        velocity.tracker.append(10)
-        velocity.tracker.append(10)
-        velocity.tracker.append(0)
-
-        print(velocity.tracker)
-        updateFailSuccessLabel(status: "Success!!")
-        updateVelocityScoreLabel()
-
-    }
-
 }
