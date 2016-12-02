@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         store.fetchData()
 
-        updateView()
+        //updateView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +88,7 @@ class MainViewController: UIViewController {
         let score = velocity.calculateScore()
         print("Score:\(score)")
         
-        velocityScoreView.velocityScore.text = "\(score)"
+        //velocityScoreView.velocityScore.text = "\(score)"
         velocityScoreView.reloadInputViews()
     }
 
