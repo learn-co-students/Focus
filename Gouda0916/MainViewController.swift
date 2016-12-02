@@ -32,8 +32,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         store.fetchData()
 
-        //updateView()
     }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,47 +52,16 @@ class MainViewController: UIViewController {
     @IBAction func successButtonTouched(_ sender: Any) {
         failButton.isEnabled = false
         sucessButton.isEnabled = false
-        
+
         velocity.tracker.append(10)
         velocity.tracker.append(10)
         velocity.tracker.append(10)
         velocity.tracker.append(0)
-        
+
         print(velocity.tracker)
         updateFailSuccessLabel(status: "Success!!")
         updateVelocityScoreLabel()
-        
-    }
-
-
-    func updateView() {
-        ButtonBackground.layer.masksToBounds = true
-        ButtonBackground.layer.cornerRadius = 3.0
-
-        buttonShadowBackground.layer.masksToBounds = false
-        buttonShadowBackground.layer.cornerRadius = 3.0
-        buttonShadowBackground.layer.shadowColor = UIColor.black.cgColor
-        buttonShadowBackground.layer.shadowOpacity = 0.4
-        buttonShadowBackground.layer.shadowRadius = CGFloat(5)
-        buttonShadowBackground.layer.shadowOffset = CGSize(width: 0, height: 0)
-
 
     }
-
-    func updateFailSuccessLabel(status: String) {
-        failSuccessLabel.text = status
-    }
-
-    func updateVelocityScoreLabel() {
-        //let velocityNib = UINib(nibName: "VelocityScoreView", bundle: nil)
-        let score = velocity.calculateScore()
-        print("Score:\(score)")
-        
-        //velocityScoreView.velocityScore.text = "\(score)"
-        velocityScoreView.reloadInputViews()
-    }
-
-
-
 
 }

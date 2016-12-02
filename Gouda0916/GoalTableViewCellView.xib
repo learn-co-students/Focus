@@ -35,29 +35,29 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Climbing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
                             <rect key="frame" x="13.5" y="17.5" width="377.5" height="40"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xa-B3R">
                             <rect key="frame" x="13.5" y="57.5" width="189" height="20"/>
                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="XTg-ch-vr8">
                             <rect key="frame" x="391" y="17.5" width="134.5" height="40"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily allowance for lunch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="0AX-Ue-cVN">
                             <rect key="frame" x="372.5" y="57.5" width="153" height="20"/>
                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.67862259553102267" green="0.67503199978747219" blue="0.68221319127457303" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Wbp-mI-hGN" firstAttribute="centerY" secondItem="9IH-qo-EbE" secondAttribute="centerY" multiplier="0.75" id="LUB-QY-NpS"/>
                         <constraint firstItem="Wbp-mI-hGN" firstAttribute="height" secondItem="9IH-qo-EbE" secondAttribute="height" multiplier="0.4" id="PR8-sZ-rOF"/>
@@ -87,13 +87,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Complete" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-3u-Si9">
                             <rect key="frame" x="20.5" y="15" width="98" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
                             <rect key="frame" x="20.5" y="57" width="94" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E54-Sh-MAV" userLabel="Days Goal">
@@ -111,11 +111,11 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
                                     <rect key="frame" x="171" y="0.0" width="21" height="13"/>
                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.39777876109999999" green="0.49727344940000001" blue="0.54912467279999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="o7r-h7-Xfx" firstAttribute="trailing" secondItem="E54-Sh-MAV" secondAttribute="leading" constant="1" id="Fl9-tM-8pL"/>
                                 <constraint firstItem="o7r-h7-Xfx" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="OgT-JF-wxS"/>
@@ -138,7 +138,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0/$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
                                     <rect key="frame" x="163.5" y="0.0" width="37.5" height="13.5"/>
                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -151,7 +151,7 @@
                                     <color key="backgroundColor" red="0.42242146868807051" green="1" blue="0.60385605865361702" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.39777876113503863" green="0.49727344938374518" blue="0.54912467277486909" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="fSD-ZI-mib" firstAttribute="trailing" secondItem="Efx-PA-xAO" secondAttribute="leading" constant="1" id="1wi-BR-0tV"/>
                                 <constraint firstItem="fSD-ZI-mib" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="Ent-iB-xUs"/>
@@ -168,7 +168,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.86272905759162311" green="0.86272905759162311" blue="0.86272905759162311" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Efx-PA-xAO" firstAttribute="leading" secondItem="JiR-52-6ln" secondAttribute="centerX" multiplier="0.1" id="EkI-HR-9hP"/>
                         <constraint firstItem="r4P-3u-Si9" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="top" id="PUv-8Q-c9b"/>
@@ -195,10 +195,12 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-Cb-xZq">
                             <rect key="frame" x="17" y="12" width="101" height="75"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
-                            <state key="normal" title="edit"/>
+                            <state key="normal" title="edit">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.77206724476439792" green="0.77206724476439792" blue="0.77206724476439792" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="MJI-Cb-xZq" firstAttribute="width" secondItem="tso-XT-ooc" secondAttribute="width" multiplier="0.75" id="1GR-hp-vrc"/>
                         <constraint firstItem="MJI-Cb-xZq" firstAttribute="height" secondItem="tso-XT-ooc" secondAttribute="height" multiplier="0.75" id="Jyc-qN-utQ"/>
@@ -212,7 +214,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="9IH-qo-EbE" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="3Jf-6b-DoT"/>
                 <constraint firstItem="9IH-qo-EbE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="5XQ-gJ-R7C"/>

@@ -15,25 +15,26 @@ import FirebaseDatabase
 class GoalViewController: UIViewController {
     
     let store = DataStore.sharedInstance
+    var thereIsCellExpanded = false
+    var selectedRowIndex = -1
     
     @IBOutlet weak var goalTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        goalTableView.reloadData()
+        self.definesPresentationContext = true
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goalVCToCreateGoalVC" {
+            let destVC = segue.destination as! CreateGoalViewController
+            destVC.goalsTableView = goalTableView
+        }
+    }
 }
 
 
@@ -49,7 +50,35 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        cell.goalCellView.goal = store.goals[indexPath.row]
+        cell.initCustomViewWithFrame()
+        if let unwrappedView = cell.customView {
+            unwrappedView.goal = store.goals[indexPath.row]
+        } else {
+            print("couldnt get customView")
+        }
+        //cell.customView?.goal = store.goals[indexPath.row]
+        //cell.frame.width = cell.contentView.frame.width
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == selectedRowIndex && thereIsCellExpanded {
+            return 200
+        }
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedRowIndex != indexPath.row {
+            thereIsCellExpanded = true
+            selectedRowIndex = indexPath.row
+        } else {
+            thereIsCellExpanded = false
+            selectedRowIndex = -1
+        }
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
 }
