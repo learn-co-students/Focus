@@ -15,6 +15,7 @@ class EditGoalViewController: UIViewController {
     
     @IBOutlet weak var goalView: GoalTableViewCellView!
     @IBOutlet weak var optionsCollectionView: UICollectionView!
+    @IBOutlet weak var goalViewCenterXConstraint: NSLayoutConstraint!
     
     
     
@@ -44,6 +45,7 @@ class EditGoalViewController: UIViewController {
     
 }
 
+//MARK: View Controller Delegate and Datasource
 extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,9 +54,18 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionsCollectionView.dequeueReusableCell(withReuseIdentifier: "editGoalCell", for: indexPath) as! EditGoalCustomCell
-        cell.backgroundColor = UIColor.themeAccentGoldColor
+        cell.backgroundColor = UIColor.themeLightGreenColor
         cell.cellLabel.text = textForOptions[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.goalViewCenterXConstraint.constant -= UIScreen.main.bounds.width
+            self.view.layoutIfNeeded()
+        })
+        
     }
     
 }
