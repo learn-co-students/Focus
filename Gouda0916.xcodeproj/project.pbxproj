@@ -27,6 +27,11 @@
 		11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEAF7E1DEDEE10003667AC /* UserInputView.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
 		55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */; };
+		703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EB91DECAC1E001D5CE7 /* Vertex.swift */; };
+		703F4EBC1DECAC30001D5CE7 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBB1DECAC30001D5CE7 /* Edge.swift */; };
+		703F4EBE1DECAC4E001D5CE7 /* SwiftGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */; };
+		703F4EC01DECC232001D5CE7 /* WeeklyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */; };
+		703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */; };
 		70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70934DD61DE4C51F00913625 /* VelocityScoreView.xib */; };
 		70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DD81DE4D04400913625 /* VelocityScoreView.swift */; };
 		70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DDA1DE4F8A300913625 /* Velocity.swift */; };
@@ -63,6 +68,11 @@
 		11FEAF7E1DEDEE10003667AC /* UserInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 		55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		703F4EB91DECAC1E001D5CE7 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		703F4EBB1DECAC30001D5CE7 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGraph.swift; sourceTree = "<group>"; };
+		703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyGraphView.swift; sourceTree = "<group>"; };
+		703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyGraphView.swift; sourceTree = "<group>"; };
 		70934DD61DE4C51F00913625 /* VelocityScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VelocityScoreView.xib; sourceTree = "<group>"; };
 		70934DD81DE4D04400913625 /* VelocityScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelocityScoreView.swift; sourceTree = "<group>"; };
 		70934DDA1DE4F8A300913625 /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
@@ -99,6 +109,9 @@
 				905278591DDF58CA0079E3DD /* User.swift */,
 				55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */,
 				70934DDA1DE4F8A300913625 /* Velocity.swift */,
+				703F4EB91DECAC1E001D5CE7 /* Vertex.swift */,
+				703F4EBB1DECAC30001D5CE7 /* Edge.swift */,
+				703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */,
 				11FE917B1DDF4BE800E3EA4F /* DataStore.swift */,
 			);
 			name = Model;
@@ -107,9 +120,12 @@
 		116A9DC31DDCD98600437479 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */,
+				703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */,
 				90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */,
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
+				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
 				114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */,
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
@@ -336,8 +352,11 @@
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
+				703F4EBC1DECAC30001D5CE7 /* Edge.swift in Sources */,
+				703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
+				703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				90DFD64C1DEBA867003CDF17 /* SideBarTableViewController.swift in Sources */,
@@ -346,10 +365,12 @@
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
 				90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
+				703F4EBE1DECAC4E001D5CE7 /* SwiftGraph.swift in Sources */,
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
 				119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */,
+				703F4EC01DECC232001D5CE7 /* WeeklyGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
