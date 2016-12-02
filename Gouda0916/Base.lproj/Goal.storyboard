@@ -359,8 +359,8 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tXt-dp-koq">
-                                <rect key="frame" x="0.0" y="294" width="414" height="736"/>
-                                <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="294" width="414" height="442"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8YL-HE-CFQ">
                                     <size key="itemSize" width="178" height="194"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -375,8 +375,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="194"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40T-LU-1a6">
-                                                    <rect key="frame" x="68" y="86" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40T-LU-1a6">
+                                                    <rect key="frame" x="9" y="-0.6666666666666714" width="160" height="194.33333333333331"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -385,6 +385,8 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="40T-LU-1a6" firstAttribute="centerX" secondItem="o0Q-Un-9Ph" secondAttribute="centerX" id="Pfq-fM-5sX"/>
+                                            <constraint firstItem="40T-LU-1a6" firstAttribute="height" secondItem="o0Q-Un-9Ph" secondAttribute="height" id="XbS-g1-dvf"/>
+                                            <constraint firstItem="40T-LU-1a6" firstAttribute="width" secondItem="o0Q-Un-9Ph" secondAttribute="width" multiplier="0.9" id="lTI-CU-sKF"/>
                                             <constraint firstItem="40T-LU-1a6" firstAttribute="centerY" secondItem="o0Q-Un-9Ph" secondAttribute="centerY" id="rjW-qN-H9S"/>
                                         </constraints>
                                         <connections>
@@ -418,7 +420,7 @@
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="P5h-o1-nxc"/>
                             <constraint firstItem="H7c-MM-QWQ" firstAttribute="width" secondItem="yP6-pW-8u1" secondAttribute="width" id="S9z-98-Nd4"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.3" id="VCm-pm-Ibr"/>
-                            <constraint firstItem="tXt-dp-koq" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" id="cjL-7L-cYI"/>
+                            <constraint firstItem="tXt-dp-koq" firstAttribute="bottom" secondItem="hMM-wr-8Sq" secondAttribute="top" id="d8b-RY-f7f"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="i4j-Ja-3CD"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="itc-S6-3bT"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="top" secondItem="ZsK-Uc-qJJ" secondAttribute="top" id="psS-Jh-dPQ"/>

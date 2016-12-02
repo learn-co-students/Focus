@@ -19,7 +19,7 @@ class EditGoalViewController: UIViewController {
     
     
     
-    var textForOptions = ["Set As Active Goal", "Saving Goal", "Savings For", "Saving On", "Timeframe", "Daily Budget", "Delete"]
+    var textForOptions: [String] = ["Set this goal as the current active goal", "Change your savings goal", "Change what you're savings for", "Change what you're saving on", "Change Timeframe", " Change Daily Budget", "Delete Goal"]
     
     
     //Collection View Cell Size and Spacing
@@ -32,16 +32,21 @@ class EditGoalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         configureLayout()
         goalView.goal = self.goal
         goalView.editButton.isHidden = true
         
     }
+
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func populateTextForOptions() {
+        
+    }
     
 }
 
@@ -70,16 +75,16 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     
 }
 
-//MARK: Flow Layout
+//MARK: Collection view flow Layout
 extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     
     func configureLayout () {
         
         let screenWidth = UIScreen.main.bounds.width
-        let desiredSpacing: CGFloat = 5
+        let desiredSpacing: CGFloat = 2
         let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
         let itemWidth = (screenWidth - (whiteSpace * desiredSpacing)) / numberOfCellsPerRow
-        let itemHeight = itemWidth / 2
+        let itemHeight = ((UIScreen.main.bounds.height * 0.6) - ((4 + 1) * desiredSpacing)) / 4
         
         spacing = desiredSpacing
         sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
@@ -87,6 +92,10 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == textForOptions.count - 1 {
+            itemSize.width = (itemSize.width * 2) + spacing
+            return itemSize
+        }
         return itemSize
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
