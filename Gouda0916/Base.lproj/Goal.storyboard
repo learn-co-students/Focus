@@ -403,18 +403,24 @@
                                 <rect key="frame" x="0.0" y="73.333333333333343" width="414" height="220.66666666666666"/>
                                 <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-MM-QWQ" userLabel="EditView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-MM-QWQ" userLabel="EditView" customClass="EditGoalView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="414" y="73.333333333333343" width="414" height="220.66666666666666"/>
                                 <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-nH-1C4" userLabel="YesNoView">
+                                <rect key="frame" x="-414" y="73.333333333333343" width="414" height="220.66666666666666"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="47Y-2j-nZR"/>
+                            <constraint firstItem="Uj7-nH-1C4" firstAttribute="centerY" secondItem="yP6-pW-8u1" secondAttribute="centerY" id="4kS-ki-zfv"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="top" secondItem="yP6-pW-8u1" secondAttribute="bottom" id="7j6-kl-RhR"/>
                             <constraint firstItem="H7c-MM-QWQ" firstAttribute="top" secondItem="yP6-pW-8u1" secondAttribute="top" id="7nD-v2-EUU"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.1" id="7wK-La-tsI"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="centerX" secondItem="Qco-Np-Fpw" secondAttribute="centerX" id="A43-cO-Ud3"/>
+                            <constraint firstItem="Uj7-nH-1C4" firstAttribute="trailing" secondItem="yP6-pW-8u1" secondAttribute="leading" id="Ahg-Bu-eUr"/>
                             <constraint firstItem="H7c-MM-QWQ" firstAttribute="height" secondItem="yP6-pW-8u1" secondAttribute="height" id="Grk-UR-G22"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="top" secondItem="Qco-Np-Fpw" secondAttribute="bottom" id="HII-sk-fNd"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="P5h-o1-nxc"/>
@@ -425,10 +431,13 @@
                             <constraint firstItem="tXt-dp-koq" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="itc-S6-3bT"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="top" secondItem="ZsK-Uc-qJJ" secondAttribute="top" id="psS-Jh-dPQ"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="uA1-J6-R94"/>
+                            <constraint firstItem="Uj7-nH-1C4" firstAttribute="height" secondItem="yP6-pW-8u1" secondAttribute="height" id="v7n-qb-WqY"/>
                             <constraint firstItem="H7c-MM-QWQ" firstAttribute="leading" secondItem="yP6-pW-8u1" secondAttribute="trailing" id="vMX-HN-0OW"/>
+                            <constraint firstItem="Uj7-nH-1C4" firstAttribute="width" secondItem="yP6-pW-8u1" secondAttribute="width" id="zxX-wj-HFQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editViewLeadingConstraint" destination="vMX-HN-0OW" id="QrA-bj-DHt"/>
                         <outlet property="goalView" destination="yP6-pW-8u1" id="HL8-q7-4GP"/>
                         <outlet property="goalViewCenterXConstraint" destination="A43-cO-Ud3" id="6Je-Cp-JQW"/>
                         <outlet property="optionsCollectionView" destination="tXt-dp-koq" id="mpW-ZQ-J3B"/>

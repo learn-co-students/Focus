@@ -16,6 +16,7 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var goalView: GoalTableViewCellView!
     @IBOutlet weak var optionsCollectionView: UICollectionView!
     @IBOutlet weak var goalViewCenterXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var editViewLeadingConstraint: NSLayoutConstraint!
     
     
     
@@ -66,8 +67,13 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        
+        
+        
+        
+        
         UIView.animate(withDuration: 0.1, animations: {
-            self.goalViewCenterXConstraint.constant -= UIScreen.main.bounds.width
+            self.editViewLeadingConstraint.constant -= UIScreen.main.bounds.width
             self.view.layoutIfNeeded()
         })
         
