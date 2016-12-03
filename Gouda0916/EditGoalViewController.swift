@@ -11,16 +11,17 @@ import UIKit
 
 class EditGoalViewController: UIViewController {
     var goal: Goal!
+    var editIsActive = false
     
     
     @IBOutlet weak var goalView: GoalTableViewCellView!
     @IBOutlet weak var optionsCollectionView: UICollectionView!
+    @IBOutlet weak var saveCancelViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var goalViewCenterXConstraint: NSLayoutConstraint!
-    @IBOutlet weak var editViewLeadingConstraint: NSLayoutConstraint!
     
     
     
-    var textForOptions: [String] = ["Set this goal as the current active goal", "Change your savings goal", "Change what you're savings for", "Change what you're saving on", "Change Timeframe", " Change Daily Budget", "Delete Goal"]
+    var editOptions: [Edit] = []
     
     
     //Collection View Cell Size and Spacing
@@ -33,19 +34,27 @@ class EditGoalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
         goalView.editButton.isHidden = true
         
     }
-
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func populateTextForOptions() {
+    func populateEditOptions() {
+        let editActivateGoal = Edit(editQuestion: "Set this goal as the current active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo)
+        let editDeleteGoal = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo)
+        let editSavingsPurchase = Edit(editQuestion: "Change what you're saving for", editRequest: "Enter a new thing you want to save for", editType: .saveCancel)
+        let editSavingsGoal = Edit(editQuestion: "Change what you're savings for", editRequest: "Enter a new savings amount", editType: .saveCancel)
+        let editWayToSave = Edit(editQuestion: "Change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel)
+        let editTimeframe = Edit(editQuestion: "Change Timeframe", editRequest: "How many days do you have to save?", editType: .saveCancel)
+        let editDailyBudget = Edit(editQuestion: " Change Daily Budget", editRequest: "What is your daily budget?", editType: .saveCancel)
+        
+        editOptions = [editActivateGoal, editSavingsGoal, editSavingsPurchase, editWayToSave, editTimeframe, editDailyBudget, editDeleteGoal]
         
     }
     
@@ -55,27 +64,31 @@ class EditGoalViewController: UIViewController {
 extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return textForOptions.count
+        return editOptions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionsCollectionView.dequeueReusableCell(withReuseIdentifier: "editGoalCell", for: indexPath) as! EditGoalCustomCell
         cell.backgroundColor = UIColor.themeLightGreenColor
-        cell.cellLabel.text = textForOptions[indexPath.row]
+        cell.cellLabel.text = editOptions[indexPath.row].editQuestion
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let type = editOptions[indexPath.item].editType
+        
+        if type == .yesNo {
+            
+        }
         
         
-        
-        
-        
-        UIView.animate(withDuration: 0.1, animations: {
-            self.editViewLeadingConstraint.constant -= UIScreen.main.bounds.width
-            self.view.layoutIfNeeded()
-        })
+        if type == .saveCancel {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.saveCancelViewLeadingConstraint.constant -= UIScreen.main.bounds.width
+                self.view.layoutIfNeeded()
+            })
+        }
         
     }
     
@@ -98,7 +111,7 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == textForOptions.count - 1 {
+        if indexPath.row == editOptions.count - 1 {
             itemSize.width = (itemSize.width * 2) + spacing
             return itemSize
         }
@@ -115,8 +128,19 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+//MARK: Collection View Custom Cell
 class EditGoalCustomCell: UICollectionViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
+}
+
+//MARK: Edit and EditType
+struct Edit {
+    let editQuestion: String
+    let editRequest: String
+    let editType: EditType
+}
+
+enum EditType {
+    case yesNo, saveCancel
 }
