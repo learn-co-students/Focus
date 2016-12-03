@@ -407,7 +407,7 @@
                                 <rect key="frame" x="414" y="73.333333333333343" width="414" height="220.66666666666666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-nH-1C4" userLabel="YesNoView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-nH-1C4" userLabel="YesNoView" customClass="YesNoView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="-414" y="73.333333333333343" width="414" height="220.66666666666666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -438,9 +438,9 @@
                     </view>
                     <connections>
                         <outlet property="goalView" destination="yP6-pW-8u1" id="HL8-q7-4GP"/>
-                        <outlet property="goalViewCenterXConstraint" destination="A43-cO-Ud3" id="6Je-Cp-JQW"/>
                         <outlet property="optionsCollectionView" destination="tXt-dp-koq" id="mpW-ZQ-J3B"/>
                         <outlet property="saveCancelViewLeadingConstraint" destination="SoE-yh-7ep" id="mve-yc-Jwo"/>
+                        <outlet property="yesNoTrailingConstraint" destination="Ahg-Bu-eUr" id="3LV-Rc-pV5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhd-R0-zwg" userLabel="First Responder" sceneMemberID="firstResponder"/>

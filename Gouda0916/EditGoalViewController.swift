@@ -12,19 +12,17 @@ import UIKit
 class EditGoalViewController: UIViewController {
     var goal: Goal!
     var editIsActive = false
+    var editOptions: [Edit] = []
     
     
     @IBOutlet weak var goalView: GoalTableViewCellView!
     @IBOutlet weak var optionsCollectionView: UICollectionView!
     @IBOutlet weak var saveCancelViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var goalViewCenterXConstraint: NSLayoutConstraint!
-    
-    
-    
-    var editOptions: [Edit] = []
-    
+    @IBOutlet weak var yesNoTrailingConstraint: NSLayoutConstraint!
+
     
     //Collection View Cell Size and Spacing
+    let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
     var itemSize: CGSize!
@@ -79,13 +77,16 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
         let type = editOptions[indexPath.item].editType
         
         if type == .yesNo {
-            
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                self.yesNoTrailingConstraint.constant += self.screenWidth
+                self.view.layoutIfNeeded()
+            }, completion: nil)
         }
         
         
         if type == .saveCancel {
             UIView.animate(withDuration: 0.1, animations: {
-                self.saveCancelViewLeadingConstraint.constant -= UIScreen.main.bounds.width
+                self.saveCancelViewLeadingConstraint.constant -= self.screenWidth
                 self.view.layoutIfNeeded()
             })
         }
@@ -99,7 +100,6 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     
     func configureLayout () {
         
-        let screenWidth = UIScreen.main.bounds.width
         let desiredSpacing: CGFloat = 2
         let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
         let itemWidth = (screenWidth - (whiteSpace * desiredSpacing)) / numberOfCellsPerRow
