@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */; };
 		1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */; };
+		113E8BD21DF254CF00630C02 /* EditGoalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 113E8BD11DF254CF00630C02 /* EditGoalView.xib */; };
+		113E8BD41DF254DB00630C02 /* EditGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E8BD31DF254DB00630C02 /* EditGoalView.swift */; };
 		114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */; };
 		114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalExtension.swift; sourceTree = "<group>"; };
 		1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGoalTableViewCell.swift; sourceTree = "<group>"; };
+		113E8BD11DF254CF00630C02 /* EditGoalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditGoalView.xib; sourceTree = "<group>"; };
+		113E8BD31DF254DB00630C02 /* EditGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoalView.swift; sourceTree = "<group>"; };
 		114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalTableViewCellView.xib; sourceTree = "<group>"; };
 		114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCellView.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
@@ -125,12 +129,13 @@
 				90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */,
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
-				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
 				114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */,
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
 				11FEAF7E1DEDEE10003667AC /* UserInputView.swift */,
 				11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */,
+				113E8BD11DF254CF00630C02 /* EditGoalView.xib */,
+				113E8BD31DF254DB00630C02 /* EditGoalView.swift */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
@@ -284,6 +289,7 @@
 				11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
+				113E8BD21DF254CF00630C02 /* EditGoalView.xib in Resources */,
 				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
 				90DFD6401DEB87F0003CDF17 /* Settings.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
@@ -367,6 +373,7 @@
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
 				703F4EBE1DECAC4E001D5CE7 /* SwiftGraph.swift in Sources */,
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
+				113E8BD41DF254DB00630C02 /* EditGoalView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
 				119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */,
