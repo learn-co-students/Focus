@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditGoalView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
-                <outlet property="cancel" destination="FiI-tr-1q0" id="BIp-uv-tei"/>
+                <outlet property="cancelButton" destination="FiI-tr-1q0" id="oks-3k-OtQ"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="PVX-fQ-mDs"/>
                 <outlet property="label" destination="EZM-Cn-eHg" id="gEc-PL-d0s"/>
                 <outlet property="saveButton" destination="mhh-Wq-X5U" id="s2d-bC-Zn7"/>

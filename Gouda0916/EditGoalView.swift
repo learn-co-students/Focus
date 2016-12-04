@@ -14,7 +14,7 @@ class EditGoalView: UIView {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var cancel: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

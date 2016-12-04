@@ -404,12 +404,16 @@
                                 <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-lp-FhS" userLabel="saveCancelView" customClass="EditGoalView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="414" y="73.333333333333343" width="414" height="220.66666666666666"/>
+                                <rect key="frame" x="-414" y="73.333333333333343" width="414" height="220.66666666666666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-nH-1C4" userLabel="YesNoView" customClass="YesNoView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="-414" y="73.333333333333343" width="414" height="220.66666666666666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuX-di-mvR" userLabel="CollectionViewBlocker">
+                                <rect key="frame" x="0.0" y="294" width="414" height="442"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,11 +424,15 @@
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.1" id="7wK-La-tsI"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="centerX" secondItem="Qco-Np-Fpw" secondAttribute="centerX" id="A43-cO-Ud3"/>
                             <constraint firstItem="Uj7-nH-1C4" firstAttribute="trailing" secondItem="yP6-pW-8u1" secondAttribute="leading" id="Ahg-Bu-eUr"/>
+                            <constraint firstItem="EuX-di-mvR" firstAttribute="width" secondItem="tXt-dp-koq" secondAttribute="width" id="GlH-UE-PI3"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="top" secondItem="Qco-Np-Fpw" secondAttribute="bottom" id="HII-sk-fNd"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="P5h-o1-nxc"/>
-                            <constraint firstItem="ESJ-lp-FhS" firstAttribute="leading" secondItem="yP6-pW-8u1" secondAttribute="trailing" id="SoE-yh-7ep"/>
+                            <constraint firstItem="ESJ-lp-FhS" firstAttribute="trailing" secondItem="yP6-pW-8u1" secondAttribute="leading" id="SoE-yh-7ep"/>
+                            <constraint firstItem="EuX-di-mvR" firstAttribute="centerY" secondItem="tXt-dp-koq" secondAttribute="centerY" id="TsA-nV-m04"/>
                             <constraint firstItem="yP6-pW-8u1" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.3" id="VCm-pm-Ibr"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="bottom" secondItem="hMM-wr-8Sq" secondAttribute="top" id="d8b-RY-f7f"/>
+                            <constraint firstItem="EuX-di-mvR" firstAttribute="centerX" secondItem="tXt-dp-koq" secondAttribute="centerX" id="dv7-fk-MkD"/>
+                            <constraint firstItem="EuX-di-mvR" firstAttribute="height" secondItem="tXt-dp-koq" secondAttribute="height" id="g82-Ii-SAS"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="i4j-Ja-3CD"/>
                             <constraint firstItem="ESJ-lp-FhS" firstAttribute="width" secondItem="yP6-pW-8u1" secondAttribute="width" id="iTh-3j-1JN"/>
                             <constraint firstItem="tXt-dp-koq" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="itc-S6-3bT"/>
@@ -437,10 +445,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionViewBlocker" destination="EuX-di-mvR" id="Xae-aM-CYE"/>
                         <outlet property="goalView" destination="yP6-pW-8u1" id="HL8-q7-4GP"/>
                         <outlet property="optionsCollectionView" destination="tXt-dp-koq" id="mpW-ZQ-J3B"/>
-                        <outlet property="saveCancelViewLeadingConstraint" destination="SoE-yh-7ep" id="mve-yc-Jwo"/>
+                        <outlet property="saveCancelView" destination="ESJ-lp-FhS" id="RBK-Ic-W7C"/>
+                        <outlet property="saveCancelViewTrailingConstraint" destination="SoE-yh-7ep" id="qWt-N3-QQ5"/>
                         <outlet property="yesNoTrailingConstraint" destination="Ahg-Bu-eUr" id="3LV-Rc-pV5"/>
+                        <outlet property="yesNoView" destination="Uj7-nH-1C4" id="Mac-hX-GuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhd-R0-zwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
