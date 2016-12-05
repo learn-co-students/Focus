@@ -9,34 +9,72 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import CoreData
+import CoreGraphics
+
+//@IBDesignable
 
 
 class MainViewController: UIViewController {
 
+    
+    @IBOutlet weak var addGoalView: UIView!
+    
+    @IBOutlet weak var addNewGoalView: UIView!
+    
+    
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
-
-    let velocity = Velocity()
-    let velocityScoreView = VelocityScoreView()
-
-    // TODO: Fix
-    @IBOutlet weak var ButtonBackground: UIView!
-    @IBOutlet weak var buttonShadowBackground: UIView!
-    @IBOutlet weak var failSuccessLabel: UILabel!
-
-    @IBOutlet weak var failButton: UIButton!
-    // TODO: Fix successButton misspelling
-    @IBOutlet weak var sucessButton: UIButton!
-
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         store.fetchData()
-
+        calculateProgress()
+        checkIfGoalExists()
+        
+        
+//        
+//        let tapGR = UITapGestureRecognizer(target: self, action: "didTap:")
+//        
+//        self.addNewGoalView.addGestureRecognizer(tapGR)
+        //        self.view.addGestureRecognizer(tapGR)
+        
     }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//    
+//    func didTap(tapGR: UITapGestureRecognizer){
+//        print ("You touched me.")
+//    }
+    
+    //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
+    
+    func calculateProgress() {
+        print("print")
+        guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
+        
+        guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal amount"); return}
+        
+        store.progress += (812 - CGFloat(checkSaved/checkGoalAmount)/812)
     }
-
+    
+    
+    
+    func checkIfGoalExists() {
+        if store.goals.isEmpty {
+            addGoalView.isHidden = true
+            addNewGoalView.isHidden = false
+        }
+        else{
+            //if today's entry is empty,
+            addGoalView.isHidden = true
+            addNewGoalView.isHidden = true
+        }
+    }
+    
 }
+
+
+
+

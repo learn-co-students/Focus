@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import CoreData
+import CoreGraphics
 
 class Velocity {
+
+    var store = DataStore.sharedInstance
+    
     var tracker: [Int] = [0]
+    var score = Int()
+
     var velocityTrend: [String: Int] = [date: 0]
     
     static let date = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
@@ -30,6 +37,10 @@ class Velocity {
             
             total = firstIndex + secondIndex + thirdIndex
             score = total / 3
+            
+            var scoreForCircle = 552 - ((CGFloat(score))/552)
+            store.velocity = scoreForCircle
+            
         }
         return score
     }
@@ -48,3 +59,6 @@ class Velocity {
         }
     }
 }
+
+
+
