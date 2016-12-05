@@ -11,7 +11,7 @@ import UIKit
 
 class EditGoalViewController: UIViewController {
     let store = DataStore.sharedInstance
-    
+    var delegate: EditGoalDelegate?
     var goal: Goal!
     var goalIndex: Int!
     var currentEditOpen: Edit?
@@ -85,12 +85,14 @@ class EditGoalViewController: UIViewController {
             switch currentEditOpen.editChange {
             case .delete:
                 store.goals.remove(at: goalIndex)
+                delegate?.resetTableView()
                 //delete from core data
                 self.dismiss(animated: true, completion: nil)
                 break
             case .activate:
                 store.goals.remove(at: goalIndex)
                 store.goals.insert(goal, at: 0)
+                delegate?.resetTableView()
                 //edit array in core data
                 break
             case .changeGoal:

@@ -44,6 +44,7 @@ class GoalViewController: UIViewController {
             let destVC = segue.destination as! EditGoalViewController
             destVC.goal = store.goals[buttonTag]
             destVC.goalIndex = buttonTag
+            destVC.delegate = self
         }
     }
     
@@ -89,3 +90,21 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+extension GoalViewController: EditGoalDelegate {
+    
+    func resetTableView() {
+        self.selectedRowIndex = -1
+        self.buttonTag = 0
+        self.goalTableView.reloadData()
+    }
+}
+
+//MARK: edit Gaol Delegate
+
+protocol EditGoalDelegate {
+    
+    func resetTableView()
+    
+}
+
