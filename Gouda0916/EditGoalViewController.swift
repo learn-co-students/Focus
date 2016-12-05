@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class EditGoalViewController: UIViewController {
+    let store = DataStore.sharedInstance
+    
     var goal: Goal!
+    var goalIndex: Int!
     var currentEditOpen: Edit?
     var editOptions: [Edit] = []
     
@@ -61,9 +64,9 @@ class EditGoalViewController: UIViewController {
                 })
             default:
                 view.endEditing(true)
-                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                self.saveCancelView.resignFirstResponder()
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                     self.saveCancelViewTrailingConstraint.constant -= self.screenWidth
-                    self.saveCancelView.resignFirstResponder()
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
                 }, completion: { success in
@@ -75,7 +78,60 @@ class EditGoalViewController: UIViewController {
     }
     
     func yesOrSaveButtonTapped(_ sender: UIButton) {
+       
         
+        if let currentEditOpen = currentEditOpen {
+            
+            switch currentEditOpen.editChange {
+            case .delete:
+                store.goals.remove(at: goalIndex)
+                //delete from core data
+                self.dismiss(animated: true, completion: nil)
+                break
+            case .activate:
+                store.goals.remove(at: goalIndex)
+                store.goals.insert(goal, at: 0)
+                //edit array in core data
+                break
+            case .changeGoal:
+                break
+            case .changePurchase:
+                break
+            case .changeTimeframe:
+                break
+            case .changeBudget:
+                break
+            case .changeWayToSave:
+                break
+                
+            }
+            
+            
+            switch currentEditOpen.editChange {
+            case .delete:
+                break
+            case .activate:
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    self.yesNoTrailingConstraint.constant -= self.screenWidth
+                    self.collectionViewBlocker.alpha = 0
+                    self.view.layoutIfNeeded()
+                }, completion: { (success) in
+                    self.collectionViewBlocker.isHidden = true
+                })
+            default:
+                view.endEditing(true)
+                self.saveCancelView.resignFirstResponder()
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                    self.saveCancelViewTrailingConstraint.constant -= self.screenWidth
+                    self.collectionViewBlocker.alpha = 0
+                    self.view.layoutIfNeeded()
+                }, completion: { success in
+                    self.collectionViewBlocker.isHidden = true
+                })
+            }
+            self.currentEditOpen = nil
+        }
+
     }
     
     func populateEditOptions() {

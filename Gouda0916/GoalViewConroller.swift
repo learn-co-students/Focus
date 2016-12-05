@@ -43,6 +43,7 @@ class GoalViewController: UIViewController {
         if segue.identifier == "toEditGoal" {
             let destVC = segue.destination as! EditGoalViewController
             destVC.goal = store.goals[buttonTag]
+            destVC.goalIndex = buttonTag
         }
     }
     
