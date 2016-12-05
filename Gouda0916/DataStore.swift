@@ -19,7 +19,7 @@ class DataStore {
     var userName = User()
     var progress: CGFloat = 0
     var velocity: CGFloat = 0
-    var days: CGFloat = 2
+    var days: CGFloat = 0
     
     
     

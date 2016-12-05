@@ -37,16 +37,12 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
+        addNewGoalView.isHidden = true
+        addGoalView.isHidden = true
         checkIfGoalExists()
         
-        
-//        
-//        let tapGR = UITapGestureRecognizer(target: self, action: "didTap:")
-//        
-//        self.addNewGoalView.addGestureRecognizer(tapGR)
-        //        self.view.addGestureRecognizer(tapGR)
-        
     }
+
 //    
 
 
@@ -72,10 +68,13 @@ class MainViewController: UIViewController {
     func calculateProgress() {
         print("print")
         guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
+        guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
         
-        guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal amount"); return}
+        var progressPercentage = CGFloat(checkSaved/checkGoalAmount) 
         
-        store.progress += (812 - CGFloat(checkSaved/checkGoalAmount)/812)
+        
+        store.progress = 812 * progressPercentage
+        
     }
     
     

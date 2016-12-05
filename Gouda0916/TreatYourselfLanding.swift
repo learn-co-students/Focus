@@ -110,7 +110,7 @@ public class TreatYourselfLanding : NSObject {
         color7.setStroke()
         progressMaskPath.lineWidth = 31
         context.saveGState()
-        context.setLineDash(phase: 0, lengths: [progressDash, DataStore.sharedInstance.progress])
+        context.setLineDash(phase: 0, lengths: [progressDash, 812])
         progressMaskPath.stroke()
         context.restoreGState()
         
@@ -126,7 +126,7 @@ public class TreatYourselfLanding : NSObject {
         color7.setStroke()
         velocityMaskPath.lineWidth = 30
         context.saveGState()
-        context.setLineDash(phase: 0, lengths: [velocityDash, DataStore.sharedInstance.velocity])
+        context.setLineDash(phase: 0, lengths: [velocityDash, 552])
         velocityMaskPath.stroke()
         context.restoreGState()
 
@@ -144,7 +144,7 @@ public class TreatYourselfLanding : NSObject {
         color7.setStroke()
         dayMaskPath.lineWidth = 30
         context.saveGState()
-        context.setLineDash(phase: 0, lengths: [daysDash, DataStore.sharedInstance.days])
+        context.setLineDash(phase: 0, lengths: [daysDash, 312])
         dayMaskPath.stroke()
         context.restoreGState()
 
@@ -255,7 +255,7 @@ public class TreatYourselfLanding : NSObject {
         context.clip(to: symbolRect)
         context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
 
-        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 300, velocityDash: 14, daysDash: 17)
+        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: DataStore.sharedInstance.progress, velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
         context.restoreGState()
 
 
