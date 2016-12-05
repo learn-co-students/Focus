@@ -57,6 +57,7 @@ class MainViewController: UIViewController {
         guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal amount"); return}
         
         store.progress += (812 - CGFloat(checkSaved/checkGoalAmount)/812)
+        
     }
     
     

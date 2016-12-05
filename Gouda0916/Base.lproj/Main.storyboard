@@ -130,6 +130,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOw-xj-cg9">
+                                        <rect key="frame" x="160" y="172" width="55" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Velocity"/>
+                                        <connections>
+                                            <segue destination="Mp4-Iy-Fad" kind="show" id="aai-m2-FOb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-gG-hlr">
@@ -141,6 +151,14 @@
                                         <state key="normal" title="Start A New Goal"/>
                                         <connections>
                                             <segue destination="02N-V4-vpn" kind="show" id="9bX-TP-bpQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGm-jv-o9j">
+                                        <rect key="frame" x="160" y="318" width="55" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Velocity"/>
+                                        <connections>
+                                            <segue destination="Mp4-Iy-Fad" kind="show" id="G05-LQ-Erw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -168,6 +186,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDN-v8-L1X">
+                                        <rect key="frame" x="222" y="391" width="55" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Velocity"/>
+                                        <connections>
+                                            <segue destination="Mp4-Iy-Fad" kind="show" id="VOC-nP-SDr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.71800528460000002" green="1" blue="0.90997070749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -217,5 +243,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="1B5-do-BbX"/>
+        <segue reference="aai-m2-FOb"/>
     </inferredMetricsTieBreakers>
 </document>
