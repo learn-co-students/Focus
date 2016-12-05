@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreGraphics
 
 class DataStore {
     static let sharedInstance = DataStore()
@@ -16,6 +17,9 @@ class DataStore {
     
     var goals: [Goal] = []
     var userName = User()
+    var progress: CGFloat = 0
+    var velocity: CGFloat = 0
+    var days: CGFloat = 2
     
     
     

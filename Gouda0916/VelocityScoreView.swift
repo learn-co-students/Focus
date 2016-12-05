@@ -10,21 +10,26 @@ import UIKit
 
 class VelocityScoreView: UIView {
     
+    let velocity = Velocity()
+    
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var velocityScore: UILabel!
-    @IBOutlet weak var backGroundCircleView: UIView!
-    @IBOutlet weak var shadowBackGroundCircleView: UIView!
+    @IBOutlet weak var velocityScoreLabel: UILabel!
+    @IBOutlet weak var velocityScoreView: UIView!
+    @IBOutlet weak var velocityScoreBGView: UIView!
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
         updateView()
+        updateVelocityView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
         updateView()
+        updateVelocityView()
     }
     
     func commonInit() {
@@ -41,16 +46,22 @@ class VelocityScoreView: UIView {
         contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
-        backGroundCircleView.layer.masksToBounds = true
-        backGroundCircleView.layer.cornerRadius = 70
-        
-        shadowBackGroundCircleView.layer.masksToBounds = false
-        shadowBackGroundCircleView.layer.cornerRadius = 70
-        shadowBackGroundCircleView.layer.shadowColor = UIColor.black.cgColor
-        shadowBackGroundCircleView.layer.shadowOpacity = 0.6
-        shadowBackGroundCircleView.layer.shadowRadius = CGFloat(5)
-        shadowBackGroundCircleView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
+    
+    func updateVelocityView() {
+        velocityScoreView.layer.masksToBounds = true
+        velocityScoreView.layer.cornerRadius = 5.0
+        
+        velocityScoreView.layer.masksToBounds = false
+        velocityScoreBGView.layer.cornerRadius = 5
+        velocityScoreBGView.layer.shadowColor = UIColor.themeBlackColor.cgColor
+        velocityScoreBGView.layer.shadowOpacity = 0.8
+        velocityScoreBGView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        velocityScoreBGView.layer.shadowRadius = 3
+        
+    }
+    
+    
     
     
     
