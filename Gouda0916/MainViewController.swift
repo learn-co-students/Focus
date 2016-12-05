@@ -10,77 +10,68 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import CoreData
+import CoreGraphics
+
+//@IBDesignable
 
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var addGoalView: UIView!
+    
+    @IBOutlet weak var addNewGoalView: UIView!
     
     
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
-    //    var goalsHere = DataStore.sharedInstance.goals.first?.goalAmount
-    //    var savedHere = DataStore.sharedInstance.goals.first?.currentAmountSaved
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         store.fetchData()
-        
-//        let tapGR = UITapGestureRecognizer(target: self, action: "didTap")
-//        self.view.addGestureRecognizer(tapGR)
-        
+        calculateProgress()
+        checkIfGoalExists()
         
         
-        //        store.progress += progressUpdate(goalAmount: goalsHere, saved: savedHere)
-        
+//        
+//        let tapGR = UITapGestureRecognizer(target: self, action: "didTap:")
+//        
+//        self.addNewGoalView.addGestureRecognizer(tapGR)
+        //        self.view.addGestureRecognizer(tapGR)
         
     }
-    
-//    func didTap(tapGR: UITapGestureRecognizer) {
-//        
-//        let shapeView = TreatYourselfLandingView(frame: tapPoint)
-//        self.view.addSubview(shapeView)
-//        
+//    
+//    func didTap(tapGR: UITapGestureRecognizer){
+//        print ("You touched me.")
 //    }
     
-    //  add to progress
+    //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
     
-//    
-//    func progressUpdate (goalAmount:Double, saved: Double) -> Float {
-//        
-//        print("print")
-//        let progress = Float(saved/goalAmount)
-//        return progress
-//    }
-//    
-//    func submit() {
-//        guard let unwrappedGoal = store.goals.first?.goalAmount else {
-//            print("no goals")
-//            return
-//        }
-//        guard let unwrappedSaved = store.goals.first?.currentAmountSaved else {
-//            print("no amount saved")
-//            return
-//        }
-//        
-//        store.progress += progressUpdate(goalAmount: unwrappedGoal, saved: unwrappedSaved)
-    
-//                store.progress += progressUpdate(goalAmount: (store.goals.first?.goalAmount)!, saved: ((store.goals.first?.currentAmountSaved)))
+    func calculateProgress() {
+        print("print")
+        guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
         
-//    }
-    
-    //
-
-    
-    func createGoal () {
-        var newShoes = Goal()
-        newShoes.currentAmountSaved = 4.0
-        newShoes.goalAmount = 100.0
-        store.goals.append(newShoes)
+        guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal amount"); return}
+        
+        store.progress += (812 - CGFloat(checkSaved/checkGoalAmount)/812)
     }
     
     
-
+    
+    func checkIfGoalExists() {
+        if store.goals.isEmpty {
+            addGoalView.isHidden = true
+            addNewGoalView.isHidden = false
+        }
+        else{
+            //if today's entry is empty,
+            addGoalView.isHidden = true
+            addNewGoalView.isHidden = true
+        }
+    }
+    
 }
 
 

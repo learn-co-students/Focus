@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import CoreData
+import CoreGraphics
 
 class Velocity {
+    var store = DataStore.sharedInstance
+    
     var tracker: [Int]?
     var score = Int()
     var velocityTrend: [String: Int] = [date: 0]
@@ -30,8 +34,13 @@ class Velocity {
             
             total = firstIndex + secondIndex + thirdIndex
             score = total / 3
+            
+            var scoreForCircle = 552 - ((CGFloat(score))/552)
+            store.velocity = scoreForCircle
+            
         }
     }
 }
+
 
 

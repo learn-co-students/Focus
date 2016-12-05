@@ -128,20 +128,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="8" y="105" width="375" height="375"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-gG-hlr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-HU-3nj">
+                                        <rect key="frame" x="96" y="208" width="182" height="136"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Start A New Goal"/>
+                                        <connections>
+                                            <segue destination="02N-V4-vpn" kind="show" id="9bX-TP-bpQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.83373306349999998" blue="0.56965708459999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV">
+                                <rect key="frame" x="0.0" y="2" width="375" height="662"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much did you spend today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nef-r3-AdZ">
+                                        <rect key="frame" x="69" y="147" width="250" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jti-6M-5LM">
+                                        <rect key="frame" x="139" y="273" width="109" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="SUBMIT"/>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buM-8c-dES">
+                                        <rect key="frame" x="146" y="203" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.71800528460000002" green="1" blue="0.90997070749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="AFf-w5-KMZ"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" constant="15" id="CdR-8u-7eM"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="ifD-kr-yRN"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="mzX-Zm-jWw"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="nFF-gH-tl6"/>
+                            <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="MgV-GG-DJV" secondAttribute="bottom" constant="3" id="3Km-4q-Arh"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="GVg-gG-hlr" secondAttribute="centerY" id="4kX-qP-Rvb"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="GVg-gG-hlr" secondAttribute="leading" id="Fd5-D7-0Ln"/>
+                            <constraint firstItem="GVg-gG-hlr" firstAttribute="bottom" secondItem="mkO-nJ-53q" secondAttribute="top" id="Tgi-Gk-NDa"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Via-Bx-bbq"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="trailing" id="X3X-Gg-2E7"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="MgV-GG-DJV" secondAttribute="centerY" id="Y8t-hy-jBY"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="GVg-gG-hlr" secondAttribute="trailing" id="c1v-JZ-5w6"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="top" secondItem="o1j-Yz-yVh" secondAttribute="bottom" constant="126" id="iVg-O1-cVf"/>
+                            <constraint firstItem="MgV-GG-DJV" firstAttribute="centerY" secondItem="GVg-gG-hlr" secondAttribute="centerY" id="ibe-fv-lcP"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="jbX-m3-xwY"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leading" id="nbh-fr-wKY"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="MgV-GG-DJV" secondAttribute="leading" id="uCO-eA-1er"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addGoalView" destination="MgV-GG-DJV" id="J85-gh-1A7"/>
+                        <outlet property="addNewGoalView" destination="GVg-gG-hlr" id="zMI-zH-HXy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

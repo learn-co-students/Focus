@@ -10,7 +10,7 @@ public class TreatYourselfLanding : NSObject {
 
     let store = DataStore.sharedInstance
     
-    public dynamic class func drawTreatYourselfLandingCircle(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 568), resizing: ResizingBehavior = .aspectFit, progressDash: CGFloat = 6, velocityDash: CGFloat = 14, daysDash: CGFloat = 17) {
+    public dynamic class func drawTreatYourselfLandingCircle(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 568), resizing: ResizingBehavior = .aspectFit, progressDash: CGFloat = 8, velocityDash: CGFloat = 14, daysDash: CGFloat = 17) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -110,10 +110,10 @@ public class TreatYourselfLanding : NSObject {
         color7.setStroke()
         progressMaskPath.lineWidth = 31
         context.saveGState()
-        context.setLineDash(phase: 0, lengths: [progressDash, 810])
+        context.setLineDash(phase: 0, lengths: [progressDash, DataStore.sharedInstance.progress])
         progressMaskPath.stroke()
         context.restoreGState()
-
+        
 
         //// VelocityMask Drawing
         let velocityMaskPath = UIBezierPath()
@@ -126,10 +126,11 @@ public class TreatYourselfLanding : NSObject {
         color7.setStroke()
         velocityMaskPath.lineWidth = 30
         context.saveGState()
-        context.setLineDash(phase: 0, lengths: [velocityDash, 549])
+        context.setLineDash(phase: 0, lengths: [velocityDash, DataStore.sharedInstance.velocity])
         velocityMaskPath.stroke()
         context.restoreGState()
 
+        
 
         //// DayMask Drawing
         let dayMaskPath = UIBezierPath()
@@ -143,7 +144,7 @@ public class TreatYourselfLanding : NSObject {
         color7.setStroke()
         dayMaskPath.lineWidth = 30
         context.saveGState()
-        context.setLineDash(phase: 0, lengths: [daysDash, 308])
+        context.setLineDash(phase: 0, lengths: [daysDash, DataStore.sharedInstance.days])
         dayMaskPath.stroke()
         context.restoreGState()
 
@@ -254,7 +255,7 @@ public class TreatYourselfLanding : NSObject {
         context.clip(to: symbolRect)
         context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
 
-        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 150, velocityDash: 14, daysDash: 17)
+        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 300, velocityDash: 14, daysDash: 17)
         context.restoreGState()
 
 
@@ -264,9 +265,13 @@ public class TreatYourselfLanding : NSObject {
         ovalPath.fill()
         
         context.restoreGState()
-
+        
+        
+        
+        
     }
 
+    
 
 
 
@@ -307,6 +312,8 @@ public class TreatYourselfLanding : NSObject {
             return result
         }
     }
+    
+    
 }
 
 
