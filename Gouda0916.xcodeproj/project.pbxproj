@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */; };
 		1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */; };
+		113E8BD21DF254CF00630C02 /* EditGoalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 113E8BD11DF254CF00630C02 /* EditGoalView.xib */; };
+		113E8BD41DF254DB00630C02 /* EditGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E8BD31DF254DB00630C02 /* EditGoalView.swift */; };
+		113E8BD61DF32CF800630C02 /* YesNoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 113E8BD51DF32CF800630C02 /* YesNoView.xib */; };
+		113E8BD81DF32D0B00630C02 /* YesNoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E8BD71DF32D0B00630C02 /* YesNoView.swift */; };
 		114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */; };
 		114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
+		119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119161D61DEF99400085F979 /* EditGoalViewController.swift */; };
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
 		11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA181DDA6E170072C46A /* Main.storyboard */; };
 		11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */; };
@@ -22,10 +27,17 @@
 		11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */; };
 		11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA2F1DDA70A00072C46A /* LogViewController.swift */; };
 		11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE917B1DDF4BE800E3EA4F /* DataStore.swift */; };
+		11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */; };
+		11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEAF7E1DEDEE10003667AC /* UserInputView.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
 		55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */; };
 		55CE54D21DF0EC08009524D0 /* TreatYourselfLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */; };
 		55CE54D41DF0EC20009524D0 /* TreatYourselfLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */; };
+		703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EB91DECAC1E001D5CE7 /* Vertex.swift */; };
+		703F4EBC1DECAC30001D5CE7 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBB1DECAC30001D5CE7 /* Edge.swift */; };
+		703F4EBE1DECAC4E001D5CE7 /* SwiftGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */; };
+		703F4EC01DECC232001D5CE7 /* WeeklyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */; };
+		703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */; };
 		70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70934DD61DE4C51F00913625 /* VelocityScoreView.xib */; };
 		70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DD81DE4D04400913625 /* VelocityScoreView.swift */; };
 		70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DDA1DE4F8A300913625 /* Velocity.swift */; };
@@ -33,14 +45,23 @@
 		70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */; };
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
+		90DFD6401DEB87F0003CDF17 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */; };
+		90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */; };
+		90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */; };
+		90DFD64C1DEBA867003CDF17 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalExtension.swift; sourceTree = "<group>"; };
 		1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGoalTableViewCell.swift; sourceTree = "<group>"; };
+		113E8BD11DF254CF00630C02 /* EditGoalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditGoalView.xib; sourceTree = "<group>"; };
+		113E8BD31DF254DB00630C02 /* EditGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoalView.swift; sourceTree = "<group>"; };
+		113E8BD51DF32CF800630C02 /* YesNoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YesNoView.xib; sourceTree = "<group>"; };
+		113E8BD71DF32D0B00630C02 /* YesNoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoView.swift; sourceTree = "<group>"; };
 		114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalTableViewCellView.xib; sourceTree = "<group>"; };
 		114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCellView.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
+		119161D61DEF99400085F979 /* EditGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoalViewController.swift; sourceTree = "<group>"; };
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FCAA141DDA6E160072C46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FCAA191DDA6E170072C46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,10 +74,17 @@
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputView.xib; sourceTree = "<group>"; };
+		11FEAF7E1DEDEE10003667AC /* UserInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 		55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatYourselfLanding.swift; sourceTree = "<group>"; };
 		55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatYourselfLandingView.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		703F4EB91DECAC1E001D5CE7 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		703F4EBB1DECAC30001D5CE7 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGraph.swift; sourceTree = "<group>"; };
+		703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyGraphView.swift; sourceTree = "<group>"; };
+		703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyGraphView.swift; sourceTree = "<group>"; };
 		70934DD61DE4C51F00913625 /* VelocityScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VelocityScoreView.xib; sourceTree = "<group>"; };
 		70934DD81DE4D04400913625 /* VelocityScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelocityScoreView.swift; sourceTree = "<group>"; };
 		70934DDA1DE4F8A300913625 /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
@@ -64,6 +92,12 @@
 		70FF8BFC1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Velocity.storyboard; sourceTree = "<group>"; };
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		90DFD6451DEBA4A2003CDF17 /* Gouda0916-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gouda0916-Bridging-Header.h"; sourceTree = "<group>"; };
+		90DFD6461DEBA4A3003CDF17 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
 		E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.release.xcconfig"; sourceTree = "<group>"; };
 		F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gouda0916.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gouda0916/Pods-Gouda0916.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +121,9 @@
 				905278591DDF58CA0079E3DD /* User.swift */,
 				55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */,
 				70934DDA1DE4F8A300913625 /* Velocity.swift */,
+				703F4EB91DECAC1E001D5CE7 /* Vertex.swift */,
+				703F4EBB1DECAC30001D5CE7 /* Edge.swift */,
+				703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */,
 				11FE917B1DDF4BE800E3EA4F /* DataStore.swift */,
 			);
 			name = Model;
@@ -95,12 +132,21 @@
 		116A9DC31DDCD98600437479 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */,
+				703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */,
+				90DFD63F1DEB87F0003CDF17 /* Settings.storyboard */,
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
 				114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */,
 				70FF8BF91DE5F4CF00660564 /* Goal.storyboard */,
+				11FEAF7E1DEDEE10003667AC /* UserInputView.swift */,
+				11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */,
+				113E8BD11DF254CF00630C02 /* EditGoalView.xib */,
+				113E8BD31DF254DB00630C02 /* EditGoalView.swift */,
+				113E8BD51DF32CF800630C02 /* YesNoView.xib */,
+				113E8BD71DF32D0B00630C02 /* YesNoView.swift */,
 				70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */,
 				11FCAA181DDA6E170072C46A /* Main.storyboard */,
 				11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */,
@@ -112,12 +158,15 @@
 			isa = PBXGroup;
 			children = (
 				55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */,
+				90DFD64B1DEBA867003CDF17 /* SideBarTableViewController.swift */,
+				119161D61DEF99400085F979 /* EditGoalViewController.swift */,
+				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
 				1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
 				117221131DDD02D600A7A680 /* CreateGoalViewController.swift */,
-				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
 				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
 				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
+				90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -127,9 +176,12 @@
 			children = (
 				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
 				11FCAA1E1DDA6E170072C46A /* Assets.xcassets */,
+				90DFD6461DEBA4A3003CDF17 /* SWRevealViewController.h */,
+				90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */,
 				11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */,
 				90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */,
 				11FCAA231DDA6E170072C46A /* Info.plist */,
+				90DFD6451DEBA4A2003CDF17 /* Gouda0916-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,6 +267,7 @@
 				TargetAttributes = {
 					11FCAA101DDA6E160072C46A = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -245,11 +298,15 @@
 				70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */,
 				90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */,
 				70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */,
+				11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
+				113E8BD21DF254CF00630C02 /* EditGoalView.xib in Resources */,
 				70FF8BFD1DE5F4CF00660564 /* Goal.storyboard in Resources */,
+				90DFD6401DEB87F0003CDF17 /* Settings.storyboard in Resources */,
 				11FCAA1F1DDA6E170072C46A /* Assets.xcassets in Resources */,
 				11FCAA1A1DDA6E170072C46A /* Main.storyboard in Resources */,
+				113E8BD61DF32CF800630C02 /* YesNoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,22 +366,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FCAA2A1DDA70650072C46A /* LogInViewController.swift in Sources */,
+				11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */,
 				117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */,
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
 				11FCAA2E1DDA708C0072C46A /* GoalViewConroller.swift in Sources */,
 				1124084E1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift in Sources */,
+				703F4EBC1DECAC30001D5CE7 /* Edge.swift in Sources */,
+				703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
+				703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				55CE54D21DF0EC08009524D0 /* TreatYourselfLanding.swift in Sources */,
+				90DFD64C1DEBA867003CDF17 /* SideBarTableViewController.swift in Sources */,
+				90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */,
 				55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */,
 				11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */,
+				90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */,
 				11FCAA301DDA70A00072C46A /* LogViewController.swift in Sources */,
+				703F4EBE1DECAC4E001D5CE7 /* SwiftGraph.swift in Sources */,
 				70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */,
+				113E8BD41DF254DB00630C02 /* EditGoalView.swift in Sources */,
 				11FE917C1DDF4BE800E3EA4F /* DataStore.swift in Sources */,
 				55CE54D41DF0EC20009524D0 /* TreatYourselfLandingView.swift in Sources */,
 				11FCAA2C1DDA70750072C46A /* MainViewController.swift in Sources */,
+				113E8BD81DF32D0B00630C02 /* YesNoView.swift in Sources */,
+				119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */,
+				703F4EC01DECC232001D5CE7 /* WeeklyGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,10 +533,13 @@
 			baseConfigurationReference = F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flatiron.Gouda0916;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gouda0916/Gouda0916-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -477,10 +549,12 @@
 			baseConfigurationReference = E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = flatiron.Gouda0916;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gouda0916/Gouda0916-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

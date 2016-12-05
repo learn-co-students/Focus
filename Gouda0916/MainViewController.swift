@@ -16,6 +16,7 @@ import CoreGraphics
 
 
 class MainViewController: UIViewController {
+
     
     @IBOutlet weak var addGoalView: UIView!
     
@@ -73,8 +74,6 @@ class MainViewController: UIViewController {
     }
     
 }
-
-
 
 
 

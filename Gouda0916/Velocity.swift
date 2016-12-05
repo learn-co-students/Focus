@@ -11,18 +11,21 @@ import CoreData
 import CoreGraphics
 
 class Velocity {
+
     var store = DataStore.sharedInstance
     
-    var tracker: [Int]?
+    var tracker: [Int] = [0]
     var score = Int()
+
     var velocityTrend: [String: Int] = [date: 0]
     
     static let date = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
     
-    func calculateScore() {
+    func calculateScore() -> Int {
         var total: Int = 0
+        var score = Int()
         
-        guard let tracker = tracker else { return }
+        //guard let tracker = tracker else { return 100 }
         
         if tracker.count <= 3 {
             total = tracker.reduce(0, +)
@@ -38,6 +41,21 @@ class Velocity {
             var scoreForCircle = 552 - ((CGFloat(score))/552)
             store.velocity = scoreForCircle
             
+        }
+        return score
+    }
+    
+    func updateVelocityTracker(points: Int) {
+        tracker.append(points)
+    }
+    
+    func updateVelocityTrend(score: Int) {
+        for key in velocityTrend.keys {
+            if key == Velocity.date {
+                break
+            } else {
+                velocityTrend[Velocity.date] = score
+            }
         }
     }
 }

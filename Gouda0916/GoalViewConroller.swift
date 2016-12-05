@@ -15,6 +15,9 @@ import FirebaseDatabase
 class GoalViewController: UIViewController {
     
     let store = DataStore.sharedInstance
+    var thereIsCellExpanded = false
+    var selectedRowIndex = -1
+    var buttonTag = 0
     
     @IBOutlet weak var goalTableView: UITableView!
     
@@ -22,16 +25,27 @@ class GoalViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        goalTableView.reloadData()
-    }
-    
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func editButtonTapped(withIndex tag: Int) {
+        buttonTag = tag
+        performSegue(withIdentifier: "toEditGoal", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goalVCToCreateGoalVC" {
+            let destVC = segue.destination as! CreateGoalViewController
+            destVC.goalsTableView = goalTableView
+        }
+        
+        if segue.identifier == "toEditGoal" {
+            let destVC = segue.destination as! EditGoalViewController
+            destVC.goal = store.goals[buttonTag]
+            destVC.goalIndex = buttonTag
+            destVC.delegate = self
+        }
     }
     
 }
@@ -49,7 +63,48 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        cell.goalCellView.goal = store.goals[indexPath.row]
+        cell.customView.goal = store.goals[indexPath.row]
+        cell.customView.editButton.tag = indexPath.row
+        cell.delegate = self
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == selectedRowIndex && thereIsCellExpanded {
+            return 200
+        }
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedRowIndex != indexPath.row {
+            thereIsCellExpanded = true
+            selectedRowIndex = indexPath.row
+        } else {
+            thereIsCellExpanded = false
+            selectedRowIndex = -1
+        }
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
 }
+
+extension GoalViewController: EditGoalDelegate {
+    
+    func resetTableView() {
+        self.selectedRowIndex = -1
+        self.buttonTag = 0
+        self.goalTableView.reloadData()
+    }
+}
+
+//MARK: edit Gaol Delegate
+
+protocol EditGoalDelegate {
+    
+    func resetTableView()
+    
+}
+

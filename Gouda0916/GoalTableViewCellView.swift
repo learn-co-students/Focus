@@ -23,6 +23,8 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var daysCompleteProgressBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var editButton: UIButton!
+    
     var goal: Goal! {
         didSet {
             updateLabels()
@@ -47,6 +49,7 @@ class GoalTableViewCellView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+                
     }
     
     func updateLabels() {
