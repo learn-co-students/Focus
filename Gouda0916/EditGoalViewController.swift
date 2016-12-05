@@ -48,6 +48,7 @@ class EditGoalViewController: UIViewController {
     
     //MARK: Button Actions
     @IBAction func backButtonTapped(_ sender: Any) {
+        delegate?.resetTableView()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -82,31 +83,47 @@ class EditGoalViewController: UIViewController {
         
         if let currentEditOpen = currentEditOpen {
             
+            let input = saveCancelView.textField.text!
+            
             switch currentEditOpen.editChange {
             case .delete:
                 store.goals.remove(at: goalIndex)
                 delegate?.resetTableView()
                 //delete from core data
                 self.dismiss(animated: true, completion: nil)
-                break
             case .activate:
                 store.goals.remove(at: goalIndex)
                 store.goals.insert(goal, at: 0)
-                delegate?.resetTableView()
                 //edit array in core data
-                break
             case .changeGoal:
-                break
+                store.goals[goalIndex].goalAmount = Double(input)!
+                goal.goalAmount = Double(input)!
+                goalView.goalLabel.text = "$\(goal.goalAmount)"
+                goalView.savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
+                goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+                //edit goal amount in core data
             case .changePurchase:
-                break
+                store.goals[goalIndex].purchasGoal = input
+                goal.purchasGoal = input
+                goalView.titleLabel.text = goal.purchasGoal
+                //edit title in core data
             case .changeTimeframe:
-                break
+                store.goals[goalIndex].timeframe = Double(input)!
+                goal.timeframe = Double(input)!
+                goalView.daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
+                goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+                //edit timeframe in core data
             case .changeBudget:
-                break
+                store.goals[goalIndex].dailyBudget = Double(input)!
+                goal.dailyBudget = Double(input)!
+                goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
             case .changeWayToSave:
+                //need to get rid of having multiple ways to dave
                 break
                 
             }
+            
+            //save change in core data ^
             
             
             switch currentEditOpen.editChange {
@@ -128,6 +145,7 @@ class EditGoalViewController: UIViewController {
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
                 }, completion: { success in
+                    self.saveCancelView.textField.text = ""
                     self.collectionViewBlocker.isHidden = true
                 })
             }
@@ -141,7 +159,7 @@ class EditGoalViewController: UIViewController {
         let editActivateGoal = Edit(editQuestion: "Set this goal as the current active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate)
         let editDeleteGoal = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete)
         let editSavingsPurchase = Edit(editQuestion: "Change what you're saving for", editRequest: "Enter a new thing you want to save for", editType: .saveCancel, editChange: .changePurchase)
-        let editSavingsGoal = Edit(editQuestion: "Change what you're savings for", editRequest: "Enter a new savings amount", editType: .saveCancel, editChange: .changeGoal)
+        let editSavingsGoal = Edit(editQuestion: "Change your total $ goal", editRequest: "Enter a new savings amount", editType: .saveCancel, editChange: .changeGoal)
         let editWayToSave = Edit(editQuestion: "Change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave)
         let editTimeframe = Edit(editQuestion: "Change Timeframe", editRequest: "How many days do you have to save?", editType: .saveCancel, editChange: .changeTimeframe)
         let editDailyBudget = Edit(editQuestion: " Change Daily Budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget)
