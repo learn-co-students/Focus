@@ -71,6 +71,7 @@ class EditGoalViewController: UIViewController {
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
                 }, completion: { success in
+                    self.saveCancelView.textField.text = ""
                     self.collectionViewBlocker.isHidden = true
                 })
             }
