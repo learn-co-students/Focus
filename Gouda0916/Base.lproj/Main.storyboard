@@ -128,22 +128,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOw-xj-cg9">
-                                        <rect key="frame" x="160" y="172" width="55" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Velocity"/>
-                                        <connections>
-                                            <segue destination="Mp4-Iy-Fad" kind="show" id="aai-m2-FOb"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="307" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="2" width="375" height="662"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-gG-hlr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-gG-hlr">
+                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-HU-3nj">
                                         <rect key="frame" x="96" y="208" width="182" height="136"/>
@@ -153,18 +143,9 @@
                                             <segue destination="02N-V4-vpn" kind="show" id="9bX-TP-bpQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGm-jv-o9j">
-                                        <rect key="frame" x="160" y="318" width="55" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Velocity"/>
-                                        <connections>
-                                            <segue destination="Mp4-Iy-Fad" kind="show" id="G05-LQ-Erw"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.83373306349999998" blue="0.56965708459999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV">
                                 <rect key="frame" x="0.0" y="2" width="375" height="662"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much did you spend today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nef-r3-AdZ">
@@ -186,33 +167,23 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDN-v8-L1X">
-                                        <rect key="frame" x="222" y="391" width="55" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Velocity"/>
-                                        <connections>
-                                            <segue destination="Mp4-Iy-Fad" kind="show" id="VOC-nP-SDr"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.71800528460000002" green="1" blue="0.90997070749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="MgV-GG-DJV" secondAttribute="bottom" constant="3" id="3Km-4q-Arh"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="GVg-gG-hlr" secondAttribute="centerY" id="4kX-qP-Rvb"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="GVg-gG-hlr" secondAttribute="leading" id="Fd5-D7-0Ln"/>
-                            <constraint firstItem="GVg-gG-hlr" firstAttribute="bottom" secondItem="mkO-nJ-53q" secondAttribute="top" id="Tgi-Gk-NDa"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Via-Bx-bbq"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="trailing" id="X3X-Gg-2E7"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="MgV-GG-DJV" secondAttribute="centerY" id="Y8t-hy-jBY"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="GVg-gG-hlr" secondAttribute="trailing" id="c1v-JZ-5w6"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="top" secondItem="o1j-Yz-yVh" secondAttribute="bottom" constant="126" id="iVg-O1-cVf"/>
-                            <constraint firstItem="MgV-GG-DJV" firstAttribute="centerY" secondItem="GVg-gG-hlr" secondAttribute="centerY" id="ibe-fv-lcP"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="jbX-m3-xwY"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leading" id="nbh-fr-wKY"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="MgV-GG-DJV" secondAttribute="leading" id="uCO-eA-1er"/>
+                            <constraint firstItem="GVg-gG-hlr" firstAttribute="top" secondItem="o1j-Yz-yVh" secondAttribute="bottom" constant="272" id="94a-8A-J3H"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="GVg-gG-hlr" secondAttribute="leading" id="D1d-Pb-ZMj"/>
+                            <constraint firstAttribute="trailing" secondItem="DXJ-8Z-kV9" secondAttribute="trailing" id="EEb-Nh-Gyf"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="bottom" secondItem="MgV-GG-DJV" secondAttribute="bottom" id="F01-uF-9Oo"/>
+                            <constraint firstItem="GVg-gG-hlr" firstAttribute="bottom" secondItem="mkO-nJ-53q" secondAttribute="top" id="H8H-9x-Mkr"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="GVg-gG-hlr" secondAttribute="trailing" id="NyP-WG-P2z"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" constant="16" id="TiN-CY-nfA"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Zgq-8H-9XJ"/>
+                            <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="DXJ-8Z-kV9" secondAttribute="bottom" constant="3" id="cBH-Cu-jXx"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="top" secondItem="MgV-GG-DJV" secondAttribute="top" id="rLA-MK-Z8c"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="MgV-GG-DJV" secondAttribute="leading" id="uXw-7u-4ib"/>
+                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="trailing" id="yc7-j3-17l"/>
                         </constraints>
                     </view>
                     <connections>
@@ -240,9 +211,21 @@
             </objects>
             <point key="canvasLocation" x="1700" y="162"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="y0b-85-ZRz">
+            <objects>
+                <viewController id="eUU-7n-Wjd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SuW-Tc-xbs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaK-gh-1gT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="1B5-do-BbX"/>
-        <segue reference="aai-m2-FOb"/>
     </inferredMetricsTieBreakers>
 </document>

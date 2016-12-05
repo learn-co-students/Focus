@@ -33,30 +33,24 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         store.fetchData()
         calculateProgress()
-        checkIfGoalExists()
-        
-        
-//        
-//        let tapGR = UITapGestureRecognizer(target: self, action: "didTap:")
-//        
-//        self.addNewGoalView.addGestureRecognizer(tapGR)
-        //        self.view.addGestureRecognizer(tapGR)
+        addNewGoalView.isHidden = true
+        addGoalView.isHidden = true
+        //checkIfGoalExists()
         
     }
-//    
-//    func didTap(tapGR: UITapGestureRecognizer){
-//        print ("You touched me.")
-//    }
+
     
     //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
     
     func calculateProgress() {
         print("print")
         guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
+        guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
         
-        guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal amount"); return}
+        var progressPercentage = CGFloat(checkSaved/checkGoalAmount) 
         
-        store.progress += (812 - CGFloat(checkSaved/checkGoalAmount)/812)
+        
+        store.progress = 812 * progressPercentage
         
     }
     
