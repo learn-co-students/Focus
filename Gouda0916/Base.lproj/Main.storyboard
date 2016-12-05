@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vjJ-gG-U3K">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LogInViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -61,9 +61,6 @@
                                 <rect key="frame" x="281" y="535" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Skip"/>
-                                <connections>
-                                    <segue destination="p1Q-z2-jo0" kind="show" id="1B5-do-BbX"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQv-SZ-vko">
                                 <rect key="frame" x="321" y="226" width="30" height="30"/>
@@ -109,17 +106,91 @@
                         <outlet property="loginButton" destination="Kon-v3-AuF" id="iyq-iW-Tat"/>
                         <outlet property="newUserButton" destination="WDb-2T-4k7" id="0Yi-lh-uzx"/>
                         <outlet property="passwordTextField" destination="ZpL-vk-Zeu" id="umU-AA-fYz"/>
-                        <segue destination="p1Q-z2-jo0" kind="show" identifier="loginSegue" id="ZtW-0k-tG5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157.59999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="134" y="178"/>
+        </scene>
+        <!--App Controller-->
+        <scene sceneID="bXp-bj-TZ1">
+            <objects>
+                <viewController storyboardIdentifier="app-container-view-controller" title="App Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vjJ-gG-U3K" customClass="AppController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9XY-Ia-0J2"/>
+                        <viewControllerLayoutGuide type="bottom" id="SFz-cr-8mo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HnS-Ff-vNd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5f-el-AvC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SFz-cr-8mo" firstAttribute="top" secondItem="i5f-el-AvC" secondAttribute="bottom" id="1PO-we-obJ"/>
+                            <constraint firstItem="i5f-el-AvC" firstAttribute="top" secondItem="HnS-Ff-vNd" secondAttribute="top" id="Ak0-RN-xvY"/>
+                            <constraint firstItem="i5f-el-AvC" firstAttribute="leading" secondItem="HnS-Ff-vNd" secondAttribute="leading" id="iik-Sd-5nt"/>
+                            <constraint firstAttribute="trailing" secondItem="i5f-el-AvC" secondAttribute="trailing" id="thJ-Oa-OdB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="i5f-el-AvC" id="1M1-IQ-P3z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-fH-uSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="928.78560719640188"/>
+        </scene>
+        <!--Main Container View Controller-->
+        <scene sceneID="9sC-nh-uVw">
+            <objects>
+                <viewController storyboardIdentifier="main-container-view-controller" title="Main Container View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AST-kZ-U9X" customClass="MainContainerViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NDC-ed-QHo"/>
+                        <viewControllerLayoutGuide type="bottom" id="lVr-2U-swf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Ka-zY-oOp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hH8-Rc-I8D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-Iv-vVQ" userLabel="menu">
+                                <rect key="frame" x="0.0" y="67" width="188" height="534"/>
+                                <connections>
+                                    <segue destination="LQF-Kr-3Ld" kind="embed" id="Ad7-Qz-f3j"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lVr-2U-swf" firstAttribute="top" secondItem="hH8-Rc-I8D" secondAttribute="bottom" id="6m7-kO-HwX"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="leading" secondItem="7Ka-zY-oOp" secondAttribute="leading" id="BNr-4H-1nn"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="centerY" secondItem="7Ka-zY-oOp" secondAttribute="centerY" id="Hou-Hu-fqA"/>
+                            <constraint firstItem="hH8-Rc-I8D" firstAttribute="top" secondItem="7Ka-zY-oOp" secondAttribute="top" id="Jbf-iQ-S6y"/>
+                            <constraint firstItem="hH8-Rc-I8D" firstAttribute="leading" secondItem="7Ka-zY-oOp" secondAttribute="leading" id="OWZ-6b-BU0"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="height" secondItem="7Ka-zY-oOp" secondAttribute="height" multiplier="0.8" id="Tct-YN-Lcm"/>
+                            <constraint firstAttribute="trailing" secondItem="hH8-Rc-I8D" secondAttribute="trailing" id="aLT-8a-lHi"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="width" secondItem="7Ka-zY-oOp" secondAttribute="width" multiplier="0.5" id="laR-2b-Tkd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="hH8-Rc-I8D" id="q6Y-DY-JXn"/>
+                        <outlet property="menu" destination="a5a-Iv-vVQ" id="eL4-Pf-Iij"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kT-aU-w2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="928.78560719640188"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="EtH-U0-waC">
             <objects>
-                <viewController id="p1Q-z2-jo0" customClass="MainViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p1Q-z2-jo0" customClass="MainViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o1j-Yz-yVh"/>
                         <viewControllerLayoutGuide type="bottom" id="mkO-nJ-53q"/>
@@ -135,27 +206,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3i-Uv-j9u">
                                 <rect key="frame" x="278" y="20" width="81" height="30"/>
                                 <state key="normal" title="Goal Button"/>
-                                <connections>
-                                    <segue destination="02N-V4-vpn" kind="show" id="SI1-lf-KIO"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey7-Xq-0ut">
                                 <rect key="frame" x="16" y="20" width="55" height="30"/>
                                 <state key="normal" title="Velocity"/>
-                                <connections>
-                                    <segue destination="Mp4-Iy-Fad" kind="show" id="aqR-u1-wxG"/>
-                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-gG-hlr">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-gG-hlr" userLabel="start new goal view">
                                 <rect key="frame" x="32" y="292" width="343" height="375"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-HU-3nj">
                                         <rect key="frame" x="96" y="208" width="182" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Start A New Goal"/>
-                                        <connections>
-                                            <segue destination="02N-V4-vpn" kind="show" id="9bX-TP-bpQ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
@@ -183,6 +245,10 @@
                                     </textField>
                                 </subviews>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-ty-Jsk">
+                                <rect key="frame" x="16" y="637" width="39" height="30"/>
+                                <state key="normal" title="Menu"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -191,12 +257,14 @@
                             <constraint firstAttribute="trailing" secondItem="DXJ-8Z-kV9" secondAttribute="trailing" id="EEb-Nh-Gyf"/>
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="bottom" secondItem="MgV-GG-DJV" secondAttribute="bottom" id="F01-uF-9Oo"/>
                             <constraint firstItem="GVg-gG-hlr" firstAttribute="bottom" secondItem="mkO-nJ-53q" secondAttribute="top" id="H8H-9x-Mkr"/>
+                            <constraint firstItem="buB-ty-Jsk" firstAttribute="bottom" secondItem="mkO-nJ-53q" secondAttribute="top" id="IQI-ag-BQn"/>
                             <constraint firstItem="j3i-Uv-j9u" firstAttribute="trailing" secondItem="mLC-qD-PCr" secondAttribute="trailingMargin" id="Lia-0L-mCU"/>
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="GVg-gG-hlr" secondAttribute="trailing" id="NyP-WG-P2z"/>
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" constant="16" id="TiN-CY-nfA"/>
                             <constraint firstItem="j3i-Uv-j9u" firstAttribute="top" secondItem="o1j-Yz-yVh" secondAttribute="bottom" id="WEi-eG-tDi"/>
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Zgq-8H-9XJ"/>
                             <constraint firstItem="Ey7-Xq-0ut" firstAttribute="top" secondItem="o1j-Yz-yVh" secondAttribute="bottom" id="aMG-fL-VX6"/>
+                            <constraint firstItem="buB-ty-Jsk" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" id="bTp-E6-gIP"/>
                             <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="DXJ-8Z-kV9" secondAttribute="bottom" constant="3" id="cBH-Cu-jXx"/>
                             <constraint firstItem="Ey7-Xq-0ut" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" id="ju7-dq-UoW"/>
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="top" secondItem="MgV-GG-DJV" secondAttribute="top" id="rLA-MK-Z8c"/>
@@ -204,51 +272,40 @@
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="trailing" id="yc7-j3-17l"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="addGoalView" destination="MgV-GG-DJV" id="J85-gh-1A7"/>
-                        <outlet property="addNewGoalView" destination="GVg-gG-hlr" id="zMI-zH-HXy"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="56.221889055472268"/>
+            <point key="canvasLocation" x="1831" y="929"/>
         </scene>
         <!--Goal-->
         <scene sceneID="NbO-Oi-Y5f">
             <objects>
-                <viewControllerPlaceholder storyboardName="Goal" id="02N-V4-vpn" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="goal-view-controller" storyboardName="Goal" id="02N-V4-vpn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxf-CO-qeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="115"/>
+            <point key="canvasLocation" x="2535" y="987"/>
         </scene>
         <!--Velocity-->
         <scene sceneID="Woc-Ev-o8t">
             <objects>
-                <viewControllerPlaceholder storyboardName="Velocity" id="Mp4-Iy-Fad" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="velocity-view-controller" storyboardName="Velocity" id="Mp4-Iy-Fad" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKA-Mk-vGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="162"/>
+            <point key="canvasLocation" x="2549" y="1034"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="y0b-85-ZRz">
+        <!--Hamburger Menu View Controller-->
+        <scene sceneID="xdQ-Iy-isF">
             <objects>
-                <viewController id="eUU-7n-Wjd" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nM5-uT-DFl"/>
-                        <viewControllerLayoutGuide type="bottom" id="QtB-0j-pZE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SuW-Tc-xbs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="hamburger-menu-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LQF-Kr-3Ld" customClass="HamburgerMenuViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JFM-0a-51p">
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="534"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HaK-gh-1gT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5GT-YE-ZxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="502" y="1691"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="1B5-do-BbX"/>
-        <segue reference="SI1-lf-KIO"/>
-    </inferredMetricsTieBreakers>
 </document>

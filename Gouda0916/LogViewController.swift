@@ -20,6 +20,7 @@ class LogViewController: UIViewController {
     
     @IBOutlet weak var velocityScoreView: VelocityScoreView!
     
+    
     let weeklyGraphView = WeeklyGraphView()
     
     let itemsPerRow: CGFloat = 7
@@ -39,7 +40,7 @@ class LogViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-   @IBAction func MenuBtnPressed(_ sender: Any) {
+    @IBAction func MenuButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: .unhideBar, object: nil)
     }
 //    @IBAction func backButtonClicked(_ sender: Any) {
