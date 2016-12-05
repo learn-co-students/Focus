@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
         calculateProgress()
         addNewGoalView.isHidden = true
         addGoalView.isHidden = true
-        //checkIfGoalExists()
+        checkIfGoalExists()
         
     }
 
