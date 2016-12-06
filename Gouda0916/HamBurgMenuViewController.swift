@@ -14,21 +14,14 @@ class HamburgerMenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
     let testArray = ["home", "goal", "Velocity", "notificiations", "logout"]
-    
-    @IBAction func velocityPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .openVelocityVC, object: nil)}
-    
-    @IBAction func goalPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .openGoalVC, object: nil)}
-    
-    @IBAction func homePressed(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .openMainVC, object: nil)}
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
+//MARK: Menu Table View setup
 extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,6 +37,18 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch testArray[indexPath.row] {
+        case "home":
+            NotificationCenter.default.post(name: .openMainVC, object: nil)
+        case "goal":
+            NotificationCenter.default.post(name: .openGoalVC, object: nil)
+        case "Velocity":
+            NotificationCenter.default.post(name: .openVelocityVC, object: nil)
+        default:
+            break
+        }
+    }
 }
 
 //Dismiss view controller when option selected
