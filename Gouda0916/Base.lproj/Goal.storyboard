@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D3r-1k-js1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D3r-1k-js1">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Goal View Controller-->
         <scene sceneID="4qk-Yx-9il">
             <objects>
-                <viewController definesPresentationContext="YES" id="D3r-1k-js1" customClass="GoalViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goal-view-controller" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D3r-1k-js1" customClass="GoalViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VKE-pe-vce"/>
                         <viewControllerLayoutGuide type="bottom" id="qYt-Zo-NYW"/>
@@ -42,23 +42,11 @@
                                         <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-tV-nFx" userLabel="BackButton">
-                                        <rect key="frame" x="5" y="8.6666666666666679" width="30" height="57"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <state key="normal" title="&lt;">
-                                            <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backButtonTapped:" destination="D3r-1k-js1" eventType="touchUpInside" id="4gb-Rd-k0I"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="xNg-tV-nFx" firstAttribute="leading" secondItem="WfY-DZ-EqF" secondAttribute="leading" constant="5" id="4WT-ak-y56"/>
                                     <constraint firstItem="Kn8-uD-LmE" firstAttribute="trailing" secondItem="WfY-DZ-EqF" secondAttribute="trailing" multiplier="0.95" id="AcF-Oz-qfW"/>
                                     <constraint firstItem="HLA-wY-o5j" firstAttribute="centerY" secondItem="WfY-DZ-EqF" secondAttribute="centerY" id="ki1-01-uf1"/>
-                                    <constraint firstItem="xNg-tV-nFx" firstAttribute="centerY" secondItem="WfY-DZ-EqF" secondAttribute="centerY" id="kzT-Mq-cEj"/>
                                     <constraint firstItem="Kn8-uD-LmE" firstAttribute="centerY" secondItem="WfY-DZ-EqF" secondAttribute="centerY" id="rKe-te-8bD"/>
                                     <constraint firstItem="HLA-wY-o5j" firstAttribute="centerX" secondItem="WfY-DZ-EqF" secondAttribute="centerX" id="v40-CC-q9F"/>
                                 </constraints>
@@ -89,12 +77,21 @@
                                     <outlet property="delegate" destination="D3r-1k-js1" id="Acb-Dz-kLR"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Ny-ENd">
+                                <rect key="frame" x="20" y="706" width="39" height="30"/>
+                                <state key="normal" title="menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="D3r-1k-js1" eventType="touchUpInside" id="tY4-xu-Yhr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="leading" secondItem="eSv-Qz-yKF" secondAttribute="leading" id="2zT-7N-QIp"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="centerX" secondItem="eSv-Qz-yKF" secondAttribute="centerX" id="IPO-Er-0Nf"/>
+                            <constraint firstItem="Hoo-Ny-ENd" firstAttribute="leading" secondItem="eSv-Qz-yKF" secondAttribute="leadingMargin" id="Msj-0J-gEa"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="width" secondItem="eSv-Qz-yKF" secondAttribute="width" id="SrP-6I-7FV"/>
+                            <constraint firstItem="Hoo-Ny-ENd" firstAttribute="bottom" secondItem="qYt-Zo-NYW" secondAttribute="top" id="Zd0-ik-oUp"/>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="top" secondItem="WfY-DZ-EqF" secondAttribute="bottom" id="kxk-H4-zfM"/>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="bottom" secondItem="eSv-Qz-yKF" secondAttribute="bottomMargin" id="o3j-BC-rsd"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="top" secondItem="eSv-Qz-yKF" secondAttribute="top" id="us8-3q-uOA"/>

@@ -1,11 +1,12 @@
 //
-//  MainViewController.swift
+//  MainViewController2.swift
 //  Gouda0916
 //
-//  Created by Douglas Galante on 11/14/16.
+//  Created by Marie Park on 12/5/16.
 //  Copyright © 2016 Flatiron. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Firebase
 import FirebaseDatabase
@@ -16,21 +17,25 @@ import CoreGraphics
 
 
 class MainViewController: UIViewController {
-
+    
+    
     
     @IBOutlet weak var addGoalView: UIView!
     
     @IBOutlet weak var addNewGoalView: UIView!
     
     
+    
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
+    var menuIsShowing = false
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
         addNewGoalView.isHidden = true
@@ -38,7 +43,34 @@ class MainViewController: UIViewController {
         checkIfGoalExists()
         
     }
-
+    
+    //
+    
+    
+    
+    //    func didTap(tapGR: UITapGestureRecognizer){
+    //        print ("You touched me.")
+    //    }
+    
+    @IBAction func VelocityBtnPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: .openVelocityVC, object: nil)
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        if !menuIsShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+            menuIsShowing = true
+        } else {
+              NotificationCenter.default.post(name: .hideBar, object: nil)
+            menuIsShowing = false
+        }
+        
+        
+    }
+    
+    @IBAction func GoalBtnPressed(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .openGoalVC, object: nil)
+    }
     
     //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
     
@@ -47,7 +79,7 @@ class MainViewController: UIViewController {
         guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
         guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
         
-        var progressPercentage = CGFloat(checkSaved/checkGoalAmount) 
+        let progressPercentage = CGFloat(checkSaved/checkGoalAmount)
         
         
         store.progress = 812 * progressPercentage
@@ -69,7 +101,3 @@ class MainViewController: UIViewController {
     }
     
 }
-
-
-
-

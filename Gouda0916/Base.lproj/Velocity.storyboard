@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1m8-i6-Nd0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1m8-i6-Nd0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,14 +7,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Log View Controller-->
         <scene sceneID="adD-qN-cHX">
             <objects>
-                <viewController id="1m8-i6-Nd0" customClass="LogViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="velocity-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1m8-i6-Nd0" customClass="LogViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nXH-4c-Gtu"/>
                         <viewControllerLayoutGuide type="bottom" id="0tY-lm-4XS"/>
@@ -187,22 +189,11 @@
                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY8-rc-L19">
-                                        <rect key="frame" x="5" y="5" width="30" height="57"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <state key="normal" title="&lt;">
-                                            <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backButtonClicked:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="hdz-M8-0SB"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="sY8-rc-L19" firstAttribute="centerY" secondItem="ha7-Tf-v25" secondAttribute="centerY" id="6J7-HP-2NC"/>
+                                    <constraint firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="top" id="A1O-xj-6rY"/>
                                     <constraint firstItem="Dhd-7q-IdU" firstAttribute="centerY" secondItem="ha7-Tf-v25" secondAttribute="centerY" id="BeE-1W-Tk6"/>
-                                    <constraint firstItem="sY8-rc-L19" firstAttribute="leading" secondItem="ha7-Tf-v25" secondAttribute="leading" constant="5" id="kLe-8F-vo6"/>
                                     <constraint firstItem="Dhd-7q-IdU" firstAttribute="centerX" secondItem="ha7-Tf-v25" secondAttribute="centerX" id="l5T-3b-IPH"/>
                                 </constraints>
                             </view>
@@ -214,6 +205,13 @@
                                 <rect key="frame" x="0.0" y="481" width="375" height="186"/>
                                 <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-Kt-8TR">
+                                <rect key="frame" x="16" y="637" width="39" height="30"/>
+                                <state key="normal" title="menu"/>
+                                <connections>
+                                    <action selector="MenuButtonPressed:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="vLT-R6-kic"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -232,6 +230,7 @@
                             <constraint firstItem="Gy6-Jw-KK8" firstAttribute="top" secondItem="n8T-sQ-eX3" secondAttribute="top" id="Xe7-Id-Zok"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="bottom" id="bsP-Wv-84l"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="cZn-vm-VtD"/>
+                            <constraint firstItem="ySS-Kt-8TR" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leadingMargin" id="cs7-2o-hsk"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.2" id="ikE-oM-rLv"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="j4h-fC-og6"/>
                             <constraint firstItem="Jfd-R1-FGX" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="kdk-mg-VEb"/>
@@ -239,6 +238,7 @@
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" id="ox5-U6-EeG"/>
                             <constraint firstItem="Gy6-Jw-KK8" firstAttribute="bottom" secondItem="n8T-sQ-eX3" secondAttribute="bottom" id="qWT-4p-7RS"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" id="ubF-57-OsP"/>
+                            <constraint firstItem="ySS-Kt-8TR" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="ve9-fa-NW1"/>
                             <constraint firstItem="Jfd-R1-FGX" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="x9K-FR-etl"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="xYx-BJ-Cdx"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.1" id="zML-uT-9Cw"/>

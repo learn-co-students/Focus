@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 
 class GoalViewController: UIViewController {
-    
     let store = DataStore.sharedInstance
     var thereIsCellExpanded = false
     var selectedRowIndex = -1
@@ -21,13 +20,20 @@ class GoalViewController: UIViewController {
     
     @IBOutlet weak var goalTableView: UITableView!
     
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: .unhideBar, object: nil)
+    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
+
     }
     
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        goalTableView.reloadData()
     }
+
     
     func editButtonTapped(withIndex tag: Int) {
         buttonTag = tag
@@ -49,7 +55,6 @@ class GoalViewController: UIViewController {
     }
     
 }
-
 
 //MARK: Table View Delegate and Datasource
 extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
