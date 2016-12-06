@@ -10,6 +10,7 @@ import UIKit
 
 class MonthlyGraphView: UIView {
 
+    
     @IBOutlet var contentView: UIView!
     
     
@@ -20,17 +21,19 @@ class MonthlyGraphView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         commonInit()
         updateView()
-        configure()
+        //configure()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         commonInit()
         updateView()
-        configure()
+        //configure()
       
     }
     
@@ -39,7 +42,7 @@ class MonthlyGraphView: UIView {
     }
     
     func updateView() {
-        contentView.backgroundColor = UIColor.themeAccentGoldColor.withAlphaComponent(0.2)
+        
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(contentView)
@@ -48,6 +51,8 @@ class MonthlyGraphView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        //contentView.backgroundColor = UIColor.themeAccentGoldColor.withAlphaComponent(0.2)
         
     }
     

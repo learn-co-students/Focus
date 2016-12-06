@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1m8-i6-Nd0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1m8-i6-Nd0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -145,7 +145,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="XTK-fX-K3f" firstAttribute="bottom" secondItem="2xX-Gv-YHR" secondAttribute="bottom" id="2fp-iZ-Gnq"/>
                                             <constraint firstItem="cN8-iY-VcZ" firstAttribute="trailing" secondItem="8WO-Uh-gPc" secondAttribute="leading" multiplier="0.95" id="5W4-Ah-czs"/>
@@ -190,7 +190,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="top" id="A1O-xj-6rY"/>
                                     <constraint firstItem="Dhd-7q-IdU" firstAttribute="centerY" secondItem="ha7-Tf-v25" secondAttribute="centerY" id="BeE-1W-Tk6"/>
@@ -199,12 +199,50 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-o7-Pt4" userLabel="FooterView">
                                 <rect key="frame" x="-0.5" y="601" width="375" height="66"/>
-                                <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RF-Qy-ygZ" userLabel="MonthlyView" customClass="MonthlyGraphView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="481" width="375" height="186"/>
-                                <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="0.20258620689655171" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiC-ES-nGO">
+                                <rect key="frame" x="133" y="539" width="109" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="0.19741379310344828" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qiC-ES-nGO" secondAttribute="height" multiplier="91:30" id="3Gc-Mc-BG8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Week Two">
+                                    <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="weekTwoScoreTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="n1n-zC-dq6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-s2-Zkl">
+                                <rect key="frame" x="133" y="498.5" width="109" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="0.20183189655172415" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9aR-s2-Zkl" secondAttribute="height" multiplier="91:30" id="yTe-pA-pwY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Week One">
+                                    <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="weekOneScoreTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="xQT-Wu-A5E"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-Kt-8TR">
                                 <rect key="frame" x="16" y="637" width="39" height="30"/>
                                 <state key="normal" title="menu"/>
@@ -213,12 +251,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Jfd-R1-FGX" firstAttribute="bottom" secondItem="xh3-o7-Pt4" secondAttribute="top" multiplier="0.8" id="27s-e6-xc2"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="29Y-3x-Gao"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" id="5RU-fp-6Y3"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="top" secondItem="akb-s5-Dyr" secondAttribute="bottom" id="Er9-g5-8GX"/>
+                            <constraint firstItem="qiC-ES-nGO" firstAttribute="centerX" secondItem="9RF-Qy-ygZ" secondAttribute="centerX" id="Hff-aM-Uxn"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" id="Nqs-ia-q36"/>
                             <constraint firstItem="Gy6-Jw-KK8" firstAttribute="leading" secondItem="n8T-sQ-eX3" secondAttribute="leading" id="NvH-Mh-re4"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="bottom" secondItem="Jfd-R1-FGX" secondAttribute="top" id="PJS-cG-MxA"/>
@@ -228,16 +267,19 @@
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.1" id="SsF-xt-4gi"/>
                             <constraint firstItem="Jfd-R1-FGX" firstAttribute="top" secondItem="n8T-sQ-eX3" secondAttribute="bottom" id="Sy6-UR-FcT"/>
                             <constraint firstItem="Gy6-Jw-KK8" firstAttribute="top" secondItem="n8T-sQ-eX3" secondAttribute="top" id="Xe7-Id-Zok"/>
+                            <constraint firstItem="9aR-s2-Zkl" firstAttribute="centerX" secondItem="9RF-Qy-ygZ" secondAttribute="centerX" id="Zf3-uN-TPQ"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="bottom" id="bsP-Wv-84l"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="cZn-vm-VtD"/>
                             <constraint firstItem="ySS-Kt-8TR" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leadingMargin" id="cs7-2o-hsk"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.2" id="ikE-oM-rLv"/>
+                            <constraint firstItem="qiC-ES-nGO" firstAttribute="centerY" secondItem="9RF-Qy-ygZ" secondAttribute="centerY" multiplier="0.97" id="ix9-05-QxY"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="j4h-fC-og6"/>
                             <constraint firstItem="Jfd-R1-FGX" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="kdk-mg-VEb"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="mXR-b2-1Dg"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" id="ox5-U6-EeG"/>
                             <constraint firstItem="Gy6-Jw-KK8" firstAttribute="bottom" secondItem="n8T-sQ-eX3" secondAttribute="bottom" id="qWT-4p-7RS"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" id="ubF-57-OsP"/>
+                            <constraint firstItem="9aR-s2-Zkl" firstAttribute="centerY" secondItem="9RF-Qy-ygZ" secondAttribute="centerY" multiplier="0.9" id="vcc-n0-qTh"/>
                             <constraint firstItem="ySS-Kt-8TR" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="ve9-fa-NW1"/>
                             <constraint firstItem="Jfd-R1-FGX" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="x9K-FR-etl"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="xYx-BJ-Cdx"/>

@@ -6,19 +6,98 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MonthlyGraphView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="46k-wU-yuw"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="It0-Gt-qmO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rP-g6-80C" userLabel="dividerOne">
+                    <rect key="frame" x="130" y="28" width="2" height="93"/>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="0.20086206896551725" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5rP-g6-80C" secondAttribute="height" multiplier="1:56" id="zvC-m5-MKf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1n-sR-gO2" userLabel="dividerTwo">
+                    <rect key="frame" x="243" y="28" width="2" height="93"/>
+                    <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="J1n-sR-gO2" secondAttribute="height" multiplier="1:56" id="36S-kO-3ay"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Successful Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXd-8b-KoJ">
+                    <rect key="frame" x="0.0" y="98.5" width="130" height="22.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dXd-8b-KoJ" secondAttribute="height" multiplier="132:23" id="evP-WZ-oxp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Days Needed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-Eu-zwe">
+                    <rect key="frame" x="245" y="98" width="130" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ruu-Eu-zwe" secondAttribute="height" multiplier="130:23" id="YL4-6M-bpJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwV-pa-eeu">
+                    <rect key="frame" x="0.0" y="28" width="130" height="70.5"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="30"/>
+                    <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mZ-uG-0CE">
+                    <rect key="frame" x="245" y="28" width="130" height="70"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="30"/>
+                    <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="5rP-g6-80C" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.7" id="2lW-dB-1Hq"/>
+                <constraint firstItem="5rP-g6-80C" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.8" id="3Uw-0i-u3p"/>
+                <constraint firstItem="ruu-Eu-zwe" firstAttribute="bottom" secondItem="J1n-sR-gO2" secondAttribute="bottom" id="4GO-Al-2I1"/>
+                <constraint firstItem="VwV-pa-eeu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="62K-iL-utJ"/>
+                <constraint firstItem="ruu-Eu-zwe" firstAttribute="leading" secondItem="J1n-sR-gO2" secondAttribute="trailing" id="6TO-ar-Sb0"/>
+                <constraint firstItem="8mZ-uG-0CE" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="80I-jb-OFY"/>
+                <constraint firstItem="VwV-pa-eeu" firstAttribute="top" secondItem="5rP-g6-80C" secondAttribute="top" id="A2H-WN-qAe"/>
+                <constraint firstItem="VwV-pa-eeu" firstAttribute="bottom" secondItem="dXd-8b-KoJ" secondAttribute="top" id="Ed5-Hu-YAw"/>
+                <constraint firstItem="5rP-g6-80C" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="Jrs-m7-KHl"/>
+                <constraint firstItem="VwV-pa-eeu" firstAttribute="trailing" secondItem="5rP-g6-80C" secondAttribute="leading" id="T7W-FL-Tut"/>
+                <constraint firstItem="dXd-8b-KoJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ybk-jd-9hW"/>
+                <constraint firstItem="8mZ-uG-0CE" firstAttribute="leading" secondItem="J1n-sR-gO2" secondAttribute="trailing" id="ZOU-03-emB"/>
+                <constraint firstItem="dXd-8b-KoJ" firstAttribute="trailing" secondItem="5rP-g6-80C" secondAttribute="leading" id="abF-y6-6cS"/>
+                <constraint firstItem="J1n-sR-gO2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.3" id="d0N-86-bYD"/>
+                <constraint firstAttribute="trailing" secondItem="ruu-Eu-zwe" secondAttribute="trailing" id="dzD-JB-Xwx"/>
+                <constraint firstItem="J1n-sR-gO2" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="jHb-un-Hzj"/>
+                <constraint firstItem="J1n-sR-gO2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.8" id="kks-Oy-m2P"/>
+                <constraint firstItem="8mZ-uG-0CE" firstAttribute="bottom" secondItem="ruu-Eu-zwe" secondAttribute="top" id="mMn-jb-c6E"/>
+                <constraint firstItem="dXd-8b-KoJ" firstAttribute="bottom" secondItem="5rP-g6-80C" secondAttribute="bottom" id="pNH-rX-1Vf"/>
+                <constraint firstItem="8mZ-uG-0CE" firstAttribute="top" secondItem="J1n-sR-gO2" secondAttribute="top" id="wTM-sy-Vz3"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-53.5" y="-599"/>
