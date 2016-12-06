@@ -43,7 +43,6 @@ class EditGoalViewController: UIViewController {
         saveCancelView.cancelButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
         yesNoView.noButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
         yesNoView.yesButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
-        
     }
     
     //MARK: Button Actions
@@ -81,7 +80,6 @@ class EditGoalViewController: UIViewController {
     
     func yesOrSaveButtonTapped(_ sender: UIButton) {
        
-        
         if let currentEditOpen = currentEditOpen {
             
             let input = saveCancelView.textField.text!
@@ -97,36 +95,31 @@ class EditGoalViewController: UIViewController {
                 store.goals.insert(goal, at: 0)
                 //edit array in core data
             case .changeGoal:
-                store.goals[goalIndex].goalAmount = Double(input)!
+                goal.willChangeValue(forKey: "goalAmount")
                 goal.goalAmount = Double(input)!
-                goalView.goalLabel.text = "$\(goal.goalAmount)"
-                goalView.savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
-                goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-                //edit goal amount in core data
+                goal.didChangeValue(forKey: "goalAmount")
             case .changePurchase:
-                store.goals[goalIndex].purchasGoal = input
+                goal.willChangeValue(forKey: "purchaseGoal")
                 goal.purchasGoal = input
-                goalView.titleLabel.text = goal.purchasGoal
-                //edit title in core data
+                goal.didChangeValue(forKey: "purchaseGoal")
             case .changeTimeframe:
-                store.goals[goalIndex].timeframe = Double(input)!
+                goal.willChangeValue(forKey: "timeframe")
                 goal.timeframe = Double(input)!
-                goalView.daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
-                goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-                //edit timeframe in core data
+                goal.didChangeValue(forKey: "timeframe")
             case .changeBudget:
-                store.goals[goalIndex].dailyBudget = Double(input)!
+                goal.willChangeValue(forKey: "dailyBudget")
                 goal.dailyBudget = Double(input)!
-                goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+                goal.didChangeValue(forKey: "dailyBudget")
             case .changeWayToSave:
-                //need to get rid of having multiple ways to dave
+                //need to get rid of having multiple ways to save
                 break
                 
             }
             
-            //save change in core data ^
+            updateGoalView()
+            store.saveContext()
             
-            
+            //Animate views
             switch currentEditOpen.editChange {
             case .delete:
                 break
@@ -153,6 +146,14 @@ class EditGoalViewController: UIViewController {
             self.currentEditOpen = nil
         }
 
+    }
+    
+    func updateGoalView() {
+        goalView.titleLabel.text = goal.purchasGoal
+        goalView.goalLabel.text = "$\(goal.goalAmount)"
+        goalView.savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
+        goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+        goalView.daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
     }
     
     func populateEditOptions() {
