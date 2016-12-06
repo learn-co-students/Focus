@@ -18,15 +18,15 @@ extension Goal {
         return dailyBudget - (amountNeededPerDay)
     }
     
-    var waysToSaveAsStrings: [String] {
-        var array: [String] = []
-        for way in waysToSave?.allObjects as! [WayToSave] {
-            if let way = way.way {
-                array.append(way)
-            }
-        }
-        return array
-    }
+//    var waysToSaveAsStrings: [String] {
+//        var array: [String] = []
+//        for way in waysToSave?.allObjects as! [WayToSave] {
+//            if let way = way.way {
+//                array.append(way)
+//            }
+//        }
+//        return array
+//    }
 
     func serializeGoalIntoDictionary() -> [String : Any] {
         var serializedGoal: [String : Any] = [ : ]
@@ -35,12 +35,11 @@ extension Goal {
         serializedGoal["timeframe"] = timeframe
         serializedGoal["daily_budget"] = dailyBudget
         serializedGoal["goal_purchase"] = purchasGoal
-        serializedGoal["ways_to_save"] = waysToSaveAsStrings
+        serializedGoal["way_to_save"] = wayToSave
         serializedGoal["day_counter"] = dayCounter
         serializedGoal["current_amount_saved"] = currentAmountSaved
         serializedGoal["allocated_daily_budget"] =  alloctedDailyBudget
-        
-        print(serializedGoal)
+        serializedGoal["is_active_goal"] = isActiveGoal
         
         return serializedGoal
     }
