@@ -37,12 +37,20 @@
                             <nil key="highlightedColor"/>
                             <size key="shadowOffset" width="1" height="-1"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-gu-dbg">
+                            <rect key="frame" x="164.5" y="38.5" width="28.5" height="41"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="30"/>
+                            <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="lQ3-Ue-Whe" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" multiplier="1.6" id="7Uk-yC-kxb"/>
                         <constraint firstItem="lQ3-Ue-Whe" firstAttribute="leading" secondItem="Adu-nG-VRo" secondAttribute="leading" id="gip-kZ-bVu"/>
+                        <constraint firstItem="3PS-gu-dbg" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" id="j5o-Ev-04F"/>
                         <constraint firstItem="lQ3-Ue-Whe" firstAttribute="trailing" secondItem="Adu-nG-VRo" secondAttribute="trailing" id="mKx-qb-lGe"/>
+                        <constraint firstItem="3PS-gu-dbg" firstAttribute="centerX" secondItem="Adu-nG-VRo" secondAttribute="centerX" id="q4c-p2-oRT"/>
                     </constraints>
                 </view>
             </subviews>

@@ -15,6 +15,7 @@ class WeeklyGraphView: UIView {
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
 
     override func draw(_ rect: CGRect) {
+        
         let width = rect.width
         let height = rect.height
         
@@ -35,7 +36,7 @@ class WeeklyGraphView: UIView {
         let topBorder: CGFloat = 60
         let bottomBorder: CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = graphPoints.max()
+        let maxValue = self.graphPoints.max()
         let columnYPoint = { (graphPoint: Int) -> CGFloat in
             // unwrap maxValue
             var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
@@ -45,8 +46,8 @@ class WeeklyGraphView: UIView {
         }
         
         // draw line graph
-        UIColor.themeDarkGreenColor.setFill()
-        UIColor.themeDarkGreenColor.setStroke()
+        UIColor.themeAccentGoldColor.setFill()
+        UIColor.themeAccentGoldColor.setStroke()
         
         // points line
         let graphPath = UIBezierPath()
@@ -77,7 +78,7 @@ class WeeklyGraphView: UIView {
         // Add Clipping Path to context
         clippingPath.addClip()
     
-        UIColor.themeDarkGreenColor.withAlphaComponent(0.1).setFill()
+        UIColor.themeAccentGoldColor.withAlphaComponent(0.2).setFill()
         let rectPath = UIBezierPath(rect: self.bounds)
         
         rectPath.fill()
@@ -125,6 +126,8 @@ class WeeklyGraphView: UIView {
         linePath.stroke()
     }
 }
+
+
 
 
 

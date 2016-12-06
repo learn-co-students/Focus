@@ -30,7 +30,16 @@ class LogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Temp
+        headerView.backgroundColor = UIColor.white
+        WeeklyView.backgroundColor = UIColor.white
+        maskView.backgroundColor = UIColor.white
+        print("maskView height:\(maskView.bounds.height)")
+        print("maskView width:\(maskView.bounds.width)")
+        
         updateViewShadow()
+        
+    
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -53,6 +62,8 @@ class LogViewController: UIViewController {
     
     
     @IBAction func dailyScoreButtonTouched(_ sender: UIButton) {
+        setupGraphDisplay()
+        
         let buttonTapped = sender.accessibilityLabel
         if let unwrappedButtonTapped = buttonTapped {
             velocityScoreViewTransition(with: unwrappedButtonTapped)
@@ -79,5 +90,15 @@ class LogViewController: UIViewController {
         }, completion: { success in
             self.velocityScoreView.velocityScoreLabel.text = "\(labeltext)'s Velocity Score"
         })
+    }
+    
+    func setupGraphDisplay() {
+        
+        weeklyGraphView.graphPoints = [0, 2, 10, 2, 3, 8, 5, 10, 0]
+        print(weeklyGraphView.graphPoints)
+        weeklyGraphView.setNeedsDisplay()
+        WeeklyView.setNeedsDisplay()
+        WeeklyView.setNeedsLayout()
+        
     }
 }
