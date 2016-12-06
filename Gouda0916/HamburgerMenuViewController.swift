@@ -10,6 +10,8 @@ import UIKit
 
 class HamburgerMenuViewController: UIViewController {
     
+    let testArray = ["home", "goal", "Velocity", "notificiations", "logout"]
+    
     @IBAction func velocityPressed(_ sender: Any) {
         NotificationCenter.default.post(name: .openVelocityVC, object: nil)}
     
@@ -24,6 +26,22 @@ class HamburgerMenuViewController: UIViewController {
     }
 }
 
+extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+}
+
+//Dismiss view controller when option selected
 extension HamburgerMenuViewController {
     
     func add(viewController: UIViewController, animated: Bool = false) {

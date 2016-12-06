@@ -248,6 +248,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-ty-Jsk">
                                 <rect key="frame" x="16" y="637" width="39" height="30"/>
                                 <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="yGM-Ii-mbl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -272,6 +275,10 @@
                             <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="trailing" id="yc7-j3-17l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addGoalView" destination="MgV-GG-DJV" id="0nT-xQ-zdg"/>
+                        <outlet property="addNewGoalView" destination="GVg-gG-hlr" id="Weg-ip-DIZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,10 +304,40 @@
         <scene sceneID="xdQ-Iy-isF">
             <objects>
                 <viewController storyboardIdentifier="hamburger-menu-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LQF-Kr-3Ld" customClass="HamburgerMenuViewController" customModule="Gouda0916" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0sb-af-xe0"/>
+                        <viewControllerLayoutGuide type="bottom" id="YCS-ey-eAT"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JFM-0a-51p">
                         <rect key="frame" x="0.0" y="0.0" width="188" height="534"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-eR-5n7">
+                                <rect key="frame" x="0.0" y="0.0" width="188" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WEs-Gd-5eX">
+                                        <rect key="frame" x="0.0" y="28" width="188" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WEs-Gd-5eX" id="9SA-My-uEc">
+                                            <rect key="frame" x="0.0" y="0.0" width="188" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LQF-Kr-3Ld" id="6aV-eL-98c"/>
+                                    <outlet property="delegate" destination="LQF-Kr-3Ld" id="QhJ-gj-Au3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tMW-eR-5n7" firstAttribute="height" secondItem="JFM-0a-51p" secondAttribute="height" id="Cki-6z-njD"/>
+                            <constraint firstItem="tMW-eR-5n7" firstAttribute="centerX" secondItem="JFM-0a-51p" secondAttribute="centerX" id="OWb-GO-254"/>
+                            <constraint firstItem="tMW-eR-5n7" firstAttribute="centerY" secondItem="JFM-0a-51p" secondAttribute="centerY" id="jIi-oV-nr1"/>
+                            <constraint firstItem="tMW-eR-5n7" firstAttribute="width" secondItem="JFM-0a-51p" secondAttribute="width" id="m9m-Sc-EQR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GT-YE-ZxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

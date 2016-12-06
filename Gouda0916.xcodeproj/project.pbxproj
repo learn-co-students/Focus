@@ -45,6 +45,7 @@
 		909105F11DF600EF00D3C6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909105EF1DF600EF00D3C6BA /* Main.storyboard */; };
 		909105F51DF628E900D3C6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 909105F41DF628E900D3C6BA /* Assets.xcassets */; };
 		909FE98F1DF5F88D0055645B /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909FE98D1DF5F88D0055645B /* Goal.storyboard */; };
+		90B1151B1DF62EE60002E969 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1151A1DF62EE60002E969 /* MainViewController.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
 		90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */; };
 		90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */; };
@@ -69,7 +70,6 @@
 		11FCAA211DDA6E170072C46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11FCAA231DDA6E170072C46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11FCAA291DDA70650072C46A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		11FCAA2B1DDA70750072C46A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewConroller.swift; sourceTree = "<group>"; };
 		11FCAA2F1DDA70A00072C46A /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 		909105F01DF600EF00D3C6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		909105F41DF628E900D3C6BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		909FE98E1DF5F88D0055645B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gouda0916/Base.lproj/Goal.storyboard; sourceTree = "<group>"; };
+		90B1151A1DF62EE60002E969 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		90DFD6451DEBA4A2003CDF17 /* Gouda0916-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gouda0916-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -165,7 +166,7 @@
 				9052DE441DEF746100B8F67A /* HamburgerMenuViewController.swift */,
 				55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */,
 				119161D61DEF99400085F979 /* EditGoalViewController.swift */,
-				11FCAA2B1DDA70750072C46A /* MainViewController.swift */,
+				90B1151A1DF62EE60002E969 /* MainViewController.swift */,
 				11FCAA291DDA70650072C46A /* LogInViewController.swift */,
 				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
 				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
@@ -379,6 +380,7 @@
 				703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
+				90B1151B1DF62EE60002E969 /* MainViewController.swift in Sources */,
 				703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
 				90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */,

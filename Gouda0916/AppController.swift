@@ -100,6 +100,7 @@ extension Notification.Name {
     static let openGoalVC = Notification.Name("open-goal-view-controller")
     static let openVelocityVC = Notification.Name("open-velocity-view-controller")
     static let unhideBar = Notification.Name("unhide-bar")
+    static let hideBar = Notification.Name("hide-bar")
 }
 
 // MARK: - UIView Extension

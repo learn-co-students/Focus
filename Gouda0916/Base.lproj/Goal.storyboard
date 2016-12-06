@@ -92,6 +92,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Ny-ENd">
                                 <rect key="frame" x="20" y="706" width="39" height="30"/>
                                 <state key="normal" title="menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="D3r-1k-js1" eventType="touchUpInside" id="tY4-xu-Yhr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

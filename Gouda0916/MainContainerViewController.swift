@@ -25,12 +25,15 @@ final class MainContainerViewController: UIViewController {
         menu.alpha = 0.0
     }
     
+    
+    
     // MARK: - Notficiation Observers
     func addNotificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openMainVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openGoalVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openVelocityVC, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(unhideMenu), name: .unhideBar, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: .hideBar, object: nil)
     }
     
     //// MARK: - Loading VC's
@@ -64,12 +67,17 @@ extension MainContainerViewController {
         }) { _ in }
     }
     
-   func unhideMenu() {
-    print("ello")
-    UIView.animate(withDuration: 0.3) {
-         self.menu.alpha = 1.0
+    func unhideMenu() {
+        UIView.animate(withDuration: 0.3) {
+            self.menu.alpha = 1.0
+        }
     }
-   
+    
+    func hideMenu() {
+        UIView.animate(withDuration: 0.3) {
+            self.menu.alpha = 0.0
+        }
+
     }
     
     func switchViewController(with notification: Notification) {
@@ -110,7 +118,5 @@ extension MainContainerViewController {
         }
         
     }
-    
-    
 }
 

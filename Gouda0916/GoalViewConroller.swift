@@ -20,10 +20,10 @@ class GoalViewController: UIViewController {
     
     @IBOutlet weak var goalTableView: UITableView!
     
-    @IBAction func MenuBtnPressed(_ sender: Any) {
+    @IBAction func menuButtonPressed(_ sender: Any) {
         NotificationCenter.default.post(name: .unhideBar, object: nil)
     }
-
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
