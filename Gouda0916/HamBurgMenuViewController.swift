@@ -1,15 +1,18 @@
 //
-//  HamburgerMenuViewController.swift
+//  HamBurgMenuViewController.swift
 //  Gouda0916
 //
-//  Created by Marie Park on 11/30/16.
+//  Created by Marie Park on 12/5/16.
 //  Copyright © 2016 Flatiron. All rights reserved.
 //
+
+import Foundation
 
 import UIKit
 
 class HamburgerMenuViewController: UIViewController {
     
+    @IBOutlet weak var menuTableView: UITableView!
     let testArray = ["home", "goal", "Velocity", "notificiations", "logout"]
     
     @IBAction func velocityPressed(_ sender: Any) {
@@ -36,7 +39,9 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell")
+        cell?.textLabel?.text = testArray[indexPath.row]
+        return cell!
     }
     
 }
@@ -46,7 +51,7 @@ extension HamburgerMenuViewController {
     
     func add(viewController: UIViewController, animated: Bool = false) {
         self.addChildViewController(viewController)
-       self.view.alpha = 0.0
+        self.view.alpha = 0.0
         viewController.didMove(toParentViewController: self)
         
         guard animated else { self.view.alpha = 1.0; return }
