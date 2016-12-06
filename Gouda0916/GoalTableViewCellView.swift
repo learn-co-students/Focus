@@ -53,10 +53,10 @@ class GoalTableViewCellView: UIView {
     }
     
     func updateLabels() {
-        titleLabel.text = goal.purchasGoal!
+        titleLabel.text = goal.purchasGoal!.capitalized
         goalLabel.text = "$\(goal.goalAmount) goal"
         allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-        allowanceDescriptionLabel.text = "\(goal.wayToSave!) money"
+        allowanceDescriptionLabel.text = "\(goal.wayToSave!.lowercased()) money"
         
         daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
         savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
