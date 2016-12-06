@@ -5,6 +5,7 @@
         <attribute name="dailyBudget" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="dayCounter" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="goalAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isActiveGoal" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="purchasGoal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeframe" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="waysToSave" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WayToSave" inverseName="goal" inverseEntity="WayToSave" syncable="YES"/>
@@ -14,7 +15,7 @@
         <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="waysToSave" inverseEntity="Goal" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Goal" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Goal" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="WayToSave" positionX="-54" positionY="36" width="128" height="75"/>
     </elements>
 </model>

@@ -88,12 +88,15 @@ class EditGoalViewController: UIViewController {
             case .delete:
                 store.goals.remove(at: goalIndex)
                 delegate?.resetTableView()
-                //delete from core data
+                store.persistentContainer.viewContext.delete(goal)
                 self.dismiss(animated: true, completion: nil)
             case .activate:
+                store.goals.first?.isActiveGoal = false
+                goal.willChangeValue(forKey: "isActiveGoal")
+                goal.isActiveGoal = true
+                goal.didChangeValue(forKey: "isActiveGoal")
                 store.goals.remove(at: goalIndex)
                 store.goals.insert(goal, at: 0)
-                //edit array in core data
             case .changeGoal:
                 goal.willChangeValue(forKey: "goalAmount")
                 goal.goalAmount = Double(input)!

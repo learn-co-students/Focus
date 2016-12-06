@@ -82,6 +82,10 @@ class CreateGoalViewController: UIViewController {
         goalEntity.dailyBudget = dailyBudget
         goalEntity.timeframe = Double(timeframe)
         
+        if store.goals.isEmpty {
+            goalEntity.isActiveGoal = true
+        }
+        
         for way in waysToSave {
             let wayEntity = WayToSave(context: context)
             wayEntity.way = way
