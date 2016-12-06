@@ -255,7 +255,7 @@ public class TreatYourselfLanding : NSObject {
         context.clip(to: symbolRect)
         context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
 
-        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 700, velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
+        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: DataStore.sharedInstance.progress, velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
         context.restoreGState()
 //
 //      
