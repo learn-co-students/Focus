@@ -27,6 +27,13 @@ class GoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
+        
+        for (index, goal) in store.goals.enumerated() {
+            if goal.isActiveGoal == true {
+                store.goals.remove(at: index)
+                store.goals.insert(goal, at: 0)
+            }
+        }
 
     }
     

@@ -71,7 +71,7 @@ class CreateGoalViewController: UIViewController {
         let timeframe = Int(howManyDays.textField.text!)!
         let dailyBudget = Double(currentDailyBudget.textField.text!)!
         let goalPurchase = whatAreYouSavingFor.textField.text!
-        let waysToSave = [wayToSave.textField.text!]
+        let enteredWayToSave = wayToSave.textField.text!
         
         let context = store.persistentContainer.viewContext
         let goalEntity = Goal(context: context)
@@ -81,12 +81,17 @@ class CreateGoalViewController: UIViewController {
         goalEntity.dayCounter = 0.0
         goalEntity.dailyBudget = dailyBudget
         goalEntity.timeframe = Double(timeframe)
+        goalEntity.wayToSave = enteredWayToSave
         
-        for way in waysToSave {
-            let wayEntity = WayToSave(context: context)
-            wayEntity.way = way
-            goalEntity.addToWaysToSave(wayEntity)
+        if store.goals.isEmpty {
+            goalEntity.isActiveGoal = true
         }
+        
+//        for way in waysToSave {
+//            let wayEntity = WayToSave(context: context)
+//            wayEntity.way = way
+//            goalEntity.addToWaysToSave(wayEntity)
+//        }
         
         store.saveContext()
         store.goals.append(goalEntity)
