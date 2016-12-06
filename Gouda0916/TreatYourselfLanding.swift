@@ -255,9 +255,23 @@ public class TreatYourselfLanding : NSObject {
         context.clip(to: symbolRect)
         context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
 
-        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: DataStore.sharedInstance.progress, velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
+        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 700, velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
         context.restoreGState()
-
+//
+//      
+//        UIView.animateKeyframes(withDuration: 1, delay: 0.0, options: .beginFromCurrentState, animations: {
+//            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1, animations: {
+//                TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 0, velocityDash: 0, daysDash: 0)
+//                context.setLineDash(phase: 0, lengths: [0, 400])
+                
+//            })
+//            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 2.0, animations: {
+//                TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: 300, velocityDash: 200, daysDash: 100)
+//                context.setLineDash(phase: 0, lengths: [0, 600])
+//            })
+//        }, completion: nil)
+////
+        
 
         //// Oval Drawing
         let ovalPath = UIBezierPath(ovalIn: CGRect(x: 128, y: 251, width: 66, height: 67))
@@ -266,7 +280,7 @@ public class TreatYourselfLanding : NSObject {
         
         context.restoreGState()
         
-        
+  
         
         
     }
