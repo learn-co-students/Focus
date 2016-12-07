@@ -114,32 +114,9 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="8.6666666666666714"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-y0-EWc" userLabel="Footer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-y0-EWc" userLabel="Footer" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="662.66666666666652" width="414" height="73.333333333333371"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYX-rV-j0g" userLabel="shadow">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3.6666666666667425"/>
-                                        <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Ny-ENd">
-                                        <rect key="frame" x="8" y="21.333333333333371" width="39" height="30"/>
-                                        <state key="normal" title="menu">
-                                            <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="menuButtonPressed:" destination="D3r-1k-js1" eventType="touchUpInside" id="tY4-xu-Yhr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Hoo-Ny-ENd" firstAttribute="leading" secondItem="IYe-y0-EWc" secondAttribute="leadingMargin" id="2yB-jv-sXt"/>
-                                    <constraint firstItem="LYX-rV-j0g" firstAttribute="height" secondItem="IYe-y0-EWc" secondAttribute="height" multiplier="0.05" id="4AA-Bp-usn"/>
-                                    <constraint firstItem="Hoo-Ny-ENd" firstAttribute="centerY" secondItem="IYe-y0-EWc" secondAttribute="centerY" id="S57-sn-rm4"/>
-                                    <constraint firstItem="LYX-rV-j0g" firstAttribute="centerX" secondItem="IYe-y0-EWc" secondAttribute="centerX" id="jdu-Kw-sPo"/>
-                                    <constraint firstItem="LYX-rV-j0g" firstAttribute="top" secondItem="IYe-y0-EWc" secondAttribute="top" id="yV5-rw-d9R"/>
-                                    <constraint firstItem="LYX-rV-j0g" firstAttribute="width" secondItem="IYe-y0-EWc" secondAttribute="width" id="z2l-Rn-NYM"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,6 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="footerView" destination="IYe-y0-EWc" id="UfO-H1-w5I"/>
                         <outlet property="goalTableView" destination="hPZ-Qd-JkO" id="yvn-Ja-bKR"/>
                         <segue destination="9Yf-Zo-ulC" kind="presentation" identifier="toEditGoal" id="0p3-4l-5u5"/>
                     </connections>

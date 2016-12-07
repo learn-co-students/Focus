@@ -18,12 +18,10 @@ class GoalViewController: UIViewController {
     var selectedRowIndex = -1
     var buttonTag = 0
     
+    @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var goalTableView: UITableView!
     
-    @IBAction func menuButtonPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .unhideBar, object: nil)
-    }
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -34,13 +32,28 @@ class GoalViewController: UIViewController {
                 store.goals.insert(goal, at: 0)
             }
         }
+        
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+        footerView.hamburgerMenuView.addGestureRecognizer(tapGesture)
+        
+        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         goalTableView.reloadData()
+        
+    }
+    
+    func pressedHamburger(sender: UITapGestureRecognizer) {
+        print("pressed hamburger menu")
+        NotificationCenter.default.post(name: .unhideBar, object: nil)
+
     }
 
+    func menuButtonPressed(_ sender: Any) {
+                NotificationCenter.default.post(name: .unhideBar, object: nil)
+    }
     
     func editButtonTapped(withIndex tag: Int) {
         buttonTag = tag
@@ -75,9 +88,6 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        //cell.floatingView.addSubview(cell.customView)
-//        cell.customView.goal = store.goals[indexPath.row]
-//        cell.customView.editButton.tag = indexPath.row
         cell.floatingView.goal = store.goals[indexPath.row]
         cell.floatingView.editButton.tag = indexPath.row
         cell.delegate = self
