@@ -37,7 +37,8 @@ class EditGoalViewController: UIViewController {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
-        goalView.editButton.isHidden = true
+        goalView.expandIconImageView.isHidden = true
+        goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
         saveCancelView.saveButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
         saveCancelView.cancelButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
@@ -119,7 +120,7 @@ class EditGoalViewController: UIViewController {
                 
             }
             
-            updateGoalView()
+            goalView.updateLabels()
             store.saveContext()
             
             //Animate views
@@ -155,7 +156,7 @@ class EditGoalViewController: UIViewController {
         goalView.titleLabel.text = goal.purchasGoal
         goalView.goalLabel.text = "$\(goal.goalAmount)"
         goalView.savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
-        goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+        goalView.allowanceLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
         goalView.daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
     }
     

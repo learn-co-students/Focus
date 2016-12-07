@@ -18,12 +18,10 @@ class GoalViewController: UIViewController {
     var selectedRowIndex = -1
     var buttonTag = 0
     
+    @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var goalTableView: UITableView!
     
-    @IBAction func menuButtonPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .unhideBar, object: nil)
-    }
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -34,16 +32,27 @@ class GoalViewController: UIViewController {
                 store.goals.insert(goal, at: 0)
             }
         }
-
+        
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         goalTableView.reloadData()
+        
     }
-
     
-    func editButtonTapped(withIndex tag: Int) {
-        buttonTag = tag
+    func pressedHamburger(sender: UITapGestureRecognizer) {
+        print("pressed hamburger menu")
+        NotificationCenter.default.post(name: .unhideBar, object: nil)
+
+    }
+    
+    func editIconTapped(_ sender: UITapGestureRecognizer) {
+        if let senderView = sender.view {
+            buttonTag = senderView.tag
+        }
         performSegue(withIdentifier: "toEditGoal", sender: nil)
     }
     
@@ -74,21 +83,26 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        cell.customView.goal = store.goals[indexPath.row]
-        cell.customView.editButton.tag = indexPath.row
-        cell.delegate = self
+        cell.floatingView.goal = store.goals[indexPath.row]
+        cell.floatingView.editIconImageView.tag = indexPath.row
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editIconTapped))
+        cell.floatingView.editIconImageView.addGestureRecognizer(tapGesture)
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == selectedRowIndex && thereIsCellExpanded {
-            return 200
+        
+        if indexPath.row == selectedRowIndex && thereIsCellExpanded || indexPath.row == 0 {
+            return 260
         }
         return 100
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if selectedRowIndex != indexPath.row {
             thereIsCellExpanded = true
             selectedRowIndex = indexPath.row
@@ -96,7 +110,6 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
             thereIsCellExpanded = false
             selectedRowIndex = -1
         }
-        
         tableView.beginUpdates()
         tableView.endUpdates()
     }

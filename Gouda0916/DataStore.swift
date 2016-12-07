@@ -24,6 +24,8 @@ class DataStore {
     //total days 
     var days: CGFloat = 0
     
+    var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
+    
     
     //day counter = how many days have passed
     //time frame = total days 

@@ -10,22 +10,27 @@ import UIKit
 
 class WeeklyGraphView: UIView {
     
-    // Sample Data
-    // Seven Days
-    var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
-
+    let store = DataStore.sharedInstance
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    
     override func draw(_ rect: CGRect) {
-        let width = rect.width
-        let height = rect.height
-        
+        let rectWidth = rect.width
+        let rectHeight = rect.height
         let context = UIGraphicsGetCurrentContext()
+        let margin: CGFloat = 0.0
         
         // X Point (Days of the week)
-        let margin: CGFloat = 0.0
         let columnXPoint = { (column: Int) -> CGFloat in
             // Gap between Points
-            // Used Closure instead of Function
-            let spacer = (width - margin * 2 - 4) / CGFloat(self.graphPoints.count - 1)
+            let spacer = (rectWidth - margin * 2 - 4) / CGFloat(self.store.graphPoints.count - 1)
             var x: CGFloat = CGFloat(column) * spacer
             x += margin + 2
             return x
@@ -34,84 +39,105 @@ class WeeklyGraphView: UIView {
         // Y Point (Velocity Score)
         let topBorder: CGFloat = 60
         let bottomBorder: CGFloat = 50
-        let graphHeight = height - topBorder - bottomBorder
-        let maxValue = graphPoints.max()
+        let graphHeight = rectHeight - topBorder - bottomBorder
+        let maxValue = 10
         let columnYPoint = { (graphPoint: Int) -> CGFloat in
-            // unwrap maxValue
-            var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
-            // changes the origin point from the top-left corneer to the bottom-left corner
+            var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
+            // Change the origin point from the top-left corneer to the bottom-left corner
             y = graphHeight + topBorder - y
             return y
         }
         
-        // draw line graph
-        UIColor.themeDarkGreenColor.setFill()
-        UIColor.themeDarkGreenColor.setStroke()
+        UIColor.themeAccentGoldColor.setFill()
+        UIColor.themeAccentGoldColor.setStroke()
         
-        // points line
+        // Points line
         let graphPath = UIBezierPath()
         // Move to the start of the line
-        graphPath.move(to: (CGPoint(x: columnXPoint(0), y: columnYPoint(graphPoints[0]))))
+        graphPath.move(to: (CGPoint(x: columnXPoint(0), y: columnYPoint(store.graphPoints[0]))))
         
-        // add points for each item in the graphPoints array at the correct x,y location
-        for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
+        // Add points for each item in the graphPoints array at the correct x,y location
+        for i in 1..<store.graphPoints.count {
+            let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(store.graphPoints[i]))
             graphPath.addLine(to: nextPoint)
         }
-        // Draw line
+        
         graphPath.lineWidth = 1.0
         graphPath.stroke()
+        animate(graphPath: graphPath)
         
-        // Save Context State to keep lines clean
         context?.saveGState()
-        
-        // Clip Path
-        // Copy The path
-        let clippingPath = graphPath.copy() as! UIBezierPath
-        
-        // Add Lines to copied path to complete clip area
-        clippingPath.addLine(to: (CGPoint(x: columnXPoint(graphPoints.count - 1), y: height)))
-        clippingPath.addLine(to: (CGPoint(x: columnXPoint(0), y: height)))
-        clippingPath.close()
-        
-        // Add Clipping Path to context
-        clippingPath.addClip()
-    
-        UIColor.themeDarkGreenColor.withAlphaComponent(0.1).setFill()
-        let rectPath = UIBezierPath(rect: self.bounds)
-        
-        rectPath.fill()
-        
-        // Restore context State
+        clip(path: graphPath, height: rectHeight, columnXPoint: columnXPoint)
         context?.restoreGState()
         
-//        // Draw Circles on top of Stroke
-//        for i in 0..<graphPoints.count {
-//            var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
-//            point.x -= 5.0/2
-//            point.y -= 5.0/2
-//            
-//            let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 2.0, height: 2.0)))
-//            UIColor.themeAccentGoldColor.setStroke()
-//            circle.stroke()
-//            
-//        }
+        //drawCirlceOn(columnXPoint: columnXPoint, columnYPoint: columnYPoint)
         
-        // Draw Horizontal lines
+        horizontalGraphLines(margin: margin,
+                             width: rectWidth,
+                             height: rectHeight,
+                             graphHeight: graphHeight,
+                             topBorder: topBorder,
+                             bottomBorder: bottomBorder)
+    }
+    
+    func animate(graphPath: UIBezierPath) {
+        let pathLayer: CAShapeLayer = CAShapeLayer()
+        
+        pathLayer.frame = self.bounds
+        pathLayer.path = graphPath.cgPath
+        pathLayer.strokeColor = UIColor.white.cgColor
+        pathLayer.fillColor = nil
+        pathLayer.lineWidth = 2.0
+        pathLayer.lineJoin = kCALineCapRound
+        
+        self.layer.addSublayer(pathLayer)
+        
+        let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        pathAnimation.duration = 1.0
+        pathAnimation.fromValue = 1.0
+        pathAnimation.toValue = 0.0
+        
+        pathLayer.add(pathAnimation, forKey: "strokeEnd")
+        pathLayer.strokeEnd = 0.0
+    }
+    
+    func clip(path: UIBezierPath, height: CGFloat, columnXPoint: (Int) -> CGFloat) {
+        let clippingPath = path.copy() as! UIBezierPath
+        
+        clippingPath.addLine(to: (CGPoint(x: columnXPoint(store.graphPoints.count - 1), y: height)))
+        clippingPath.addLine(to: (CGPoint(x: columnXPoint(0), y: height)))
+        clippingPath.close()
+        clippingPath.addClip()
+        
+        UIColor.themeAccentGoldColor.withAlphaComponent(0.2).setFill()
+        let rectPath = UIBezierPath(rect: self.bounds)
+        rectPath.fill()
+    }
+    
+    func drawCirlceOn(columnXPoint: (Int) -> CGFloat, columnYPoint: (Int) -> CGFloat) {
+        for i in 1..<store.graphPoints.count - 1 {
+            var point = CGPoint(x: columnXPoint(i), y: columnYPoint(store.graphPoints[i]))
+            point.x -= 5.0/2
+            point.y -= 5.0/2
+            
+            let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 2.0, height: 2.0)))
+            UIColor.themeDarkGreenColor.setStroke()
+            circle.stroke()
+        }
+    }
+    
+    func horizontalGraphLines(margin: CGFloat, width: CGFloat, height: CGFloat, graphHeight: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat) {
         let linePath = UIBezierPath()
         
-        // Top Lines
         linePath.move(to: CGPoint(x: margin, y: topBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: topBorder))
         
         linePath.move(to: CGPoint(x: margin, y: graphHeight / 4 + topBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight / 4 + topBorder))
         
-        // Center Line
         linePath.move(to: CGPoint(x: margin, y: graphHeight / 2 + topBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight / 2 + topBorder))
         
-        // Bottom Line
         linePath.move(to: CGPoint(x: margin, y: graphHeight / 2 + topBorder + bottomBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight / 2 + topBorder + bottomBorder))
         
@@ -125,17 +151,3 @@ class WeeklyGraphView: UIView {
         linePath.stroke()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

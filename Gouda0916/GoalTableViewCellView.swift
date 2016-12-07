@@ -12,18 +12,27 @@ class GoalTableViewCellView: UIView {
     
     @IBOutlet var contentView: UIView!
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
-    @IBOutlet weak var allowanceAmountLabel: UILabel!
-    @IBOutlet weak var allowanceDescriptionLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var allowanceLabel: UILabel!
+    @IBOutlet weak var breakLabel: UILabel!
+    @IBOutlet weak var wayToSaveLabel: UILabel!
+    @IBOutlet weak var focusOnLabel: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var smallGoalLabel: UILabel!
     
+    @IBOutlet weak var amountSavedLabel: UILabel!
+    @IBOutlet weak var daysCompletedLabel: UILabel!
     @IBOutlet weak var savingGoalView: UIView!
     @IBOutlet weak var daysProgressLabel: UILabel!
     @IBOutlet weak var savingsProgressLabel: UILabel!
     @IBOutlet weak var daysCompleteProgressBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var daysBarView: UIView!
+    @IBOutlet weak var savingsBarView: UIView!
     
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var editIconImageView: UIImageView!
+    @IBOutlet weak var expandIconImageView: UIImageView!
     
     var goal: Goal! {
         didSet {
@@ -49,19 +58,41 @@ class GoalTableViewCellView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-                
+        
     }
     
     func updateLabels() {
-        titleLabel.text = goal.purchasGoal!
-        goalLabel.text = "$\(goal.goalAmount) goal"
-        allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-        allowanceDescriptionLabel.text = "\(goal.wayToSave!) money"
         
-        daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
-        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
+        if goal.isActiveGoal == true {
+            expandIconImageView.isHidden = true
+        }
+        
+        titleLabel.text = goal.purchasGoal!.capitalized
+        wayToSaveLabel.text = "\(goal.wayToSave!.lowercased()) "
+        allowanceLabel.text = "$\(Int(goal.alloctedDailyBudget!)) / day"
+        goalLabel.text = "$\(Int(goal.goalAmount))"
+        daysProgressLabel.text = "\(Int(goal.dayCounter)) "
+        daysLabel.text = "/ \(Int(goal.timeframe))"
+        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved)) "
+        smallGoalLabel.text = "/ $\(Int(goal.goalAmount))"
         daysCompleteProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
         savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
+        
+        if !goal.isActiveGoal {
+
+            daysCompletedLabel.textColor = UIColor.white
+            amountSavedLabel.textColor = UIColor.white
+            daysLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            smallGoalLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            contentView.backgroundColor = UIColor.themePaleGreenColor
+            daysBarView.backgroundColor = UIColor.themeLightPrimaryBlueColor
+            savingsBarView.backgroundColor = UIColor.themeLightPrimaryBlueColor
+            titleLabel.textColor = UIColor.white
+            breakLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            wayToSaveLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            focusOnLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            allowanceLabel.textColor = UIColor.themeLightPrimaryBlueColor
+        }
     }
 }
 

@@ -17,54 +17,36 @@ class VelocityScoreView: UIView {
     @IBOutlet weak var velocityScoreView: UIView!
     @IBOutlet weak var velocityScoreBGView: UIView!
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        updateView()
         updateVelocityView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-        updateView()
         updateVelocityView()
     }
     
     func commonInit() {
         Bundle.main.loadNibNamed("VelocityScoreView", owner: self, options: nil)
-    }
-    
-    func updateView() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
         addSubview(contentView)
-        
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
     }
     
     func updateVelocityView() {
         velocityScoreView.layer.masksToBounds = true
         velocityScoreView.layer.cornerRadius = 5.0
-        
-        velocityScoreView.layer.masksToBounds = false
+
         velocityScoreBGView.layer.cornerRadius = 5
         velocityScoreBGView.layer.shadowColor = UIColor.themeBlackColor.cgColor
         velocityScoreBGView.layer.shadowOpacity = 0.8
         velocityScoreBGView.layer.shadowOffset = CGSize(width: 0, height: 0)
         velocityScoreBGView.layer.shadowRadius = 3
-        
     }
-    
-    
-    
-    
-    
-    
-    
 }
