@@ -9,8 +9,17 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import UserNotifications
+
 
 class CreateGoalViewController: UIViewController {
+  
+    //test notification variables
+    let oneMin = TimeInterval.init(60)
+    var date = Date()
+    let delegate = UIApplication.shared.delegate as? AppDelegate
+    
+
     let store = DataStore.sharedInstance
     let ref =  FIRDatabase.database().reference()
     var textFields: [UITextField] = []
@@ -38,6 +47,9 @@ class CreateGoalViewController: UIViewController {
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
+        date = Date.init(timeIntervalSinceNow: oneMin)
+        delegate?.scheduleNotification(at: date)
+        
     }
     
     func setTextForNib() {
@@ -86,7 +98,7 @@ class CreateGoalViewController: UIViewController {
         if store.goals.isEmpty {
             goalEntity.isActiveGoal = true
         }
-        
+
 //        for way in waysToSave {
 //            let wayEntity = WayToSave(context: context)
 //            wayEntity.way = way
