@@ -15,7 +15,6 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var allowanceAmountLabel: UILabel!
-    @IBOutlet weak var allowanceDescriptionLabel: UILabel!
     
     @IBOutlet weak var savingGoalView: UIView!
     @IBOutlet weak var daysProgressLabel: UILabel!
@@ -56,7 +55,7 @@ class GoalTableViewCellView: UIView {
         titleLabel.text = goal.purchasGoal!.capitalized
         goalLabel.text = "$\(goal.goalAmount) goal"
         allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-        allowanceDescriptionLabel.text = "\(goal.wayToSave!.lowercased()) money"
+        //allowanceDescriptionLabel.text = "\(goal.wayToSave!.lowercased()) money"
         
         daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
         savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
