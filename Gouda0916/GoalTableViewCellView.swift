@@ -61,9 +61,9 @@ class GoalTableViewCellView: UIView {
         titleLabel.text = goal.purchasGoal!.capitalized
         allowanceLabel.text = "$\(goal.goalAmount)/day"
         goalLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-        daysProgressLabel.text = "\(Int(goal.dayCounter))"
+        daysProgressLabel.text = "\(Int(goal.dayCounter)) "
         daysLabel.text = "/ \(Int(goal.timeframe))"
-        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))"
+        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved)) "
         smallGoalLabel.text = "/ $\(Int(goal.goalAmount))"
         daysCompleteProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
         savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
@@ -74,6 +74,7 @@ class GoalTableViewCellView: UIView {
             gradientLayer.locations = [0.5, 0.0]
             contentView.layer.addSublayer(gradientLayer)
             
+            contentView.backgroundColor = UIColor.themeLightPrimaryBlueColor
             titleLabel.textColor = UIColor.white
             breakLabel.textColor = UIColor.themeLightGrayColor
             wayToSaveLabel.textColor = UIColor.themeLightGrayColor

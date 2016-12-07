@@ -75,8 +75,11 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
-        cell.customView.goal = store.goals[indexPath.row]
-        cell.customView.editButton.tag = indexPath.row
+        //cell.floatingView.addSubview(cell.customView)
+//        cell.customView.goal = store.goals[indexPath.row]
+//        cell.customView.editButton.tag = indexPath.row
+        cell.floatingView.goal = store.goals[indexPath.row]
+        cell.floatingView.editButton.tag = indexPath.row
         cell.delegate = self
         return cell
     }
