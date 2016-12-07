@@ -14,7 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="dUM-8X-JxC"/>
-                <outlet property="hamburgerMenuView" destination="lob-GF-fm3" id="qOm-ig-x3h"/>
+                <outlet property="hamburgerMenuImageView" destination="lob-GF-fm3" id="waH-HJ-Hk0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

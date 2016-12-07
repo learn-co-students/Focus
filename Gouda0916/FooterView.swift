@@ -11,7 +11,7 @@ import UIKit
 class FooterView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var hamburgerMenuView: UIImageView!
+    @IBOutlet weak var hamburgerMenuImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

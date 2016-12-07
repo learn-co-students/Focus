@@ -31,6 +31,10 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var daysBarView: UIView!
     @IBOutlet weak var savingsBarView: UIView!
     
+    @IBOutlet weak var editIconImageView: UIImageView!
+    @IBOutlet weak var expandIconImageView: UIImageView!
+    
+    
     @IBOutlet weak var editButton: UIButton!
     let gradientLayer = CAGradientLayer()
     

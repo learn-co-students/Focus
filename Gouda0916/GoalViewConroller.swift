@@ -34,7 +34,7 @@ class GoalViewController: UIViewController {
         }
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
-        footerView.hamburgerMenuView.addGestureRecognizer(tapGesture)
+        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
         
         
 
