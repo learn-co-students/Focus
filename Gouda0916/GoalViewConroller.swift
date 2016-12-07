@@ -36,9 +36,6 @@ class GoalViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
         
-        
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,7 +110,6 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
             thereIsCellExpanded = false
             selectedRowIndex = -1
         }
-        
         tableView.beginUpdates()
         tableView.endUpdates()
     }

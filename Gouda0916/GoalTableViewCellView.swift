@@ -72,6 +72,7 @@ class GoalTableViewCellView: UIView {
         }
         
         titleLabel.text = goal.purchasGoal!.capitalized
+        wayToSaveLabel.text = "\(goal.wayToSave!.lowercased()) "
         allowanceLabel.text = "$\(goal.goalAmount)/day"
         goalLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
         daysProgressLabel.text = "\(Int(goal.dayCounter)) "

@@ -29,7 +29,6 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var questionOneLeadingConstraint: NSLayoutConstraint!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextForNib()
@@ -38,6 +37,7 @@ class CreateGoalViewController: UIViewController {
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
+        addActionToButtons()
     }
     
     func setTextForNib() {
@@ -46,6 +46,14 @@ class CreateGoalViewController: UIViewController {
         howManyDays.label.text = "How many days do you have?"
         wayToSave.label.text = "What can you save money on?"
         currentDailyBudget.label.text = "What is you current daily budget?"
+    }
+    
+    func addActionToButtons() {
+        whatAreYouSavingFor.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
+        howMuchToSave.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
+        howManyDays.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
+        wayToSave.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
+        currentDailyBudget.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
     }
     
     func addTextFieldsToArray() {
@@ -61,7 +69,7 @@ class CreateGoalViewController: UIViewController {
     }
 
     //MARK: Tap IBActions
-    @IBAction func backButtonTapped(_ sender: UIButton) {
+    func xButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -101,6 +109,9 @@ class CreateGoalViewController: UIViewController {
         goalsTableView?.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
 }
 
 //MARK: Swipe Gestures and animation for goal steps
