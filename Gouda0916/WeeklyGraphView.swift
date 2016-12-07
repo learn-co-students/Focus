@@ -10,11 +10,22 @@ import UIKit
 
 class WeeklyGraphView: UIView {
     
+    let store = DataStore.sharedInstance
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     // Sample Data
     // Seven Days
-    var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
-
+    
+    
     override func draw(_ rect: CGRect) {
+        
         let width = rect.width
         let height = rect.height
         
@@ -25,7 +36,7 @@ class WeeklyGraphView: UIView {
         let columnXPoint = { (column: Int) -> CGFloat in
             // Gap between Points
             // Used Closure instead of Function
-            let spacer = (width - margin * 2 - 4) / CGFloat(self.graphPoints.count - 1)
+            let spacer = (width - margin * 2 - 4) / CGFloat(self.store.graphPoints.count - 1)
             var x: CGFloat = CGFloat(column) * spacer
             x += margin + 2
             return x
@@ -35,27 +46,27 @@ class WeeklyGraphView: UIView {
         let topBorder: CGFloat = 60
         let bottomBorder: CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = graphPoints.max()
+        let maxValue = 10
         let columnYPoint = { (graphPoint: Int) -> CGFloat in
             // unwrap maxValue
-            var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
+            var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
             // changes the origin point from the top-left corneer to the bottom-left corner
             y = graphHeight + topBorder - y
             return y
         }
         
         // draw line graph
-        UIColor.themeDarkGreenColor.setFill()
-        UIColor.themeDarkGreenColor.setStroke()
+        UIColor.themeAccentGoldColor.setFill()
+        UIColor.themeAccentGoldColor.setStroke()
         
         // points line
         let graphPath = UIBezierPath()
         // Move to the start of the line
-        graphPath.move(to: (CGPoint(x: columnXPoint(0), y: columnYPoint(graphPoints[0]))))
+        graphPath.move(to: (CGPoint(x: columnXPoint(0), y: columnYPoint(store.graphPoints[0]))))
         
         // add points for each item in the graphPoints array at the correct x,y location
-        for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
+        for i in 1..<store.graphPoints.count {
+            let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(store.graphPoints[i]))
             graphPath.addLine(to: nextPoint)
         }
         // Draw line
@@ -70,14 +81,14 @@ class WeeklyGraphView: UIView {
         let clippingPath = graphPath.copy() as! UIBezierPath
         
         // Add Lines to copied path to complete clip area
-        clippingPath.addLine(to: (CGPoint(x: columnXPoint(graphPoints.count - 1), y: height)))
+        clippingPath.addLine(to: (CGPoint(x: columnXPoint(store.graphPoints.count - 1), y: height)))
         clippingPath.addLine(to: (CGPoint(x: columnXPoint(0), y: height)))
         clippingPath.close()
         
         // Add Clipping Path to context
         clippingPath.addClip()
-    
-        UIColor.themeDarkGreenColor.withAlphaComponent(0.1).setFill()
+        
+        UIColor.themeAccentGoldColor.withAlphaComponent(0.2).setFill()
         let rectPath = UIBezierPath(rect: self.bounds)
         
         rectPath.fill()
@@ -85,17 +96,17 @@ class WeeklyGraphView: UIView {
         // Restore context State
         context?.restoreGState()
         
-//        // Draw Circles on top of Stroke
-//        for i in 0..<graphPoints.count {
-//            var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
-//            point.x -= 5.0/2
-//            point.y -= 5.0/2
-//            
-//            let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 2.0, height: 2.0)))
-//            UIColor.themeAccentGoldColor.setStroke()
-//            circle.stroke()
-//            
-//        }
+        //        // Draw Circles on top of Stroke
+        //        for i in 0..<graphPoints.count {
+        //            var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
+        //            point.x -= 5.0/2
+        //            point.y -= 5.0/2
+        //
+        //            let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 2.0, height: 2.0)))
+        //            UIColor.themeAccentGoldColor.setStroke()
+        //            circle.stroke()
+        //
+        //        }
         
         // Draw Horizontal lines
         let linePath = UIBezierPath()
@@ -125,8 +136,6 @@ class WeeklyGraphView: UIView {
         linePath.stroke()
     }
 }
-
-
 
 
 

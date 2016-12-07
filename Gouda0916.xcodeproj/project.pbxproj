@@ -40,6 +40,7 @@
 		70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70934DD61DE4C51F00913625 /* VelocityScoreView.xib */; };
 		70934DD91DE4D04400913625 /* VelocityScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DD81DE4D04400913625 /* VelocityScoreView.swift */; };
 		70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70934DDA1DE4F8A300913625 /* Velocity.swift */; };
+		70FA72591DF732C100FAC1BB /* MonthlyGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FA72581DF732C100FAC1BB /* MonthlyGraphView.xib */; };
 		70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FF8BFB1DE5F4CF00660564 /* Velocity.storyboard */; };
 		9052785A1DDF58CA0079E3DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905278591DDF58CA0079E3DD /* User.swift */; };
 		9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */; };
@@ -91,6 +92,7 @@
 		70934DD61DE4C51F00913625 /* VelocityScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VelocityScoreView.xib; sourceTree = "<group>"; };
 		70934DD81DE4D04400913625 /* VelocityScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelocityScoreView.swift; sourceTree = "<group>"; };
 		70934DDA1DE4F8A300913625 /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
+		70FA72581DF732C100FAC1BB /* MonthlyGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthlyGraphView.xib; sourceTree = "<group>"; };
 		70FF8BFC1DE5F4CF00660564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Velocity.storyboard; sourceTree = "<group>"; };
 		905278591DDF58CA0079E3DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				116E0BF21DF8730A00CF2B57 /* FooterView.swift */,
 				703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */,
 				703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */,
+				70FA72581DF732C100FAC1BB /* MonthlyGraphView.xib */,
 				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
@@ -314,6 +317,7 @@
 				909105F51DF628E900D3C6BA /* Assets.xcassets in Resources */,
 				70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */,
 				11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */,
+				70FA72591DF732C100FAC1BB /* MonthlyGraphView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				909105F11DF600EF00D3C6BA /* Main.storyboard in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,

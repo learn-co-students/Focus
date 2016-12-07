@@ -21,6 +21,8 @@ class DataStore {
     var velocity: CGFloat = 0
     var days: CGFloat = 0
     
+    var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
+    
     
     
     
