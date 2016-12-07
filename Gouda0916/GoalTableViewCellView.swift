@@ -66,6 +66,11 @@ class GoalTableViewCellView: UIView {
     }
     
     func updateLabels() {
+        
+        if goal.isActiveGoal == true {
+            expandIconImageView.isHidden = true
+        }
+        
         titleLabel.text = goal.purchasGoal!.capitalized
         allowanceLabel.text = "$\(goal.goalAmount)/day"
         goalLabel.text = "$\(Int(goal.alloctedDailyBudget!))"

@@ -37,7 +37,8 @@ class EditGoalViewController: UIViewController {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
-        goalView.editButton.isHidden = true
+        goalView.expandIconImageView.isHidden = true
+        goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
         saveCancelView.saveButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
         saveCancelView.cancelButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
@@ -119,7 +120,7 @@ class EditGoalViewController: UIViewController {
                 
             }
             
-            updateGoalView()
+            goalView.updateLabels()
             store.saveContext()
             
             //Animate views

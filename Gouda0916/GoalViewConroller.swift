@@ -37,6 +37,7 @@ class GoalViewController: UIViewController {
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
         
         
+        
 
     }
     
@@ -50,13 +51,11 @@ class GoalViewController: UIViewController {
         NotificationCenter.default.post(name: .unhideBar, object: nil)
 
     }
-
-    func menuButtonPressed(_ sender: Any) {
-                NotificationCenter.default.post(name: .unhideBar, object: nil)
-    }
     
-    func editButtonTapped(withIndex tag: Int) {
-        buttonTag = tag
+    func editIconTapped(_ sender: UITapGestureRecognizer) {
+        if let senderView = sender.view {
+            buttonTag = senderView.tag
+        }
         performSegue(withIdentifier: "toEditGoal", sender: nil)
     }
     
@@ -87,22 +86,26 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
         cell.floatingView.goal = store.goals[indexPath.row]
-        cell.floatingView.editButton.tag = indexPath.row
-        cell.delegate = self
+        cell.floatingView.editIconImageView.tag = indexPath.row
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editIconTapped))
+        cell.floatingView.editIconImageView.addGestureRecognizer(tapGesture)
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         if indexPath.row == selectedRowIndex && thereIsCellExpanded || indexPath.row == 0 {
-                return 260
+            return 260
         }
         return 100
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if selectedRowIndex != indexPath.row {
             thereIsCellExpanded = true
             selectedRowIndex = indexPath.row
@@ -111,12 +114,8 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
             selectedRowIndex = -1
         }
         
-        
         tableView.beginUpdates()
         tableView.endUpdates()
-       
-
-       
     }
     
 }

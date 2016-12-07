@@ -23,7 +23,6 @@
                 <outlet property="daysCompletedLabel" destination="r4P-3u-Si9" id="2AC-6b-26B"/>
                 <outlet property="daysLabel" destination="wtD-Zi-cJw" id="qGt-BU-e3y"/>
                 <outlet property="daysProgressLabel" destination="Lqi-W2-TtL" id="P37-Dl-sbY"/>
-                <outlet property="editButton" destination="k24-kg-cMG" id="Hd8-LA-dLa"/>
                 <outlet property="editIconImageView" destination="qS3-qd-E3m" id="S0w-nM-vst"/>
                 <outlet property="expandIconImageView" destination="An1-Gh-aIM" id="r7c-2E-abX"/>
                 <outlet property="focusOnLabel" destination="iR2-fr-cP8" id="MOL-KE-GCg"/>
@@ -85,7 +84,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
-                    <rect key="frame" x="16" y="159.5" width="94.5" height="20"/>
+                    <rect key="frame" x="16" y="160.5" width="94.5" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="0.47843137250000001" green="0.73333333329999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -97,13 +96,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ $20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Y-S0-KVt" userLabel="/ $20">
-                    <rect key="frame" x="445" y="178" width="37" height="20"/>
+                    <rect key="frame" x="445" y="179" width="37" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
-                    <rect key="frame" x="422" y="178" width="23" height="20"/>
+                    <rect key="frame" x="422" y="179" width="23" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -141,7 +140,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO" userLabel="Saving Goal">
-                    <rect key="frame" x="16" y="181.5" width="325" height="16.5"/>
+                    <rect key="frame" x="16" y="182.5" width="325" height="16.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
                             <rect key="frame" x="0.0" y="0.0" width="1" height="16.5"/>
@@ -161,12 +160,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k24-kg-cMG">
-                    <rect key="frame" x="402" y="218" width="30" height="30"/>
-                    <state key="normal" title="edit">
-                        <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtD-Zi-cJw">
                     <rect key="frame" x="454.5" y="123.5" width="27.5" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
@@ -174,13 +167,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand button" translatesAutoresizingMaskIntoConstraints="NO" id="An1-Gh-aIM" userLabel="Expand Icon Image View">
-                    <rect key="frame" x="457" y="54.5" width="25" height="27.5"/>
+                    <rect key="frame" x="457" y="59.5" width="25" height="27.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="An1-Gh-aIM" secondAttribute="height" multiplier="46:50" id="8JI-YA-r9f"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit button" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
-                    <rect key="frame" x="453.5" y="218" width="28.5" height="26"/>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit icon" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
+                    <rect key="frame" x="16" y="218.5" width="28.5" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="30:27" id="9i3-JC-1NQ"/>
                     </constraints>
@@ -189,7 +182,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Efx-PA-xAO" firstAttribute="height" secondItem="E54-Sh-MAV" secondAttribute="height" id="3hd-cr-21Z"/>
-                <constraint firstItem="k24-kg-cMG" firstAttribute="trailing" secondItem="Y8Y-S0-KVt" secondAttribute="trailing" constant="-50" id="5lu-dg-QQH"/>
                 <constraint firstItem="Y8Y-S0-KVt" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="bottom" id="6FL-ai-Tex"/>
                 <constraint firstItem="An1-Gh-aIM" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="7aJ-Zu-EAN"/>
                 <constraint firstItem="S7l-44-cOu" firstAttribute="trailing" secondItem="Y8Y-S0-KVt" secondAttribute="leading" id="9x4-Dw-Vc9"/>
@@ -203,6 +195,7 @@
                 <constraint firstItem="5Rg-Xa-B3R" firstAttribute="bottom" secondItem="wiG-Kt-TZ2" secondAttribute="bottom" id="OxM-jc-vBf"/>
                 <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" id="POn-h4-SDW"/>
                 <constraint firstItem="wtD-Zi-cJw" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="QwO-JM-qS7"/>
+                <constraint firstItem="qS3-qd-E3m" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="RKG-fA-sk1"/>
                 <constraint firstItem="Wbp-mI-hGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" multiplier="2" id="RVU-D8-jdQ"/>
                 <constraint firstItem="Wbp-mI-hGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" multiplier="2" id="TEH-aR-o0o"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.65" id="VZX-D4-h9z"/>
@@ -211,17 +204,15 @@
                 <constraint firstItem="wiG-Kt-TZ2" firstAttribute="leading" secondItem="9NA-U5-Up3" secondAttribute="trailing" id="XJs-d7-ong"/>
                 <constraint firstItem="5Rg-Xa-B3R" firstAttribute="leading" secondItem="wiG-Kt-TZ2" secondAttribute="trailing" id="ZWZ-1j-xeO"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="top" secondItem="iR2-fr-cP8" secondAttribute="bottom" multiplier="1.5" constant="10" id="Zba-Kc-ZHC"/>
-                <constraint firstItem="qS3-qd-E3m" firstAttribute="trailing" secondItem="Y8Y-S0-KVt" secondAttribute="trailing" id="cI5-jX-mBH"/>
                 <constraint firstItem="r4P-3u-Si9" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="top" constant="-2" id="cyQ-9O-S2z"/>
                 <constraint firstItem="Efx-PA-xAO" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="bottom" multiplier="1.2" constant="10" id="dBu-gE-6vZ"/>
                 <constraint firstItem="wiG-Kt-TZ2" firstAttribute="bottom" secondItem="9NA-U5-Up3" secondAttribute="bottom" id="dtu-ki-20w"/>
                 <constraint firstItem="Efx-PA-xAO" firstAttribute="width" secondItem="E54-Sh-MAV" secondAttribute="width" id="ftr-6E-8Lc"/>
                 <constraint firstItem="T2m-eG-q24" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="gEZ-GF-hx7"/>
-                <constraint firstItem="k24-kg-cMG" firstAttribute="top" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" constant="20" id="gOr-ps-7m3"/>
                 <constraint firstItem="An1-Gh-aIM" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.05" id="ghL-ad-wLB"/>
                 <constraint firstItem="Y8Y-S0-KVt" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="gov-Sz-BvF"/>
                 <constraint firstItem="XTg-ch-vr8" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" multiplier="0.98" id="h8B-Ta-TTw"/>
-                <constraint firstItem="An1-Gh-aIM" firstAttribute="top" secondItem="XTg-ch-vr8" secondAttribute="bottom" id="itH-LU-OnA"/>
+                <constraint firstItem="An1-Gh-aIM" firstAttribute="top" secondItem="XTg-ch-vr8" secondAttribute="bottom" constant="5" id="itH-LU-OnA"/>
                 <constraint firstItem="wtD-Zi-cJw" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="bottom" id="iyg-Ka-TVb"/>
                 <constraint firstItem="Lqi-W2-TtL" firstAttribute="trailing" secondItem="wtD-Zi-cJw" secondAttribute="leading" id="kib-X9-S5K"/>
                 <constraint firstItem="qS3-qd-E3m" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="lnN-On-2GM"/>
@@ -234,7 +225,7 @@
         </view>
     </objects>
     <resources>
-        <image name="edit button" width="30" height="27"/>
+        <image name="edit icon" width="29" height="27"/>
         <image name="expand button" width="46" height="50"/>
     </resources>
 </document>
