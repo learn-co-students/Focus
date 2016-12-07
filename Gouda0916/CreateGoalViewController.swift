@@ -18,7 +18,7 @@ class CreateGoalViewController: UIViewController {
     var screenWidth = UIScreen.main.bounds.width
     weak var goalsTableView: UITableView?
     
-    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
     
     @IBOutlet weak var whatAreYouSavingFor: UserInputView!
     @IBOutlet weak var howMuchToSave: UserInputView!
@@ -34,10 +34,11 @@ class CreateGoalViewController: UIViewController {
         setTextForNib()
         addTextFieldsToArray()
         setUpTextFieldsForEditing()
-        createButton.isEnabled = false
+        finishButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
         addActionToButtons()
+        finishButton.setTitleColor(UIColor.themeLightGrayColor, for: UIControlState.disabled)
     }
     
     func setTextForNib() {
@@ -49,11 +50,11 @@ class CreateGoalViewController: UIViewController {
     }
     
     func addActionToButtons() {
-        whatAreYouSavingFor.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
-        howMuchToSave.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
-        howManyDays.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
-        wayToSave.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
-        currentDailyBudget.xButton.target(forAction: #selector(xButtonTapped), withSender: self)
+        whatAreYouSavingFor.xButton.addTarget(self, action: #selector(xButtonTapped), for: .touchUpInside)
+        howMuchToSave.xButton.addTarget(self, action: #selector(xButtonTapped), for: .touchUpInside)
+        howManyDays.xButton.addTarget(self, action: #selector(xButtonTapped), for: .touchUpInside)
+        wayToSave.xButton.addTarget(self, action: #selector(xButtonTapped), for: .touchUpInside)
+        currentDailyBudget.xButton.addTarget(self, action: #selector(xButtonTapped), for: .touchUpInside)
     }
     
     func addTextFieldsToArray() {
@@ -73,7 +74,7 @@ class CreateGoalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func createButtonTapped(_ sender: UIButton) {
+    @IBAction func finishButtonTapped(_ sender: UIButton) {
         //Force unwrap handled in validation
         let goal = Double(howMuchToSave.textField.text!)!
         let timeframe = Int(howManyDays.textField.text!)!
@@ -94,12 +95,6 @@ class CreateGoalViewController: UIViewController {
         if store.goals.isEmpty {
             goalEntity.isActiveGoal = true
         }
-        
-//        for way in waysToSave {
-//            let wayEntity = WayToSave(context: context)
-//            wayEntity.way = way
-//            goalEntity.addToWaysToSave(wayEntity)
-//        }
         
         store.saveContext()
         store.goals.append(goalEntity)
@@ -128,7 +123,7 @@ extension CreateGoalViewController {
     
     func swipe(sender: UISwipeGestureRecognizer) {
         
-        if index < textFields.count {
+        if index < textFields.count - 1 {
             if sender.direction == .left {
                 
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
@@ -182,9 +177,10 @@ extension CreateGoalViewController {
         
         //enables create button if all are valid, disables if any are invalid
         if checkIfAllTextFieldsAreValid() {
-            createButton.isEnabled = true
+            finishButton.isEnabled = true
+            
         } else {
-            createButton.isEnabled = false
+            finishButton.isEnabled = false
         }
     }
     

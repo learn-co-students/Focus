@@ -34,10 +34,6 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var editIconImageView: UIImageView!
     @IBOutlet weak var expandIconImageView: UIImageView!
     
-    
-    @IBOutlet weak var editButton: UIButton!
-    let gradientLayer = CAGradientLayer()
-    
     var goal: Goal! {
         didSet {
             updateLabels()
@@ -73,8 +69,8 @@ class GoalTableViewCellView: UIView {
         
         titleLabel.text = goal.purchasGoal!.capitalized
         wayToSaveLabel.text = "\(goal.wayToSave!.lowercased()) "
-        allowanceLabel.text = "$\(goal.goalAmount)/day"
-        goalLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+        allowanceLabel.text = "$\(Int(goal.alloctedDailyBudget!)) / day"
+        goalLabel.text = "$\(Int(goal.goalAmount))"
         daysProgressLabel.text = "\(Int(goal.dayCounter)) "
         daysLabel.text = "/ \(Int(goal.timeframe))"
         savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved)) "
@@ -83,11 +79,7 @@ class GoalTableViewCellView: UIView {
         savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
         
         if !goal.isActiveGoal {
-            gradientLayer.frame = contentView.bounds
-            gradientLayer.colors = [UIColor.themeDarkGreenColor, UIColor.themeLightGreenColor]
-            gradientLayer.locations = [0.5, 0.0]
-            contentView.layer.addSublayer(gradientLayer)
-            
+
             daysCompletedLabel.textColor = UIColor.white
             amountSavedLabel.textColor = UIColor.white
             daysLabel.textColor = UIColor.themeLightPrimaryBlueColor
