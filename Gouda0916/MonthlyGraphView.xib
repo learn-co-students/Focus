@@ -54,7 +54,7 @@
                     <color key="textColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Days Needed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-Eu-zwe">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Until Reward" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-Eu-zwe">
                     <rect key="frame" x="245" y="98" width="130" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ruu-Eu-zwe" secondAttribute="height" multiplier="130:23" id="YL4-6M-bpJ"/>

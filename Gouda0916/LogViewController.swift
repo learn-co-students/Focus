@@ -79,6 +79,7 @@ class LogViewController: UIViewController {
         
         self.WeeklyView.setNeedsDisplay()
         // Test Data
+        
         self.store.graphPoints = [0, 10, 5, 8, 10, 10, 8, 2, 0]
     }
     
@@ -107,7 +108,6 @@ class LogViewController: UIViewController {
                 self.velocityScoreView.layer.opacity = 1
                 self.velocityScoreView.center.x = self.view.center.x
                 self.velocityScoreView.velocityScoreLabel.text = ""
-                
             })
         }, completion: { success in
             self.velocityScoreView.velocityScoreLabel.text = "\(labeltext)'s Velocity Score"
