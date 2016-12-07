@@ -27,87 +27,100 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="537" height="265"/>
+            <rect key="frame" x="0.0" y="0.0" width="500" height="260"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Shoes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Shoes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-mI-hGN">
                     <rect key="frame" x="16" y="16" width="157.5" height="38.5"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="32"/>
                     <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="XTg-ch-vr8" userLabel="Goal Label">
-                    <rect key="frame" x="455" y="16" width="68.5" height="38.5"/>
+                    <rect key="frame" x="413.5" y="16" width="68.5" height="38.5"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="32"/>
                     <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="focus on: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="iR2-fr-cP8" userLabel="Focus On label">
-                    <rect key="frame" x="16" y="54.5" width="101" height="29"/>
+                    <rect key="frame" x="16" y="54.5" width="100.5" height="29"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lunch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="9NA-U5-Up3" userLabel="focus label">
-                    <rect key="frame" x="117" y="55.5" width="52" height="28"/>
+                    <rect key="frame" x="116.5" y="55.5" width="52" height="28"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  I  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="wiG-Kt-TZ2" userLabel="I">
-                    <rect key="frame" x="169" y="54.5" width="34" height="29"/>
+                    <rect key="frame" x="168.5" y="54.5" width="34" height="29"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10 / day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xa-B3R" userLabel="Allowance label">
-                    <rect key="frame" x="203" y="55.5" width="89.5" height="28"/>
+                    <rect key="frame" x="202.5" y="55.5" width="89.5" height="28"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Complete" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-3u-Si9">
-                    <rect key="frame" x="16" y="118.5" width="98" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days complete" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-3u-Si9">
+                    <rect key="frame" x="16" y="116" width="98.5" height="20"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
+                    <rect key="frame" x="16" y="170.5" width="94.5" height="20"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
+                    <rect key="frame" x="442" y="131" width="13.5" height="20"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
-                    <rect key="frame" x="16" y="175" width="94" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ $20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Y-S0-KVt" userLabel="/ $20">
+                    <rect key="frame" x="446" y="185.5" width="36" height="20"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
+                    <rect key="frame" x="423.5" y="185.5" width="22.5" height="20"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E54-Sh-MAV" userLabel="Days Goal">
-                    <rect key="frame" x="16" y="135.5" width="322" height="16"/>
+                    <rect key="frame" x="16" y="136" width="300" height="15"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7r-h7-Xfx" userLabel="Days Complete">
-                            <rect key="frame" x="0.0" y="0.0" width="1" height="16"/>
-                            <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7r-h7-Xfx" userLabel="Days Complete">
+                            <rect key="frame" x="0.0" y="0.0" width="10" height="15"/>
+                            <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqi-W2-TtL">
-                            <rect key="frame" x="150.5" y="0.0" width="21" height="16"/>
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="o7r-h7-Xfx" firstAttribute="trailing" secondItem="E54-Sh-MAV" secondAttribute="leading" constant="1" id="Fl9-tM-8pL"/>
                         <constraint firstAttribute="width" secondItem="E54-Sh-MAV" secondAttribute="height" multiplier="160:8" id="Kay-pb-Va1"/>
                         <constraint firstItem="o7r-h7-Xfx" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="OgT-JF-wxS"/>
-                        <constraint firstItem="Lqi-W2-TtL" firstAttribute="centerY" secondItem="E54-Sh-MAV" secondAttribute="centerY" id="VcY-bW-GKs"/>
-                        <constraint firstItem="Lqi-W2-TtL" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="bottom" id="XYC-ZT-ON9"/>
                         <constraint firstItem="o7r-h7-Xfx" firstAttribute="leading" secondItem="E54-Sh-MAV" secondAttribute="leading" id="ZFW-eP-yeD"/>
-                        <constraint firstItem="Lqi-W2-TtL" firstAttribute="centerX" secondItem="E54-Sh-MAV" secondAttribute="centerX" id="fuj-g6-cVX"/>
                         <constraint firstItem="o7r-h7-Xfx" firstAttribute="height" secondItem="E54-Sh-MAV" secondAttribute="height" id="jVc-bF-BOv"/>
-                        <constraint firstItem="Lqi-W2-TtL" firstAttribute="top" secondItem="E54-Sh-MAV" secondAttribute="top" id="y1E-Fh-qAE"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -116,33 +129,19 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO" userLabel="Saving Goal">
-                    <rect key="frame" x="16" y="192" width="322" height="16"/>
+                    <rect key="frame" x="16" y="190.5" width="300" height="15"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0/$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
-                            <rect key="frame" x="142.5" y="0.0" width="37.5" height="16"/>
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
-                            <rect key="frame" x="0.0" y="0.0" width="1" height="16"/>
-                            <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
+                            <rect key="frame" x="0.0" y="0.0" width="10" height="15"/>
+                            <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="fSD-ZI-mib" firstAttribute="trailing" secondItem="Efx-PA-xAO" secondAttribute="leading" constant="1" id="1wi-BR-0tV"/>
                         <constraint firstItem="fSD-ZI-mib" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="Ent-iB-xUs"/>
-                        <constraint firstItem="S7l-44-cOu" firstAttribute="centerX" secondItem="Efx-PA-xAO" secondAttribute="centerX" id="Pbw-4A-DoM"/>
                         <constraint firstItem="fSD-ZI-mib" firstAttribute="top" secondItem="Efx-PA-xAO" secondAttribute="top" id="VJE-5A-Q3S"/>
                         <constraint firstItem="fSD-ZI-mib" firstAttribute="height" secondItem="Efx-PA-xAO" secondAttribute="height" id="ZJB-pA-vGq"/>
-                        <constraint firstItem="S7l-44-cOu" firstAttribute="top" secondItem="Efx-PA-xAO" secondAttribute="top" id="cXD-oa-J3Z"/>
-                        <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="bottom" id="htl-A6-IIf"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -150,16 +149,27 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtD-Zi-cJw">
+                    <rect key="frame" x="455.5" y="130.5" width="26.5" height="20"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Efx-PA-xAO" firstAttribute="height" secondItem="E54-Sh-MAV" secondAttribute="height" id="3hd-cr-21Z"/>
+                <constraint firstItem="Y8Y-S0-KVt" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="bottom" id="6FL-ai-Tex"/>
+                <constraint firstItem="S7l-44-cOu" firstAttribute="trailing" secondItem="Y8Y-S0-KVt" secondAttribute="leading" id="9x4-Dw-Vc9"/>
+                <constraint firstItem="Lqi-W2-TtL" firstAttribute="bottom" secondItem="wtD-Zi-cJw" secondAttribute="bottom" id="F5w-ti-K9E"/>
                 <constraint firstItem="r4P-3u-Si9" firstAttribute="leading" secondItem="E54-Sh-MAV" secondAttribute="leading" id="H6w-As-Cdg"/>
                 <constraint firstItem="iR2-fr-cP8" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="leading" id="IF7-dX-RrX"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="leading" secondItem="iR2-fr-cP8" secondAttribute="leading" id="KT2-ch-Jux"/>
                 <constraint firstItem="9NA-U5-Up3" firstAttribute="bottom" secondItem="iR2-fr-cP8" secondAttribute="bottom" id="LJa-dU-yLX"/>
                 <constraint firstItem="XTg-ch-vr8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" multiplier="2" id="O9v-ai-kZj"/>
                 <constraint firstItem="5Rg-Xa-B3R" firstAttribute="bottom" secondItem="wiG-Kt-TZ2" secondAttribute="bottom" id="OxM-jc-vBf"/>
+                <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" id="POn-h4-SDW"/>
+                <constraint firstItem="wtD-Zi-cJw" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="QwO-JM-qS7"/>
                 <constraint firstItem="Wbp-mI-hGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" multiplier="2" id="RVU-D8-jdQ"/>
                 <constraint firstItem="Wbp-mI-hGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" multiplier="2" id="TEH-aR-o0o"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="VZX-D4-h9z"/>
@@ -173,13 +183,16 @@
                 <constraint firstItem="wiG-Kt-TZ2" firstAttribute="bottom" secondItem="9NA-U5-Up3" secondAttribute="bottom" id="dtu-ki-20w"/>
                 <constraint firstItem="Efx-PA-xAO" firstAttribute="width" secondItem="E54-Sh-MAV" secondAttribute="width" id="ftr-6E-8Lc"/>
                 <constraint firstItem="T2m-eG-q24" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="gEZ-GF-hx7"/>
-                <constraint firstItem="XTg-ch-vr8" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" multiplier="0.99" id="h8B-Ta-TTw"/>
+                <constraint firstItem="Y8Y-S0-KVt" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="gov-Sz-BvF"/>
+                <constraint firstItem="XTg-ch-vr8" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" multiplier="0.98" id="h8B-Ta-TTw"/>
+                <constraint firstItem="wtD-Zi-cJw" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="bottom" id="iyg-Ka-TVb"/>
+                <constraint firstItem="Lqi-W2-TtL" firstAttribute="trailing" secondItem="wtD-Zi-cJw" secondAttribute="leading" id="kib-X9-S5K"/>
                 <constraint firstItem="T2m-eG-q24" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="top" id="pXM-Nk-cXt"/>
                 <constraint firstItem="9NA-U5-Up3" firstAttribute="leading" secondItem="iR2-fr-cP8" secondAttribute="trailing" id="zy7-Hm-8k3"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="265.5" y="-103.5"/>
+            <point key="canvasLocation" x="236" y="-147"/>
         </view>
     </objects>
 </document>
