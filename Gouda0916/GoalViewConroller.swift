@@ -84,9 +84,10 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == selectedRowIndex && thereIsCellExpanded || indexPath.row == 0 {
-            return 260
+                return 260
         }
         return 100
     }
@@ -100,8 +101,12 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
             selectedRowIndex = -1
         }
         
+        
         tableView.beginUpdates()
         tableView.endUpdates()
+       
+
+       
     }
     
 }

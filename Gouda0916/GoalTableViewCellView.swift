@@ -26,6 +26,8 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var savingsProgressLabel: UILabel!
     @IBOutlet weak var daysCompleteProgressBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var daysBarView: UIView!
+    @IBOutlet weak var savingsBarView: UIView!
     
     @IBOutlet weak var editButton: UIButton!
     let gradientLayer = CAGradientLayer()
@@ -74,12 +76,14 @@ class GoalTableViewCellView: UIView {
             gradientLayer.locations = [0.5, 0.0]
             contentView.layer.addSublayer(gradientLayer)
             
-            contentView.backgroundColor = UIColor.themeLightPrimaryBlueColor
+            contentView.backgroundColor = UIColor.themePaleGreenColor
+            daysBarView.backgroundColor = UIColor.themeLightPrimaryBlueColor
+            savingsBarView.backgroundColor = UIColor.themeLightPrimaryBlueColor
             titleLabel.textColor = UIColor.white
-            breakLabel.textColor = UIColor.themeLightGrayColor
-            wayToSaveLabel.textColor = UIColor.themeLightGrayColor
-            focusOnLabel.textColor = UIColor.themeLightGrayColor
-            allowanceLabel.textColor = UIColor.themeLightGrayColor
+            breakLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            wayToSaveLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            focusOnLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            allowanceLabel.textColor = UIColor.themeLightPrimaryBlueColor
         }
     }
 }

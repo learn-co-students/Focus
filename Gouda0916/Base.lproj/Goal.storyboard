@@ -65,8 +65,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JC-aA-pUX" userLabel="shadow">
-                                                    <rect key="frame" x="25.666666666666657" y="5" width="372.66666666666663" height="95"/>
-                                                    <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="9" y="5.3333333333333357" width="401.66666666666669" height="94.666666666666657"/>
+                                                    <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="10"/>
@@ -74,7 +74,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iND-Yz-ddC" customClass="GoalTableViewCellView" customModule="Gouda0916" customModuleProvider="target">
-                                                    <rect key="frame" x="20.666666666666657" y="5" width="372.66666666666663" height="90"/>
+                                                    <rect key="frame" x="6.3333333333333428" y="2.6666666666666643" width="401.33333333333337" height="91.666666666666657"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -85,14 +85,14 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="top" secondItem="iND-Yz-ddC" secondAttribute="top" id="8LQ-Zv-zxy"/>
-                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="leading" secondItem="iND-Yz-ddC" secondAttribute="leading" constant="5" id="SU7-eM-ciK"/>
+                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="top" secondItem="iND-Yz-ddC" secondAttribute="top" constant="2.5" id="8LQ-Zv-zxy"/>
+                                                <constraint firstItem="iND-Yz-ddC" firstAttribute="bottom" secondItem="jtO-Wn-fRZ" secondAttribute="bottom" constant="-5.6699999999999999" id="PwO-1I-bqO"/>
+                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="leading" secondItem="iND-Yz-ddC" secondAttribute="leading" constant="2.5" id="SU7-eM-ciK"/>
                                                 <constraint firstItem="iND-Yz-ddC" firstAttribute="centerX" secondItem="jtO-Wn-fRZ" secondAttribute="centerX" id="Vq6-wN-pBV"/>
-                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="height" secondItem="jtO-Wn-fRZ" secondAttribute="height" multiplier="0.95" id="anz-wI-liz"/>
-                                                <constraint firstItem="iND-Yz-ddC" firstAttribute="height" secondItem="jtO-Wn-fRZ" secondAttribute="height" multiplier="0.9" id="dKO-PP-6EN"/>
-                                                <constraint firstItem="iND-Yz-ddC" firstAttribute="width" secondItem="jtO-Wn-fRZ" secondAttribute="width" multiplier="0.9" id="efb-Kk-d1o"/>
-                                                <constraint firstItem="iND-Yz-ddC" firstAttribute="centerY" secondItem="jtO-Wn-fRZ" secondAttribute="centerY" id="i6Z-Vy-rQE"/>
-                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="width" secondItem="jtO-Wn-fRZ" secondAttribute="width" multiplier="0.9" id="xQC-Of-TG2"/>
+                                                <constraint firstItem="iND-Yz-ddC" firstAttribute="width" secondItem="jtO-Wn-fRZ" secondAttribute="width" multiplier="0.97" id="efb-Kk-d1o"/>
+                                                <constraint firstItem="iND-Yz-ddC" firstAttribute="top" secondItem="jtO-Wn-fRZ" secondAttribute="topMargin" constant="-5.3300000000000001" id="pAf-jw-4tz"/>
+                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="bottom" secondItem="jtO-Wn-fRZ" secondAttribute="bottom" id="q46-y3-PDI"/>
+                                                <constraint firstItem="2JC-aA-pUX" firstAttribute="width" secondItem="jtO-Wn-fRZ" secondAttribute="width" multiplier="0.97" id="xQC-Of-TG2"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="leading" secondItem="eSv-Qz-yKF" secondAttribute="leading" id="2zT-7N-QIp"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="centerX" secondItem="eSv-Qz-yKF" secondAttribute="centerX" id="IPO-Er-0Nf"/>
