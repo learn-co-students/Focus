@@ -12,9 +12,14 @@ class GoalTableViewCellView: UIView {
     
     @IBOutlet var contentView: UIView!
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
-    @IBOutlet weak var allowanceAmountLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var allowanceLabel: UILabel!
+    @IBOutlet weak var breakLabel: UILabel!
+    @IBOutlet weak var wayToSaveLabel: UILabel!
+    @IBOutlet weak var focusOnLabel: UILabel!
+    @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var smallGoalLabel: UILabel!
     
     @IBOutlet weak var savingGoalView: UIView!
     @IBOutlet weak var daysProgressLabel: UILabel!
@@ -23,6 +28,7 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var editButton: UIButton!
+    let gradientLayer = CAGradientLayer()
     
     var goal: Goal! {
         didSet {
@@ -48,19 +54,32 @@ class GoalTableViewCellView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-                
+        
     }
     
     func updateLabels() {
         titleLabel.text = goal.purchasGoal!.capitalized
-        goalLabel.text = "$\(goal.goalAmount) goal"
-        allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
-        //allowanceDescriptionLabel.text = "\(goal.wayToSave!.lowercased()) money"
-        
-        daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
-        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
+        allowanceLabel.text = "$\(goal.goalAmount)/day"
+        goalLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+        daysProgressLabel.text = "\(Int(goal.dayCounter))"
+        daysLabel.text = "/ \(Int(goal.timeframe))"
+        savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))"
+        smallGoalLabel.text = "/ $\(Int(goal.goalAmount))"
         daysCompleteProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
         savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
+        
+        if !goal.isActiveGoal {
+            gradientLayer.frame = contentView.bounds
+            gradientLayer.colors = [UIColor.themeDarkGreenColor, UIColor.themeLightGreenColor]
+            gradientLayer.locations = [0.5, 0.0]
+            contentView.layer.addSublayer(gradientLayer)
+            
+            titleLabel.textColor = UIColor.white
+            breakLabel.textColor = UIColor.themeLightGrayColor
+            wayToSaveLabel.textColor = UIColor.themeLightGrayColor
+            focusOnLabel.textColor = UIColor.themeLightGrayColor
+            allowanceLabel.textColor = UIColor.themeLightGrayColor
+        }
     }
 }
 

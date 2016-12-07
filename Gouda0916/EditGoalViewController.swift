@@ -155,7 +155,7 @@ class EditGoalViewController: UIViewController {
         goalView.titleLabel.text = goal.purchasGoal
         goalView.goalLabel.text = "$\(goal.goalAmount)"
         goalView.savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved))/$\(Int(goal.goalAmount))"
-        goalView.allowanceAmountLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
+        goalView.allowanceLabel.text = "$\(Int(goal.alloctedDailyBudget!))"
         goalView.daysProgressLabel.text = "\(Int(goal.dayCounter))/\(Int(goal.timeframe))"
     }
     

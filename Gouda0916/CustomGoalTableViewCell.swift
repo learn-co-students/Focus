@@ -22,7 +22,7 @@ class CustomGoalCell: UITableViewCell {
         let x = self.contentView.bounds.origin.x
         let y = self.contentView.bounds.origin.y
         let width = UIScreen.main.bounds.width
-        let height = self.contentView.bounds.height * 2
+        let height: CGFloat =  260
         let frame = CGRect(x: x, y: y, width: width, height: height)
         let view = GoalTableViewCellView(frame: frame)
         
