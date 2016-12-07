@@ -111,6 +111,8 @@ class CreateGoalViewController: UIViewController {
         goalEntity.endDate = endDate as NSDate?
         
     }
+    
+    
 }
 
 //MARK: Swipe Gestures and animation for goal steps
