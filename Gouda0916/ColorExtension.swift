@@ -12,7 +12,7 @@ import UIKit
 
 extension UIColor {
     static var themePaleGreenColor: UIColor {
-        return UIColor(colorLiteralRed: 162/255, green: 210/255, blue: 202/255, alpha: 1)
+        return UIColor(colorLiteralRed: 106/255, green: 184/255, blue: 174/255, alpha: 1)
     }
     static var themeShadowColor: UIColor {
         return UIColor(colorLiteralRed: 162/255, green: 210/255, blue: 202/255, alpha: 1)

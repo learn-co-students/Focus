@@ -21,6 +21,8 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var smallGoalLabel: UILabel!
     
+    @IBOutlet weak var amountSavedLabel: UILabel!
+    @IBOutlet weak var daysCompletedLabel: UILabel!
     @IBOutlet weak var savingGoalView: UIView!
     @IBOutlet weak var daysProgressLabel: UILabel!
     @IBOutlet weak var savingsProgressLabel: UILabel!
@@ -76,6 +78,10 @@ class GoalTableViewCellView: UIView {
             gradientLayer.locations = [0.5, 0.0]
             contentView.layer.addSublayer(gradientLayer)
             
+            daysCompletedLabel.textColor = UIColor.white
+            amountSavedLabel.textColor = UIColor.white
+            daysLabel.textColor = UIColor.themeLightPrimaryBlueColor
+            smallGoalLabel.textColor = UIColor.themeLightPrimaryBlueColor
             contentView.backgroundColor = UIColor.themePaleGreenColor
             daysBarView.backgroundColor = UIColor.themeLightPrimaryBlueColor
             savingsBarView.backgroundColor = UIColor.themeLightPrimaryBlueColor
