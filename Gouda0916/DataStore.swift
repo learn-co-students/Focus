@@ -23,9 +23,6 @@ class DataStore {
     
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
     
-    
-    
-    
     func fetchData() {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
