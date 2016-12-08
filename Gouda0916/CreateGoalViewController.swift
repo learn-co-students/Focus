@@ -47,8 +47,6 @@ class CreateGoalViewController: UIViewController {
         createButton.isEnabled = false
         createAndAddGestureRecognizers()
         textFields.first?.becomeFirstResponder()
-        date = Date.init(timeIntervalSinceNow: oneMin)
-        delegate?.scheduleNotification(at: date)
         
     }
     
@@ -98,6 +96,10 @@ class CreateGoalViewController: UIViewController {
         if store.goals.isEmpty {
             goalEntity.isActiveGoal = true
         }
+        
+        date = Date.init(timeIntervalSinceNow: oneMin)
+        delegate?.scheduleNotification(at: date)
+
 
 //        for way in waysToSave {
 //            let wayEntity = WayToSave(context: context)
@@ -108,8 +110,10 @@ class CreateGoalViewController: UIViewController {
         store.saveContext()
         store.goals.append(goalEntity)
    
-        ref.child("goals").childByAutoId().setValue(goalEntity.serializeGoalIntoDictionary())
-        
+      let refer = ref.child("goals").childByAutoId()
+        goalEntity.firebaseID = refer.key
+        refer.setValue(goalEntity.serializeGoalIntoDictionary())
+      
         goalsTableView?.reloadData()
         self.dismiss(animated: true, completion: nil)
     }

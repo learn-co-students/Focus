@@ -13,7 +13,7 @@ import UIKit
 class HamburgerMenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
-    let testArray = ["home", "goal", "Velocity", "notificiations", "logout"]
+    let testArray = ["home", "goal", "velocity", "logout"]
 
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
             NotificationCenter.default.post(name: .openMainVC, object: nil)
         case "goal":
             NotificationCenter.default.post(name: .openGoalVC, object: nil)
-        case "Velocity":
+        case "velocity":
             NotificationCenter.default.post(name: .openVelocityVC, object: nil)
         default:
             break

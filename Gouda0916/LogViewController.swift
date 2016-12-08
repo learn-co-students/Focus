@@ -11,6 +11,7 @@ import UIKit
 class LogViewController: UIViewController {
     
     let store = DataStore.sharedInstance
+    var menuIsShowing = false
     
     // TODO: Fix Caplitalization
     @IBOutlet weak var ContainerView: UIView!
@@ -43,7 +44,14 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func MenuButtonPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .unhideBar, object: nil)
+        if !menuIsShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+            menuIsShowing = true
+        } else {
+            NotificationCenter.default.post(name: .hideBar, object: nil)
+            menuIsShowing = false
+        }
+
     }
     
     func updateViewShadow() {

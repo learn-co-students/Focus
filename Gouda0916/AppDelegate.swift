@@ -25,12 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRDatabase.database().persistenceEnabled = false
     }
     
+    //backing up in firebase
+    func backupFirebase(goals: [Goal]) {
+        let ref =  FIRDatabase.database().reference()
+        
+        for goal in goals {
+            if let firebaseID = goal.firebaseID {
+                ref.child("goals").child(firebaseID).updateChildValues(goal.serializeGoalIntoDictionary())
+            } else {
+                print("didnt have a firebase ID saved")
+            }
+        }
+    }
+    
     //Creating trigger that sets calendar notifications and repeats at a specific time
     func scheduleNotification(at date: Date) {
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: .current, from: date)
         let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (61), repeats: true)
         
@@ -50,34 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-      
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-            application.registerForRemoteNotifications()
         
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        application.registerForRemoteNotifications()
         
-        
-        
-//        // Called when APNs has assigned the device a unique token
-//        func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-//            // Convert token to string
-//            let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-//            
-//            // Print it to console
-//            print("APNs device token: \(deviceTokenString)")
-//            
-//            // Persist it in your backend in case it's new
-//             UserDefaults.standard.setValue(deviceTokenString, forKey: "user_auth_token")
-//        }
-//        
-//        // Called when APNs failed to register the device for push notifications
-//        func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-//            // Print the error to console (you should alert the user that registration failed)
-//            print("APNs registration failed: \(error)"
-
         UIApplication.shared.statusBarStyle = .lightContent
-
+        
         store.fetchData()
-    
+  
         return true
     }
 
@@ -104,7 +96,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
 
-   
-
-}
+ }
 
