@@ -16,6 +16,7 @@ class EditGoalViewController: UIViewController {
     var goalIndex: Int!
     var currentEditOpen: Edit?
     var editOptions: [Edit] = []
+    var delte: Edit = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete, editImage: #imageLiteral(resourceName: "no X mark copy"))
     var menuShowing = false
     
     @IBOutlet weak var saveCancelView: EditGoalView!
@@ -26,6 +27,7 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var yesNoTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewBlocker: UIView!
     @IBOutlet weak var footerView: FooterView!
+    @IBOutlet weak var collectionViewContainerView: UIView!
     
     //Collection View Cell Size and Spacing
     let screenWidth = UIScreen.main.bounds.width
@@ -176,15 +178,14 @@ class EditGoalViewController: UIViewController {
     
     func populateEditOptions() {
         
-        let editActivateGoal = Edit(editQuestion: "Set this goal as the current active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate)
-        let editDeleteGoal = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete)
-        let editSavingsPurchase = Edit(editQuestion: "Change what you're saving for", editRequest: "Enter a new thing you want to save for", editType: .saveCancel, editChange: .changePurchase)
-        let editSavingsGoal = Edit(editQuestion: "Change your total $ goal", editRequest: "Enter a new savings amount", editType: .saveCancel, editChange: .changeGoal)
-        let editWayToSave = Edit(editQuestion: "Change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave)
-        let editTimeframe = Edit(editQuestion: "Change Timeframe", editRequest: "How many days do you have to save?", editType: .saveCancel, editChange: .changeTimeframe)
-        let editDailyBudget = Edit(editQuestion: " Change Daily Budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget)
+        let editActivateGoal = Edit(editQuestion: "Set this goal as the current active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate, editImage: #imageLiteral(resourceName: "setAsActiveGoal"))
+        let editSavingsPurchase = Edit(editQuestion: "Change what you're saving for", editRequest: "Enter a new thing you want to save for", editType: .saveCancel, editChange: .changePurchase, editImage: #imageLiteral(resourceName: "change savings goal"))
+        let editSavingsGoal = Edit(editQuestion: "Change your total $ goal", editRequest: "Enter a new savings amount", editType: .saveCancel, editChange: .changeGoal, editImage: #imageLiteral(resourceName: "change what you're saving for"))
+        let editWayToSave = Edit(editQuestion: "Change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave, editImage: #imageLiteral(resourceName: "change focus"))
+        let editTimeframe = Edit(editQuestion: "Change Timeframe", editRequest: "How many days do you have to save?", editType: .saveCancel, editChange: .changeTimeframe, editImage: #imageLiteral(resourceName: "timeframe"))
+        let editDailyBudget = Edit(editQuestion: " Change Daily Budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget, editImage: #imageLiteral(resourceName: "change daily budget"))
         
-        editOptions = [editActivateGoal, editSavingsGoal, editSavingsPurchase, editWayToSave, editTimeframe, editDailyBudget, editDeleteGoal]
+        editOptions = [editActivateGoal, editSavingsGoal, editSavingsPurchase, editWayToSave, editTimeframe, editDailyBudget]
         
     }
     
@@ -242,10 +243,11 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     
     func configureLayout () {
         
-        let desiredSpacing: CGFloat = 2
-        let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
-        let itemWidth = (screenWidth - (whiteSpace * desiredSpacing)) / numberOfCellsPerRow
-        let itemHeight = ((UIScreen.main.bounds.height * 0.6) - ((4 + 1) * desiredSpacing)) / 4
+//      let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
+        let desiredSpacing: CGFloat = 0
+
+        let itemWidth = collectionViewContainerView.frame.width / numberOfCellsPerRow
+        let itemHeight = collectionViewContainerView.frame.height / (CGFloat(editOptions.count) / numberOfCellsPerRow)
         
         spacing = desiredSpacing
         sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
@@ -253,10 +255,6 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == editOptions.count - 1 {
-            itemSize.width = (itemSize.width * 2) + spacing
-            return itemSize
-        }
         return itemSize
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -282,6 +280,7 @@ struct Edit {
     let editRequest: String
     let editType: EditType
     let editChange: EditChange
+    var editImage: UIImage
 }
 
 enum EditType {
