@@ -16,7 +16,6 @@ class EditGoalViewController: UIViewController {
     var goalIndex: Int!
     var currentEditOpen: Edit?
     var editOptions: [Edit] = []
-    var delte: Edit = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete, editImage: #imageLiteral(resourceName: "no X mark copy"))
     var menuShowing = false
     
     @IBOutlet weak var saveCancelView: EditGoalView!
@@ -28,13 +27,14 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var collectionViewBlocker: UIView!
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var collectionViewContainerView: UIView!
+    @IBOutlet weak var deleteImageView: UIImageView!
     
     //Collection View Cell Size and Spacing
     let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
     var itemSize: CGSize!
-    var numberOfCellsPerRow: CGFloat = 2
+    var numberOfCellsPerRow: CGFloat = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +51,33 @@ class EditGoalViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
         footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+        
+        let deleteTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(deleteImageTapped))
+        deleteImageView.addGestureRecognizer(deleteTapGesture)
+        deleteImageView.image = #imageLiteral(resourceName: "no X mark copy")
+        
 
     }
     
     //MARK: Button Actions
+    
+    //make this re-usable witht he collection view and dont force unwrap
+    func deleteImageTapped() {
+        let edit = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete, editImage: #imageLiteral(resourceName: "no X mark copy"))
+        if edit.editType == .yesNo {
+            yesNoView.label.text = edit.editRequest
+            if currentEditOpen == nil {
+                collectionViewBlocker.isHidden = false
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    self.yesNoTrailingConstraint.constant += self.screenWidth
+                    self.collectionViewBlocker.alpha = 0.9
+                    self.view.layoutIfNeeded()
+                }, completion: { success in self.currentEditOpen = edit })
+            }
+        }
+    }
+    
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         delegate?.resetTableView()
         self.dismiss(animated: true, completion: nil)
@@ -178,12 +201,12 @@ class EditGoalViewController: UIViewController {
     
     func populateEditOptions() {
         
-        let editActivateGoal = Edit(editQuestion: "Set this goal as the current active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate, editImage: #imageLiteral(resourceName: "setAsActiveGoal"))
-        let editSavingsPurchase = Edit(editQuestion: "Change what you're saving for", editRequest: "Enter a new thing you want to save for", editType: .saveCancel, editChange: .changePurchase, editImage: #imageLiteral(resourceName: "change savings goal"))
-        let editSavingsGoal = Edit(editQuestion: "Change your total $ goal", editRequest: "Enter a new savings amount", editType: .saveCancel, editChange: .changeGoal, editImage: #imageLiteral(resourceName: "change what you're saving for"))
-        let editWayToSave = Edit(editQuestion: "Change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave, editImage: #imageLiteral(resourceName: "change focus"))
-        let editTimeframe = Edit(editQuestion: "Change Timeframe", editRequest: "How many days do you have to save?", editType: .saveCancel, editChange: .changeTimeframe, editImage: #imageLiteral(resourceName: "timeframe"))
-        let editDailyBudget = Edit(editQuestion: " Change Daily Budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget, editImage: #imageLiteral(resourceName: "change daily budget"))
+        let editActivateGoal = Edit(editQuestion: "set as active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate, editImage: #imageLiteral(resourceName: "set as active goal"))
+        let editSavingsPurchase = Edit(editQuestion: "change what you're saving for", editRequest: "Enter a new thing you want to save for.", editType: .saveCancel, editChange: .changePurchase, editImage: #imageLiteral(resourceName: "change what youre saving goal"))
+        let editSavingsGoal = Edit(editQuestion: "change total savings amount", editRequest: "Enter a new savings amount.", editType: .saveCancel, editChange: .changeGoal, editImage: #imageLiteral(resourceName: "change savings goal"))
+        let editWayToSave = Edit(editQuestion: "change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave, editImage: #imageLiteral(resourceName: "change focus"))
+        let editTimeframe = Edit(editQuestion: "adjust timeframe", editRequest: "Enter the total days you have to save?", editType: .saveCancel, editChange: .changeTimeframe, editImage: #imageLiteral(resourceName: "timeframe"))
+        let editDailyBudget = Edit(editQuestion: "adjust daily budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget, editImage: #imageLiteral(resourceName: "change daily budget"))
         
         editOptions = [editActivateGoal, editSavingsGoal, editSavingsPurchase, editWayToSave, editTimeframe, editDailyBudget]
         
@@ -191,7 +214,7 @@ class EditGoalViewController: UIViewController {
     
 }
 
-//MARK: View Controller Delegate and Datasource
+//MARK: Collection View Delegate and Datasource
 extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -200,8 +223,10 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionsCollectionView.dequeueReusableCell(withReuseIdentifier: "editGoalCell", for: indexPath) as! EditGoalCustomCell
-        cell.backgroundColor = UIColor.themeLightGreenColor
-        cell.cellLabel.text = editOptions[indexPath.row].editQuestion
+        let index = indexPath.row
+        cell.backgroundColor = UIColor.themePaleGreenColor
+        cell.cellLabel.text = editOptions[index].editQuestion
+        cell.iconImageView.image = editOptions[index].editImage
         return cell
     }
     
@@ -270,7 +295,7 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: Collection View Custom Cell
 class EditGoalCustomCell: UICollectionViewCell {
-    
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
 }
 
