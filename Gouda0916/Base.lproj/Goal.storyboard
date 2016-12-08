@@ -460,7 +460,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-lp-FhS" userLabel="saveCancelView" customClass="EditGoalView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="-414" y="73" width="414" height="257.66666666666669"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
