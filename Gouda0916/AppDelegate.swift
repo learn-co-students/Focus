@@ -10,7 +10,8 @@
 import UIKit
 import CoreData
 import Firebase
-
+import UserNotifications
+ 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
    
@@ -24,11 +25,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRDatabase.database().persistenceEnabled = false
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UIApplication.shared.statusBarStyle = .lightContent
-
-        store.fetchData()
+    //backing up in firebase
+    func backupFirebase(goals: [Goal]) {
+        let ref =  FIRDatabase.database().reference()
         
+        for goal in goals {
+            if let firebaseID = goal.firebaseID {
+                ref.child("goals").child(firebaseID).updateChildValues(goal.serializeGoalIntoDictionary())
+            } else {
+                print("didnt have a firebase ID saved")
+            }
+        }
+    }
+    
+    //Creating trigger that sets calendar notifications and repeats at a specific time
+    func scheduleNotification(at date: Date) {
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (61), repeats: true)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Tutorial Reminder"
+        content.body = "Just a reminder to read your tutorial over at appcoda.com!"
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
+        
+        // UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().add(request) {(error) in
+            if let error = error {
+                print("Uh oh! We had an error: \(error)")
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        application.registerForRemoteNotifications()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        store.fetchData()
+  
         return true
     }
 
@@ -55,7 +96,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
 
-   
-
-}
+ }
 
