@@ -19,15 +19,15 @@ import CoreGraphics
 class MainViewController: UIViewController {
     
     
-    @IBOutlet weak var addNewGoalView: UIImageView!
+   
+    @IBOutlet weak var addNewGoalView: UIView!
     
     @IBOutlet weak var addGoalView: UIView!
     
 
-    @IBAction func clickToAddGoalClicked(_ sender: Any) {
+ 
+    @IBAction func addNewGoalClicked(_ sender: Any) {
     }
-    
-    
     
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
         store.fetchData()
         calculateProgress()
 //        addNewGoalView.isHidden = true
-        addGoalView.isHidden = true
+//        addGoalView.isHidden = false
         checkIfGoalExists()
 //        numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         
@@ -105,23 +105,21 @@ class MainViewController: UIViewController {
         let daysLeft = (DataStore.sharedInstance.goals.first?.timeframe)! - Double(timeSinceStartDateInDays)
         print(Int(daysLeft))
         print("🐩🏀🍾")
+        
        
         
     }
-        
-    
-//    let interval = laterDate.timeIntervalSinceDate(earlierDate)
     
     
     func checkIfGoalExists() {
         if store.goals.isEmpty {
             addGoalView.isHidden = true
-//            addNewGoalView.isHidden = false
+            addNewGoalView.isHidden = false
         }
         else{
             //if today's entry is empty,
             addGoalView.isHidden = true
-//            addNewGoalView.isHidden = true
+            addNewGoalView.isHidden = true
              numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         }
     }

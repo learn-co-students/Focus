@@ -19,6 +19,8 @@ class TreatYourselfLandingView: UIView {
         //
         //        }
         //        else {
+      
+        
         
         TreatYourselfLanding.drawCanvas1()
         
