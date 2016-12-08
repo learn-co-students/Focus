@@ -8,7 +8,11 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
+
+
+
+
 
 class TreatYourselfLandingView: UIView {
     

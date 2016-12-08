@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addGoalView: UIView!
     
 
+    @IBOutlet weak var circleView: UIView!
  
     @IBAction func addNewGoalClicked(_ sender: Any) {
     }
@@ -41,9 +42,11 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
+        
+        circleView.isHidden = false
 //        addNewGoalView.isHidden = true
 //        addGoalView.isHidden = false
-        checkIfGoalExists()
+//        checkIfGoalExists()
 //        numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         
         
