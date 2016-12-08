@@ -39,14 +39,12 @@ class GoalViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
-        
+    
         if let delegate = delegate {
             delegate.backupFirebase(goals: store.goals)
         } else {
             print("didnt get the app delegate 🐰♥️")
         }
-
-        
 
     }
     
@@ -126,7 +124,6 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
             thereIsCellExpanded = false
             selectedRowIndex = -1
         }
-        
         tableView.beginUpdates()
         tableView.endUpdates()
     }

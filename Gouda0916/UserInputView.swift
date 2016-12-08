@@ -10,6 +10,8 @@ import UIKit
 
 class UserInputView: UIView {
     
+    @IBOutlet weak var floatingView: UIView!
+    @IBOutlet weak var xButton: UIButton!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -32,8 +34,10 @@ class UserInputView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        contentView.backgroundColor = UIColor.themeLightGreenColor
+        floatingView.backgroundColor = UIColor.themePaleGreenColor
     }
+    
+    
     
     
     

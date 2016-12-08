@@ -59,20 +59,20 @@
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lunch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="9NA-U5-Up3" userLabel="focus label">
-                    <rect key="frame" x="112" y="54" width="47" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lunch " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="9NA-U5-Up3" userLabel="focus label">
+                    <rect key="frame" x="112" y="54" width="52.5" height="24"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="20"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  I  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="wiG-Kt-TZ2" userLabel="I Label">
-                    <rect key="frame" x="159" y="54" width="31.5" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="wiG-Kt-TZ2" userLabel="I Label">
+                    <rect key="frame" x="164.5" y="54" width="19.5" height="24"/>
                     <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10 / day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xa-B3R" userLabel="Allowance Label">
-                    <rect key="frame" x="190.5" y="54" width="79" height="24"/>
+                    <rect key="frame" x="184" y="54" width="79" height="24"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="20"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-eG-q24">
-                    <rect key="frame" x="16" y="160.5" width="94.5" height="20"/>
+                    <rect key="frame" x="16" y="159.5" width="94.5" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="0.47843137250000001" green="0.73333333329999995" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -96,13 +96,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ $20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Y-S0-KVt" userLabel="/ $20">
-                    <rect key="frame" x="445" y="179" width="37" height="20"/>
+                    <rect key="frame" x="445" y="178" width="37" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
-                    <rect key="frame" x="422" y="179" width="23" height="20"/>
+                    <rect key="frame" x="422" y="178" width="23" height="20"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                     <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -140,7 +140,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO" userLabel="Saving Goal">
-                    <rect key="frame" x="16" y="182.5" width="325" height="16.5"/>
+                    <rect key="frame" x="16" y="181.5" width="325" height="16.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
                             <rect key="frame" x="0.0" y="0.0" width="1" height="16.5"/>
@@ -173,7 +173,7 @@
                     </constraints>
                 </imageView>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit icon" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
-                    <rect key="frame" x="16" y="218.5" width="28.5" height="26"/>
+                    <rect key="frame" x="459.5" y="218.5" width="22.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="30:27" id="9i3-JC-1NQ"/>
                     </constraints>
@@ -181,6 +181,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="qS3-qd-E3m" firstAttribute="trailing" secondItem="Y8Y-S0-KVt" secondAttribute="trailing" id="2ZL-La-HJg"/>
                 <constraint firstItem="Efx-PA-xAO" firstAttribute="height" secondItem="E54-Sh-MAV" secondAttribute="height" id="3hd-cr-21Z"/>
                 <constraint firstItem="Y8Y-S0-KVt" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="bottom" id="6FL-ai-Tex"/>
                 <constraint firstItem="An1-Gh-aIM" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="7aJ-Zu-EAN"/>
@@ -195,7 +196,6 @@
                 <constraint firstItem="5Rg-Xa-B3R" firstAttribute="bottom" secondItem="wiG-Kt-TZ2" secondAttribute="bottom" id="OxM-jc-vBf"/>
                 <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" id="POn-h4-SDW"/>
                 <constraint firstItem="wtD-Zi-cJw" firstAttribute="trailing" secondItem="XTg-ch-vr8" secondAttribute="trailing" id="QwO-JM-qS7"/>
-                <constraint firstItem="qS3-qd-E3m" firstAttribute="leading" secondItem="Efx-PA-xAO" secondAttribute="leading" id="RKG-fA-sk1"/>
                 <constraint firstItem="Wbp-mI-hGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" multiplier="2" id="RVU-D8-jdQ"/>
                 <constraint firstItem="Wbp-mI-hGN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" multiplier="2" id="TEH-aR-o0o"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.65" id="VZX-D4-h9z"/>
@@ -215,7 +215,7 @@
                 <constraint firstItem="An1-Gh-aIM" firstAttribute="top" secondItem="XTg-ch-vr8" secondAttribute="bottom" constant="5" id="itH-LU-OnA"/>
                 <constraint firstItem="wtD-Zi-cJw" firstAttribute="bottom" secondItem="E54-Sh-MAV" secondAttribute="bottom" id="iyg-Ka-TVb"/>
                 <constraint firstItem="Lqi-W2-TtL" firstAttribute="trailing" secondItem="wtD-Zi-cJw" secondAttribute="leading" id="kib-X9-S5K"/>
-                <constraint firstItem="qS3-qd-E3m" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="lnN-On-2GM"/>
+                <constraint firstItem="qS3-qd-E3m" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="lnN-On-2GM"/>
                 <constraint firstItem="T2m-eG-q24" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="top" constant="-2" id="pXM-Nk-cXt"/>
                 <constraint firstItem="9NA-U5-Up3" firstAttribute="leading" secondItem="iR2-fr-cP8" secondAttribute="trailing" id="zy7-Hm-8k3"/>
             </constraints>
