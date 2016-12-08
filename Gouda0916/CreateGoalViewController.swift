@@ -9,8 +9,17 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import UserNotifications
+
 
 class CreateGoalViewController: UIViewController {
+  
+    //test notification variables
+    let oneMin = TimeInterval.init(60)
+    var date = Date()
+    let delegate = UIApplication.shared.delegate as? AppDelegate
+    
+
     let store = DataStore.sharedInstance
     let ref =  FIRDatabase.database().reference()
     var textFields: [UITextField] = []
@@ -39,6 +48,7 @@ class CreateGoalViewController: UIViewController {
         textFields.first?.becomeFirstResponder()
         addActionToButtons()
         finishButton.setTitleColor(UIColor.themeLightGrayColor, for: UIControlState.disabled)
+
     }
     
     func setTextForNib() {
@@ -97,11 +107,16 @@ class CreateGoalViewController: UIViewController {
             goalEntity.isActiveGoal = true
         }
         
+        date = Date.init(timeIntervalSinceNow: oneMin)
+        delegate?.scheduleNotification(at: date)
+
         store.saveContext()
         store.goals.append(goalEntity)
    
-        ref.child("goals").childByAutoId().setValue(goalEntity.serializeGoalIntoDictionary())
-        
+      let refer = ref.child("goals").childByAutoId()
+        goalEntity.firebaseID = refer.key
+        refer.setValue(goalEntity.serializeGoalIntoDictionary())
+      
         goalsTableView?.reloadData()
         self.dismiss(animated: true, completion: nil)
     }

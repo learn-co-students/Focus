@@ -11,7 +11,11 @@ import CoreData
 import CoreGraphics
 
 class DataStore {
+    
+    
     static let sharedInstance = DataStore()
+    
+
     
     private init() {}
     
@@ -23,6 +27,7 @@ class DataStore {
     
     //total days 
     var days: CGFloat = 0
+    
     
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
     
@@ -43,6 +48,9 @@ class DataStore {
         }catch {
             print("couldnt get goals from fetch request")
         }
+
+        
+
     }
     
     
