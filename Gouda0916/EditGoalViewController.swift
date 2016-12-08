@@ -48,6 +48,8 @@ class EditGoalViewController: UIViewController {
         yesNoView.yesButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+
     }
     
     //MARK: Button Actions

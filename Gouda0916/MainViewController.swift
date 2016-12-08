@@ -120,7 +120,7 @@ class MainViewController: UIViewController {
             //if today's entry is empty,
             addGoalView.isHidden = true
 //            addNewGoalView.isHidden = true
-             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+//             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         }
     }
     

@@ -40,6 +40,8 @@ class GoalViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+
     
         if let delegate = delegate {
             delegate.backupFirebase(goals: store.goals)
