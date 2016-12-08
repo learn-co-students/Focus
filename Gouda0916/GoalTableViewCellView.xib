@@ -172,10 +172,10 @@
                         <constraint firstAttribute="width" secondItem="An1-Gh-aIM" secondAttribute="height" multiplier="46:50" id="8JI-YA-r9f"/>
                     </constraints>
                 </imageView>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit icon" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
-                    <rect key="frame" x="459.5" y="218.5" width="22.5" height="21"/>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit button (1)" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
+                    <rect key="frame" x="461" y="218.5" width="21" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="30:27" id="9i3-JC-1NQ"/>
+                        <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="589:580" id="9i3-JC-1NQ"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -225,7 +225,7 @@
         </view>
     </objects>
     <resources>
-        <image name="edit icon" width="29" height="27"/>
+        <image name="edit button (1)" width="589" height="580"/>
         <image name="expand button" width="46" height="50"/>
     </resources>
 </document>
