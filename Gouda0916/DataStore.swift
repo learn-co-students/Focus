@@ -21,12 +21,21 @@ class DataStore {
     
     var goals: [Goal] = []
     var userName = User()
-    var progress: CGFloat = 0
+    var progress: Double = 0
     var velocity: CGFloat = 0
+    var daysLeft: Double = 0
+    
+    //total days 
     var days: CGFloat = 0
     
     
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
+    
+    
+    //day counter = how many days have passed
+    //time frame = total days 
+    //days left - how many days are left until the total days as indicated by user (calc prop) - goal extension 
+    
     
     
     

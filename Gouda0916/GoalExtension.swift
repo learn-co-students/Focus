@@ -18,15 +18,6 @@ extension Goal {
         return dailyBudget - (amountNeededPerDay)
     }
     
-//    var waysToSaveAsStrings: [String] {
-//        var array: [String] = []
-//        for way in waysToSave?.allObjects as! [WayToSave] {
-//            if let way = way.way {
-//                array.append(way)
-//            }
-//        }
-//        return array
-//    }
 
     func serializeGoalIntoDictionary() -> [String : Any] {
         var serializedGoal: [String : Any] = [ : ]
@@ -43,4 +34,16 @@ extension Goal {
         
         return serializedGoal
     }
+    //already have end dates (located in create goal view controller) 
+    
+
+    
+    
+    
+    //take in two dates - date when goal starts, date when goal ends
+    //return the difference
+    
+    
+    
+    
 }

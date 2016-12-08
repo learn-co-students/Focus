@@ -19,10 +19,11 @@ import CoreGraphics
 class MainViewController: UIViewController {
     
     
+    @IBOutlet weak var addNewGoalView: UIImageView!
     
     @IBOutlet weak var addGoalView: UIView!
     
-    @IBOutlet weak var addNewGoalView: UIView!
+
     
     
     
@@ -38,9 +39,11 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
-        addNewGoalView.isHidden = true
+//        addNewGoalView.isHidden = true
         addGoalView.isHidden = true
         checkIfGoalExists()
+//        numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+        
         
     }
     
@@ -79,24 +82,45 @@ class MainViewController: UIViewController {
         guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
         guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
         
-        let progressPercentage = CGFloat(checkSaved/checkGoalAmount)
-        
-        
-        store.progress = 812 * progressPercentage
-        
+        let progressPercentage = (checkSaved/checkGoalAmount)
+    
+        store.progress = 812.0 * progressPercentage
+      
     }
     
+    
+    func numberOfDaysLeft (startDate: Date, goalEntity: [Goal]) {
+        
+        let currentDate = Date()
+        let timeSinceStartDateInSeconds = currentDate.timeIntervalSince((goalEntity.first?.startDate)! as Date)
+        
+        let timeSinceStartDateInDays = timeSinceStartDateInSeconds/(24*60*60)
+        
+        print(timeSinceStartDateInSeconds)
+        print(timeSinceStartDateInDays)
+        print("🍣🍔🍳")
+        
+        let daysLeft = (DataStore.sharedInstance.goals.first?.timeframe)! - Double(timeSinceStartDateInDays)
+        print(Int(daysLeft))
+        print("🐩🏀🍾")
+       
+        
+    }
+        
+    
+//    let interval = laterDate.timeIntervalSinceDate(earlierDate)
     
     
     func checkIfGoalExists() {
         if store.goals.isEmpty {
             addGoalView.isHidden = true
-            addNewGoalView.isHidden = false
+//            addNewGoalView.isHidden = false
         }
         else{
             //if today's entry is empty,
             addGoalView.isHidden = true
-            addNewGoalView.isHidden = true
+//            addNewGoalView.isHidden = true
+             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         }
     }
     
