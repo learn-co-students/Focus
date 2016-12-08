@@ -17,6 +17,7 @@ class GoalViewController: UIViewController {
     var thereIsCellExpanded = false
     var selectedRowIndex = -1
     var buttonTag = 0
+    var menuShowing = false
     
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var goalTableView: UITableView!
@@ -44,9 +45,11 @@ class GoalViewController: UIViewController {
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
-        print("pressed hamburger menu")
-        NotificationCenter.default.post(name: .unhideBar, object: nil)
-
+        if !menuShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+        } else {
+            NotificationCenter.default.post(name: .hideBar, object: nil)
+        }
     }
     
     func editIconTapped(_ sender: UITapGestureRecognizer) {

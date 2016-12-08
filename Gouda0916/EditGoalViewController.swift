@@ -16,6 +16,7 @@ class EditGoalViewController: UIViewController {
     var goalIndex: Int!
     var currentEditOpen: Edit?
     var editOptions: [Edit] = []
+    var menuShowing = false
     
     @IBOutlet weak var saveCancelView: EditGoalView!
     @IBOutlet weak var yesNoView: YesNoView!
@@ -24,6 +25,7 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var saveCancelViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var yesNoTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewBlocker: UIView!
+    @IBOutlet weak var footerView: FooterView!
     
     //Collection View Cell Size and Spacing
     let screenWidth = UIScreen.main.bounds.width
@@ -44,12 +46,22 @@ class EditGoalViewController: UIViewController {
         saveCancelView.cancelButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
         yesNoView.noButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
         yesNoView.yesButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
     }
     
     //MARK: Button Actions
     @IBAction func backButtonTapped(_ sender: Any) {
         delegate?.resetTableView()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func pressedHamburger(sender: UITapGestureRecognizer) {
+        if !menuShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+        } else {
+            NotificationCenter.default.post(name: .hideBar, object: nil)
+        }
     }
     
     func noOrCancelButtonTapped(_ sender: UIButton) {
