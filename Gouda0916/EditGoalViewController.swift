@@ -44,10 +44,7 @@ class EditGoalViewController: UIViewController {
         goalView.expandIconImageView.isHidden = true
         goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
-        saveCancelView.saveButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
-        saveCancelView.cancelButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
-        yesNoView.noButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
-        yesNoView.yesButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
+        
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
         footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
@@ -55,6 +52,20 @@ class EditGoalViewController: UIViewController {
         let deleteTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(deleteImageTapped))
         deleteImageView.addGestureRecognizer(deleteTapGesture)
         deleteImageView.image = #imageLiteral(resourceName: "no X mark copy")
+        
+        let yesIconGesture = UITapGestureRecognizer.init(target: self, action: #selector(yesOrSaveButtonTapped))
+        yesNoView.checkImageView.addGestureRecognizer(yesIconGesture)
+        
+        let saveIconGesture = UITapGestureRecognizer.init(target: self, action: #selector(yesOrSaveButtonTapped))
+        saveCancelView.checkImageView.addGestureRecognizer(saveIconGesture)
+        
+        let xIconGesture = UITapGestureRecognizer.init(target: self, action: #selector(noOrCancelButtonTapped))
+        yesNoView.xImageView.addGestureRecognizer(xIconGesture)
+        
+        let xIconGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(noOrCancelButtonTapped))
+        saveCancelView.xImageView.addGestureRecognizer(xIconGesture2)
+        
+        setUpTextFieldForValidation()
         
 
     }
@@ -91,7 +102,7 @@ class EditGoalViewController: UIViewController {
         }
     }
     
-    func noOrCancelButtonTapped(_ sender: UIButton) {
+    func noOrCancelButtonTapped(_ sender: UITapGestureRecognizer) {
         if let currentEditOpen = currentEditOpen {
             switch currentEditOpen.editChange {
             case .activate, .delete:
@@ -118,7 +129,7 @@ class EditGoalViewController: UIViewController {
         }
     }
     
-    func yesOrSaveButtonTapped(_ sender: UIButton) {
+    func yesOrSaveButtonTapped(_ sender: UITapGestureRecognizer) {
        
         if let currentEditOpen = currentEditOpen {
             
@@ -162,6 +173,7 @@ class EditGoalViewController: UIViewController {
             goalView.updateLabels()
             store.saveContext()
             
+            
             //Animate views
             switch currentEditOpen.editChange {
             case .delete:
@@ -183,6 +195,8 @@ class EditGoalViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: { success in
                     self.saveCancelView.textField.text = ""
+                    self.saveCancelView.checkImageView.alpha = 0.2
+                    self.saveCancelView.isUserInteractionEnabled = false
                     self.collectionViewBlocker.isHidden = true
                 })
             }
@@ -291,6 +305,60 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
+}
+
+//MARK: Text Field Validation
+extension EditGoalViewController {
+    
+    func setUpTextFieldForValidation() {
+        saveCancelView.textField.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
+    }
+    
+    func checkForTextFieldEdit(_ textField: UITextField) {
+        let validInput = checkForValidInputIn(textField: textField)
+        
+        //changes text field color
+        if validInput {
+            print("🔥")
+            textField.textColor = UIColor.themeBlackColor
+            saveCancelView.checkImageView.isUserInteractionEnabled = true
+            saveCancelView.checkImageView.alpha = 1
+        } else {
+            print("❌")
+            textField.textColor = .red
+            saveCancelView.checkImageView.isUserInteractionEnabled = false
+            saveCancelView.checkImageView.alpha = 0.2
+        }
+    
+    }
+    
+    func checkForValidInputIn(textField: UITextField) -> Bool {
+        var isValid = false
+        let userInput = textField.text
+        
+        if let editOpen = currentEditOpen {
+            switch editOpen.editChange{
+            case .changeGoal, .changeBudget, .changeTimeframe:
+                if let userInput = userInput {
+                    let inputAsDouble = Double(userInput)
+                    if inputAsDouble != nil {
+                        if inputAsDouble! > 0.0 {
+                            isValid = true
+                        }
+                    }
+                }
+            case .changeWayToSave, .changePurchase:
+                if userInput != "" {
+                    isValid = true
+                }
+            default:
+                break
+            }
+
+        }
+        return isValid
+    }
+
 }
 
 //MARK: Collection View Custom Cell

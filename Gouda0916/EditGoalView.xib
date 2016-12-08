@@ -13,11 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditGoalView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
-                <outlet property="cancelButton" destination="LED-xg-P8Z" id="cQ1-Ml-nmj"/>
+                <outlet property="checkImageView" destination="hvg-De-7jd" id="Ni1-oG-tzo"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="PVX-fQ-mDs"/>
                 <outlet property="label" destination="be8-bR-j3Z" id="VCG-9K-hb5"/>
-                <outlet property="saveButton" destination="jh3-QL-3jf" id="0o0-db-V2X"/>
                 <outlet property="textField" destination="csp-Oj-Ryq" id="uae-2W-D6l"/>
+                <outlet property="xImageView" destination="wts-G4-CI1" id="cP4-N7-XfO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -43,32 +43,18 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no X mark copy" translatesAutoresizingMaskIntoConstraints="NO" id="wts-G4-CI1" userLabel="xImage">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no X mark copy" translatesAutoresizingMaskIntoConstraints="NO" id="wts-G4-CI1" userLabel="xImage">
                             <rect key="frame" x="72.5" y="112" width="45" height="44.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wts-G4-CI1" secondAttribute="height" multiplier="1:1" id="yOO-2R-KFf"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes check mark copy" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-De-7jd" userLabel="checkImage">
+                        <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes check mark copy" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-De-7jd" userLabel="checkImage">
                             <rect key="frame" x="262" y="112" width="45" height="44.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="hvg-De-7jd" secondAttribute="height" multiplier="1:1" id="hvX-XD-rOs"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jh3-QL-3jf" userLabel="Save Button">
-                            <rect key="frame" x="262" y="112" width="45" height="44.5"/>
-                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
-                            <state key="normal">
-                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LED-xg-P8Z" userLabel="Cancel Button">
-                            <rect key="frame" x="72" y="112" width="45" height="44.5"/>
-                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
-                            <state key="normal">
-                                <color key="titleColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="csp-Oj-Ryq">
                             <rect key="frame" x="47" y="65.5" width="285" height="30"/>
                             <nil key="textColor"/>
@@ -78,26 +64,18 @@
                     </subviews>
                     <color key="backgroundColor" red="0.41568627450000001" green="0.72156862749999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="jh3-QL-3jf" firstAttribute="width" secondItem="hvg-De-7jd" secondAttribute="width" id="0BE-lf-4Up"/>
                         <constraint firstItem="csp-Oj-Ryq" firstAttribute="centerY" secondItem="B9j-00-iaw" secondAttribute="centerY" multiplier="0.9" id="16m-DH-EoT"/>
                         <constraint firstItem="hvg-De-7jd" firstAttribute="centerX" secondItem="B9j-00-iaw" secondAttribute="centerX" multiplier="1.5" id="897-XS-5VV"/>
                         <constraint firstItem="be8-bR-j3Z" firstAttribute="centerX" secondItem="B9j-00-iaw" secondAttribute="centerX" id="HXy-IQ-EgP"/>
-                        <constraint firstItem="LED-xg-P8Z" firstAttribute="centerX" secondItem="wts-G4-CI1" secondAttribute="centerX" id="Hrj-HW-m7f"/>
                         <constraint firstItem="wts-G4-CI1" firstAttribute="height" secondItem="B9j-00-iaw" secondAttribute="height" multiplier="0.25" id="IHa-XI-Moy"/>
                         <constraint firstItem="wts-G4-CI1" firstAttribute="centerY" secondItem="B9j-00-iaw" secondAttribute="centerY" multiplier="1.5" id="LbQ-Gx-IvE"/>
-                        <constraint firstItem="jh3-QL-3jf" firstAttribute="centerY" secondItem="hvg-De-7jd" secondAttribute="centerY" id="PKm-p1-xQW"/>
-                        <constraint firstItem="LED-xg-P8Z" firstAttribute="width" secondItem="wts-G4-CI1" secondAttribute="width" id="TGE-E0-xpz"/>
                         <constraint firstItem="hvg-De-7jd" firstAttribute="centerY" secondItem="B9j-00-iaw" secondAttribute="centerY" multiplier="1.5" id="UR8-sC-kU8"/>
-                        <constraint firstItem="LED-xg-P8Z" firstAttribute="height" secondItem="wts-G4-CI1" secondAttribute="height" id="bcE-7x-jhL"/>
                         <constraint firstItem="wts-G4-CI1" firstAttribute="centerX" secondItem="B9j-00-iaw" secondAttribute="centerX" multiplier="0.5" id="eM7-wT-2xn"/>
-                        <constraint firstItem="LED-xg-P8Z" firstAttribute="centerY" secondItem="wts-G4-CI1" secondAttribute="centerY" id="gDo-dS-SE4"/>
                         <constraint firstItem="csp-Oj-Ryq" firstAttribute="centerX" secondItem="B9j-00-iaw" secondAttribute="centerX" id="i0M-RC-TKu"/>
                         <constraint firstItem="csp-Oj-Ryq" firstAttribute="width" secondItem="B9j-00-iaw" secondAttribute="width" multiplier="0.75" id="kFk-Ge-iHt"/>
                         <constraint firstItem="be8-bR-j3Z" firstAttribute="width" secondItem="B9j-00-iaw" secondAttribute="width" multiplier="0.75" id="lbQ-IO-UKr"/>
                         <constraint firstItem="be8-bR-j3Z" firstAttribute="centerY" secondItem="B9j-00-iaw" secondAttribute="centerY" multiplier="0.4" id="tU5-4X-han"/>
                         <constraint firstItem="hvg-De-7jd" firstAttribute="height" secondItem="B9j-00-iaw" secondAttribute="height" multiplier="0.25" id="vu9-UO-SYv"/>
-                        <constraint firstItem="jh3-QL-3jf" firstAttribute="centerX" secondItem="hvg-De-7jd" secondAttribute="centerX" id="wFO-wt-sQA"/>
-                        <constraint firstItem="jh3-QL-3jf" firstAttribute="height" secondItem="hvg-De-7jd" secondAttribute="height" id="zKD-wE-ahd"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
