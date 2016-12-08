@@ -15,6 +15,7 @@
 		113E8BD81DF32D0B00630C02 /* YesNoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E8BD71DF32D0B00630C02 /* YesNoView.swift */; };
 		114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */; };
 		114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */; };
+		114CFDC81DF9F7E10070E11B /* UserInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114CFDC71DF9F7E10070E11B /* UserInputProtocol.swift */; };
 		116E0BF11DF872FA00CF2B57 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116E0BF01DF872FA00CF2B57 /* FooterView.xib */; };
 		116E0BF31DF8730A00CF2B57 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E0BF21DF8730A00CF2B57 /* FooterView.swift */; };
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
@@ -66,6 +67,7 @@
 		113E8BD71DF32D0B00630C02 /* YesNoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoView.swift; sourceTree = "<group>"; };
 		114250E81DE62CAC003B7624 /* GoalTableViewCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalTableViewCellView.xib; sourceTree = "<group>"; };
 		114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCellView.swift; sourceTree = "<group>"; };
+		114CFDC71DF9F7E10070E11B /* UserInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputProtocol.swift; sourceTree = "<group>"; };
 		116E0BF01DF872FA00CF2B57 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		116E0BF21DF8730A00CF2B57 /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				112179B71DE3A9B600CC3FF1 /* GoalExtension.swift */,
+				114CFDC71DF9F7E10070E11B /* UserInputProtocol.swift */,
 				905278591DDF58CA0079E3DD /* User.swift */,
 				55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */,
 				70934DDA1DE4F8A300913625 /* Velocity.swift */,
@@ -288,7 +291,7 @@
 				TargetAttributes = {
 					11FCAA101DDA6E160072C46A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = KXY9EDFTF5;
+						DevelopmentTeam = QY9ZR636M2;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -404,6 +407,7 @@
 				703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
+				114CFDC81DF9F7E10070E11B /* UserInputProtocol.swift in Sources */,
 				90B1151B1DF62EE60002E969 /* MainViewController.swift in Sources */,
 				703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */,
 				70934DDB1DE4F8A300913625 /* Velocity.swift in Sources */,
@@ -568,11 +572,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Gouda0916/Gouda0916.entitlements;
-				DEVELOPMENT_TEAM = KXY9EDFTF5;
+				DEVELOPMENT_TEAM = QY9ZR636M2;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.team-cheese-house";
+				PRODUCT_BUNDLE_IDENTIFIER = com.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gouda0916/Gouda0916-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -587,11 +591,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Gouda0916/Gouda0916.entitlements;
-				DEVELOPMENT_TEAM = KXY9EDFTF5;
+				DEVELOPMENT_TEAM = QY9ZR636M2;
 				INFOPLIST_FILE = Gouda0916/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.team-cheese-house";
+				PRODUCT_BUNDLE_IDENTIFIER = com.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gouda0916/Gouda0916-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
