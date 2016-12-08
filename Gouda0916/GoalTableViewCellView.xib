@@ -172,10 +172,10 @@
                         <constraint firstAttribute="width" secondItem="An1-Gh-aIM" secondAttribute="height" multiplier="46:50" id="8JI-YA-r9f"/>
                     </constraints>
                 </imageView>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit icon" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
-                    <rect key="frame" x="459.5" y="218.5" width="22.5" height="21"/>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit button (1)" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
+                    <rect key="frame" x="461" y="223" width="21" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="30:27" id="9i3-JC-1NQ"/>
+                        <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="589:580" id="9i3-JC-1NQ"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -191,7 +191,7 @@
                 <constraint firstItem="iR2-fr-cP8" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="leading" id="IF7-dX-RrX"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="leading" secondItem="iR2-fr-cP8" secondAttribute="leading" id="KT2-ch-Jux"/>
                 <constraint firstItem="9NA-U5-Up3" firstAttribute="bottom" secondItem="iR2-fr-cP8" secondAttribute="bottom" id="LJa-dU-yLX"/>
-                <constraint firstItem="qS3-qd-E3m" firstAttribute="top" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" constant="20" id="NIM-og-Rhl"/>
+                <constraint firstItem="qS3-qd-E3m" firstAttribute="top" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" constant="25" id="NIM-og-Rhl"/>
                 <constraint firstItem="XTg-ch-vr8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" multiplier="2" id="O9v-ai-kZj"/>
                 <constraint firstItem="5Rg-Xa-B3R" firstAttribute="bottom" secondItem="wiG-Kt-TZ2" secondAttribute="bottom" id="OxM-jc-vBf"/>
                 <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" id="POn-h4-SDW"/>
@@ -225,7 +225,7 @@
         </view>
     </objects>
     <resources>
-        <image name="edit icon" width="29" height="27"/>
+        <image name="edit button (1)" width="589" height="580"/>
         <image name="expand button" width="46" height="50"/>
     </resources>
 </document>

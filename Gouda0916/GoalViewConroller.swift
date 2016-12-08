@@ -18,6 +18,7 @@ class GoalViewController: UIViewController {
     var thereIsCellExpanded = false
     var selectedRowIndex = -1
     var buttonTag = 0
+    var menuShowing = false
     
     
     var menuIsShowing = false
@@ -39,6 +40,8 @@ class GoalViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+
     
         if let delegate = delegate {
             delegate.backupFirebase(goals: store.goals)
@@ -54,12 +57,12 @@ class GoalViewController: UIViewController {
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
-        if !menuIsShowing {
+        if !menuShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
-            menuIsShowing = true
+            menuShowing = true
         } else {
             NotificationCenter.default.post(name: .hideBar, object: nil)
-            menuIsShowing = false
+            menuShowing = false
         }
     }
     

@@ -16,6 +16,7 @@ class EditGoalViewController: UIViewController {
     var goalIndex: Int!
     var currentEditOpen: Edit?
     var editOptions: [Edit] = []
+    var menuShowing = false
     
     @IBOutlet weak var saveCancelView: EditGoalView!
     @IBOutlet weak var yesNoView: YesNoView!
@@ -24,13 +25,16 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var saveCancelViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var yesNoTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewBlocker: UIView!
+    @IBOutlet weak var footerView: FooterView!
+    @IBOutlet weak var collectionViewContainerView: UIView!
+    @IBOutlet weak var deleteImageView: UIImageView!
     
     //Collection View Cell Size and Spacing
     let screenWidth = UIScreen.main.bounds.width
     var spacing: CGFloat!
     var sectionInsets: UIEdgeInsets!
     var itemSize: CGSize!
-    var numberOfCellsPerRow: CGFloat = 2
+    var numberOfCellsPerRow: CGFloat = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,19 +44,71 @@ class EditGoalViewController: UIViewController {
         goalView.expandIconImageView.isHidden = true
         goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
-        saveCancelView.saveButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
-        saveCancelView.cancelButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
-        yesNoView.noButton.addTarget(self, action: #selector(noOrCancelButtonTapped), for: .touchUpInside)
-        yesNoView.yesButton.addTarget(self, action: #selector(yesOrSaveButtonTapped), for: .touchUpInside)
+        
+       
+        addGestures()
+        setUpTextFieldForValidation()
+        
+
+    }
+    
+    
+    func addGestures() {
+        //unhide hamburger when we get rid of segway
+//        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+//        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+//        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+        footerView.hamburgerMenuImageView.isHidden = true
+        
+        let deleteTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(deleteImageTapped))
+        deleteImageView.addGestureRecognizer(deleteTapGesture)
+        deleteImageView.image = #imageLiteral(resourceName: "no X mark copy")
+        
+        let yesIconGesture = UITapGestureRecognizer.init(target: self, action: #selector(yesOrSaveButtonTapped))
+        yesNoView.checkImageView.addGestureRecognizer(yesIconGesture)
+        
+        let saveIconGesture = UITapGestureRecognizer.init(target: self, action: #selector(yesOrSaveButtonTapped))
+        saveCancelView.checkImageView.addGestureRecognizer(saveIconGesture)
+        
+        let xIconGesture = UITapGestureRecognizer.init(target: self, action: #selector(noOrCancelButtonTapped))
+        yesNoView.xImageView.addGestureRecognizer(xIconGesture)
+        
+        let xIconGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(noOrCancelButtonTapped))
+        saveCancelView.xImageView.addGestureRecognizer(xIconGesture2)
     }
     
     //MARK: Button Actions
+    //make this re-usable witht he collection view and dont force unwrap
+    func deleteImageTapped() {
+        let edit = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete, editImage: #imageLiteral(resourceName: "no X mark copy"))
+        if edit.editType == .yesNo {
+            yesNoView.label.text = edit.editRequest
+            if currentEditOpen == nil {
+                collectionViewBlocker.isHidden = false
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    self.yesNoTrailingConstraint.constant += self.screenWidth
+                    self.collectionViewBlocker.alpha = 0.9
+                    self.view.layoutIfNeeded()
+                }, completion: { success in self.currentEditOpen = edit })
+            }
+        }
+    }
+    
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         delegate?.resetTableView()
         self.dismiss(animated: true, completion: nil)
     }
     
-    func noOrCancelButtonTapped(_ sender: UIButton) {
+    func pressedHamburger(sender: UITapGestureRecognizer) {
+        if !menuShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+        } else {
+            NotificationCenter.default.post(name: .hideBar, object: nil)
+        }
+    }
+    
+    func noOrCancelButtonTapped(_ sender: UITapGestureRecognizer) {
         if let currentEditOpen = currentEditOpen {
             switch currentEditOpen.editChange {
             case .activate, .delete:
@@ -79,7 +135,7 @@ class EditGoalViewController: UIViewController {
         }
     }
     
-    func yesOrSaveButtonTapped(_ sender: UIButton) {
+    func yesOrSaveButtonTapped(_ sender: UITapGestureRecognizer) {
        
         if let currentEditOpen = currentEditOpen {
             
@@ -110,6 +166,12 @@ class EditGoalViewController: UIViewController {
                 goal.willChangeValue(forKey: "timeframe")
                 goal.timeframe = Double(input)!
                 goal.didChangeValue(forKey: "timeframe")
+                goal.willChangeValue(forKey: "endDate")
+                let timeInt = TimeInterval.init(exactly: goal.timeframe*60*60*24)
+                if let timeInt = timeInt {
+                    goal.endDate = goal.startDate?.addingTimeInterval(timeInt)
+                }
+                goal.didChangeValue(forKey: "endDate")
             case .changeBudget:
                 goal.willChangeValue(forKey: "dailyBudget")
                 goal.dailyBudget = Double(input)!
@@ -122,6 +184,7 @@ class EditGoalViewController: UIViewController {
             
             goalView.updateLabels()
             store.saveContext()
+            
             
             //Animate views
             switch currentEditOpen.editChange {
@@ -144,6 +207,8 @@ class EditGoalViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: { success in
                     self.saveCancelView.textField.text = ""
+                    self.saveCancelView.checkImageView.alpha = 0.2
+                    self.saveCancelView.isUserInteractionEnabled = false
                     self.collectionViewBlocker.isHidden = true
                 })
             }
@@ -162,21 +227,20 @@ class EditGoalViewController: UIViewController {
     
     func populateEditOptions() {
         
-        let editActivateGoal = Edit(editQuestion: "Set this goal as the current active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate)
-        let editDeleteGoal = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete)
-        let editSavingsPurchase = Edit(editQuestion: "Change what you're saving for", editRequest: "Enter a new thing you want to save for", editType: .saveCancel, editChange: .changePurchase)
-        let editSavingsGoal = Edit(editQuestion: "Change your total $ goal", editRequest: "Enter a new savings amount", editType: .saveCancel, editChange: .changeGoal)
-        let editWayToSave = Edit(editQuestion: "Change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave)
-        let editTimeframe = Edit(editQuestion: "Change Timeframe", editRequest: "How many days do you have to save?", editType: .saveCancel, editChange: .changeTimeframe)
-        let editDailyBudget = Edit(editQuestion: " Change Daily Budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget)
+        let editActivateGoal = Edit(editQuestion: "set as active goal", editRequest: "Replace current active goal with this goal?", editType: .yesNo, editChange: .activate, editImage: #imageLiteral(resourceName: "set as active goal"))
+        let editSavingsPurchase = Edit(editQuestion: "change what you're saving for", editRequest: "Enter a new thing you want to save for.", editType: .saveCancel, editChange: .changePurchase, editImage: #imageLiteral(resourceName: "change what youre saving goal"))
+        let editSavingsGoal = Edit(editQuestion: "change total savings amount", editRequest: "Enter a new savings amount.", editType: .saveCancel, editChange: .changeGoal, editImage: #imageLiteral(resourceName: "change savings goal"))
+        let editWayToSave = Edit(editQuestion: "change what you're saving on", editRequest: "What do you want to save money on?", editType: .saveCancel, editChange: .changeWayToSave, editImage: #imageLiteral(resourceName: "change focus"))
+        let editTimeframe = Edit(editQuestion: "adjust timeframe", editRequest: "Enter the total days you have to save?", editType: .saveCancel, editChange: .changeTimeframe, editImage: #imageLiteral(resourceName: "timeframe"))
+        let editDailyBudget = Edit(editQuestion: "adjust daily budget", editRequest: "What is your daily budget?", editType: .saveCancel, editChange: .changeBudget, editImage: #imageLiteral(resourceName: "change daily budget"))
         
-        editOptions = [editActivateGoal, editSavingsGoal, editSavingsPurchase, editWayToSave, editTimeframe, editDailyBudget, editDeleteGoal]
+        editOptions = [editActivateGoal, editSavingsGoal, editSavingsPurchase, editWayToSave, editTimeframe, editDailyBudget]
         
     }
     
 }
 
-//MARK: View Controller Delegate and Datasource
+//MARK: Collection View Delegate and Datasource
 extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -185,8 +249,10 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionsCollectionView.dequeueReusableCell(withReuseIdentifier: "editGoalCell", for: indexPath) as! EditGoalCustomCell
-        cell.backgroundColor = UIColor.themeLightGreenColor
-        cell.cellLabel.text = editOptions[indexPath.row].editQuestion
+        let index = indexPath.row
+        cell.backgroundColor = UIColor.themePaleGreenColor
+        cell.cellLabel.text = editOptions[index].editQuestion
+        cell.iconImageView.image = editOptions[index].editImage
         return cell
     }
     
@@ -228,10 +294,11 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     
     func configureLayout () {
         
-        let desiredSpacing: CGFloat = 2
-        let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
-        let itemWidth = (screenWidth - (whiteSpace * desiredSpacing)) / numberOfCellsPerRow
-        let itemHeight = ((UIScreen.main.bounds.height * 0.6) - ((4 + 1) * desiredSpacing)) / 4
+//      let whiteSpace: CGFloat = numberOfCellsPerRow + 1.0
+        let desiredSpacing: CGFloat = 0
+
+        let itemWidth = collectionViewContainerView.frame.width / numberOfCellsPerRow
+        let itemHeight = collectionViewContainerView.frame.height / (CGFloat(editOptions.count) / numberOfCellsPerRow)
         
         spacing = desiredSpacing
         sectionInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
@@ -239,10 +306,6 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == editOptions.count - 1 {
-            itemSize.width = (itemSize.width * 2) + spacing
-            return itemSize
-        }
         return itemSize
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -256,9 +319,61 @@ extension EditGoalViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: Text Field Validation
+extension EditGoalViewController {
+    
+    func setUpTextFieldForValidation() {
+        saveCancelView.textField.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
+    }
+    
+    func checkForTextFieldEdit(_ textField: UITextField) {
+        let validInput = checkForValidInputIn(textField: textField)
+        
+        //changes text field color
+        if validInput {
+            textField.textColor = UIColor.themeBlackColor
+            saveCancelView.checkImageView.isUserInteractionEnabled = true
+            saveCancelView.checkImageView.alpha = 1
+        } else {
+            textField.textColor = .red
+            saveCancelView.checkImageView.isUserInteractionEnabled = false
+            saveCancelView.checkImageView.alpha = 0.2
+        }
+    
+    }
+    
+    func checkForValidInputIn(textField: UITextField) -> Bool {
+        var isValid = false
+        let userInput = textField.text
+        
+        if let editOpen = currentEditOpen {
+            switch editOpen.editChange{
+            case .changeGoal, .changeBudget, .changeTimeframe:
+                if let userInput = userInput {
+                    let inputAsDouble = Double(userInput)
+                    if inputAsDouble != nil {
+                        if inputAsDouble! > 0.0 {
+                            isValid = true
+                        }
+                    }
+                }
+            case .changeWayToSave, .changePurchase:
+                if userInput != "" {
+                    isValid = true
+                }
+            default:
+                break
+            }
+
+        }
+        return isValid
+    }
+
+}
+
 //MARK: Collection View Custom Cell
 class EditGoalCustomCell: UICollectionViewCell {
-    
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
 }
 
@@ -268,6 +383,7 @@ struct Edit {
     let editRequest: String
     let editType: EditType
     let editChange: EditChange
+    var editImage: UIImage
 }
 
 enum EditType {

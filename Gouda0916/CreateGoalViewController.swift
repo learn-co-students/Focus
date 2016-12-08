@@ -101,6 +101,7 @@ class CreateGoalViewController: UIViewController {
         goalEntity.dailyBudget = dailyBudget
         goalEntity.timeframe = Double(timeframe)
         goalEntity.wayToSave = enteredWayToSave
+        createStartAndEnd(timeFrame: timeframe, goalEntity: goalEntity)
         
         if store.goals.isEmpty {
             goalEntity.isActiveGoal = true
@@ -120,6 +121,16 @@ class CreateGoalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+
+    func createStartAndEnd(timeFrame: Int, goalEntity: Goal) {
+        let now = Date()
+        let timeInt = TimeInterval(exactly: Double(timeFrame)*60*60*24)
+        goalEntity.startDate = now as NSDate?
+        let endDate = now.addingTimeInterval(timeInt!)
+        goalEntity.endDate = endDate as NSDate?
+        
+    }
+
     
     
 }
