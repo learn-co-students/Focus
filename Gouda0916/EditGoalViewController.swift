@@ -45,9 +45,20 @@ class EditGoalViewController: UIViewController {
         goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
         
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
-        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
-        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+       
+        addGestures()
+        setUpTextFieldForValidation()
+        
+
+    }
+    
+    
+    func addGestures() {
+        //unhide hamburger when we get rid of segway
+//        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+//        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+//        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+        footerView.hamburgerMenuImageView.isHidden = true
         
         let deleteTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(deleteImageTapped))
         deleteImageView.addGestureRecognizer(deleteTapGesture)
@@ -64,14 +75,9 @@ class EditGoalViewController: UIViewController {
         
         let xIconGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(noOrCancelButtonTapped))
         saveCancelView.xImageView.addGestureRecognizer(xIconGesture2)
-        
-        setUpTextFieldForValidation()
-        
-
     }
     
     //MARK: Button Actions
-    
     //make this re-usable witht he collection view and dont force unwrap
     func deleteImageTapped() {
         let edit = Edit(editQuestion: "Delete Goal", editRequest: "Delete This Goal?", editType: .yesNo, editChange: .delete, editImage: #imageLiteral(resourceName: "no X mark copy"))
