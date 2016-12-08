@@ -24,6 +24,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addGoalView: UIView!
     
 
+    @IBAction func clickToAddGoalClicked(_ sender: Any) {
+    }
     
     
     

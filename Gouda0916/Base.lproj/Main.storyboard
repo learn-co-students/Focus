@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -202,94 +201,111 @@
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="307" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="32" y="2" width="343" height="662"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-ty-Jsk">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buB-ty-Jsk">
                                 <rect key="frame" x="16" y="637" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu"/>
                                 <connections>
                                     <action selector="menuButtonPressed:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="yGM-Ii-mbl"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ta-G6b">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ep1-Sa-vxl" userLabel="footerView" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="initial_landing_page_720" translatesAutoresizingMaskIntoConstraints="NO" id="PUH-ZV-z9E">
+                                    <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="blank Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-yO-naH">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Add A New Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-8y-eHm">
-                                        <rect key="frame" x="118" y="482" width="139" height="21"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-FG-1pd">
-                                        <rect key="frame" x="164" y="522" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1V-1B-RUx" userLabel="holdsSpentToday">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="blue-green_notification_box_480" translatesAutoresizingMaskIntoConstraints="NO" id="MLv-hb-fM9">
+                                                <rect key="frame" x="39" y="126" width="297" height="155"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-q6-V6b">
+                                                <rect key="frame" x="108" y="188" width="158" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much did you spend today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-hf-AHY">
+                                                <rect key="frame" x="62" y="153" width="251" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                                <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-gF-AYA">
+                                                <rect key="frame" x="163" y="226" width="48" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <state key="normal" title="Submit"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="MLv-hb-fM9" firstAttribute="centerX" secondItem="P1V-1B-RUx" secondAttribute="centerX" id="AUo-Nf-i6h"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80094288793103452" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="P1V-1B-RUx" firstAttribute="width" secondItem="Tpu-yO-naH" secondAttribute="width" id="dy5-IV-7w8"/>
+                                    <constraint firstItem="P1V-1B-RUx" firstAttribute="height" secondItem="Tpu-yO-naH" secondAttribute="height" id="slY-8v-8HP"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ta-G6b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank Circle" translatesAutoresizingMaskIntoConstraints="NO" id="PUH-ZV-z9E">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq6-k4-vWf">
+                                        <rect key="frame" x="123" y="477" width="143" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="click to add a goal ">
+                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="02N-V4-vpn" kind="show" id="v00-os-fjH"/>
+                                            <action selector="clickToAddGoalClicked:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="vFi-1z-5hV"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfh-cp-8b2">
+                                        <rect key="frame" x="166" y="188" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="b3M-8y-eHm" firstAttribute="centerX" secondItem="PUH-ZV-z9E" secondAttribute="centerX" id="5ub-Vb-wjf"/>
-                                    <constraint firstItem="bvh-FG-1pd" firstAttribute="centerX" secondItem="b3M-8y-eHm" secondAttribute="centerX" id="RLb-Z6-xxJ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue-green_notification_box_480" translatesAutoresizingMaskIntoConstraints="NO" id="MLv-hb-fM9">
-                                        <rect key="frame" x="34" y="206" width="297" height="155"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-q6-V6b">
-                                        <rect key="frame" x="107" y="263" width="158" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How much did you spend today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-hf-AHY">
-                                        <rect key="frame" x="60" y="230" width="251" height="21"/>
-                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
-                                        <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-gF-AYA">
-                                        <rect key="frame" x="158" y="299" width="48" height="32"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <state key="normal" title="Submit"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80094288793103452" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="rcc-gF-AYA" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="DKE-eF-7YO"/>
-                                    <constraint firstItem="8UH-hf-AHY" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="Neq-s6-MLQ"/>
+                                    <constraint firstItem="sfh-cp-8b2" firstAttribute="centerX" secondItem="PUH-ZV-z9E" secondAttribute="centerX" id="XHE-Tq-nkL"/>
+                                    <constraint firstItem="cq6-k4-vWf" firstAttribute="centerX" secondItem="PUH-ZV-z9E" secondAttribute="centerX" id="eRV-DM-7N3"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="DXJ-8Z-kV9" secondAttribute="trailing" id="EEb-Nh-Gyf"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="bottom" secondItem="MgV-GG-DJV" secondAttribute="bottom" id="F01-uF-9Oo"/>
-                            <constraint firstItem="buB-ty-Jsk" firstAttribute="bottom" secondItem="mkO-nJ-53q" secondAttribute="top" id="IQI-ag-BQn"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" constant="16" id="TiN-CY-nfA"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Zgq-8H-9XJ"/>
-                            <constraint firstItem="buB-ty-Jsk" firstAttribute="leading" secondItem="mLC-qD-PCr" secondAttribute="leadingMargin" id="bTp-E6-gIP"/>
-                            <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="DXJ-8Z-kV9" secondAttribute="bottom" constant="3" id="cBH-Cu-jXx"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="top" secondItem="MgV-GG-DJV" secondAttribute="top" id="rLA-MK-Z8c"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="leading" secondItem="MgV-GG-DJV" secondAttribute="leading" id="uXw-7u-4ib"/>
-                            <constraint firstItem="DXJ-8Z-kV9" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="trailing" id="yc7-j3-17l"/>
+                            <constraint firstItem="ep1-Sa-vxl" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="9no-FE-VX7"/>
+                            <constraint firstItem="ep1-Sa-vxl" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.1" id="BTT-ek-cPF"/>
+                            <constraint firstItem="ep1-Sa-vxl" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="XDX-W4-2Ge"/>
+                            <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="ep1-Sa-vxl" secondAttribute="bottom" id="mpZ-l6-ETm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="DXJ-8Z-kV9"/>
                                 <exclude reference="MgV-GG-DJV"/>
+                                <exclude reference="lxf-Ta-G6b"/>
                             </mask>
                         </variation>
                     </view>
@@ -374,9 +390,26 @@
             </objects>
             <point key="canvasLocation" x="502" y="1691"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Bsu-ms-Fzm">
+            <objects>
+                <viewController id="bJ4-PE-4F4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yiK-ee-JTA"/>
+                        <viewControllerLayoutGuide type="bottom" id="itu-2g-QVb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tgu-Tb-cay">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJe-wl-L35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
+        <image name="blank Circle" width="202" height="360"/>
         <image name="blue-green_notification_box_480" width="480" height="292"/>
-        <image name="initial_landing_page_720" width="405" height="720"/>
     </resources>
 </document>
