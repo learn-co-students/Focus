@@ -31,6 +31,12 @@ extension Goal {
         serializedGoal["current_amount_saved"] = currentAmountSaved
         serializedGoal["allocated_daily_budget"] =  alloctedDailyBudget
         serializedGoal["is_active_goal"] = isActiveGoal
+        if
+            let startDate = startDate,
+            let endDate = endDate{
+                serializedGoal["start_date"] = "\(startDate)"
+                serializedGoal["end_date"] = "\(endDate)"
+        }
         
         return serializedGoal
     }

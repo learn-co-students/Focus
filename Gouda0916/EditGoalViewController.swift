@@ -160,6 +160,12 @@ class EditGoalViewController: UIViewController {
                 goal.willChangeValue(forKey: "timeframe")
                 goal.timeframe = Double(input)!
                 goal.didChangeValue(forKey: "timeframe")
+                goal.willChangeValue(forKey: "endDate")
+                let timeInt = TimeInterval.init(exactly: goal.timeframe*60*60*24)
+                if let timeInt = timeInt {
+                    goal.endDate = goal.startDate?.addingTimeInterval(timeInt)
+                }
+                goal.didChangeValue(forKey: "endDate")
             case .changeBudget:
                 goal.willChangeValue(forKey: "dailyBudget")
                 goal.dailyBudget = Double(input)!
@@ -319,12 +325,10 @@ extension EditGoalViewController {
         
         //changes text field color
         if validInput {
-            print("🔥")
             textField.textColor = UIColor.themeBlackColor
             saveCancelView.checkImageView.isUserInteractionEnabled = true
             saveCancelView.checkImageView.alpha = 1
         } else {
-            print("❌")
             textField.textColor = .red
             saveCancelView.checkImageView.isUserInteractionEnabled = false
             saveCancelView.checkImageView.alpha = 0.2
