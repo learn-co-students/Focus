@@ -12,8 +12,9 @@ class YesNoView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var noButton: UIButton!
-    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var xImageView: UIImageView!
+    @IBOutlet weak var checkImageView: UIImageView!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

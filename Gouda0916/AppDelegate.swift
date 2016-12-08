@@ -10,9 +10,10 @@
 import UIKit
 import CoreData
 import Firebase
-
+import UserNotifications
+ 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
    
     let store = DataStore.sharedInstance
     
@@ -24,11 +25,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRDatabase.database().persistenceEnabled = false
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UIApplication.shared.statusBarStyle = .lightContent
-
-        store.fetchData()
+    //backing up in firebase
+    func backupFirebase(goals: [Goal]) {
+        let ref =  FIRDatabase.database().reference()
         
+        for goal in goals {
+            if let firebaseID = goal.firebaseID {
+                ref.child("goals").child(firebaseID).updateChildValues(goal.serializeGoalIntoDictionary())
+            } else {
+                print("didnt have a firebase ID saved")
+            }
+        }
+    }
+    
+    //Creating trigger that sets calendar notifications and repeats at a specific time
+    func scheduleNotification(at date: Date) {
+//        let calendar = Calendar(identifier: .gregorian)
+//        let components = calendar.dateComponents(in: .current, from: date)
+//        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (3600), repeats: true)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Work Hard. Be Humble. Focus."
+        content.body = "Did you achieve your daily savings goal today? Click me to input and keep track of your savings amount!"
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
+        
+        
+        let notifCenter = UNUserNotificationCenter.current()
+        
+        notifCenter.add(request, withCompletionHandler: { error in
+            
+            
+            if let error = error {
+                print("Uh oh! We had an error: \(error)")
+            }
+            
+        })
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        application.registerForRemoteNotifications()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        store.fetchData()
+  
         return true
     }
 
@@ -55,7 +111,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
 
-   
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        print("\n\n")
+        print("HI!!!!!")
+        
+        
+        NotificationCenter.default.post(name: .closeLoginVC, object: nil)
 
-}
+        
+         
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        print("\n")
+        
+        print("About to present.")
+        
+    }
+ }
 

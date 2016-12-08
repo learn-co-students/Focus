@@ -14,9 +14,14 @@ import FirebaseDatabase
 
 class GoalViewController: UIViewController {
     let store = DataStore.sharedInstance
+    let delegate = UIApplication.shared.delegate as? AppDelegate
     var thereIsCellExpanded = false
     var selectedRowIndex = -1
     var buttonTag = 0
+    var menuShowing = false
+    
+    
+    var menuIsShowing = false
     
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var goalTableView: UITableView!
@@ -35,9 +40,14 @@ class GoalViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
-        
-        
-        
+        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+
+    
+        if let delegate = delegate {
+            delegate.backupFirebase(goals: store.goals)
+        } else {
+            print("didnt get the app delegate 🐰♥️")
+        }
 
     }
     
@@ -47,9 +57,13 @@ class GoalViewController: UIViewController {
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
-        print("pressed hamburger menu")
-        NotificationCenter.default.post(name: .unhideBar, object: nil)
-
+        if !menuShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+            menuShowing = true
+        } else {
+            NotificationCenter.default.post(name: .hideBar, object: nil)
+            menuShowing = false
+        }
     }
     
     func editIconTapped(_ sender: UITapGestureRecognizer) {
@@ -113,7 +127,6 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
             thereIsCellExpanded = false
             selectedRowIndex = -1
         }
-        
         tableView.beginUpdates()
         tableView.endUpdates()
     }

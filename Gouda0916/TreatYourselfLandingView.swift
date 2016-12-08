@@ -22,7 +22,6 @@ class TreatYourselfLandingView: UIView {
         
         TreatYourselfLanding.drawCanvas1()
         
-        print("stop")
         
         //            }
         

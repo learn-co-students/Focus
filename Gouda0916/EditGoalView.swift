@@ -13,8 +13,9 @@ class EditGoalView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var xImageView: UIImageView!
+    @IBOutlet weak var checkImageView: UIImageView!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
