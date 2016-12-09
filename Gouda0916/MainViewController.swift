@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addGoalView: UIView!
     
 
+    @IBOutlet weak var footerView: FooterView!
     
     
     
@@ -39,12 +40,13 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
-//        addNewGoalView.isHidden = true
-        addGoalView.isHidden = true
-        checkIfGoalExists()
-//        numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+//        checkIfGoalExists()
         
-        
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     //
@@ -114,7 +116,8 @@ class MainViewController: UIViewController {
     func checkIfGoalExists() {
         if store.goals.isEmpty {
             addGoalView.isHidden = true
-//            addNewGoalView.isHidden = false
+            addNewGoalView.isHidden = false
+            
         }
         else{
             //if today's entry is empty,
