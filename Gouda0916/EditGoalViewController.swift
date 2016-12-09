@@ -69,6 +69,15 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
         goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
         
+        //gradient for collection view
+        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        optionsCollectionView.backgroundColor = .clear
+        gradient.frame = collectionViewContainerView.bounds
+        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)
+        
        
         addGestures()
         setUpTextFieldForValidation()
@@ -274,7 +283,7 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionsCollectionView.dequeueReusableCell(withReuseIdentifier: "editGoalCell", for: indexPath) as! EditGoalCustomCell
         let index = indexPath.row
-        cell.backgroundColor = UIColor.themePaleGreenColor
+        cell.backgroundColor = UIColor.clear
         cell.cellLabel.text = editOptions[index].editQuestion
         cell.iconImageView.image = editOptions[index].editImage
         return cell
