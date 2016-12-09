@@ -200,11 +200,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_reflection_3x_720" translatesAutoresizingMaskIntoConstraints="NO" id="W5h-be-eWi">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-dr-GxF" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_reflection_3x_720" translatesAutoresizingMaskIntoConstraints="NO" id="W5h-be-eWi">
                                 <rect key="frame" x="37" y="266" width="300" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-3e-f7j">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-3e-f7j">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -291,7 +296,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jda-9C-HLJ">
-                                        <rect key="frame" x="177.5" y="88" width="20" height="20"/>
+                                        <rect key="frame" x="178" y="88" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="MpV-ZQ-GEj"/>
                                         </constraints>
@@ -430,9 +435,6 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="02N-V4-vpn" kind="show" id="2WY-zT-QhW"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -473,6 +475,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="W5h-be-eWi"/>
+                                <exclude reference="9XG-3e-f7j"/>
+                                <exclude reference="tYR-u9-s8F"/>
                                 <exclude reference="MgV-GG-DJV"/>
                                 <exclude reference="lxf-Ta-G6b"/>
                             </mask>

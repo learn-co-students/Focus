@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
         store.fetchData()
         calculateProgress()
       
-        topGoldTrailing.constant = bottomGoldView.frame.
+//        topGoldTrailing.constant = bottomGoldView.frame.
         
         
         

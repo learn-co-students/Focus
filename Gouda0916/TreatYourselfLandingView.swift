@@ -10,21 +10,9 @@ import UIKit
 
 @IBDesignable
 
-
-
-
-
 class TreatYourselfLandingView: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
+
     
     override func draw(_ rect: CGRect) {
         
@@ -32,11 +20,13 @@ class TreatYourselfLandingView: UIView {
        
     }
     
+    override init (frame : CGRect) {
+        super.init(frame : frame)
+        self.clipsToBounds = false
+    }
     
-    func commonInit() {
-        
-        
-        
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
