@@ -102,11 +102,9 @@ class Velocity {
     }
     
     func saveDefaultData() {
-        
         for (key, value) in velocityHistory {
             defaults.set("\(key)_\(value)", forKey: self.defaultKey)
         }
-        
     }
     
     

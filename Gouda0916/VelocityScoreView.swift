@@ -23,13 +23,13 @@ class VelocityScoreView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        updateVelocityView()
+        //updateVelocityView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-        updateVelocityView()
+        //updateVelocityView()
     }
     
     func commonInit() {

@@ -13,17 +13,11 @@ import UIKit
 class TreatYourselfLandingView: UIView {
     
     override func draw(_ rect: CGRect) {
-        //
-        //        if DataStore.sharedInstance.goals.isEmpty{
-        //            print ("nothing to show")
-        //
-        //        }
-        //        else {
         
-        TreatYourselfLanding.drawCanvas1()
-        
-        
-        //            }
+        TreatYourselfLanding.drawCanvas1(frame: rect, resizing: .aspectFit)
         
     }
+    
+    
+    
 }

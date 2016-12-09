@@ -30,7 +30,7 @@ class LogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateViewShadow()
+        //updateViewShadow()
         navigationController?.navigationBar.isHidden = true
 
     }
