@@ -10,9 +10,7 @@ import Foundation
 
 protocol UserInputProtocol {
     var store: DataStore { get }
-    func checkForVelocity(goal: Goal, textField: UITextField) -> Bool
-    func incrementDayAndAmount(goal: Goal, textField: UITextField)
-    func checkIfComplete(goal: Goal)
+
 }
 
 extension UserInputProtocol {
@@ -22,8 +20,9 @@ extension UserInputProtocol {
         var stayedUnderBudget = false
         if let userInput = textField.text {
             if let amountSpent = Double(userInput) {
-                if amountSpent <= goal.dailyBudget {
+                if amountSpent <= goal.alloctedDailyBudget! {
                     stayedUnderBudget = true
+                    print("🔥 sayed under budget \(stayedUnderBudget)")
                 }
             }
         }
@@ -31,20 +30,29 @@ extension UserInputProtocol {
     }
     
     //updates goal stats based on user input
-    func incrementDayAmount(goal: Goal, textField: UITextField) {
+    func incrementDayAndAmount(goal: Goal, textField: UITextField) {
         if let userInput = textField.text {
             if let amountSpent = Double(userInput) {
-                goal.currentAmountSaved += amountSpent
+                print(goal.currentAmountSaved)
+                print(goal.dayCounter)
+                
                 goal.dayCounter += 1
+                
+                goal.currentAmountSaved += (goal.dailyBudget - goal.alloctedDailyBudget!) + (goal.alloctedDailyBudget! - amountSpent)
+                
+                print(goal.currentAmountSaved)
+                print(goal.dayCounter)
             }
         }
     }
     
     
     //checks if the goal is complete, if it is it removes it and sets a new goal
-    func checkStatus(goal: Goal, notify: (Goal, Bool) -> Void) {
+    func checkIfComplete(goal: Goal, notify: (Bool) -> Void) {
         if goal.currentAmountSaved >= goal.goalAmount {
-            notify(goal, true)
+            print("currentAmountSaved = \(goal.currentAmountSaved)")
+            print("goal amount = \(goal.goalAmount)")
+            notify(true)
             store.goals.remove(at: 0)
             if let nextGoal = store.goals.first {
                 nextGoal.isActiveGoal = true

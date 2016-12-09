@@ -75,8 +75,8 @@ class GoalTableViewCellView: UIView {
         daysLabel.text = "/ \(Int(goal.timeframe))"
         savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved)) "
         smallGoalLabel.text = "/ $\(Int(goal.goalAmount))"
-        daysCompleteProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
-        savingsProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
+        savingsProgressBarConstraint.constant = CGFloat(goal.currentAmountSaved / goal.goalAmount) * savingGoalView.frame.width
+        daysCompleteProgressBarConstraint.constant = CGFloat(goal.dayCounter / goal.timeframe) * savingGoalView.frame.width
         
         if !goal.isActiveGoal {
 
