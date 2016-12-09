@@ -19,12 +19,17 @@ import CoreGraphics
 class MainViewController: UIViewController {
     
     
+    @IBOutlet weak var topGoldTrailing: NSLayoutConstraint!
    
+    @IBOutlet weak var bottomGoldView: UIView!
     @IBOutlet weak var addNewGoalView: UIView!
+    
+    
     
     @IBOutlet weak var addGoalView: UIView!
     
 
+    @IBOutlet weak var circleContainer: UIView!
     @IBOutlet weak var circleView: UIView!
  
     @IBAction func addNewGoalClicked(_ sender: Any) {
@@ -42,14 +47,28 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
+      
+        topGoldTrailing.constant = bottomGoldView.frame.
         
-        circleView.isHidden = false
+        
+        
+        //circleView.isHidden = false
+        
+        //circleView.contentMode = .redraw
+        //print("\(circleView.frame)🍣")
+        //circleView.frame = circleContainer.frame
+        //print("\(circleView.frame)🍣")
+
+
 //        addNewGoalView.isHidden = true
 //        addGoalView.isHidden = false
 //        checkIfGoalExists()
 //        numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     //

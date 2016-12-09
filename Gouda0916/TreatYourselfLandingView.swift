@@ -8,7 +8,7 @@
 
 import UIKit
 
-//@IBDesignable
+@IBDesignable
 
 
 
@@ -16,20 +16,27 @@ import UIKit
 
 class TreatYourselfLandingView: UIView {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
     override func draw(_ rect: CGRect) {
-        //
-        //        if DataStore.sharedInstance.goals.isEmpty{
-        //            print ("nothing to show")
-        //
-        //        }
-        //        else {
-      
-        
         
         TreatYourselfLanding.drawCanvas1()
+       
+    }
+    
+    
+    func commonInit() {
         
         
-        //            }
         
     }
+    
 }

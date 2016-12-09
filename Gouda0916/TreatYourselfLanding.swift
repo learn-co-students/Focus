@@ -10,16 +10,17 @@ public class TreatYourselfLanding {
     //// Drawing Methods
 
     let store = DataStore.sharedInstance
+    let screenBounds = UIScreen.main.bounds
     
-    public dynamic class func drawTreatYourselfLandingCircle(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 568), resizing: ResizingBehavior = .aspectFit, progressDash: CGFloat = 8, velocityDash: CGFloat = 14, daysDash: CGFloat = 17) {
+    public dynamic class func drawTreatYourselfLandingCircle(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75), resizing: ResizingBehavior = .aspectFit, progressDash: CGFloat = 8, velocityDash: CGFloat = 14, daysDash: CGFloat = 17) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
         context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 320, height: 568), target: targetFrame)
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 320, y: resizedFrame.height / 568)
+        context.scaleBy(x: resizedFrame.width / (UIScreen.main.bounds.width * 0.75), y: resizedFrame.height / (UIScreen.main.bounds.height * 0.75))
 
 
         //// Color Declarations
@@ -158,15 +159,15 @@ public class TreatYourselfLanding {
 
     }
 
-    public dynamic class func drawCanvas1(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 320, height: 568), resizing: ResizingBehavior = .aspectFit) {
+    public dynamic class func drawCanvas1(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
         context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 320, height: 568), target: targetFrame)
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 320, y: resizedFrame.height / 568)
+        context.scaleBy(x: resizedFrame.width/(UIScreen.main.bounds.width * 0.75), y: resizedFrame.height/(UIScreen.main.bounds.height * 0.75))
 
 
         //// Color Declarations
@@ -251,7 +252,7 @@ public class TreatYourselfLanding {
 
 
         //// Symbol Drawing
-        let symbolRect = CGRect(x: 0, y: 0, width: 320, height: 568)
+        let symbolRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75)
         context.saveGState()
         context.clip(to: symbolRect)
         context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
