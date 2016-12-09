@@ -13,8 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VelocityScoreView">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="cR6-29-TP5"/>
+                <outlet property="velocityDayLabel" destination="lQ3-Ue-Whe" id="RiM-ON-PUy"/>
                 <outlet property="velocityScoreBGView" destination="i96-Ij-bW2" id="Sxa-fT-ebY"/>
-                <outlet property="velocityScoreLabel" destination="lQ3-Ue-Whe" id="oCI-IM-Ppj"/>
+                <outlet property="velocityScoreLabel" destination="3PS-gu-dbg" id="q7B-9M-qGy"/>
                 <outlet property="velocityScoreView" destination="Adu-nG-VRo" id="Vny-5u-lIF"/>
             </connections>
         </placeholder>

@@ -11,35 +11,37 @@ import CoreData
 import CoreGraphics
 
 class DataStore {
-    
-    
-    static let sharedInstance = DataStore()
-    
 
-    
+
+    static let sharedInstance = DataStore()
+
+
+
     private init() {}
-    
+
     var goals: [Goal] = []
     var userName = User()
     var progress: Double = 0
     var velocity: CGFloat = 0
     var daysLeft: Double = 0
-    
-    //total days 
+
+    //total days
     var days: CGFloat = 0
-    
-    
+
+
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
-    
-    
+
+
+
     //day counter = how many days have passed
-    //time frame = total days 
-    //days left - how many days are left until the total days as indicated by user (calc prop) - goal extension 
-    
-    
-    
-    
-    
+    //time frame = total days
+    //days left - how many days are left until the total days as indicated by user (calc prop) - goal extension
+
+
+
+
+
+
     func fetchData() {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
@@ -49,11 +51,11 @@ class DataStore {
             print("couldnt get goals from fetch request")
         }
 
-        
+
 
     }
-    
-    
+
+
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -67,7 +69,7 @@ class DataStore {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -81,9 +83,9 @@ class DataStore {
         })
         return container
     }()
-    
+
     // MARK: - Core Data Saving support
-    
+
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

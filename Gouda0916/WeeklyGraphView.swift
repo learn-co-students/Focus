@@ -22,6 +22,7 @@ class WeeklyGraphView: UIView {
     
     
     override func draw(_ rect: CGRect) {
+        
         let rectWidth = rect.width
         let rectHeight = rect.height
         let context = UIGraphicsGetCurrentContext()
@@ -81,6 +82,7 @@ class WeeklyGraphView: UIView {
     }
     
     func animate(graphPath: UIBezierPath) {
+        
         let pathLayer: CAShapeLayer = CAShapeLayer()
         
         pathLayer.frame = self.bounds
@@ -93,6 +95,7 @@ class WeeklyGraphView: UIView {
         self.layer.addSublayer(pathLayer)
         
         let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
         pathAnimation.duration = 1.0
         pathAnimation.fromValue = 1.0
         pathAnimation.toValue = 0.0
@@ -102,6 +105,7 @@ class WeeklyGraphView: UIView {
     }
     
     func clip(path: UIBezierPath, height: CGFloat, columnXPoint: (Int) -> CGFloat) {
+        
         let clippingPath = path.copy() as! UIBezierPath
         
         clippingPath.addLine(to: (CGPoint(x: columnXPoint(store.graphPoints.count - 1), y: height)))
@@ -115,6 +119,7 @@ class WeeklyGraphView: UIView {
     }
     
     func drawCirlceOn(columnXPoint: (Int) -> CGFloat, columnYPoint: (Int) -> CGFloat) {
+        
         for i in 1..<store.graphPoints.count - 1 {
             var point = CGPoint(x: columnXPoint(i), y: columnYPoint(store.graphPoints[i]))
             point.x -= 5.0/2
@@ -127,6 +132,7 @@ class WeeklyGraphView: UIView {
     }
     
     func horizontalGraphLines(margin: CGFloat, width: CGFloat, height: CGFloat, graphHeight: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat) {
+        
         let linePath = UIBezierPath()
         
         linePath.move(to: CGPoint(x: margin, y: topBorder))
