@@ -36,15 +36,15 @@
                     <rect key="frame" x="37.5" y="233.5" width="300" height="133"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WMY-qe-2pa">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="17"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
                             <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SsX-cN-q5K">
-                            <rect key="frame" x="0.0" y="50.5" width="300" height="17"/>
+                            <rect key="frame" x="0.0" y="50.5" width="300" height="20"/>
                             <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmH-Qo-wrY">
@@ -64,25 +64,25 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PS-8B-Cfa">
-                    <rect key="frame" x="288.5" y="366.5" width="49" height="29"/>
-                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                    <rect key="frame" x="285.5" y="366.5" width="52" height="30"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                     <state key="normal" title="I'm new!">
                         <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zue-es-bS4">
-                    <rect key="frame" x="294.5" y="301" width="43" height="30"/>
+                    <rect key="frame" x="294.5" y="304" width="43" height="30"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                     <state key="normal" title="forgot?">
                         <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmf-HE-pjz" userLabel="emailUnderline">
-                    <rect key="frame" x="37" y="250.5" width="300" height="1.5"/>
+                    <rect key="frame" x="37" y="253.5" width="300" height="1.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-b4-lsC" userLabel="passwordUnderline">
-                    <rect key="frame" x="37" y="301" width="300" height="1.5"/>
+                    <rect key="frame" x="37" y="304" width="300" height="1.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -95,7 +95,7 @@
                 <constraint firstItem="vmf-HE-pjz" firstAttribute="top" secondItem="WMY-qe-2pa" secondAttribute="bottom" id="NfW-4O-YD6"/>
                 <constraint firstItem="dve-Rd-etd" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="Tvp-mh-OaD"/>
                 <constraint firstItem="4vh-b4-lsC" firstAttribute="width" secondItem="SsX-cN-q5K" secondAttribute="width" id="aCl-v0-Xuk"/>
-                <constraint firstItem="vmf-HE-pjz" firstAttribute="height" secondItem="WMY-qe-2pa" secondAttribute="height" multiplier="0.1" id="bNI-zp-bII"/>
+                <constraint firstItem="vmf-HE-pjz" firstAttribute="height" secondItem="WMY-qe-2pa" secondAttribute="height" multiplier="0.05" id="bNI-zp-bII"/>
                 <constraint firstItem="4vh-b4-lsC" firstAttribute="top" secondItem="SsX-cN-q5K" secondAttribute="bottom" id="co2-lA-hAm"/>
                 <constraint firstItem="4vh-b4-lsC" firstAttribute="centerX" secondItem="SsX-cN-q5K" secondAttribute="centerX" id="euw-7R-Z9v"/>
                 <constraint firstItem="8PS-8B-Cfa" firstAttribute="trailing" secondItem="RmH-Qo-wrY" secondAttribute="trailing" id="fUU-ye-dqt"/>

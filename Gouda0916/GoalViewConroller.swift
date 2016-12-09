@@ -57,6 +57,7 @@ class GoalViewController: UIViewController {
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
+        //print("🔥🔥🔥")
         if !menuShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuShowing = true

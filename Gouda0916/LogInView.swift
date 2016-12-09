@@ -39,7 +39,6 @@ class LogInView: UIView {
         let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
         let endingColorOFGradient = UIColor.themeDarkGreenColor.cgColor
         let gradient: CAGradientLayer = CAGradientLayer()
-        
         gradient.frame = contentView.bounds
         gradient.colors = [startingColorOfGradient , endingColorOFGradient]
         self.contentView.layer.insertSublayer(gradient, at: 0)

@@ -28,6 +28,9 @@ class FooterView: UIView {
         Bundle.main.loadNibNamed("FooterView", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.frame = self.bounds
+
+        
+
         
     }
 }

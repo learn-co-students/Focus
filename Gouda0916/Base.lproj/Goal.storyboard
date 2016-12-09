@@ -120,10 +120,6 @@
                                 <rect key="frame" x="0.0" y="662.66666666666652" width="414" height="73.333333333333371"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mg3-bU-v2g" userLabel="Test Login View" customClass="LogInView" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -139,11 +135,7 @@
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="top" secondItem="VKE-pe-vce" secondAttribute="bottom" id="Z29-qD-N1x"/>
                             <constraint firstItem="IYe-y0-EWc" firstAttribute="width" secondItem="eSv-Qz-yKF" secondAttribute="width" id="bFz-cc-2By"/>
                             <constraint firstItem="mJv-YM-dxN" firstAttribute="centerX" secondItem="WfY-DZ-EqF" secondAttribute="centerX" id="ddB-0A-bSh"/>
-                            <constraint firstItem="mg3-bU-v2g" firstAttribute="centerY" secondItem="eSv-Qz-yKF" secondAttribute="centerY" id="goQ-LK-9Ps"/>
-                            <constraint firstItem="mg3-bU-v2g" firstAttribute="height" secondItem="eSv-Qz-yKF" secondAttribute="height" id="naw-Df-fFM"/>
                             <constraint firstItem="mJv-YM-dxN" firstAttribute="height" secondItem="WfY-DZ-EqF" secondAttribute="height" multiplier="0.2" id="poo-yg-62f"/>
-                            <constraint firstItem="mg3-bU-v2g" firstAttribute="centerX" secondItem="eSv-Qz-yKF" secondAttribute="centerX" id="sR2-9Z-g2e"/>
-                            <constraint firstItem="mg3-bU-v2g" firstAttribute="width" secondItem="eSv-Qz-yKF" secondAttribute="width" id="trS-Vo-TZT"/>
                             <constraint firstItem="mJv-YM-dxN" firstAttribute="width" secondItem="WfY-DZ-EqF" secondAttribute="width" id="v52-nW-nvS"/>
                             <constraint firstItem="hPZ-Qd-JkO" firstAttribute="trailing" secondItem="eSv-Qz-yKF" secondAttribute="trailing" id="xtI-oq-giI"/>
                             <constraint firstItem="WfY-DZ-EqF" firstAttribute="height" secondItem="eSv-Qz-yKF" secondAttribute="height" multiplier="0.06" id="zcv-Nr-ULA"/>
@@ -248,7 +240,7 @@
                                         <rect key="frame" x="0.0" y="0.66666666666662877" width="155.33333333333334" height="36.666666666666686"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                         <state key="normal" title="Finish">
-                                            <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="finishButtonTapped:" destination="7gZ-XA-M5M" eventType="touchUpInside" id="tk8-Yb-hNp"/>

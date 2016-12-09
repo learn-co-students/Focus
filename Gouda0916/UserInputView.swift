@@ -34,7 +34,14 @@ class UserInputView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        floatingView.backgroundColor = UIColor.themePaleGreenColor
+        //floatingView.backgroundColor = UIColor.themePaleGreenColor
+        
+        let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
+        let endingColorOFGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = contentView.bounds
+        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.floatingView.layer.insertSublayer(gradient, at: 0)
     }
     
     
