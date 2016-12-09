@@ -517,10 +517,6 @@
                                 <rect key="frame" x="-414" y="73" width="414" height="258"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-PX-o15">
-                                <rect key="frame" x="0.0" y="684" width="105" height="30"/>
-                                <state key="normal" title="Test User Input"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-9S-hnr" userLabel="TestInputView">
                                 <rect key="frame" x="104" y="276" width="207" height="184"/>
                                 <subviews>
@@ -559,7 +555,6 @@
                             <constraint firstItem="8nb-fr-RRz" firstAttribute="height" secondItem="5yW-lv-2se" secondAttribute="height" id="4VK-Dx-TuG"/>
                             <constraint firstItem="Uj7-nH-1C4" firstAttribute="height" secondItem="mvA-zA-QNa" secondAttribute="height" id="9xA-CK-H1H"/>
                             <constraint firstItem="5yW-lv-2se" firstAttribute="bottom" secondItem="4cr-Vg-wvf" secondAttribute="top" constant="-40" id="AkK-sD-dbe"/>
-                            <constraint firstItem="yv8-PX-o15" firstAttribute="centerY" secondItem="4cr-Vg-wvf" secondAttribute="centerY" id="DTE-7I-8mB"/>
                             <constraint firstItem="8nb-fr-RRz" firstAttribute="leading" secondItem="5yW-lv-2se" secondAttribute="leading" constant="5" id="Dvc-vX-khm"/>
                             <constraint firstItem="ESJ-lp-FhS" firstAttribute="trailing" secondItem="mvA-zA-QNa" secondAttribute="leading" id="E6v-1T-GCe"/>
                             <constraint firstItem="5yW-lv-2se" firstAttribute="width" secondItem="mvA-zA-QNa" secondAttribute="width" multiplier="0.97" id="GoK-RT-a2U"/>
@@ -575,7 +570,6 @@
                             <constraint firstItem="Uj7-nH-1C4" firstAttribute="width" secondItem="mvA-zA-QNa" secondAttribute="width" id="Sp6-yS-21l"/>
                             <constraint firstItem="EuX-di-mvR" firstAttribute="top" secondItem="Qco-Np-Fpw" secondAttribute="bottom" id="URv-Zh-Zkq"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="top" secondItem="XQI-xd-F3t" secondAttribute="bottom" id="VYQ-Sq-tMo"/>
-                            <constraint firstItem="yv8-PX-o15" firstAttribute="leading" secondItem="4cr-Vg-wvf" secondAttribute="leading" id="WMf-gZ-wGE"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="WcB-e2-pFd"/>
                             <constraint firstItem="EuX-di-mvR" firstAttribute="bottom" secondItem="4cr-Vg-wvf" secondAttribute="top" id="XZ5-ps-vcx"/>
                             <constraint firstItem="r7C-9S-hnr" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" multiplier="0.5" id="YtX-7A-Vxi"/>
@@ -605,7 +599,6 @@
                         <outlet property="deleteImageView" destination="yxt-wQ-ajW" id="zqV-89-2ek"/>
                         <outlet property="footerView" destination="4cr-Vg-wvf" id="NYp-ON-ldL"/>
                         <outlet property="goalView" destination="yP6-pW-8u1" id="HL8-q7-4GP"/>
-                        <outlet property="openTestButton" destination="yv8-PX-o15" id="Z0R-kY-sk1"/>
                         <outlet property="optionsCollectionView" destination="tXt-dp-koq" id="mpW-ZQ-J3B"/>
                         <outlet property="saveCancelView" destination="ESJ-lp-FhS" id="RBK-Ic-W7C"/>
                         <outlet property="saveCancelViewTrailingConstraint" destination="E6v-1T-GCe" id="6qt-xr-oxN"/>

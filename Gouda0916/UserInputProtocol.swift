@@ -33,15 +33,13 @@ extension UserInputProtocol {
     func incrementDayAndAmount(goal: Goal, textField: UITextField) {
         if let userInput = textField.text {
             if let amountSpent = Double(userInput) {
-                print(goal.currentAmountSaved)
-                print(goal.dayCounter)
-                
+                goal.willChangeValue(forKey: "dayCounter")
                 goal.dayCounter += 1
-                
+                goal.didChangeValue(forKey: "dayCounter")
+                goal.willChangeValue(forKey: "currentAmountSaved")
                 goal.currentAmountSaved += (goal.dailyBudget - goal.alloctedDailyBudget!) + (goal.alloctedDailyBudget! - amountSpent)
-                
-                print(goal.currentAmountSaved)
-                print(goal.dayCounter)
+                goal.didChangeValue(forKey: "currentAmountSaved")
+                store.saveContext()
             }
         }
     }
@@ -50,15 +48,17 @@ extension UserInputProtocol {
     //checks if the goal is complete, if it is it removes it and sets a new goal
     func checkIfComplete(goal: Goal, notify: (Bool) -> Void) {
         if goal.currentAmountSaved >= goal.goalAmount {
-            print("currentAmountSaved = \(goal.currentAmountSaved)")
-            print("goal amount = \(goal.goalAmount)")
             notify(true)
             store.goals.remove(at: 0)
+            store.persistentContainer.viewContext.delete(goal)
             if let nextGoal = store.goals.first {
+                nextGoal.willChangeValue(forKey: "isActiveGoal")
                 nextGoal.isActiveGoal = true
+                nextGoal.didChangeValue(forKey: "isActiveGoal")
             } else {
                 print("no queued goals")
             }
+            store.saveContext()
         }
     }
     
