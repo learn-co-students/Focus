@@ -26,7 +26,6 @@ final class MainContainerViewController: UIViewController {
     }
     
     
-    
     // MARK: - Notficiation Observers
     func addNotificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .openMainVC, object: nil)
@@ -85,15 +84,17 @@ extension MainContainerViewController {
         switch notification.name {
             
         case Notification.Name.openMainVC:
+            print("Opening MAIN VC!!!!")
             switchToViewController(with: .mainVC)
-            
+            break
         case Notification.Name.openGoalVC:
+            print("Opening GOAL VC!!!!")
             switchToViewController(with: .goalVC)
-            
-            
+            break
         case Notification.Name.openVelocityVC:
+            print("Opening VELOCITY VC!!!!")
             switchToViewController(with: .velocityVC)
-            
+            break
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
         }
