@@ -22,12 +22,20 @@ class MainViewController: UIViewController {
     
     @IBOutlet var addNewGoalView: UIView!
     
-    
     @IBOutlet weak var didYouSpendTodayView: UIView!
     
-    
-    
     @IBOutlet weak var footerView: FooterView!
+    
+    
+    @IBAction func goToGoalVC2(_ sender: Any) {
+        NotificationCenter.default.post(name: .openGoalVC, object: nil)
+    }
+   
+  
+    @IBAction func goToGoalVC(_ sender: Any) {
+        NotificationCenter.default.post(name: .openGoalVC, object: nil)
+    }
+    
     
     
     
@@ -43,8 +51,8 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
-        //        checkIfGoalExists()
-        footerView.hamburgerMenuImageView.isHidden = true
+        checkIfGoalExists()
+      
         
         
         let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
@@ -135,12 +143,20 @@ class MainViewController: UIViewController {
             
         }
             
-        else{
+    else  {
             //if today's entry is empty,
-            didYouSpendTodayView.isHidden = false
-            //            addNewGoalView.isHidden = true
-            //             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+            didYouSpendTodayView.isHidden = true
+            addNewGoalView.isHidden = true
+            footerView.hamburgerMenuImageView.isHidden = false
+            
+            
         }
     }
+    
+    /// hamburger on circleview needs to show 
+    /// another else? 
+    ///new conversion for circle progressPercentage
+    // update labels
+
     
 }

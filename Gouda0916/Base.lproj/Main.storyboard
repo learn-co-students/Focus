@@ -195,7 +195,7 @@
                         <viewControllerLayoutGuide type="top" id="o1j-Yz-yVh"/>
                         <viewControllerLayoutGuide type="bottom" id="mkO-nJ-53q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mLC-qD-PCr" userLabel="DidYouSpendTodayView">
+                    <view key="view" contentMode="scaleToFill" id="mLC-qD-PCr" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -298,6 +298,9 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goToGoalVC2:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="V8w-k2-Q7H"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-oT-wGn">
                                         <rect key="frame" x="104" y="467" width="167" height="33"/>
@@ -305,6 +308,9 @@
                                         <state key="normal" title="click to add a new goal">
                                             <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="d4M-Bc-Zww"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,7 +329,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-Gc-iLP">
-                                        <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-mj-7Iz" userLabel="SpendSubmitBoxContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -372,7 +378,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80094288793103452" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="top" secondItem="cKo-Gc-iLP" secondAttribute="top" id="EhT-6k-RXN"/>
                                     <constraint firstItem="cKo-Gc-iLP" firstAttribute="centerX" secondItem="MgV-GG-DJV" secondAttribute="centerX" id="OxO-GC-F8t"/>
@@ -408,16 +414,10 @@
                             <constraint firstItem="3U2-Gu-6nt" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.1" id="xhT-j2-oaQ"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="yjj-xR-314"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="q01-hH-8cJ"/>
-                                <exclude reference="lxf-Ta-G6b"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="addNewGoalView" destination="mLC-qD-PCr" id="oaL-7V-ycG"/>
-                        <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="rUz-Dl-nfl"/>
+                        <outlet property="addNewGoalView" destination="lxf-Ta-G6b" id="ijF-eD-ucb"/>
+                        <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="RZ3-EJ-spd"/>
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
                         <outlet property="gradient" destination="WQ6-BZ-EPL" id="W4u-KJ-KA9"/>
                     </connections>
