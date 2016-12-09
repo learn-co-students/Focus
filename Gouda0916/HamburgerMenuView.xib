@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HamburgerMenuView" customModule="Gouda0916" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="djC-nh-Uh6"/>
+                <outlet property="logoutFooter" destination="7WV-BQ-5Nm" id="Gm4-KP-qLK"/>
+                <outlet property="tableView" destination="KNz-Mv-iUR" id="Zi3-gi-aU6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="184" height="280"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KNz-Mv-iUR">
+                    <rect key="frame" x="0.0" y="0.0" width="184" height="236"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WV-BQ-5Nm" userLabel="logout">
+                    <rect key="frame" x="0.0" y="236" width="184" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KNz-Mv-iUR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4aj-Z9-7zu"/>
+                <constraint firstItem="7WV-BQ-5Nm" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="8ly-Jk-K6D"/>
+                <constraint firstItem="KNz-Mv-iUR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="NIk-UK-QFq"/>
+                <constraint firstItem="7WV-BQ-5Nm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-44" id="NOW-CG-i7l"/>
+                <constraint firstItem="7WV-BQ-5Nm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bOo-5F-wUF"/>
+                <constraint firstItem="7WV-BQ-5Nm" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="cFf-T0-WXy"/>
+                <constraint firstItem="KNz-Mv-iUR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xGm-pp-J5k"/>
+                <constraint firstItem="KNz-Mv-iUR" firstAttribute="bottom" secondItem="7WV-BQ-5Nm" secondAttribute="top" id="zpX-p1-ucW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-42" y="-217"/>
+        </view>
+    </objects>
+</document>
