@@ -30,7 +30,7 @@ class LogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateViewShadow()
+        //updateViewShadow()
         navigationController?.navigationBar.isHidden = true
 
     }
@@ -40,6 +40,7 @@ class LogViewController: UIViewController {
     }
 
     @IBAction func MenuButtonPressed(_ sender: Any) {
+        print("menu button pressed")
         if !menuIsShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true

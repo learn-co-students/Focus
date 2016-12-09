@@ -26,7 +26,7 @@ class WeeklyGraphView: UIView {
         let rectWidth = rect.width
         let rectHeight = rect.height
         let context = UIGraphicsGetCurrentContext()
-        let margin: CGFloat = 0.0
+        let margin: CGFloat = 20.0
         
         // X Point (Days of the week)
         let columnXPoint = { (column: Int) -> CGFloat in
@@ -68,7 +68,7 @@ class WeeklyGraphView: UIView {
         animate(graphPath: graphPath)
         
         context?.saveGState()
-        clip(path: graphPath, height: rectHeight, columnXPoint: columnXPoint)
+        clip(path: graphPath, height: rectHeight, bottomBorder: bottomBorder, columnXPoint: columnXPoint)
         context?.restoreGState()
         
         //drawCirlceOn(columnXPoint: columnXPoint, columnYPoint: columnYPoint)
@@ -79,6 +79,13 @@ class WeeklyGraphView: UIView {
                              graphHeight: graphHeight,
                              topBorder: topBorder,
                              bottomBorder: bottomBorder)
+        
+        verticalGraphLines(margin: margin,
+                           width: rectWidth,
+                           height: rectHeight,
+                           graphHeight: graphHeight,
+                           topBorder: topBorder,
+                           bottomBorder: bottomBorder)
     }
     
     func animate(graphPath: UIBezierPath) {
@@ -104,12 +111,12 @@ class WeeklyGraphView: UIView {
         pathLayer.strokeEnd = 0.0
     }
     
-    func clip(path: UIBezierPath, height: CGFloat, columnXPoint: (Int) -> CGFloat) {
+    func clip(path: UIBezierPath, height: CGFloat, bottomBorder: CGFloat, columnXPoint: (Int) -> CGFloat) {
         
         let clippingPath = path.copy() as! UIBezierPath
         
-        clippingPath.addLine(to: (CGPoint(x: columnXPoint(store.graphPoints.count - 1), y: height)))
-        clippingPath.addLine(to: (CGPoint(x: columnXPoint(0), y: height)))
+        clippingPath.addLine(to: (CGPoint(x: columnXPoint(store.graphPoints.count - 1), y: height - bottomBorder)))
+        clippingPath.addLine(to: (CGPoint(x: columnXPoint(0), y: height - bottomBorder)))
         clippingPath.close()
         clippingPath.addClip()
         
@@ -149,6 +156,40 @@ class WeeklyGraphView: UIView {
         
         linePath.move(to: CGPoint(x: margin, y: height - bottomBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: height - bottomBorder))
+        
+        let lineColor = UIColor.themeDarkGrayColor.withAlphaComponent(0.2)
+        lineColor.setStroke()
+        
+        linePath.lineWidth = 1
+        linePath.stroke()
+    }
+    
+    func verticalGraphLines(margin: CGFloat, width: CGFloat, height: CGFloat, graphHeight: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat) {
+        
+        let linePath = UIBezierPath()
+        
+        linePath.move(to: CGPoint(x: margin * 3 + 4, y: topBorder))
+        linePath.addLine(to: CGPoint(x: margin * 3 + 4, y: graphHeight + topBorder))
+        
+        linePath.move(to: CGPoint(x: (width / 4) + (margin / 2), y: topBorder))
+        linePath.addLine(to: CGPoint(x: (width / 4) + (margin / 2), y: graphHeight + topBorder))
+        
+        linePath.move(to: CGPoint(x: width / 2 - (margin * 2), y: topBorder))
+        linePath.addLine(to: CGPoint(x: width / 2 - (margin * 2), y: graphHeight + topBorder))
+        
+        // Center
+        linePath.move(to: CGPoint(x: width / 2, y: topBorder))
+        linePath.addLine(to: CGPoint(x: width / 2, y: graphHeight + topBorder))
+        
+        linePath.move(to: CGPoint(x: width / 2 + (margin * 2), y: topBorder))
+        linePath.addLine(to: CGPoint(x: width / 2 + (margin * 2), y: graphHeight + topBorder))
+        
+        linePath.move(to: CGPoint(x: width - (width / 4) - (margin / 2), y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - (width / 4) - (margin / 2), y: graphHeight + topBorder))
+        
+        linePath.move(to: CGPoint(x: width - (margin * 3) - 4, y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - (margin * 3) - 4, y: graphHeight + topBorder))
+        
         
         let lineColor = UIColor.themeDarkGrayColor.withAlphaComponent(0.2)
         lineColor.setStroke()
