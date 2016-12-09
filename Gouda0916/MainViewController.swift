@@ -18,14 +18,15 @@ import CoreGraphics
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var gradient: UIView!
     
     @IBOutlet var addNewGoalView: UIView!
-  
+    
     
     @IBOutlet weak var didYouSpendTodayView: UIView!
-  
     
-
+    
+    
     @IBOutlet weak var footerView: FooterView!
     
     
@@ -42,8 +43,16 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
-//        checkIfGoalExists()
-           footerView.hamburgerMenuImageView.isHidden = true
+        //        checkIfGoalExists()
+        footerView.hamburgerMenuImageView.isHidden = true
+        
+        
+        let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
+        let endingColorOFGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let gradient1: CAGradientLayer = CAGradientLayer()
+        gradient1.frame = gradient.bounds
+        gradient1.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.gradient.layer.insertSublayer(gradient1, at: 0)
         
     }
     
@@ -69,7 +78,7 @@ class MainViewController: UIViewController {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
         } else {
-              NotificationCenter.default.post(name: .hideBar, object: nil)
+            NotificationCenter.default.post(name: .hideBar, object: nil)
             menuIsShowing = false
         }
         
@@ -88,9 +97,9 @@ class MainViewController: UIViewController {
         guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
         
         let progressPercentage = (checkSaved/checkGoalAmount)
-    
+        
         store.progress = 812.0 * progressPercentage
-      
+        
     }
     
     
@@ -108,12 +117,14 @@ class MainViewController: UIViewController {
         let daysLeft = (DataStore.sharedInstance.goals.first?.timeframe)! - Double(timeSinceStartDateInDays)
         print(Int(daysLeft))
         print("🐩🏀🍾")
-       
+        
         
     }
-        
     
-//    let interval = laterDate.timeIntervalSinceDate(earlierDate)
+    
+    
+    
+    //    let interval = laterDate.timeIntervalSinceDate(earlierDate)
     
     
     func checkIfGoalExists() {
@@ -127,8 +138,8 @@ class MainViewController: UIViewController {
         else{
             //if today's entry is empty,
             didYouSpendTodayView.isHidden = false
-//            addNewGoalView.isHidden = true
-//             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+            //            addNewGoalView.isHidden = true
+            //             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         }
     }
     

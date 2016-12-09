@@ -323,7 +323,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-Gc-iLP">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-mj-7Iz" userLabel="SpendSubmitBoxContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -344,7 +344,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much did you spend today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-hf-AHY">
-                                                <rect key="frame" x="83" y="133" width="210" height="36"/>
+                                                <rect key="frame" x="83" y="132" width="210" height="36"/>
                                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                                                 <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -419,6 +419,7 @@
                         <outlet property="addNewGoalView" destination="mLC-qD-PCr" id="oaL-7V-ycG"/>
                         <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="rUz-Dl-nfl"/>
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
+                        <outlet property="gradient" destination="WQ6-BZ-EPL" id="W4u-KJ-KA9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
