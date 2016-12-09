@@ -19,9 +19,11 @@ import CoreGraphics
 class MainViewController: UIViewController {
     
     
-    @IBOutlet weak var addNewGoalView: UIImageView!
+    @IBOutlet var addNewGoalView: UIView!
+  
     
-    @IBOutlet weak var addGoalView: UIView!
+    @IBOutlet weak var didYouSpendTodayView: UIView!
+  
     
 
     @IBOutlet weak var footerView: FooterView!
@@ -41,6 +43,7 @@ class MainViewController: UIViewController {
         store.fetchData()
         calculateProgress()
 //        checkIfGoalExists()
+           footerView.hamburgerMenuImageView.isHidden = true
         
     }
     
@@ -115,13 +118,15 @@ class MainViewController: UIViewController {
     
     func checkIfGoalExists() {
         if store.goals.isEmpty {
-            addGoalView.isHidden = true
+            didYouSpendTodayView.isHidden = true
             addNewGoalView.isHidden = false
+            footerView.hamburgerMenuImageView.isHidden = true
             
         }
+            
         else{
             //if today's entry is empty,
-            addGoalView.isHidden = true
+            didYouSpendTodayView.isHidden = false
 //            addNewGoalView.isHidden = true
 //             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
         }
