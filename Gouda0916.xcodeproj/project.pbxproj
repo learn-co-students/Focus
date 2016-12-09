@@ -39,6 +39,7 @@
 		55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */; };
 		55CE54D21DF0EC08009524D0 /* TreatYourselfLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */; };
 		55CE54D41DF0EC20009524D0 /* TreatYourselfLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */; };
+		702CFB6D1DF8AAA400F69FE5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702CFB6C1DF8AAA400F69FE5 /* DateExtension.swift */; };
 		703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EB91DECAC1E001D5CE7 /* Vertex.swift */; };
 		703F4EBC1DECAC30001D5CE7 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBB1DECAC30001D5CE7 /* Edge.swift */; };
 		703F4EBE1DECAC4E001D5CE7 /* SwiftGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */; };
@@ -99,6 +100,7 @@
 		55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatYourselfLanding.swift; sourceTree = "<group>"; };
 		55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatYourselfLandingView.swift; sourceTree = "<group>"; };
 		6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gouda0916.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		702CFB6C1DF8AAA400F69FE5 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		703F4EB91DECAC1E001D5CE7 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		703F4EBB1DECAC30001D5CE7 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGraph.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				703F4EBB1DECAC30001D5CE7 /* Edge.swift */,
 				703F4EBD1DECAC4E001D5CE7 /* SwiftGraph.swift */,
 				11FE917B1DDF4BE800E3EA4F /* DataStore.swift */,
+				702CFB6C1DF8AAA400F69FE5 /* DateExtension.swift */,
 				90FE84FB1DEE1A8400673DD3 /* StoryboardID.swift */,
 			);
 			name = Model;
@@ -164,11 +167,11 @@
 			children = (
 				909FE98D1DF5F88D0055645B /* Goal.storyboard */,
 				116E0BF01DF872FA00CF2B57 /* FooterView.xib */,
+				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				116E0BF21DF8730A00CF2B57 /* FooterView.swift */,
 				703F4EBF1DECC232001D5CE7 /* WeeklyGraphView.swift */,
 				703F4EC11DECC753001D5CE7 /* MonthlyGraphView.swift */,
 				70FA72581DF732C100FAC1BB /* MonthlyGraphView.xib */,
-				70934DD81DE4D04400913625 /* VelocityScoreView.swift */,
 				55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */,
 				70934DD61DE4C51F00913625 /* VelocityScoreView.xib */,
 				114250EA1DE62E51003B7624 /* GoalTableViewCellView.swift */,
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FCAA2A1DDA70650072C46A /* LogInViewController.swift in Sources */,
+				702CFB6D1DF8AAA400F69FE5 /* DateExtension.swift in Sources */,
 				11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */,
 				117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */,
 				11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */,
@@ -593,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F586CD46BE17B4B8B788BAD9 /* Pods-Gouda0916.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Gouda0916/Gouda0916.entitlements;
 				DEVELOPMENT_TEAM = QY9ZR636M2;
@@ -612,7 +616,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9B8BCBE30B8BF9FFADC769E /* Pods-Gouda0916.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Gouda0916/Gouda0916.entitlements;
 				DEVELOPMENT_TEAM = QY9ZR636M2;

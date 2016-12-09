@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //        let components = calendar.dateComponents(in: .current, from: date)
 //        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (3600), repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (61), repeats: true)
         
         let content = UNMutableNotificationContent()
         content.title = "Work Hard. Be Humble. Focus."
@@ -67,11 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         
     }
-    
-    
-    
-    
-    
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -117,10 +112,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("\n\n")
         print("HI!!!!!")
         
-        
-        NotificationCenter.default.post(name: .closeLoginVC, object: nil)
+        NotificationCenter.default.post(name: .openMainVC, object: nil)
+      
 
-        
          
     }
     
@@ -129,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("\n")
         
         print("About to present.")
-        
+
     }
  }
 

@@ -9,6 +9,9 @@
 import Foundation
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class HamburgerMenuViewController: UIViewController {
     
@@ -37,6 +40,15 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         return cell!
     }
     
+    func logout() {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch testArray[indexPath.row] {
         case "home":
@@ -44,7 +56,10 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         case "goal":
             NotificationCenter.default.post(name: .openGoalVC, object: nil)
         case "velocity":
+            print("Going to VELOCITY OH SHIT")
             NotificationCenter.default.post(name: .openVelocityVC, object: nil)
+        case "logout":
+            logout()
         default:
             break
         }

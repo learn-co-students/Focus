@@ -10,12 +10,15 @@ import UIKit
 
 class VelocityScoreView: UIView {
     
+    let store = DataStore.sharedInstance
     let velocity = Velocity()
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var velocityScoreLabel: UILabel!
+    @IBOutlet weak var velocityDayLabel: UILabel!
     @IBOutlet weak var velocityScoreView: UIView!
     @IBOutlet weak var velocityScoreBGView: UIView!
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,5 +51,7 @@ class VelocityScoreView: UIView {
         velocityScoreBGView.layer.shadowOpacity = 0.8
         velocityScoreBGView.layer.shadowOffset = CGSize(width: 0, height: 0)
         velocityScoreBGView.layer.shadowRadius = 3
+        
+        velocityScoreLabel.text = "\(store.velocity)"
     }
 }

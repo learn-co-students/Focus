@@ -126,6 +126,43 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButtonTouched(_ sender: UIButton) {
+        
+        let forgotPasswordAlert = UIAlertController(title: "Forgotten Password", message: "Enter your email address so we can send you info on how to reset your password.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            print("User pushed OK on alertController")
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            print("User pushed OK on alertController")
+            
+            let emailField = forgotPasswordAlert.textFields![0] as UITextField
+            print("the user entered \(emailField)")
+            
+            guard let email = emailField.text else { return }
+        }
+        
+        forgotPasswordAlert.addTextField { (textfield) in
+            textfield.placeholder = "email address"
+        }
+        
+        forgotPasswordAlert.addAction(cancelAction)
+        forgotPasswordAlert.addAction(okAction)
+        
+        self.present(forgotPasswordAlert, animated: true) {
+            print ("buttonpress")
+        }
+        
+        guard let email = emailTextField.text else { return }
+        
+        FIRAuth.auth()?.sendPasswordReset(withEmail: email) { (success) in
+            if (success != nil) {
+                print ("reset email sent")
+            } else {
+                print ("error")
+            }
+        }
+    
     }
     
     @IBAction func newUseButtonTouched(_ sender: UIButton) {
@@ -211,6 +248,8 @@ extension LogInViewController: UITextFieldDelegate {
     }
 }
 
+    
+   
 
 
 
