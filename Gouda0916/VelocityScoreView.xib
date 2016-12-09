@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,33 +26,43 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i96-Ij-bW2">
-                    <rect key="frame" x="9" y="24.5" width="356.5" height="117"/>
+                    <rect key="frame" x="-0.5" y="0.0" width="375.5" height="167"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-nG-VRo">
-                    <rect key="frame" x="9" y="24.5" width="356.5" height="117"/>
+                    <rect key="frame" x="-0.5" y="0.0" width="375.5" height="167"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Velocity Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ3-Ue-Whe">
-                            <rect key="frame" x="0.0" y="81.5" width="356.5" height="26"/>
-                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="19"/>
-                            <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ3-Ue-Whe">
+                            <rect key="frame" x="0.0" y="28" width="375.5" height="29"/>
+                            <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
+                            <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <size key="shadowOffset" width="1" height="-1"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PS-gu-dbg">
-                            <rect key="frame" x="164.5" y="38.5" width="28.5" height="41"/>
-                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="30"/>
+                            <rect key="frame" x="170.5" y="74.5" width="36" height="35"/>
+                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="30"/>
                             <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYV-fP-DCW" userLabel="Divider">
+                            <rect key="frame" x="131.5" y="140.5" width="113" height="1"/>
+                            <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="KYV-fP-DCW" secondAttribute="height" multiplier="150:1" id="tJO-dO-f1i"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="lQ3-Ue-Whe" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" multiplier="1.6" id="7Uk-yC-kxb"/>
+                        <constraint firstItem="KYV-fP-DCW" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" multiplier="1.7" id="307-kf-oKZ"/>
+                        <constraint firstItem="lQ3-Ue-Whe" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" multiplier="0.5" id="7Uk-yC-kxb"/>
+                        <constraint firstItem="KYV-fP-DCW" firstAttribute="centerX" secondItem="Adu-nG-VRo" secondAttribute="centerX" id="g7b-zm-AbR"/>
                         <constraint firstItem="lQ3-Ue-Whe" firstAttribute="leading" secondItem="Adu-nG-VRo" secondAttribute="leading" id="gip-kZ-bVu"/>
-                        <constraint firstItem="3PS-gu-dbg" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" id="j5o-Ev-04F"/>
+                        <constraint firstItem="3PS-gu-dbg" firstAttribute="centerY" secondItem="Adu-nG-VRo" secondAttribute="centerY" multiplier="1.1" id="j5o-Ev-04F"/>
                         <constraint firstItem="lQ3-Ue-Whe" firstAttribute="trailing" secondItem="Adu-nG-VRo" secondAttribute="trailing" id="mKx-qb-lGe"/>
                         <constraint firstItem="3PS-gu-dbg" firstAttribute="centerX" secondItem="Adu-nG-VRo" secondAttribute="centerX" id="q4c-p2-oRT"/>
+                        <constraint firstItem="KYV-fP-DCW" firstAttribute="width" secondItem="Adu-nG-VRo" secondAttribute="width" multiplier="0.3" id="wcs-h2-cSz"/>
                     </constraints>
                 </view>
             </subviews>
@@ -60,10 +71,10 @@
                 <constraint firstItem="i96-Ij-bW2" firstAttribute="trailing" secondItem="Adu-nG-VRo" secondAttribute="trailing" id="2vn-3f-Ml5"/>
                 <constraint firstItem="i96-Ij-bW2" firstAttribute="top" secondItem="Adu-nG-VRo" secondAttribute="top" id="6X9-FE-GSX"/>
                 <constraint firstItem="Adu-nG-VRo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HjP-2v-0qR"/>
-                <constraint firstItem="Adu-nG-VRo" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.95" id="acK-dR-i59"/>
+                <constraint firstItem="Adu-nG-VRo" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="acK-dR-i59"/>
                 <constraint firstItem="Adu-nG-VRo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="d0b-14-3vw"/>
                 <constraint firstItem="i96-Ij-bW2" firstAttribute="bottom" secondItem="Adu-nG-VRo" secondAttribute="bottom" id="isN-3b-1BP"/>
-                <constraint firstItem="Adu-nG-VRo" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" id="kwv-do-Wi7"/>
+                <constraint firstItem="Adu-nG-VRo" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="kwv-do-Wi7"/>
                 <constraint firstItem="i96-Ij-bW2" firstAttribute="leading" secondItem="Adu-nG-VRo" secondAttribute="leading" id="p3n-gz-sdW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
