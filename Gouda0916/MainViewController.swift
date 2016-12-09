@@ -18,6 +18,11 @@ import CoreGraphics
 
 class MainViewController: UIViewController {
     
+    
+    let store = DataStore.sharedInstance
+    let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
+    var menuIsShowing = false
+    
     @IBOutlet weak var gradient: UIView!
     
     @IBOutlet var addNewGoalView: UIView!
@@ -27,22 +32,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var footerView: FooterView!
     
     
-    @IBAction func goToGoalVC2(_ sender: Any) {
-        NotificationCenter.default.post(name: .openGoalVC, object: nil)
-    }
-   
-  
-    @IBAction func goToGoalVC(_ sender: Any) {
-        NotificationCenter.default.post(name: .openGoalVC, object: nil)
-    }
+    @IBOutlet weak var progressPercentLabel: UILabel!
     
+    @IBOutlet weak var daysPercentLabel: UILabel!
     
-    
-    
-    let store = DataStore.sharedInstance
-    let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
-    var menuIsShowing = false
-    
+    @IBOutlet weak var velocityPercentLabel: UILabel!
     
     
     
@@ -51,8 +45,18 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         store.fetchData()
         calculateProgress()
+        daysPercentCalculation()
         checkIfGoalExists()
-      
+        
+        
+        velocityPercentLabel.text = "x"
+        
+        
+        let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(menuButtonPressed))
+        
+        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGR)
+        
+        
         
         
         let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
@@ -69,13 +73,20 @@ class MainViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    //
     
     
+    @IBAction func goToGoalVC2(_ sender: Any) {
+        NotificationCenter.default.post(name: .openGoalVC, object: nil)
+    }
     
-    //    func didTap(tapGR: UITapGestureRecognizer){
-    //        print ("You touched me.")
-    //    }
+    
+    @IBAction func goToGoalVC(_ sender: Any) {
+        NotificationCenter.default.post(name: .openGoalVC, object: nil)
+    }
+    
+
+    
+    
     
     @IBAction func VelocityBtnPressed(_ sender: Any) {
         NotificationCenter.default.post(name: .openVelocityVC, object: nil)
@@ -83,6 +94,7 @@ class MainViewController: UIViewController {
     
     @IBAction func menuButtonPressed(_ sender: Any) {
         if !menuIsShowing {
+            print("I work 🛍🎀🍣🏀")
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
         } else {
@@ -102,11 +114,14 @@ class MainViewController: UIViewController {
     func calculateProgress() {
         print("print")
         guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
-        guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
+        guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal"); return}
         
         let progressPercentage = (checkSaved/checkGoalAmount)
         
         store.progress = 812.0 * progressPercentage
+        
+        progressPercentLabel.text = "\(Int(progressPercentage * 100))%"
+        
         
     }
     
@@ -129,10 +144,15 @@ class MainViewController: UIViewController {
         
     }
     
-    
-    
-    
-    //    let interval = laterDate.timeIntervalSinceDate(earlierDate)
+    func daysPercentCalculation() {
+        if let first = store.goals.first {
+            let dayPercentage = first.dayCounter/first.timeframe
+            daysPercentLabel.text = "\(Int(dayPercentage * 100))%"
+        }
+        
+        
+        
+    }
     
     
     func checkIfGoalExists() {
@@ -143,20 +163,16 @@ class MainViewController: UIViewController {
             
         }
             
-    else  {
+        else  {
             //if today's entry is empty,
             didYouSpendTodayView.isHidden = true
             addNewGoalView.isHidden = true
             footerView.hamburgerMenuImageView.isHidden = false
             
-            
         }
     }
     
-    /// hamburger on circleview needs to show 
-    /// another else? 
-    ///new conversion for circle progressPercentage
-    // update labels
 
+    
     
 }

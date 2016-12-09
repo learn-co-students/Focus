@@ -212,20 +212,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-vX-Bv9" userLabel="View For Percent Labels">
                                         <rect key="frame" x="0.0" y="360.5" width="375" height="200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-iu-tzL" userLabel="Progress Percent">
-                                                <rect key="frame" x="78.5" y="125" width="22.5" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-iu-tzL" userLabel="Progress Percent">
+                                                <rect key="frame" x="83.5" y="125" width="12.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                                 <color key="textColor" red="1" green="0.6112159855" blue="0.12068148770000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-4n-R0T" userLabel="Days Percent">
-                                                <rect key="frame" x="289" y="125" width="22.5" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-4n-R0T" userLabel="Days Percent">
+                                                <rect key="frame" x="294" y="125" width="12.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xok-dq-4KX" userLabel="Velocity Percent">
-                                                <rect key="frame" x="191" y="125" width="22.5" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xok-dq-4KX" userLabel="Velocity Percent">
+                                                <rect key="frame" x="196" y="125" width="12.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -417,9 +417,12 @@
                     </view>
                     <connections>
                         <outlet property="addNewGoalView" destination="lxf-Ta-G6b" id="ijF-eD-ucb"/>
+                        <outlet property="daysPercentLabel" destination="dsB-4n-R0T" id="3Nn-rq-S6z"/>
                         <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="RZ3-EJ-spd"/>
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
                         <outlet property="gradient" destination="WQ6-BZ-EPL" id="W4u-KJ-KA9"/>
+                        <outlet property="progressPercentLabel" destination="z8K-iu-tzL" id="Noc-A2-uMd"/>
+                        <outlet property="velocityPercentLabel" destination="xok-dq-4KX" id="NM4-Ff-vSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpG-sf-Ank" userLabel="First Responder" sceneMemberID="firstResponder"/>
