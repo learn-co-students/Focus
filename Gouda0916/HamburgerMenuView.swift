@@ -11,8 +11,8 @@ import UIKit
 class HamburgerMenuView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var logoutFooter: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logoutFooterView: CustomMenuCell!
     
     
     override init(frame: CGRect) {
@@ -28,6 +28,8 @@ class HamburgerMenuView: UIView {
         Bundle.main.loadNibNamed("HamburgerMenuView", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.frame = self.bounds
+        logoutFooterView.label.text = "log out"
+        logoutFooterView.iconImageView.image = #imageLiteral(resourceName: "change what youre saving goal")
         
     }
     

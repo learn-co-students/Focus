@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HamburgerMenuView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="djC-nh-Uh6"/>
-                <outlet property="logoutFooter" destination="7WV-BQ-5Nm" id="Gm4-KP-qLK"/>
+                <outlet property="logoutFooterView" destination="7WV-BQ-5Nm" id="R4I-tU-dQq"/>
                 <outlet property="tableView" destination="KNz-Mv-iUR" id="Zi3-gi-aU6"/>
             </connections>
         </placeholder>
@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="184" height="236"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WV-BQ-5Nm" userLabel="logout">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WV-BQ-5Nm" userLabel="logout" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="236" width="184" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
