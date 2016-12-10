@@ -30,6 +30,9 @@ class LogInViewController: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         //set tags
+        
+        
+        
         self.emailTextField.tag = 100
         self.passwordTextField.tag = 101
         
@@ -40,6 +43,8 @@ class LogInViewController: UIViewController {
         //add layout constraint function
         self.emailPopulated = false
         self.passwordPopulated = false
+        
+        applyGradient()
         
         passwordTextField.isSecureTextEntry = true
         
@@ -55,6 +60,18 @@ class LogInViewController: UIViewController {
             }
         }
     } // end of view did load
+    
+    func applyGradient() {
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
+        
+        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let endingColorOFGradient = UIColor.themeDarkGreenColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.view.layer.insertSublayer(gradient, at: 0)
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
