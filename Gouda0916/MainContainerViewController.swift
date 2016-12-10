@@ -68,6 +68,7 @@ extension MainContainerViewController {
     
     func unhideMenu() {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            print("⚡️ unhide menu firing")
             self.menuTrailingConstraint.constant = self.view.bounds.width * 0.4
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -110,7 +111,7 @@ extension MainContainerViewController {
         addChildViewController(actingVC)
         add(viewController: actingVC)
         actingVC.view.alpha = 0.0
-        menu.alpha = 0.0
+        hideMenu()
         
         UIView.animate(withDuration: 0.8, animations: {
             self.actingVC.view.alpha = 1.0
