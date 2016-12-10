@@ -11,29 +11,8 @@ import UIKit
 
 
 
-class EditGoalViewController: UIViewController, UserInputProtocol {
+class EditGoalViewController: UIViewController {
    
-    //testing user input
-    @IBOutlet weak var userInputTextfield: UITextField!
-    @IBOutlet weak var testButton: UIButton!
-    @IBOutlet weak var openTestButton: UIButton!
-    
-    @IBAction func testButtonTapped(_ sender: Any) {
-        let velCheck = checkForVelocity(goal: store.goals.first!, textField: userInputTextfield)
-        print(velCheck)
-        
-        incrementDayAndAmount(goal: store.goals.first!, textField: userInputTextfield)
-        checkIfComplete(goal: store.goals.first!) { (success) in
-            if success {
-                print("⚡️YAYYYY YOU DID IT!!!!")
-            } else {
-                print("🐹YOU DIDNT REACH YOUR GOAL YET")
-            }
-        }
-    }
-    
-    
-
     let store = DataStore.sharedInstance
     var delegate: EditGoalDelegate?
     var goal: Goal!
