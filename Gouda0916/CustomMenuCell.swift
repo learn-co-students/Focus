@@ -14,6 +14,13 @@ class CustomMenuCell: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     
+    var menuOption: MenuOption? {
+        didSet{
+            label.text = self.menuOption?.label
+            iconImageView.image = self.menuOption?.image
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

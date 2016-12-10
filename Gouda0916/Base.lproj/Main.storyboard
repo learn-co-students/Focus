@@ -484,49 +484,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="207" height="588"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-eR-5n7">
-                                <rect key="frame" x="0.0" y="0.0" width="207" height="588"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iF3-JX-5uS">
+                                <rect key="frame" x="0.0" y="0.0" width="207" height="529.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" textLabel="Ltn-bD-2Oh" style="IBUITableViewCellStyleDefault" id="WEs-Gd-5eX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" id="z4n-fw-ZhA" customClass="MenuCell" customModule="Gouda0916" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="207" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WEs-Gd-5eX" id="9SA-My-uEc">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4n-fw-ZhA" id="P7U-Cg-yyO">
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ltn-bD-2Oh">
-                                                    <rect key="frame" x="15" y="0.0" width="177" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-K8-Pta" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
+                                                    <rect key="frame" x="-0.6666666666666714" y="-1" width="207.33333333333331" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qyD-K8-Pta" firstAttribute="width" secondItem="P7U-Cg-yyO" secondAttribute="width" id="LwW-Ht-1T4"/>
+                                                <constraint firstItem="qyD-K8-Pta" firstAttribute="centerY" secondItem="P7U-Cg-yyO" secondAttribute="centerY" id="QLX-GH-nCf"/>
+                                                <constraint firstItem="qyD-K8-Pta" firstAttribute="centerX" secondItem="P7U-Cg-yyO" secondAttribute="centerX" id="RM0-Ac-TI8"/>
+                                                <constraint firstItem="qyD-K8-Pta" firstAttribute="height" secondItem="P7U-Cg-yyO" secondAttribute="height" id="pBn-Yw-kQo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="customMenuCell" destination="qyD-K8-Pta" id="pyQ-IA-x2C"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="LQF-Kr-3Ld" id="6aV-eL-98c"/>
-                                    <outlet property="delegate" destination="LQF-Kr-3Ld" id="QhJ-gj-Au3"/>
+                                    <outlet property="dataSource" destination="LQF-Kr-3Ld" id="yX2-hm-qw2"/>
+                                    <outlet property="delegate" destination="LQF-Kr-3Ld" id="enP-13-qJs"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7W5-Qp-bje" userLabel="Logout" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="529.33333333333348" width="207" height="58.666666666666629"/>
+                                <color key="backgroundColor" red="0.63529411759999999" green="0.82352941180000006" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tMW-eR-5n7" firstAttribute="height" secondItem="JFM-0a-51p" secondAttribute="height" id="Cki-6z-njD"/>
-                            <constraint firstItem="tMW-eR-5n7" firstAttribute="centerX" secondItem="JFM-0a-51p" secondAttribute="centerX" id="OWb-GO-254"/>
-                            <constraint firstItem="tMW-eR-5n7" firstAttribute="centerY" secondItem="JFM-0a-51p" secondAttribute="centerY" id="jIi-oV-nr1"/>
-                            <constraint firstItem="tMW-eR-5n7" firstAttribute="width" secondItem="JFM-0a-51p" secondAttribute="width" id="m9m-Sc-EQR"/>
+                            <constraint firstItem="iF3-JX-5uS" firstAttribute="leading" secondItem="JFM-0a-51p" secondAttribute="leading" id="8fo-F2-3HT"/>
+                            <constraint firstItem="iF3-JX-5uS" firstAttribute="bottom" secondItem="7W5-Qp-bje" secondAttribute="top" id="TfL-pn-r4r"/>
+                            <constraint firstItem="7W5-Qp-bje" firstAttribute="width" secondItem="JFM-0a-51p" secondAttribute="width" id="Uwc-ff-Sfq"/>
+                            <constraint firstItem="7W5-Qp-bje" firstAttribute="centerX" secondItem="JFM-0a-51p" secondAttribute="centerX" id="WWv-eZ-TKw"/>
+                            <constraint firstItem="7W5-Qp-bje" firstAttribute="bottom" secondItem="YCS-ey-eAT" secondAttribute="top" id="eW0-n2-1CA"/>
+                            <constraint firstItem="iF3-JX-5uS" firstAttribute="trailing" secondItem="JFM-0a-51p" secondAttribute="trailing" id="oMm-Po-Rbr"/>
+                            <constraint firstItem="iF3-JX-5uS" firstAttribute="top" secondItem="0sb-af-xe0" secondAttribute="bottom" id="uqm-pe-kk3"/>
+                            <constraint firstItem="7W5-Qp-bje" firstAttribute="height" secondItem="JFM-0a-51p" secondAttribute="height" multiplier="0.1" id="wgY-M3-K7k"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="menuTableView" destination="tMW-eR-5n7" id="DdL-oV-0sr"/>
+                        <outlet property="logoutView" destination="7W5-Qp-bje" id="CAZ-C4-RHB"/>
+                        <outlet property="menuTableView" destination="iF3-JX-5uS" id="tTk-mL-OJr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GT-YE-ZxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="1664"/>
+            <point key="canvasLocation" x="978.98550724637687" y="1663.858695652174"/>
         </scene>
     </scenes>
     <resources>

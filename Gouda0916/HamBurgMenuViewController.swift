@@ -15,12 +15,23 @@ import FirebaseAuth
 
 class HamburgerMenuViewController: UIViewController {
     
+    var options: [MenuOption] = []
+    
     @IBOutlet weak var menuTableView: UITableView!
-    let testArray = ["home", "goal", "velocity", "logout"]
-
+    @IBOutlet weak var logoutView: CustomMenuCell!
+    @IBOutlet weak var cellView: CustomMenuCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateOptions()
+    }
+    
+    func populateOptions() {
+        let home = MenuOption(label: "home", image: #imageLiteral(resourceName: "home"))
+        let goal = MenuOption(label: "goal", image: #imageLiteral(resourceName: "change what youre saving goal"))
+        let velocity = MenuOption(label: "velocity", image: #imageLiteral(resourceName: "velocity icon"))
+        
+        options = [home, goal, velocity]
     }
 }
 
@@ -31,13 +42,13 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testArray.count
+        return options.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell")
-        cell?.textLabel?.text = testArray[indexPath.row]
-        return cell!
+        let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell") as! MenuCell
+        cell.customMenuCell.menuOption = options[indexPath.row]
+        return cell
     }
     
     func logout() {
@@ -50,7 +61,7 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch testArray[indexPath.row] {
+        switch options[indexPath.row].label {
         case "home":
             NotificationCenter.default.post(name: .openMainVC, object: nil)
         case "goal":
@@ -80,4 +91,15 @@ extension HamburgerMenuViewController {
             self.view.alpha = 1.0
         }) { _ in }
     }
+}
+
+class MenuCell: UITableViewCell {
+    
+    @IBOutlet weak var customMenuCell: CustomMenuCell!
+    
+}
+
+struct MenuOption {
+    let label: String
+    let image: UIImage
 }

@@ -22,8 +22,6 @@
 		119117C71DFAE3A600163FC3 /* CustomMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119117C61DFAE3A600163FC3 /* CustomMenuCell.xib */; };
 		119117C91DFAE3B700163FC3 /* CustomMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119117C81DFAE3B700163FC3 /* CustomMenuCell.swift */; };
 		119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119161D61DEF99400085F979 /* EditGoalViewController.swift */; };
-		119A90D71DFADD3F000D61DC /* HamburgerMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119A90D61DFADD3F000D61DC /* HamburgerMenuView.xib */; };
-		119A90D91DFADD7E000D61DC /* HamburgerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A90D81DFADD7E000D61DC /* HamburgerMenuView.swift */; };
 		11FCAA151DDA6E160072C46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA141DDA6E160072C46A /* AppDelegate.swift */; };
 		11FCAA1D1DDA6E170072C46A /* Gouda0916.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11FCAA1B1DDA6E170072C46A /* Gouda0916.xcdatamodeld */; };
 		11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FCAA201DDA6E170072C46A /* LaunchScreen.storyboard */; };
@@ -78,8 +76,6 @@
 		119117C61DFAE3A600163FC3 /* CustomMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMenuCell.xib; sourceTree = "<group>"; };
 		119117C81DFAE3B700163FC3 /* CustomMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuCell.swift; sourceTree = "<group>"; };
 		119161D61DEF99400085F979 /* EditGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoalViewController.swift; sourceTree = "<group>"; };
-		119A90D61DFADD3F000D61DC /* HamburgerMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerMenuView.xib; sourceTree = "<group>"; };
-		119A90D81DFADD7E000D61DC /* HamburgerMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerMenuView.swift; sourceTree = "<group>"; };
 		11FCAA111DDA6E160072C46A /* Gouda0916.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda0916.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FCAA141DDA6E160072C46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FCAA1C1DDA6E170072C46A /* Gouda0916.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gouda0916.xcdatamodel; sourceTree = "<group>"; };
@@ -173,8 +169,6 @@
 				909105EF1DF600EF00D3C6BA /* Main.storyboard */,
 				11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */,
 				113E8BD11DF254CF00630C02 /* EditGoalView.xib */,
-				119A90D61DFADD3F000D61DC /* HamburgerMenuView.xib */,
-				119A90D81DFADD7E000D61DC /* HamburgerMenuView.swift */,
 				119117C61DFAE3A600163FC3 /* CustomMenuCell.xib */,
 				119117C81DFAE3B700163FC3 /* CustomMenuCell.swift */,
 				113E8BD31DF254DB00630C02 /* EditGoalView.swift */,
@@ -303,7 +297,6 @@
 				TargetAttributes = {
 					11FCAA101DDA6E160072C46A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = QY9ZR636M2;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -347,7 +340,6 @@
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,
 				909105F11DF600EF00D3C6BA /* Main.storyboard in Resources */,
 				119117C71DFAE3A600163FC3 /* CustomMenuCell.xib in Resources */,
-				119A90D71DFADD3F000D61DC /* HamburgerMenuView.xib in Resources */,
 				114250E91DE62CAC003B7624 /* GoalTableViewCellView.xib in Resources */,
 				113E8BD21DF254CF00630C02 /* EditGoalView.xib in Resources */,
 				909FE98F1DF5F88D0055645B /* Goal.storyboard in Resources */,
@@ -428,7 +420,6 @@
 				119117C91DFAE3B700163FC3 /* CustomMenuCell.swift in Sources */,
 				90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */,
 				909EFE451DF6445C00F9C383 /* HamBurgMenuViewController.swift in Sources */,
-				119A90D91DFADD7E000D61DC /* HamburgerMenuView.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
 				90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */,
 				9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */,
@@ -588,7 +579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Gouda0916/Gouda0916.entitlements;
-				DEVELOPMENT_TEAM = QY9ZR636M2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Gouda0916/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,7 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Gouda0916/Gouda0916.entitlements;
-				DEVELOPMENT_TEAM = QY9ZR636M2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Gouda0916/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
