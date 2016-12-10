@@ -19,11 +19,11 @@ class HamburgerMenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var logoutView: CustomMenuCell!
-    @IBOutlet weak var cellView: CustomMenuCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         populateOptions()
+    
     }
     
     func populateOptions() {
@@ -49,6 +49,10 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell") as! MenuCell
         cell.customMenuCell.menuOption = options[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return logoutView.frame.height
     }
     
     func logout() {

@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var daysPercentLabel: UILabel!
     @IBOutlet weak var velocityPercentLabel: UILabel!
     @IBOutlet weak var userInputTextField: UITextField!
+    @IBOutlet weak var blackOverlayView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +57,17 @@ class MainViewController: UIViewController {
         if !menuIsShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
+            UIView.animate(withDuration: 0.3) {
+                self.blackOverlayView.alpha = 0.8
+                self.view.layoutIfNeeded()
+            }
         } else {
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuIsShowing = false
+            UIView.animate(withDuration: 0.3) {
+                self.blackOverlayView.alpha = 0
+                self.view.layoutIfNeeded()
+            }
         }
     }
     

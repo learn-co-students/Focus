@@ -12,6 +12,7 @@ import Firebase
 
 final class MainContainerViewController: UIViewController {
     
+    @IBOutlet weak var menuTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     var actingVC: UIViewController!
     
@@ -22,7 +23,6 @@ final class MainContainerViewController: UIViewController {
         super.viewDidLoad()
         addNotificationObservers()
         loadInitialViewController()
-        menu.alpha = 0.0
     }
     
     
@@ -67,15 +67,17 @@ extension MainContainerViewController {
     }
     
     func unhideMenu() {
-        UIView.animate(withDuration: 0.3) {
-            self.menu.alpha = 1.0
-        }
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.menuTrailingConstraint.constant = self.view.bounds.width * 0.4
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     func hideMenu() {
-        UIView.animate(withDuration: 0.3) {
-            self.menu.alpha = 0.0
-        }
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.menuTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
 
     }
     
@@ -94,6 +96,7 @@ extension MainContainerViewController {
         case Notification.Name.openVelocityVC:
             print("Opening VELOCITY VC!!!!")
             switchToViewController(with: .velocityVC)
+            
             break
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
@@ -120,4 +123,5 @@ extension MainContainerViewController {
         
     }
 }
+
 

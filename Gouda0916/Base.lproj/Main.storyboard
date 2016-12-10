@@ -169,7 +169,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5a-Iv-vVQ" userLabel="menu">
-                                <rect key="frame" x="0.0" y="74" width="207" height="588"/>
+                                <rect key="frame" x="-165.66666666666666" y="294.33333333333337" width="165.66666666666666" height="368.00000000000011"/>
                                 <connections>
                                     <segue destination="LQF-Kr-3Ld" kind="embed" id="Ad7-Qz-f3j"/>
                                 </connections>
@@ -178,18 +178,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lVr-2U-swf" firstAttribute="top" secondItem="hH8-Rc-I8D" secondAttribute="bottom" id="6m7-kO-HwX"/>
-                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="leading" secondItem="7Ka-zY-oOp" secondAttribute="leading" id="BNr-4H-1nn"/>
-                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="centerY" secondItem="7Ka-zY-oOp" secondAttribute="centerY" id="Hou-Hu-fqA"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="trailing" secondItem="7Ka-zY-oOp" secondAttribute="leading" symbolic="YES" id="BNr-4H-1nn"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="bottom" secondItem="7Ka-zY-oOp" secondAttribute="bottom" multiplier="0.9" id="Hou-Hu-fqA"/>
                             <constraint firstItem="hH8-Rc-I8D" firstAttribute="top" secondItem="7Ka-zY-oOp" secondAttribute="top" id="Jbf-iQ-S6y"/>
                             <constraint firstItem="hH8-Rc-I8D" firstAttribute="leading" secondItem="7Ka-zY-oOp" secondAttribute="leading" id="OWZ-6b-BU0"/>
-                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="height" secondItem="7Ka-zY-oOp" secondAttribute="height" multiplier="0.8" id="Tct-YN-Lcm"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="height" secondItem="7Ka-zY-oOp" secondAttribute="height" multiplier="0.5" id="Tct-YN-Lcm"/>
                             <constraint firstAttribute="trailing" secondItem="hH8-Rc-I8D" secondAttribute="trailing" id="aLT-8a-lHi"/>
-                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="width" secondItem="7Ka-zY-oOp" secondAttribute="width" multiplier="0.5" id="laR-2b-Tkd"/>
+                            <constraint firstItem="a5a-Iv-vVQ" firstAttribute="width" secondItem="7Ka-zY-oOp" secondAttribute="width" multiplier="0.4" id="laR-2b-Tkd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="hH8-Rc-I8D" id="q6Y-DY-JXn"/>
                         <outlet property="menu" destination="a5a-Iv-vVQ" id="eL4-Pf-Iij"/>
+                        <outlet property="menuTrailingConstraint" destination="BNr-4H-1nn" id="RGs-kl-p2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kT-aU-w2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,6 +405,10 @@
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="width" secondItem="cKo-Gc-iLP" secondAttribute="width" id="und-HF-Niy"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-0g-VZg" userLabel="BlackCover">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3U2-Gu-6nt" userLabel="Footer" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="662" width="414" height="74"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -429,10 +434,14 @@
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="HYP-C3-jaz"/>
                             <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="3U2-Gu-6nt" secondAttribute="bottom" id="MTO-Sf-oAE"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="P9r-Ol-oXc"/>
+                            <constraint firstItem="QHF-0g-VZg" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="d0l-aH-rNM"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="dNz-Fq-n1v"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="e6r-Hq-cRX"/>
+                            <constraint firstItem="QHF-0g-VZg" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="eaj-lU-4kK"/>
+                            <constraint firstItem="QHF-0g-VZg" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="ekG-yD-r30"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="hVv-eO-WqE"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="jw1-yO-bEA"/>
+                            <constraint firstItem="QHF-0g-VZg" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="llg-sL-ZYa"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="q0j-Px-zDc"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="qea-W0-JRJ"/>
                             <constraint firstItem="3U2-Gu-6nt" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="uCl-pv-de8"/>
@@ -443,6 +452,7 @@
                     </view>
                     <connections>
                         <outlet property="addNewGoalView" destination="lxf-Ta-G6b" id="ijF-eD-ucb"/>
+                        <outlet property="blackOverlayView" destination="QHF-0g-VZg" id="RlQ-za-gBD"/>
                         <outlet property="daysPercentLabel" destination="dsB-4n-R0T" id="3Nn-rq-S6z"/>
                         <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="RZ3-EJ-spd"/>
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
@@ -481,22 +491,23 @@
                         <viewControllerLayoutGuide type="bottom" id="YCS-ey-eAT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JFM-0a-51p">
-                        <rect key="frame" x="0.0" y="0.0" width="207" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="165.66666666666666" height="368.00000000000011"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iF3-JX-5uS">
-                                <rect key="frame" x="0.0" y="0.0" width="207" height="529.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="313"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" id="z4n-fw-ZhA" customClass="MenuCell" customModule="Gouda0916" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="207" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="166" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4n-fw-ZhA" id="P7U-Cg-yyO">
-                                            <rect key="frame" x="0.0" y="0.0" width="207" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-K8-Pta" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
-                                                    <rect key="frame" x="-0.6666666666666714" y="-1" width="207.33333333333331" height="44"/>
+                                                    <rect key="frame" x="0.0" y="-1" width="166" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -518,21 +529,26 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7W5-Qp-bje" userLabel="Logout" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="529.33333333333348" width="207" height="58.666666666666629"/>
+                                <rect key="frame" x="0.0" y="313" width="166" height="55"/>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.82352941180000006" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iF3-JX-5uS" firstAttribute="leading" secondItem="JFM-0a-51p" secondAttribute="leading" id="8fo-F2-3HT"/>
+                            <constraint firstItem="iF3-JX-5uS" firstAttribute="top" secondItem="0sb-af-xe0" secondAttribute="bottom" id="SAS-sW-Qfp"/>
                             <constraint firstItem="iF3-JX-5uS" firstAttribute="bottom" secondItem="7W5-Qp-bje" secondAttribute="top" id="TfL-pn-r4r"/>
                             <constraint firstItem="7W5-Qp-bje" firstAttribute="width" secondItem="JFM-0a-51p" secondAttribute="width" id="Uwc-ff-Sfq"/>
-                            <constraint firstItem="7W5-Qp-bje" firstAttribute="centerX" secondItem="JFM-0a-51p" secondAttribute="centerX" id="WWv-eZ-TKw"/>
+                            <constraint firstItem="7W5-Qp-bje" firstAttribute="leading" secondItem="JFM-0a-51p" secondAttribute="leading" id="WWv-eZ-TKw"/>
                             <constraint firstItem="7W5-Qp-bje" firstAttribute="bottom" secondItem="YCS-ey-eAT" secondAttribute="top" id="eW0-n2-1CA"/>
-                            <constraint firstItem="iF3-JX-5uS" firstAttribute="trailing" secondItem="JFM-0a-51p" secondAttribute="trailing" id="oMm-Po-Rbr"/>
-                            <constraint firstItem="iF3-JX-5uS" firstAttribute="top" secondItem="0sb-af-xe0" secondAttribute="bottom" id="uqm-pe-kk3"/>
-                            <constraint firstItem="7W5-Qp-bje" firstAttribute="height" secondItem="JFM-0a-51p" secondAttribute="height" multiplier="0.1" id="wgY-M3-K7k"/>
+                            <constraint firstItem="7W5-Qp-bje" firstAttribute="height" secondItem="JFM-0a-51p" secondAttribute="height" multiplier="0.15" id="wgY-M3-K7k"/>
+                            <constraint firstItem="iF3-JX-5uS" firstAttribute="trailing" secondItem="7W5-Qp-bje" secondAttribute="trailing" id="xTZ-FH-Xrn"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="logoutView" destination="7W5-Qp-bje" id="CAZ-C4-RHB"/>
