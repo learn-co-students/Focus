@@ -25,6 +25,7 @@ class GoalViewController: UIViewController {
     
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var goalTableView: UITableView!
+    @IBOutlet weak var blackCoverView: UIView!
     
     
     override func viewDidLoad() {
@@ -57,13 +58,20 @@ class GoalViewController: UIViewController {
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
-        print("🔥🔥🔥")
         if !menuShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuShowing = true
+            UIView.animate(withDuration: 0.3) {
+                self.blackCoverView.alpha = 0.8
+                self.view.layoutIfNeeded()
+            }
         } else {
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuShowing = false
+            UIView.animate(withDuration: 0.3) {
+                self.blackCoverView.alpha = 0.0
+                self.view.layoutIfNeeded()
+            }
         }
     }
     

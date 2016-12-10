@@ -30,7 +30,7 @@ class HamburgerMenuViewController: UIViewController {
     
     func populateOptions() {
         let home = MenuOption(label: "home", image: #imageLiteral(resourceName: "home"))
-        let goal = MenuOption(label: "goal", image: #imageLiteral(resourceName: "change what youre saving goal"))
+        let goal = MenuOption(label: "goal", image: #imageLiteral(resourceName: "goal icon"))
         let velocity = MenuOption(label: "velocity", image: #imageLiteral(resourceName: "velocity icon"))
         
         options = [home, goal, velocity]

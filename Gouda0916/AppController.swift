@@ -89,9 +89,7 @@ extension AppController {
             self.actingVC.didMove(toParentViewController: self)
         }
     }
-    
-    
-    
+
 }
 
 // MARK: - Notification Extension
