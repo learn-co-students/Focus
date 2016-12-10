@@ -248,12 +248,6 @@ class LogInViewController: UIViewController {
 
 extension LogInViewController: UITextFieldDelegate {
     
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        
-        print("TextField did end editing method called")
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
@@ -264,12 +258,4 @@ extension LogInViewController: UITextFieldDelegate {
         return true
     }
 }
-
-    
-   
-
-
-
-//did finish editing or did end editing 
-
 

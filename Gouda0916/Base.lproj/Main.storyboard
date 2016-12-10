@@ -299,7 +299,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ta-G6b" userLabel="Add New Goal View Container">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-ip-t9g">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-ip-t9g">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-FG-1pd">
@@ -309,7 +309,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="goToGoalVC2:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="V8w-k2-Q7H"/>
+                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="tkd-nG-oNV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-oT-wGn">
@@ -319,7 +319,7 @@
                                             <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="d4M-Bc-Zww"/>
+                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="ATz-et-ByB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -338,9 +338,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV" userLabel="DidYouSpendToday">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obh-k1-lgg" userLabel="shadow">
-                                        <rect key="frame" x="71" y="137" width="289" height="184"/>
-                                        <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obh-k1-lgg" userLabel="shadow">
+                                        <rect key="frame" x="-343" y="137" width="289" height="184"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="10"/>
@@ -348,7 +348,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-mj-7Iz" userLabel="SpendSubmitBoxContainer">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                        <rect key="frame" x="-414" y="0.0" width="414" height="736"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-BZ-EPL" userLabel="Gradient">
                                                 <rect key="frame" x="63" y="129" width="289" height="184"/>
@@ -406,7 +406,7 @@
                                     <constraint firstItem="Obh-k1-lgg" firstAttribute="top" secondItem="WQ6-BZ-EPL" secondAttribute="top" constant="8" id="Nk0-62-tuO"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="centerY" secondItem="MgV-GG-DJV" secondAttribute="centerY" id="RFv-p2-bzY"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="width" secondItem="MgV-GG-DJV" secondAttribute="width" id="aFW-k0-Idl"/>
-                                    <constraint firstItem="2PV-mj-7Iz" firstAttribute="centerX" secondItem="MgV-GG-DJV" secondAttribute="centerX" id="enj-JM-C11"/>
+                                    <constraint firstItem="2PV-mj-7Iz" firstAttribute="trailing" secondItem="MgV-GG-DJV" secondAttribute="leading" id="enj-JM-C11"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="height" secondItem="MgV-GG-DJV" secondAttribute="height" id="lKW-Bv-PIK"/>
                                     <constraint firstItem="Obh-k1-lgg" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" id="yjj-RX-T9i"/>
                                 </constraints>
@@ -457,12 +457,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addGoalImageView" destination="1b1-ip-t9g" id="jTT-sW-Bqk"/>
                         <outlet property="addNewGoalView" destination="lxf-Ta-G6b" id="ijF-eD-ucb"/>
                         <outlet property="blackOverlayView" destination="QHF-0g-VZg" id="RlQ-za-gBD"/>
                         <outlet property="daysPercentLabel" destination="dsB-4n-R0T" id="3Nn-rq-S6z"/>
                         <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="RZ3-EJ-spd"/>
+                        <outlet property="didYouSubmitTrailingConstraint" destination="enj-JM-C11" id="al8-Fc-GWC"/>
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
                         <outlet property="gradient" destination="WQ6-BZ-EPL" id="W4u-KJ-KA9"/>
+                        <outlet property="logDayButton" destination="4Os-cU-n6M" id="mh5-FV-c8v"/>
                         <outlet property="progressPercentLabel" destination="z8K-iu-tzL" id="Noc-A2-uMd"/>
                         <outlet property="userInputTextField" destination="2fb-q6-V6b" id="uCb-NR-CZx"/>
                         <outlet property="velocityPercentLabel" destination="xok-dq-4KX" id="NM4-Ff-vSg"/>
@@ -509,7 +512,7 @@
                                         <rect key="frame" x="0.0" y="28" width="166" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4n-fw-ZhA" id="P7U-Cg-yyO">
-                                            <rect key="frame" x="0.0" y="0.0" width="166" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-K8-Pta" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">

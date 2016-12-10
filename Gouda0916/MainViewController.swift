@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
     
+    @IBOutlet weak var addGoalImageView: UIImageView!
     @IBOutlet weak var gradient: UIView!
     @IBOutlet var addNewGoalView: UIView!
     @IBOutlet weak var didYouSpendTodayView: UIView!
@@ -29,6 +30,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var velocityPercentLabel: UILabel!
     @IBOutlet weak var userInputTextField: UITextField!
     @IBOutlet weak var blackOverlayView: UIView!
+    @IBOutlet weak var logDayButton: UIButton!
+    
+    @IBOutlet weak var didYouSubmitTrailingConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +43,7 @@ class MainViewController: UIViewController {
         daysPercentCalculation()
         checkIfGoalExists()
         setUpMenuButtonGesture()
-        
-    }
-    
-    @IBAction func goToGoalVC2(_ sender: UIButton) {
-        NotificationCenter.default.post(name: .openGoalVC, object: nil)
+
     }
     
     @IBAction func goToGoalVC(_ sender: UIButton) {
@@ -50,7 +51,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func logDayButtonTapped(_ sender: Any) {
-        self.didYouSpendTodayView.isHidden = false
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.didYouSubmitTrailingConstraint.constant = UIScreen.main.bounds.width
+        }, completion: { success in
+            self.userInputTextField.becomeFirstResponder()
+        })
     }
     
     func menuButtonPressed(_ sender: Any) {
@@ -100,14 +106,15 @@ class MainViewController: UIViewController {
     
     func checkIfGoalExists() {
         if store.goals.isEmpty {
-            didYouSpendTodayView.isHidden = true
+            logDayButton.isHidden = true
             addNewGoalView.isHidden = false
             footerView.hamburgerMenuImageView.isHidden = true
+            
         } else {
             //if today's entry is empty,
-            didYouSpendTodayView.isHidden = true
             addNewGoalView.isHidden = true
             footerView.hamburgerMenuImageView.isHidden = false
+            logDayButton.isHidden = false
         }
     }
     
@@ -126,13 +133,13 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: Handling user input
 extension MainViewController: UserInputProtocol {
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
+        //sender.textField
         let _ = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
-        dump(store.goals)
         incrementDayAndAmount(goal: store.goals.first!, textField: userInputTextField)
-        dump(store.goals)
         checkIfComplete(goal: store.goals.first!) { (success) in
             if success {
                 print("⚡️YAYYYY YOU DID IT!!!!")
@@ -140,6 +147,11 @@ extension MainViewController: UserInputProtocol {
                 print("🐹YOU DIDNT REACH YOUR GOAL YET")
             }
         }
-        didYouSpendTodayView.isHidden = true
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.didYouSubmitTrailingConstraint.constant = 0
+        }, completion: { success in
+            self.userInputTextField.resignFirstResponder()
+        })
+        
     }
 }
