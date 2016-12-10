@@ -296,45 +296,6 @@
                                     <constraint firstItem="6BY-vX-Bv9" firstAttribute="centerX" secondItem="q01-hH-8cJ" secondAttribute="centerX" id="qJw-mF-Ntp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ta-G6b" userLabel="Add New Goal View Container">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-ip-t9g">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-FG-1pd">
-                                        <rect key="frame" x="193" y="186" width="33" height="77"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="tkd-nG-oNV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-oT-wGn">
-                                        <rect key="frame" x="124" y="517" width="167" height="33"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                        <state key="normal" title="click to add a new goal">
-                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="ATz-et-ByB"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="centerY" secondItem="bvh-FG-1pd" secondAttribute="centerY" multiplier="1.64" id="063-JL-62P"/>
-                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="height" secondItem="lxf-Ta-G6b" secondAttribute="height" id="3iE-Qm-B8o"/>
-                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="width" secondItem="lxf-Ta-G6b" secondAttribute="width" id="8id-lP-azq"/>
-                                    <constraint firstItem="472-oT-wGn" firstAttribute="centerY" secondItem="lxf-Ta-G6b" secondAttribute="centerY" multiplier="1.45" id="JBp-hP-9dE"/>
-                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="centerX" secondItem="lxf-Ta-G6b" secondAttribute="centerX" id="imh-fJ-rCX"/>
-                                    <constraint firstItem="472-oT-wGn" firstAttribute="centerX" secondItem="lxf-Ta-G6b" secondAttribute="centerX" id="oEV-xp-vUQ"/>
-                                    <constraint firstItem="bvh-FG-1pd" firstAttribute="centerX" secondItem="1b1-ip-t9g" secondAttribute="centerX" multiplier="1.01" id="vOA-57-hm1"/>
-                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="centerY" secondItem="lxf-Ta-G6b" secondAttribute="centerY" id="xPa-9V-4fq"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV" userLabel="DidYouSpendToday">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
@@ -414,6 +375,45 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-0g-VZg" userLabel="BlackCover">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ta-G6b" userLabel="Add New Goal View Container">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-ip-t9g">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-FG-1pd">
+                                        <rect key="frame" x="193" y="186" width="33" height="77"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="tkd-nG-oNV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-oT-wGn">
+                                        <rect key="frame" x="124" y="517" width="167" height="33"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                        <state key="normal" title="click to add a new goal">
+                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToGoalVC:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="ATz-et-ByB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="centerY" secondItem="bvh-FG-1pd" secondAttribute="centerY" multiplier="1.64" id="063-JL-62P"/>
+                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="height" secondItem="lxf-Ta-G6b" secondAttribute="height" id="3iE-Qm-B8o"/>
+                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="width" secondItem="lxf-Ta-G6b" secondAttribute="width" id="8id-lP-azq"/>
+                                    <constraint firstItem="472-oT-wGn" firstAttribute="centerY" secondItem="lxf-Ta-G6b" secondAttribute="centerY" multiplier="1.45" id="JBp-hP-9dE"/>
+                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="centerX" secondItem="lxf-Ta-G6b" secondAttribute="centerX" id="imh-fJ-rCX"/>
+                                    <constraint firstItem="472-oT-wGn" firstAttribute="centerX" secondItem="lxf-Ta-G6b" secondAttribute="centerX" id="oEV-xp-vUQ"/>
+                                    <constraint firstItem="bvh-FG-1pd" firstAttribute="centerX" secondItem="1b1-ip-t9g" secondAttribute="centerX" multiplier="1.01" id="vOA-57-hm1"/>
+                                    <constraint firstItem="1b1-ip-t9g" firstAttribute="centerY" secondItem="lxf-Ta-G6b" secondAttribute="centerY" id="xPa-9V-4fq"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3U2-Gu-6nt" userLabel="Footer" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="662" width="414" height="74"/>

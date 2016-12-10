@@ -43,10 +43,14 @@ class MainViewController: UIViewController {
         daysPercentCalculation()
         checkIfGoalExists()
         setUpMenuButtonGesture()
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
+        addGoalImageView.addGestureRecognizer(tapGR)
 
     }
     
     @IBAction func goToGoalVC(_ sender: UIButton) {
+        print("TEST TEST TEST")
         NotificationCenter.default.post(name: .openGoalVC, object: nil)
     }
     
