@@ -31,8 +31,6 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         //set tags
         
-        emailTextField.becomeFirstResponder()
-        
         self.emailTextField.tag = 100
         self.passwordTextField.tag = 101
         
@@ -50,7 +48,8 @@ class LogInViewController: UIViewController {
         
         FIRAuth.auth()!.addStateDidChangeListener() { auth, authenticatedEmail in
             if authenticatedEmail != nil {
-                guard let uid = authenticatedEmail?.uid else {return}
+                //not needed?
+                //guard let uid = authenticatedEmail?.uid else {return}
             }
             else if self.emailPopulated || self.passwordPopulated {
                 print("*** else if self.emailPopulated || self.passwordPopulated in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
@@ -156,7 +155,9 @@ class LogInViewController: UIViewController {
             let emailField = forgotPasswordAlert.textFields![0] as UITextField
             print("the user entered \(emailField)")
             
-            guard let email = emailField.text else { return }
+            
+            //Not Needed?
+            //guard let email = emailField.text else { return }
         }
         
         forgotPasswordAlert.addTextField { (textfield) in

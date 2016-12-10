@@ -58,6 +58,7 @@ class MainViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.didYouSubmitTrailingConstraint.constant = UIScreen.main.bounds.width
+            self.view.layoutIfNeeded()
         }, completion: { success in
             self.userInputTextField.becomeFirstResponder()
         })
@@ -153,6 +154,8 @@ extension MainViewController: UserInputProtocol {
         }
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.didYouSubmitTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+            NotificationCenter.default.post(name: .openMainVC, object: nil)
         }, completion: { success in
             self.userInputTextField.resignFirstResponder()
         })
