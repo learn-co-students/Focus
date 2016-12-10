@@ -93,6 +93,7 @@ class MainViewController: UIViewController {
     func daysPercentCalculation() {
         if let first = store.goals.first {
             let dayPercentage = first.dayCounter/first.timeframe
+            store.days = CGFloat(dayPercentage * 312.0)
             daysPercentLabel.text = "\(Int(dayPercentage * 100))%"
         }
     }
