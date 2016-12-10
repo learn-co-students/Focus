@@ -23,7 +23,9 @@ class HamburgerMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         populateOptions()
-    
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(logout))
+        logoutView.addGestureRecognizer(tapGR)
     }
     
     func populateOptions() {
@@ -62,6 +64,7 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+        NotificationCenter.default.post(name: .closeMainContainerVC, object: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,8 +76,6 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         case "velocity":
             print("Going to VELOCITY OH SHIT")
             NotificationCenter.default.post(name: .openVelocityVC, object: nil)
-        case "logout":
-            logout()
         default:
             break
         }

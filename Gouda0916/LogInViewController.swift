@@ -31,7 +31,7 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         //set tags
         
-        
+        emailTextField.becomeFirstResponder()
         
         self.emailTextField.tag = 100
         self.passwordTextField.tag = 101
