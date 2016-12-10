@@ -53,8 +53,11 @@ class GoalViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        goalTableView.reloadData()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       goalTableView.reloadData()
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
@@ -115,6 +118,7 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
         cell.floatingView.editIconImageView.tag = indexPath.row
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editIconTapped))
         cell.floatingView.editIconImageView.addGestureRecognizer(tapGesture)
+        
         return cell
     }
     

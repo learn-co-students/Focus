@@ -64,6 +64,9 @@ class EditGoalViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        goalView.updateLabels()
+    }
     
     func addGestures() {
         //unhide hamburger when we get rid of segway

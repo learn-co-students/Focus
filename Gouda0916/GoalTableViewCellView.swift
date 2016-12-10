@@ -26,10 +26,14 @@ class GoalTableViewCellView: UIView {
     @IBOutlet weak var savingGoalView: UIView!
     @IBOutlet weak var daysProgressLabel: UILabel!
     @IBOutlet weak var savingsProgressLabel: UILabel!
-    @IBOutlet weak var daysCompleteProgressBarConstraint: NSLayoutConstraint!
-    @IBOutlet weak var savingsProgressBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var daysBarView: UIView!
     @IBOutlet weak var savingsBarView: UIView!
+    
+    @IBOutlet weak var daysCompleteView: UIView!
+    
+    
+    @IBOutlet weak var savingsTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var daysTrailingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var editIconImageView: UIImageView!
     @IBOutlet weak var expandIconImageView: UIImageView!
@@ -39,6 +43,9 @@ class GoalTableViewCellView: UIView {
             updateLabels()
         }
     }
+    
+    var goalSavingsPercentage: CGFloat { return CGFloat(goal.currentAmountSaved / goal.goalAmount) }
+    var goalDayPercentage: CGFloat { return CGFloat(goal.dayCounter / goal.timeframe) }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,11 +60,13 @@ class GoalTableViewCellView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("GoalTableViewCellView", owner: self, options: nil)
         self.addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        contentView.frame = self.bounds
+        
+//        contentView.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+//        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         
     }
     
@@ -76,8 +85,8 @@ class GoalTableViewCellView: UIView {
         savingsProgressLabel.text = "$\(Int(goal.currentAmountSaved)) "
         smallGoalLabel.text = "/ $\(Int(goal.goalAmount))"
         
-        savingsProgressBarConstraint.constant = savingsBarView.frame.width * CGFloat(goal.currentAmountSaved / goal.goalAmount)
-        daysCompleteProgressBarConstraint.constant = daysBarView.frame.width * CGFloat(goal.dayCounter / goal.timeframe)
+        daysTrailingConstraint.constant = daysBarView.bounds.width * goalDayPercentage
+        savingsTrailingConstraint.constant = savingsBarView.bounds.width * goalSavingsPercentage
         
         if !goal.isActiveGoal {
 

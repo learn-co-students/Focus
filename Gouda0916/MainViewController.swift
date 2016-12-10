@@ -129,7 +129,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UserInputProtocol {
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        let velCheck = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
+        let _ = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
         dump(store.goals)
         incrementDayAndAmount(goal: store.goals.first!, textField: userInputTextField)
         dump(store.goals)

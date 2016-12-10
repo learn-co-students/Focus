@@ -338,9 +338,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-GG-DJV" userLabel="DidYouSpendToday">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initial_landing_720" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-Gc-iLP">
-                                        <rect key="frame" x="-0.66666666666665719" y="0.0" width="414.33333333333337" height="736"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obh-k1-lgg" userLabel="shadow">
+                                        <rect key="frame" x="71" y="137" width="289" height="184"/>
+                                        <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PV-mj-7Iz" userLabel="SpendSubmitBoxContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <subviews>
@@ -393,16 +399,16 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="2PV-mj-7Iz" firstAttribute="top" secondItem="cKo-Gc-iLP" secondAttribute="top" id="EhT-6k-RXN"/>
-                                    <constraint firstItem="cKo-Gc-iLP" firstAttribute="centerX" secondItem="MgV-GG-DJV" secondAttribute="centerX" id="OxO-GC-F8t"/>
+                                    <constraint firstItem="Obh-k1-lgg" firstAttribute="height" secondItem="WQ6-BZ-EPL" secondAttribute="height" id="59p-oe-dPZ"/>
+                                    <constraint firstItem="Obh-k1-lgg" firstAttribute="leading" secondItem="WQ6-BZ-EPL" secondAttribute="leading" constant="8" id="6ah-8j-QPW"/>
+                                    <constraint firstItem="Obh-k1-lgg" firstAttribute="top" secondItem="WQ6-BZ-EPL" secondAttribute="top" constant="8" id="Nk0-62-tuO"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="centerY" secondItem="MgV-GG-DJV" secondAttribute="centerY" id="RFv-p2-bzY"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="width" secondItem="MgV-GG-DJV" secondAttribute="width" id="aFW-k0-Idl"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="centerX" secondItem="MgV-GG-DJV" secondAttribute="centerX" id="enj-JM-C11"/>
-                                    <constraint firstItem="2PV-mj-7Iz" firstAttribute="height" secondItem="cKo-Gc-iLP" secondAttribute="height" id="hZW-Qh-AxE"/>
                                     <constraint firstItem="2PV-mj-7Iz" firstAttribute="height" secondItem="MgV-GG-DJV" secondAttribute="height" id="lKW-Bv-PIK"/>
-                                    <constraint firstItem="2PV-mj-7Iz" firstAttribute="width" secondItem="cKo-Gc-iLP" secondAttribute="width" id="und-HF-Niy"/>
+                                    <constraint firstItem="Obh-k1-lgg" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" id="yjj-RX-T9i"/>
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-0g-VZg" userLabel="BlackCover">
