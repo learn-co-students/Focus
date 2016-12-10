@@ -237,7 +237,7 @@ class LogInViewController: UIViewController {
             textFieldWithError.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }, completion: { success in
             UIView.animate(withDuration: 1, animations: {  // reset control to original state
-                textFieldWithError.backgroundColor = UIColor.white
+                textFieldWithError.backgroundColor = UIColor.clear
                 textFieldWithError.transform = CGAffineTransform(scaleX: 1.0, y:1.0)
             })
         })

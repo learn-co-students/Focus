@@ -21,8 +21,6 @@
 		117221141DDD02D600A7A680 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117221131DDD02D600A7A680 /* CreateGoalViewController.swift */; };
 		119117C71DFAE3A600163FC3 /* CustomMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119117C61DFAE3A600163FC3 /* CustomMenuCell.xib */; };
 		119117C91DFAE3B700163FC3 /* CustomMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119117C81DFAE3B700163FC3 /* CustomMenuCell.swift */; };
-		119117CB1DFAF0BE00163FC3 /* LogInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119117CA1DFAF0BE00163FC3 /* LogInView.xib */; };
-		119117CD1DFAF0D000163FC3 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119117CC1DFAF0D000163FC3 /* LogInView.swift */; };
 		119161D71DEF99400085F979 /* EditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119161D61DEF99400085F979 /* EditGoalViewController.swift */; };
 		119A90D71DFADD3F000D61DC /* HamburgerMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119A90D61DFADD3F000D61DC /* HamburgerMenuView.xib */; };
 		119A90D91DFADD7E000D61DC /* HamburgerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A90D81DFADD7E000D61DC /* HamburgerMenuView.swift */; };
@@ -79,8 +77,6 @@
 		117221131DDD02D600A7A680 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		119117C61DFAE3A600163FC3 /* CustomMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMenuCell.xib; sourceTree = "<group>"; };
 		119117C81DFAE3B700163FC3 /* CustomMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuCell.swift; sourceTree = "<group>"; };
-		119117CA1DFAF0BE00163FC3 /* LogInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInView.xib; sourceTree = "<group>"; };
-		119117CC1DFAF0D000163FC3 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		119161D61DEF99400085F979 /* EditGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGoalViewController.swift; sourceTree = "<group>"; };
 		119A90D61DFADD3F000D61DC /* HamburgerMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerMenuView.xib; sourceTree = "<group>"; };
 		119A90D81DFADD7E000D61DC /* HamburgerMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerMenuView.swift; sourceTree = "<group>"; };
@@ -178,8 +174,6 @@
 				11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */,
 				113E8BD11DF254CF00630C02 /* EditGoalView.xib */,
 				119A90D61DFADD3F000D61DC /* HamburgerMenuView.xib */,
-				119117CA1DFAF0BE00163FC3 /* LogInView.xib */,
-				119117CC1DFAF0D000163FC3 /* LogInView.swift */,
 				119A90D81DFADD7E000D61DC /* HamburgerMenuView.swift */,
 				119117C61DFAE3A600163FC3 /* CustomMenuCell.xib */,
 				119117C81DFAE3B700163FC3 /* CustomMenuCell.swift */,
@@ -345,7 +339,6 @@
 			files = (
 				70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */,
 				116E0BF11DF872FA00CF2B57 /* FooterView.xib in Resources */,
-				119117CB1DFAF0BE00163FC3 /* LogInView.xib in Resources */,
 				90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */,
 				909105F51DF628E900D3C6BA /* Assets.xcassets in Resources */,
 				70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */,
@@ -428,7 +421,6 @@
 				703F4EBA1DECAC1E001D5CE7 /* Vertex.swift in Sources */,
 				114250EB1DE62E51003B7624 /* GoalTableViewCellView.swift in Sources */,
 				112179B81DE3A9B600CC3FF1 /* GoalExtension.swift in Sources */,
-				119117CD1DFAF0D000163FC3 /* LogInView.swift in Sources */,
 				114CFDC81DF9F7E10070E11B /* UserInputProtocol.swift in Sources */,
 				90B1151B1DF62EE60002E969 /* MainViewController.swift in Sources */,
 				703F4EC21DECC753001D5CE7 /* MonthlyGraphView.swift in Sources */,

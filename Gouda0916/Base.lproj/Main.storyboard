@@ -51,6 +51,9 @@
                                         <state key="normal" title="log-in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GQT-b2-bBJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -362,9 +365,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-gF-AYA">
-                                                <rect key="frame" x="184" y="249" width="48" height="32"/>
+                                                <rect key="frame" x="184" y="260.33333333333331" width="48" height="32"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                                <state key="normal" title="Submit"/>
+                                                <state key="normal" title="Submit">
+                                                    <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="submitButtonTapped:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="zfi-4P-akK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -376,7 +384,7 @@
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="centerY" secondItem="WQ6-BZ-EPL" secondAttribute="centerY" id="WeV-ck-eyp"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="height" secondItem="2PV-mj-7Iz" secondAttribute="height" multiplier="0.25" id="bcY-lZ-wal"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="centerY" secondItem="2PV-mj-7Iz" secondAttribute="centerY" multiplier="0.6" id="eQw-nL-w6z"/>
-                                            <constraint firstItem="rcc-gF-AYA" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="1.2" id="fTa-Gr-aIA"/>
+                                            <constraint firstItem="rcc-gF-AYA" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="1.25" id="fTa-Gr-aIA"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="hWA-dL-cwc"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="width" secondItem="2PV-mj-7Iz" secondAttribute="width" multiplier="0.7" id="pid-LJ-KBh"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="centerX" secondItem="2PV-mj-7Iz" secondAttribute="centerX" id="plD-qw-nob"/>
@@ -400,11 +408,23 @@
                                 <rect key="frame" x="0.0" y="662" width="414" height="74"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Os-cU-n6M">
+                                <rect key="frame" x="331.33333333333331" y="682.66666666666663" width="62" height="33"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                <state key="normal" title="Log Day">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logDayButtonTapped:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="1D1-5Z-Usg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3U2-Gu-6nt" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="3Qt-gq-eWq"/>
+                            <constraint firstItem="4Os-cU-n6M" firstAttribute="centerX" secondItem="3U2-Gu-6nt" secondAttribute="centerX" multiplier="1.75" id="6tS-92-qde"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="9mG-54-BOM"/>
+                            <constraint firstItem="4Os-cU-n6M" firstAttribute="centerY" secondItem="3U2-Gu-6nt" secondAttribute="centerY" id="B9S-bR-ieS"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Fl0-9K-GWH"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="HYP-C3-jaz"/>
                             <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="3U2-Gu-6nt" secondAttribute="bottom" id="MTO-Sf-oAE"/>
@@ -428,6 +448,7 @@
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
                         <outlet property="gradient" destination="WQ6-BZ-EPL" id="W4u-KJ-KA9"/>
                         <outlet property="progressPercentLabel" destination="z8K-iu-tzL" id="Noc-A2-uMd"/>
+                        <outlet property="userInputTextField" destination="2fb-q6-V6b" id="uCb-NR-CZx"/>
                         <outlet property="velocityPercentLabel" destination="xok-dq-4KX" id="NM4-Ff-vSg"/>
                     </connections>
                 </viewController>
