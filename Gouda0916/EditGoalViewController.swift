@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
+
+
 class EditGoalViewController: UIViewController {
+   
     let store = DataStore.sharedInstance
     var delegate: EditGoalDelegate?
     var goal: Goal!
@@ -41,9 +44,23 @@ class EditGoalViewController: UIViewController {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
+        
+        //sets bars to zero so they animate to progress in the view did appear
+        goalView.savingsTrailingConstraint.constant = 0
+        goalView.daysTrailingConstraint.constant = 0
+        
         goalView.expandIconImageView.isHidden = true
         goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
+        
+        //gradient for collection view
+        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        optionsCollectionView.backgroundColor = .clear
+        gradient.frame = collectionViewContainerView.bounds
+        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)
         
        
         addGestures()
@@ -52,6 +69,12 @@ class EditGoalViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.goalView.updateLabels()
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
     
     func addGestures() {
         //unhide hamburger when we get rid of segway
@@ -117,6 +140,7 @@ class EditGoalViewController: UIViewController {
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
                 }, completion: { (success) in
+                    self.currentEditOpen = nil
                     self.collectionViewBlocker.isHidden = true
                 })
             default:
@@ -128,6 +152,7 @@ class EditGoalViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: { success in
                     self.saveCancelView.textField.text = ""
+                    self.currentEditOpen = nil
                     self.collectionViewBlocker.isHidden = true
                 })
             }
@@ -208,7 +233,7 @@ class EditGoalViewController: UIViewController {
                 }, completion: { success in
                     self.saveCancelView.textField.text = ""
                     self.saveCancelView.checkImageView.alpha = 0.2
-                    self.saveCancelView.isUserInteractionEnabled = false
+                    //self.saveCancelView.isUserInteractionEnabled = false
                     self.collectionViewBlocker.isHidden = true
                 })
             }
@@ -250,7 +275,7 @@ extension EditGoalViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionsCollectionView.dequeueReusableCell(withReuseIdentifier: "editGoalCell", for: indexPath) as! EditGoalCustomCell
         let index = indexPath.row
-        cell.backgroundColor = UIColor.themePaleGreenColor
+        cell.backgroundColor = UIColor.clear
         cell.cellLabel.text = editOptions[index].editQuestion
         cell.iconImageView.image = editOptions[index].editImage
         return cell
@@ -393,3 +418,5 @@ enum EditType {
 enum EditChange {
     case activate, delete, changeGoal, changePurchase, changeTimeframe, changeBudget, changeWayToSave
 }
+
+

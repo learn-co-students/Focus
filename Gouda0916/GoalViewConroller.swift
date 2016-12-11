@@ -25,6 +25,7 @@ class GoalViewController: UIViewController {
     
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var goalTableView: UITableView!
+    @IBOutlet weak var blackCoverView: UIView!
     
     
     override func viewDidLoad() {
@@ -52,17 +53,28 @@ class GoalViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        goalTableView.reloadData()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       goalTableView.reloadData()
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
         if !menuShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuShowing = true
+            UIView.animate(withDuration: 0.3) {
+                self.blackCoverView.alpha = 0.8
+                self.view.layoutIfNeeded()
+            }
         } else {
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuShowing = false
+            UIView.animate(withDuration: 0.3) {
+                self.blackCoverView.alpha = 0.0
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
@@ -106,6 +118,7 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
         cell.floatingView.editIconImageView.tag = indexPath.row
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editIconTapped))
         cell.floatingView.editIconImageView.addGestureRecognizer(tapGesture)
+        
         return cell
     }
     

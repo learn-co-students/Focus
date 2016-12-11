@@ -37,8 +37,8 @@
                     <rect key="frame" x="47" y="57.5" width="379" height="172"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO5-hR-af9">
-                            <rect key="frame" x="48" y="40" width="284" height="23"/>
-                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                            <rect key="frame" x="48" y="41" width="284" height="21"/>
+                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>

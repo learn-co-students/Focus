@@ -30,6 +30,7 @@ class LogInViewController: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         //set tags
+        
         self.emailTextField.tag = 100
         self.passwordTextField.tag = 101
         
@@ -41,11 +42,14 @@ class LogInViewController: UIViewController {
         self.emailPopulated = false
         self.passwordPopulated = false
         
+        applyGradient()
+        
         passwordTextField.isSecureTextEntry = true
         
         FIRAuth.auth()!.addStateDidChangeListener() { auth, authenticatedEmail in
             if authenticatedEmail != nil {
-                guard let uid = authenticatedEmail?.uid else {return}
+                //not needed?
+                //guard let uid = authenticatedEmail?.uid else {return}
             }
             else if self.emailPopulated || self.passwordPopulated {
                 print("*** else if self.emailPopulated || self.passwordPopulated in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
@@ -55,6 +59,18 @@ class LogInViewController: UIViewController {
             }
         }
     } // end of view did load
+    
+    func applyGradient() {
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
+        
+        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let endingColorOFGradient = UIColor.themeDarkGreenColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.view.layer.insertSublayer(gradient, at: 0)
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
@@ -139,7 +155,9 @@ class LogInViewController: UIViewController {
             let emailField = forgotPasswordAlert.textFields![0] as UITextField
             print("the user entered \(emailField)")
             
-            guard let email = emailField.text else { return }
+            
+            //Not Needed?
+            //guard let email = emailField.text else { return }
         }
         
         forgotPasswordAlert.addTextField { (textfield) in
@@ -220,7 +238,7 @@ class LogInViewController: UIViewController {
             textFieldWithError.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }, completion: { success in
             UIView.animate(withDuration: 1, animations: {  // reset control to original state
-                textFieldWithError.backgroundColor = UIColor.white
+                textFieldWithError.backgroundColor = UIColor.clear
                 textFieldWithError.transform = CGAffineTransform(scaleX: 1.0, y:1.0)
             })
         })
@@ -230,12 +248,6 @@ class LogInViewController: UIViewController {
 }
 
 extension LogInViewController: UITextFieldDelegate {
-    
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        
-        print("TextField did end editing method called")
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
@@ -247,12 +259,4 @@ extension LogInViewController: UITextFieldDelegate {
         return true
     }
 }
-
-    
-   
-
-
-
-//did finish editing or did end editing 
-
 

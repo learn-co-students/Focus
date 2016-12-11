@@ -40,14 +40,11 @@ extension Goal {
         
         return serializedGoal
     }
-    //already have end dates (located in create goal view controller) 
-    
-
-    
-    
-    
+    //already have end dates (located in create goal view controller)
     //take in two dates - date when goal starts, date when goal ends
     //return the difference
+    
+    
     
     
     

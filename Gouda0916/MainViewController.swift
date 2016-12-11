@@ -13,115 +13,185 @@ import FirebaseDatabase
 import CoreData
 import CoreGraphics
 
-//@IBDesignable
-
 
 class MainViewController: UIViewController {
-    
-    
-    @IBOutlet weak var addNewGoalView: UIImageView!
-    
-    @IBOutlet weak var addGoalView: UIView!
-    
-
-    
-    
     
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
     
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var addGoalImageView: UIImageView!
+    @IBOutlet weak var gradient: UIView!
+    @IBOutlet var addNewGoalView: UIView!
+    @IBOutlet weak var didYouSpendTodayView: UIView!
+    @IBOutlet weak var footerView: FooterView!
+    @IBOutlet weak var progressPercentLabel: UILabel!
+    @IBOutlet weak var daysPercentLabel: UILabel!
+    @IBOutlet weak var velocityPercentLabel: UILabel!
+    @IBOutlet weak var userInputTextField: UITextField!
+    @IBOutlet weak var blackOverlayView: UIView!
+    @IBOutlet weak var logDayButton: UIButton!
     
+    @IBOutlet weak var didYouSubmitTrailingConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        store.fetchData()
+        setGradient()
         calculateProgress()
-//        addNewGoalView.isHidden = true
-        addGoalView.isHidden = true
+        daysPercentCalculation()
         checkIfGoalExists()
-//        numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+        setUpMenuButtonGesture()
+        setUpTextFieldForValidation()
         
-        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
+        addGoalImageView.addGestureRecognizer(tapGR)
+
     }
     
-    //
-    
-    
-    
-    //    func didTap(tapGR: UITapGestureRecognizer){
-    //        print ("You touched me.")
-    //    }
-    
-    @IBAction func VelocityBtnPressed(_ sender: Any) {
-        NotificationCenter.default.post(name: .openVelocityVC, object: nil)
+    @IBAction func xButtonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.didYouSubmitTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: { success in
+            self.userInputTextField.resignFirstResponder()
+        })
     }
     
-    @IBAction func menuButtonPressed(_ sender: Any) {
-        if !menuIsShowing {
-            NotificationCenter.default.post(name: .unhideBar, object: nil)
-            menuIsShowing = true
-        } else {
-              NotificationCenter.default.post(name: .hideBar, object: nil)
-            menuIsShowing = false
-        }
-        
-        
-    }
     
-    @IBAction func GoalBtnPressed(_ sender: UIButton) {
+    @IBAction func goToGoalVC(_ sender: UIButton) {
+        print("TEST TEST TEST")
         NotificationCenter.default.post(name: .openGoalVC, object: nil)
     }
     
-    //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
+    @IBAction func logDayButtonTapped(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.didYouSubmitTrailingConstraint.constant = UIScreen.main.bounds.width
+            self.view.layoutIfNeeded()
+        }, completion: { success in
+            self.userInputTextField.becomeFirstResponder()
+        })
+    }
     
+    func menuButtonPressed(_ sender: Any) {
+        if !menuIsShowing {
+            NotificationCenter.default.post(name: .unhideBar, object: nil)
+            menuIsShowing = true
+            UIView.animate(withDuration: 0.3) {
+                self.blackOverlayView.alpha = 0.8
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            NotificationCenter.default.post(name: .hideBar, object: nil)
+            menuIsShowing = false
+            UIView.animate(withDuration: 0.3) {
+                self.blackOverlayView.alpha = 0
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
     func calculateProgress() {
         print("print")
         guard let checkSaved = store.goals.first?.currentAmountSaved else {print ("nothing saved"); return}
-        guard let checkGoalAmount = store.goals.first?.currentAmountSaved else {print ("no goal"); return}
-        
+        guard let checkGoalAmount = store.goals.first?.goalAmount else {print ("no goal"); return}
         let progressPercentage = (checkSaved/checkGoalAmount)
-    
         store.progress = 812.0 * progressPercentage
-      
+        progressPercentLabel.text = "\(Int(progressPercentage * 100))%"
     }
     
-    
-    func numberOfDaysLeft (startDate: Date, goalEntity: [Goal]) {
-        
+    func numberOfDaysLeft (startDate: Date, goalEntity: [Goal]) -> Int {
         let currentDate = Date()
         let timeSinceStartDateInSeconds = currentDate.timeIntervalSince((goalEntity.first?.startDate)! as Date)
-        
         let timeSinceStartDateInDays = timeSinceStartDateInSeconds/(24*60*60)
-        
-        print(timeSinceStartDateInSeconds)
-        print(timeSinceStartDateInDays)
-        print("🍣🍔🍳")
-        
         let daysLeft = (DataStore.sharedInstance.goals.first?.timeframe)! - Double(timeSinceStartDateInDays)
         print(Int(daysLeft))
-        print("🐩🏀🍾")
-       
-        
+        return Int(daysLeft)
     }
-        
     
-//    let interval = laterDate.timeIntervalSinceDate(earlierDate)
-    
+    func daysPercentCalculation() {
+        if let first = store.goals.first {
+            let dayPercentage = first.dayCounter/first.timeframe
+            store.days = CGFloat(dayPercentage * 312.0)
+            daysPercentLabel.text = "\(Int(dayPercentage * 100))%"
+        }
+    }
     
     func checkIfGoalExists() {
         if store.goals.isEmpty {
-            addGoalView.isHidden = true
-//            addNewGoalView.isHidden = false
-        }
-        else{
+            logDayButton.isHidden = true
+            addNewGoalView.isHidden = false
+            footerView.hamburgerMenuImageView.isHidden = true
+            
+        } else {
             //if today's entry is empty,
-            addGoalView.isHidden = true
-//            addNewGoalView.isHidden = true
-//             numberOfDaysLeft(startDate: (DataStore.sharedInstance.goals.first?.startDate)! as Date, goalEntity: DataStore.sharedInstance.goals)
+            addNewGoalView.isHidden = true
+            footerView.hamburgerMenuImageView.isHidden = false
+            logDayButton.isHidden = false
         }
     }
     
+    func setUpMenuButtonGesture() {
+        let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(menuButtonPressed))
+        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGR)
+    }
+    
+    func setGradient() {
+        let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
+        let endingColorOFGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let gradient1: CAGradientLayer = CAGradientLayer()
+        gradient1.frame = gradient.bounds
+        gradient1.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.gradient.layer.insertSublayer(gradient1, at: 0)
+    }
+}
+
+//MARK: Handling user input
+extension MainViewController: UserInputProtocol {
+    
+    @IBAction func submitButtonTapped(_ sender: UIButton) {
+        //sender.textField
+        let _ = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
+        incrementDayAndAmount(goal: store.goals.first!, textField: userInputTextField)
+        checkIfComplete(goal: store.goals.first!) { (success) in
+            if success {
+                print("⚡️YAYYYY YOU DID IT!!!!")
+            } else {
+                print("🐹YOU DIDNT REACH YOUR GOAL YET")
+            }
+        }
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.didYouSubmitTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: { success in
+            self.userInputTextField.resignFirstResponder()
+            NotificationCenter.default.post(name: .openMainVC, object: nil)
+        })
+    }
+    
+    func setUpTextFieldForValidation() {
+        userInputTextField.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
+    }
+    
+    func checkForTextFieldEdit(_ textField: UITextField) {
+        
+        if let input = textField.text {
+            let validInput = Double(input) != nil
+            
+            //changes text field color
+            if validInput {
+                textField.textColor = UIColor.themeBlackColor
+                submitButton.titleLabel?.textColor = UIColor.themeAccentGoldColor
+                submitButton.isUserInteractionEnabled = true
+            } else {
+                textField.textColor = .red
+                submitButton.titleLabel?.textColor = UIColor.themeLightGrayColor
+                submitButton.isUserInteractionEnabled = false
+            }
+        }
+    }
 }
