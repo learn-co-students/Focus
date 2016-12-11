@@ -332,19 +332,30 @@
                                                 <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-gF-AYA">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-gF-AYA">
                                                 <rect key="frame" x="184" y="260.33333333333331" width="48" height="32"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                                 <state key="normal" title="Submit">
-                                                    <color key="titleColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="submitButtonTapped:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="zfi-4P-akK"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5A-gr-X5E" userLabel="X">
+                                                <rect key="frame" x="322" y="129" width="30" height="38"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="xButtonTapped:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="Ic5-e5-kcN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="N5A-gr-X5E" firstAttribute="top" secondItem="WQ6-BZ-EPL" secondAttribute="top" id="2F1-bH-S4D"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="3Sg-m1-QPf"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="Coc-fy-2Ih"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="0.75" id="MSj-Vs-QPB"/>
@@ -357,6 +368,7 @@
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="width" secondItem="2PV-mj-7Iz" secondAttribute="width" multiplier="0.7" id="pid-LJ-KBh"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="centerX" secondItem="2PV-mj-7Iz" secondAttribute="centerX" id="plD-qw-nob"/>
                                             <constraint firstItem="rcc-gF-AYA" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="q77-Ma-Fx0"/>
+                                            <constraint firstItem="N5A-gr-X5E" firstAttribute="trailing" secondItem="WQ6-BZ-EPL" secondAttribute="trailing" id="xT1-eF-QSx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -455,6 +467,11 @@
                             <constraint firstItem="3U2-Gu-6nt" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.1" id="xhT-j2-oaQ"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="yjj-xR-314"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lxf-Ta-G6b"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addGoalImageView" destination="1b1-ip-t9g" id="jTT-sW-Bqk"/>
@@ -467,6 +484,7 @@
                         <outlet property="gradient" destination="WQ6-BZ-EPL" id="W4u-KJ-KA9"/>
                         <outlet property="logDayButton" destination="4Os-cU-n6M" id="mh5-FV-c8v"/>
                         <outlet property="progressPercentLabel" destination="z8K-iu-tzL" id="Noc-A2-uMd"/>
+                        <outlet property="submitButton" destination="rcc-gF-AYA" id="l52-rR-248"/>
                         <outlet property="userInputTextField" destination="2fb-q6-V6b" id="uCb-NR-CZx"/>
                         <outlet property="velocityPercentLabel" destination="xok-dq-4KX" id="NM4-Ff-vSg"/>
                     </connections>

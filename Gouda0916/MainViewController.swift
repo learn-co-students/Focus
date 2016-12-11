@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
     
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var addGoalImageView: UIImageView!
     @IBOutlet weak var gradient: UIView!
     @IBOutlet var addNewGoalView: UIView!
@@ -43,11 +44,22 @@ class MainViewController: UIViewController {
         daysPercentCalculation()
         checkIfGoalExists()
         setUpMenuButtonGesture()
+        setUpTextFieldForValidation()
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
 
     }
+    
+    @IBAction func xButtonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.didYouSubmitTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: { success in
+            self.userInputTextField.resignFirstResponder()
+        })
+    }
+    
     
     @IBAction func goToGoalVC(_ sender: UIButton) {
         print("TEST TEST TEST")
@@ -155,10 +167,31 @@ extension MainViewController: UserInputProtocol {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.didYouSubmitTrailingConstraint.constant = 0
             self.view.layoutIfNeeded()
-            NotificationCenter.default.post(name: .openMainVC, object: nil)
-        }, completion: { success in
             self.userInputTextField.resignFirstResponder()
+        }, completion: { success in
+            NotificationCenter.default.post(name: .openMainVC, object: nil)
         })
+    }
+    
+    func setUpTextFieldForValidation() {
+        userInputTextField.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
+    }
+    
+    func checkForTextFieldEdit(_ textField: UITextField) {
         
+        if let input = textField.text {
+            let validInput = Double(input) != nil
+            
+            //changes text field color
+            if validInput {
+                textField.textColor = UIColor.themeBlackColor
+                submitButton.titleLabel?.textColor = UIColor.themeAccentGoldColor
+                submitButton.isUserInteractionEnabled = true
+            } else {
+                textField.textColor = .red
+                submitButton.titleLabel?.textColor = UIColor.themeLightGrayColor
+                submitButton.isUserInteractionEnabled = false
+            }
+        }
     }
 }
