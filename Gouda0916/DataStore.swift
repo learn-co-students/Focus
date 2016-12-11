@@ -28,8 +28,9 @@ class DataStore {
     //total days
     var days: CGFloat = 0
 
-
+    // Velocity Variables
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
+    var velocityHistory: [Date : Double] = [Velocity.lastYear : 100]
 
 
 

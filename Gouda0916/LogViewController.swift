@@ -17,6 +17,13 @@ class LogViewController: UIViewController {
 	
     var menuIsShowing = false
 
+    @IBOutlet weak var dayOneGraphButton: UIButton!
+    @IBOutlet weak var dayTwoGraphButton: UIButton!
+    @IBOutlet weak var dayThreeGraphButton: UIButton!
+    @IBOutlet weak var dayFourGraphButton: UIButton!
+    @IBOutlet weak var dayFiveGraphButton: UIButton!
+    @IBOutlet weak var daySixGraphButton: UIButton!
+    @IBOutlet weak var daySevenGraphButton: UIButton!
 
     // TODO: Fix Caplitalization
     @IBOutlet weak var ContainerView: UIView!
@@ -32,6 +39,24 @@ class LogViewController: UIViewController {
 
         //updateViewShadow()
         navigationController?.navigationBar.isHidden = true
+        
+        // Test Data
+        store.velocityHistory.removeAll()
+        store.velocityHistory[Date()] = 5.0
+        store.velocityHistory[velocity.yesterday] = 2.0
+        store.velocityHistory[velocity.twoDaysAgo] = 5.0
+        store.velocityHistory[velocity.threeDaysAgo] = 2.0
+        store.velocityHistory[velocity.fourDaysAgo] = 5.0
+        store.velocityHistory[velocity.fiveDaysAgo] = 2.0
+        store.velocityHistory[velocity.sixDaysAgo] = 5.0
+        
+        store.velocityHistory[velocity.sevenDaysAgo] = 7.0
+        store.velocityHistory[velocity.eightDaysAgo] = 5.0
+        store.velocityHistory[velocity.nineDaysAgo] = 7.0
+        store.velocityHistory[velocity.tenDaysAgo] = 5.0
+        store.velocityHistory[velocity.elevenDaysAgo] = 7.0
+        store.velocityHistory[velocity.twelveDaysAgo] = 5.0
+        store.velocityHistory[velocity.thirteenDaysAgo] = 7.0
 
     }
 
@@ -56,6 +81,9 @@ class LogViewController: UIViewController {
         switch sender.tag {
         case 1:
             velocityScoreViewTransition(with: "Sunday")
+//            let dateFormatter = DateFormatter()
+//            let format = "EEE"
+//            dateFormatter.dateFormat = format
         case 2:
             velocityScoreViewTransition(with: "Monday")
         case 3:
@@ -69,6 +97,13 @@ class LogViewController: UIViewController {
         case 7:
             velocity.updateVelocity(success: true)
             velocityScoreViewTransition(with: "Saturday")
+            let calender = Calendar(identifier: .gregorian)
+            let weekDay = calender.component(.day, from: Date())
+            let day = calender.component(.day, from: Date())
+            let month = calender.component(.month, from: Date())
+            dayOneGraphButton.titleLabel?.text = "\(day)/\(month)"
+            daySevenGraphButton.titleLabel?.text = "\(weekDay)"
+            
         default:
             print("Failed during sender tag collection")
         }

@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-iY-VcZ">
-                                        <rect key="frame" x="80.5" y="226" width="33" height="33"/>
+                                        <rect key="frame" x="80" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Monday"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cN8-iY-VcZ" secondAttribute="height" multiplier="1:1" id="HGx-tA-Hoc"/>
@@ -95,7 +95,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xX-Gv-YHR">
-                                        <rect key="frame" x="188.5" y="226" width="33" height="33"/>
+                                        <rect key="frame" x="188" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Thursday"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2xX-Gv-YHR" secondAttribute="height" multiplier="1:1" id="7fr-yV-Bat"/>
@@ -125,7 +125,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-RX-eZr">
-                                        <rect key="frame" x="264.5" y="226" width="33" height="33"/>
+                                        <rect key="frame" x="264" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Saturday"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vTS-RX-eZr" secondAttribute="height" multiplier="1:1" id="Kfc-IP-YM1"/>
@@ -394,6 +394,13 @@
                     </view>
                     <connections>
                         <outlet property="WeeklyView" destination="akb-s5-Dyr" id="fGW-ac-x6W"/>
+                        <outlet property="dayFiveGraphButton" destination="8WO-Uh-gPc" id="vVF-iE-YSb"/>
+                        <outlet property="dayFourGraphButton" destination="0mu-P8-531" id="fnV-R3-Ov5"/>
+                        <outlet property="dayOneGraphButton" destination="vTS-RX-eZr" id="eH0-Kq-uES"/>
+                        <outlet property="daySevenGraphButton" destination="aio-EB-YAM" id="V0w-j3-3h1"/>
+                        <outlet property="daySixGraphButton" destination="cN8-iY-VcZ" id="qbp-Ve-3RU"/>
+                        <outlet property="dayThreeGraphButton" destination="2xX-Gv-YHR" id="EuR-zR-3wY"/>
+                        <outlet property="dayTwoGraphButton" destination="XTK-fX-K3f" id="w7t-FB-2Ne"/>
                         <outlet property="headerView" destination="ha7-Tf-v25" id="Aah-AO-Btl"/>
                         <outlet property="maskView" destination="9RF-Qy-ygZ" id="00V-ig-DeF"/>
                         <outlet property="velocityScoreView" destination="n8T-sQ-eX3" id="nQU-0h-PMf"/>
