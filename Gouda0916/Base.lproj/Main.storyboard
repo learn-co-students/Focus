@@ -213,14 +213,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFill" horizontalHuggingPriority="307" translatesAutoresizingMaskIntoConstraints="NO" id="DXJ-8Z-kV9" customClass="TreatYourselfLandingView" customModule="Gouda0916" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="-147" width="373" height="736"/>
+                                        <rect key="frame" x="21" y="-128.66666666666666" width="373" height="736"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoReflection" translatesAutoresizingMaskIntoConstraints="NO" id="0Ne-J0-dj2" userLabel="Reflection">
-                                        <rect key="frame" x="0.0" y="398" width="414" height="220"/>
+                                        <rect key="frame" x="0.0" y="417" width="414" height="220"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-vX-Bv9" userLabel="View For Percent Labels">
-                                        <rect key="frame" x="0.0" y="398" width="414" height="220"/>
+                                        <rect key="frame" x="0.0" y="417" width="414" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-iu-tzL" userLabel="Progress Percent">
                                                 <rect key="frame" x="89.333333333333329" y="138" width="12.333333333333343" height="22"/>
@@ -291,7 +291,7 @@
                                     <constraint firstItem="DXJ-8Z-kV9" firstAttribute="height" secondItem="q01-hH-8cJ" secondAttribute="height" id="alF-9u-pKD"/>
                                     <constraint firstItem="6BY-vX-Bv9" firstAttribute="top" secondItem="0Ne-J0-dj2" secondAttribute="top" id="e3i-zC-Dzw"/>
                                     <constraint firstItem="6BY-vX-Bv9" firstAttribute="centerX" secondItem="DXJ-8Z-kV9" secondAttribute="centerX" id="jqb-SL-DH0"/>
-                                    <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="q01-hH-8cJ" secondAttribute="centerY" multiplier="0.6" id="k6F-1u-quY"/>
+                                    <constraint firstItem="DXJ-8Z-kV9" firstAttribute="centerY" secondItem="q01-hH-8cJ" secondAttribute="centerY" multiplier="0.65" id="k6F-1u-quY"/>
                                     <constraint firstItem="0Ne-J0-dj2" firstAttribute="bottom" secondItem="DXJ-8Z-kV9" secondAttribute="bottom" multiplier="1.05" id="mbq-bx-q4m"/>
                                     <constraint firstItem="6BY-vX-Bv9" firstAttribute="centerX" secondItem="q01-hH-8cJ" secondAttribute="centerX" id="qJw-mF-Ntp"/>
                                 </constraints>
