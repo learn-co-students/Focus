@@ -448,10 +448,10 @@
                             <constraint firstItem="4Os-cU-n6M" firstAttribute="centerX" secondItem="3U2-Gu-6nt" secondAttribute="centerX" multiplier="1.75" id="6tS-92-qde"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="9mG-54-BOM"/>
                             <constraint firstItem="4Os-cU-n6M" firstAttribute="centerY" secondItem="3U2-Gu-6nt" secondAttribute="centerY" id="B9S-bR-ieS"/>
-                            <constraint firstItem="lxf-Ta-G6b" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="Fl0-9K-GWH"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="HYP-C3-jaz"/>
                             <constraint firstItem="mkO-nJ-53q" firstAttribute="top" secondItem="3U2-Gu-6nt" secondAttribute="bottom" id="MTO-Sf-oAE"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="P9r-Ol-oXc"/>
+                            <constraint firstItem="lxf-Ta-G6b" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="ZMa-ZG-tfB"/>
                             <constraint firstItem="QHF-0g-VZg" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="d0l-aH-rNM"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="dNz-Fq-n1v"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="e6r-Hq-cRX"/>
@@ -467,11 +467,6 @@
                             <constraint firstItem="3U2-Gu-6nt" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.1" id="xhT-j2-oaQ"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="yjj-xR-314"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="lxf-Ta-G6b"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="addGoalImageView" destination="1b1-ip-t9g" id="jTT-sW-Bqk"/>

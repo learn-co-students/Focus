@@ -136,7 +136,7 @@ class CreateGoalViewController: UIViewController {
 }
 
 //MARK: Swipe Gestures and animation for goal steps
-extension CreateGoalViewController {
+extension CreateGoalViewController: UITextFieldDelegate {
     
     func createAndAddGestureRecognizers() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
@@ -177,6 +177,22 @@ extension CreateGoalViewController {
             }
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //dublicated code
+        if index < textFields.count - 1 && textField.textColor != .red {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+                self.questionOneLeadingConstraint.constant -= self.screenWidth * 0.8125
+                self.view.layoutIfNeeded()
+            }, completion: { (success) in
+                self.index += 1
+                if self.index < self.textFields.count {
+                    self.textFields[self.index].becomeFirstResponder()
+                }
+            })
+        }
+        return true
+    }
 }
 
 
@@ -188,6 +204,7 @@ extension CreateGoalViewController {
         
         for field in textFields {
             field.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
+            field.delegate = self
         }
     }
     
