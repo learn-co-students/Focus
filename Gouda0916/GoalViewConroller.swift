@@ -57,7 +57,10 @@ class GoalViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       goalTableView.reloadData()
+        if store.goals.isEmpty {
+            self.performSegue(withIdentifier: "goalVCToCreateGoalVC", sender: self)
+        }
+        goalTableView.reloadData()
     }
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
