@@ -140,6 +140,7 @@ class EditGoalViewController: UIViewController {
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
                 }, completion: { (success) in
+                    self.currentEditOpen = nil
                     self.collectionViewBlocker.isHidden = true
                 })
             default:
@@ -151,6 +152,7 @@ class EditGoalViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }, completion: { success in
                     self.saveCancelView.textField.text = ""
+                    self.currentEditOpen = nil
                     self.collectionViewBlocker.isHidden = true
                 })
             }
@@ -231,7 +233,7 @@ class EditGoalViewController: UIViewController {
                 }, completion: { success in
                     self.saveCancelView.textField.text = ""
                     self.saveCancelView.checkImageView.alpha = 0.2
-                    self.saveCancelView.isUserInteractionEnabled = false
+                    //self.saveCancelView.isUserInteractionEnabled = false
                     self.collectionViewBlocker.isHidden = true
                 })
             }
