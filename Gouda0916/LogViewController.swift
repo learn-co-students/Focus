@@ -41,22 +41,22 @@ class LogViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         // Test Data
-        store.velocityHistory.removeAll()
-        store.velocityHistory[Date()] = 5.0
-        store.velocityHistory[velocity.yesterday] = 2.0
-        store.velocityHistory[velocity.twoDaysAgo] = 5.0
-        store.velocityHistory[velocity.threeDaysAgo] = 2.0
-        store.velocityHistory[velocity.fourDaysAgo] = 5.0
-        store.velocityHistory[velocity.fiveDaysAgo] = 2.0
-        store.velocityHistory[velocity.sixDaysAgo] = 5.0
-        
-        store.velocityHistory[velocity.sevenDaysAgo] = 7.0
-        store.velocityHistory[velocity.eightDaysAgo] = 5.0
-        store.velocityHistory[velocity.nineDaysAgo] = 7.0
-        store.velocityHistory[velocity.tenDaysAgo] = 5.0
-        store.velocityHistory[velocity.elevenDaysAgo] = 7.0
-        store.velocityHistory[velocity.twelveDaysAgo] = 5.0
-        store.velocityHistory[velocity.thirteenDaysAgo] = 7.0
+//        store.velocityHistory.removeAll()
+//        store.velocityHistory[Date()] = 5.0
+//        store.velocityHistory[velocity.yesterday] = 2.0
+//        store.velocityHistory[velocity.twoDaysAgo] = 5.0
+//        store.velocityHistory[velocity.threeDaysAgo] = 2.0
+//        store.velocityHistory[velocity.fourDaysAgo] = 5.0
+//        store.velocityHistory[velocity.fiveDaysAgo] = 2.0
+//        store.velocityHistory[velocity.sixDaysAgo] = 5.0
+//        
+//        store.velocityHistory[velocity.sevenDaysAgo] = 7.0
+//        store.velocityHistory[velocity.eightDaysAgo] = 5.0
+//        store.velocityHistory[velocity.nineDaysAgo] = 7.0
+//        store.velocityHistory[velocity.tenDaysAgo] = 5.0
+//        store.velocityHistory[velocity.elevenDaysAgo] = 7.0
+//        store.velocityHistory[velocity.twelveDaysAgo] = 5.0
+//        store.velocityHistory[velocity.thirteenDaysAgo] = 7.0
 
     }
 

@@ -45,6 +45,12 @@ class MainViewController: UIViewController {
         checkIfGoalExists()
         setUpMenuButtonGesture()
         setUpTextFieldForValidation()
+        updateVelocityForCircle()
+        
+        
+        
+        // Test
+        print("Pre Button Click: \(store.velocityHistory)")
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
@@ -121,6 +127,17 @@ class MainViewController: UIViewController {
         }
     }
     
+    func updateVelocityForCircle() {
+        let roundedVelocity = Double(store.velocity).rounded()
+        velocityPercentLabel.text = String(roundedVelocity)
+        
+        let velocityPercentage = store.velocity * 0.1
+        store.velocity = velocityPercentage * 552
+        
+        
+        
+    }
+    
     func checkIfGoalExists() {
         if store.goals.isEmpty {
             logDayButton.isHidden = true
@@ -155,7 +172,12 @@ extension MainViewController: UserInputProtocol {
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         //sender.textField
-        let _ = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
+        let stayedUnderBudget = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
+        
+        updateVelocity(success: stayedUnderBudget)
+        print(store.velocityHistory)
+        
+    
         incrementDayAndAmount(goal: store.goals.first!, textField: userInputTextField)
         checkIfComplete(goal: store.goals.first!) { (success) in
             if success {

@@ -22,7 +22,7 @@ extension UserInputProtocol {
             if let amountSpent = Double(userInput) {
                 if amountSpent <= goal.alloctedDailyBudget! {
                     stayedUnderBudget = true
-                    print("🔥 sayed under budget \(stayedUnderBudget)")
+                    
                 }
             }
         }
@@ -63,4 +63,53 @@ extension UserInputProtocol {
     }
     
     
+    func updateVelocity(success: Bool) {
+        
+        var dailyInput: Double {
+            if success == true {
+                return 10
+            } else {
+                return 0
+            }
+        }
+        
+        for key in store.velocityHistory.keys {
+            if Calendar.current.isDateInToday(key) {
+                print("Score was already recorded today")
+                return
+            } else {
+                let dt = Date()
+                print("******************\(dt)")
+                store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
+                // Test Data
+                print("Before Save and Fetch: \(store.velocityHistory)")
+                print("Score Added")
+            }
+        }
+    }
+    
+    func calculateVelocityScore(input: Double) -> Double {
+        let yesterday = Date(timeIntervalSinceNow: -86400)
+        let twoDaysAgo = Date(timeIntervalSinceNow: -172800)
+        
+        var tempArray: [Double] = [input]
+        var total: Double = 0
+        var score: Double = 0
+        
+        for (key, value) in store.velocityHistory {
+            if key == yesterday {
+                tempArray.append(value)
+            } else if key == twoDaysAgo {
+                tempArray.append(value)
+            }
+        }
+        
+        print("History Count: \(store.velocityHistory.count)")
+        print("TEMP ARRAY: \(tempArray)")
+        total = tempArray.reduce(0, +)
+        score = total / Double(tempArray.count)
+        store.velocity = CGFloat(score)
+        
+        return score
+    }
 }
