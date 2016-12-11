@@ -44,6 +44,11 @@ class EditGoalViewController: UIViewController {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
+        
+        //sets bars to zero so they animate to progress in the view did appear
+        goalView.savingsTrailingConstraint.constant = 0
+        goalView.daysTrailingConstraint.constant = 0
+        
         goalView.expandIconImageView.isHidden = true
         goalView.editIconImageView.isHidden = true
         collectionViewBlocker.isHidden = true
@@ -65,7 +70,10 @@ class EditGoalViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        goalView.updateLabels()
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.goalView.updateLabels()
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     func addGestures() {
