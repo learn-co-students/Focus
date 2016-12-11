@@ -76,10 +76,8 @@ extension UserInputProtocol {
         for key in store.velocityHistory.keys {
             if Calendar.current.isDateInToday(key) {
                 print("Score was already recorded today")
-                return
+                break
             } else {
-                let dt = Date()
-                print("******************\(dt)")
                 store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
                 // Test Data
                 print("Before Save and Fetch: \(store.velocityHistory)")
