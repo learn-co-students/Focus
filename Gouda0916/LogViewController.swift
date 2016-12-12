@@ -50,22 +50,22 @@ class LogViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         // Test Data
-        store.velocityHistory.removeAll()
-        store.velocityHistory[Velocity.sixDaysAgo] = 10.0
-        store.velocityHistory[Velocity.fiveDaysAgo] = 2.0
-        store.velocityHistory[Velocity.fourDaysAgo] = 5.0
-        store.velocityHistory[Velocity.threeDaysAgo] = 2.0
-        store.velocityHistory[Velocity.twoDaysAgo] = 5.0
-        store.velocityHistory[Velocity.yesterday] = 2.0
-        store.velocityHistory[Date()] = 1.0
-        
-        store.velocityHistory[Velocity.thirteenDaysAgo] = 10.0
-        store.velocityHistory[Velocity.twelveDaysAgo] = 5.0
-        store.velocityHistory[Velocity.elevenDaysAgo] = 7.0
-        store.velocityHistory[Velocity.tenDaysAgo] = 5.0
-        store.velocityHistory[Velocity.nineDaysAgo] = 7.0
-        store.velocityHistory[Velocity.eightDaysAgo] = 5.0
-        store.velocityHistory[Velocity.sevenDaysAgo] = 1.0
+//        store.velocityHistory.removeAll()
+//        store.velocityHistory[Velocity.sixDaysAgo] = 10.0
+//        store.velocityHistory[Velocity.fiveDaysAgo] = 2.0
+//        store.velocityHistory[Velocity.fourDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.threeDaysAgo] = 2.0
+//        store.velocityHistory[Velocity.twoDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.yesterday] = 2.0
+//        store.velocityHistory[Date()] = 1.0
+//        
+//        store.velocityHistory[Velocity.thirteenDaysAgo] = 10.0
+//        store.velocityHistory[Velocity.twelveDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.elevenDaysAgo] = 7.0
+//        store.velocityHistory[Velocity.tenDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.nineDaysAgo] = 7.0
+//        store.velocityHistory[Velocity.eightDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.sevenDaysAgo] = 1.0
         
     }
     
@@ -94,6 +94,7 @@ class LogViewController: UIViewController {
                         Velocity.fourDaysAgo,
                         Velocity.fiveDaysAgo,
                         Velocity.sixDaysAgo]
+        
         
         let lastWeek = [Velocity.sevenDaysAgo,
                         Velocity.eightDaysAgo,
