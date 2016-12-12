@@ -58,6 +58,7 @@ class EditGoalViewController: UIViewController {
         let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
         let gradient: CAGradientLayer = CAGradientLayer()
         optionsCollectionView.backgroundColor = .clear
+        gradient.locations = [0.0, 0.5]
         gradient.frame = collectionViewContainerView.bounds
         gradient.colors = [startingColorOfGradient , endingColorOFGradient]
         self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)

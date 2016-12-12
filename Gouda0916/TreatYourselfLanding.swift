@@ -254,9 +254,14 @@ public class TreatYourselfLanding {
         context.saveGState()
         context.clip(to: symbolRect)
         context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
-
-        TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: CGFloat(DataStore.sharedInstance.progress), velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
-        context.restoreGState()
+        
+        if DataStore.sharedInstance.progress < 0 {
+            TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: CGFloat(0), velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
+            context.restoreGState()
+        } else {
+            TreatYourselfLanding.drawTreatYourselfLandingCircle(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, progressDash: CGFloat(DataStore.sharedInstance.progress), velocityDash: DataStore.sharedInstance.velocity, daysDash: DataStore.sharedInstance.days)
+            context.restoreGState()
+        }
 
 
         //// Oval Drawing
