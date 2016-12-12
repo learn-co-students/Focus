@@ -38,15 +38,16 @@ class LogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateDailyScoreLabel(for: "This Week")
+        velocity.updateGraph(for: "This Week")
         isThisWeek = true
-        velocityScoreView.velocityScoreLabel.text = "\(Double(store.velocity))"
+    
+        velocityScoreView.velocityScoreLabel.text = "\(store.currentVelocityScore)"
         
         let menuGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         footerView.hamburgerMenuImageView.addGestureRecognizer(menuGesture)
         
-        
-        //updateViewShadow()
         navigationController?.navigationBar.isHidden = true
         
         // Test Data
@@ -82,7 +83,6 @@ class LogViewController: UIViewController {
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuIsShowing = false
         }
-        
     }
     
     @IBAction func dailyScoreButtonTouched(_ sender: UIButton) {
@@ -115,25 +115,25 @@ class LogViewController: UIViewController {
         switch sender.tag {
         case 1:
             velocityScoreViewTransition(for: week[6])
-            updateCurrentScoreLabel(withScoreFor: week[0])
+            updateCurrentScoreLabel(withScoreFor: week[6])
         case 2:
             velocityScoreViewTransition(for: week[5])
-            updateCurrentScoreLabel(withScoreFor: week[1])
+            updateCurrentScoreLabel(withScoreFor: week[5])
         case 3:
             velocityScoreViewTransition(for: week[4])
-            updateCurrentScoreLabel(withScoreFor: week[2])
+            updateCurrentScoreLabel(withScoreFor: week[4])
         case 4:
             velocityScoreViewTransition(for: week[3])
             updateCurrentScoreLabel(withScoreFor: week[3])
         case 5:
             velocityScoreViewTransition(for: week[2])
-            updateCurrentScoreLabel(withScoreFor: week[4])
+            updateCurrentScoreLabel(withScoreFor: week[2])
         case 6:
             velocityScoreViewTransition(for: week[1])
-            updateCurrentScoreLabel(withScoreFor: week[5])
+            updateCurrentScoreLabel(withScoreFor: week[1])
         case 7:
             velocityScoreViewTransition(for: week[0])
-            updateCurrentScoreLabel(withScoreFor: week[6])
+            updateCurrentScoreLabel(withScoreFor: week[0])
         default:
             print("Failed during sender tag collection")
         }

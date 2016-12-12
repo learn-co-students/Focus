@@ -131,6 +131,7 @@ class Velocity {
         if pointCount < 9 {
             for count in 1...pointsNeeded {
                 store.graphPoints.insert(0, at: count)
+                store.currentVelocityScore = Double(store.graphPoints[store.graphPoints.count - 2])
             }
         }
     }
