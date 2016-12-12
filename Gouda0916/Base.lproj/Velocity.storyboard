@@ -42,13 +42,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Su">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="WsS-cA-bNH"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-Py-2kI">
+                                        <rect key="frame" x="46" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-iY-VcZ">
                                         <rect key="frame" x="80" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Monday"/>
@@ -57,13 +63,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="M">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="Qgr-J4-GCj"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzm-Ch-pbR">
+                                        <rect key="frame" x="80" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WO-Uh-gPc">
                                         <rect key="frame" x="116" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Tuesday"/>
@@ -72,13 +84,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="T">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="obA-Z0-QEx"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Si-gG-kyQ">
+                                        <rect key="frame" x="116" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mu-P8-531">
                                         <rect key="frame" x="152" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Wednesday"/>
@@ -87,13 +105,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="W">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="ZtO-db-m3W"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xd-CQ-lrx">
+                                        <rect key="frame" x="152" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xX-Gv-YHR">
                                         <rect key="frame" x="188" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Thursday"/>
@@ -102,13 +126,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Th">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="rrF-ic-B5K"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQv-FY-DJR">
+                                        <rect key="frame" x="188" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTK-fX-K3f">
                                         <rect key="frame" x="226" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Friday"/>
@@ -117,13 +147,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="F">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="XlY-k6-kRy"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wY-9K-pBC">
+                                        <rect key="frame" x="226" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-RX-eZr">
                                         <rect key="frame" x="264" y="226" width="33" height="33"/>
                                         <accessibility key="accessibilityConfiguration" label="Saturday"/>
@@ -132,13 +168,19 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="S">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyScoreButtonTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="42a-dA-OpR"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbL-h2-3oz">
+                                        <rect key="frame" x="264" y="227.5" width="33" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tda-e1-yJK">
                                         <rect key="frame" x="8" y="208" width="30" height="30"/>
                                         <accessibility key="accessibilityConfiguration" label="Sunday"/>
@@ -214,20 +256,31 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="EwZ-Py-2kI" firstAttribute="leading" secondItem="aio-EB-YAM" secondAttribute="leading" id="0e2-aa-BFB"/>
+                                    <constraint firstItem="EwZ-Py-2kI" firstAttribute="trailing" secondItem="aio-EB-YAM" secondAttribute="trailing" id="0vJ-rF-wNg"/>
                                     <constraint firstItem="XTK-fX-K3f" firstAttribute="bottom" secondItem="2xX-Gv-YHR" secondAttribute="bottom" id="2fp-iZ-Gnq"/>
                                     <constraint firstItem="tda-e1-yJK" firstAttribute="centerY" secondItem="akb-s5-Dyr" secondAttribute="centerY" multiplier="1.67" id="2hA-Uv-MdH"/>
+                                    <constraint firstItem="YbL-h2-3oz" firstAttribute="height" secondItem="vTS-RX-eZr" secondAttribute="height" multiplier="1.1" id="4aE-ey-97V"/>
                                     <constraint firstItem="cN8-iY-VcZ" firstAttribute="trailing" secondItem="8WO-Uh-gPc" secondAttribute="leading" multiplier="0.98" id="5W4-Ah-czs"/>
+                                    <constraint firstItem="Mzm-Ch-pbR" firstAttribute="trailing" secondItem="cN8-iY-VcZ" secondAttribute="trailing" id="5bt-1S-UeP"/>
+                                    <constraint firstItem="JQv-FY-DJR" firstAttribute="height" secondItem="2xX-Gv-YHR" secondAttribute="height" multiplier="1.1" id="5sx-O1-c8r"/>
                                     <constraint firstItem="0mu-P8-531" firstAttribute="width" secondItem="akb-s5-Dyr" secondAttribute="width" multiplier="0.1" id="60d-So-Qg7"/>
+                                    <constraint firstItem="3Si-gG-kyQ" firstAttribute="leading" secondItem="8WO-Uh-gPc" secondAttribute="leading" id="7cn-j1-xUF"/>
                                     <constraint firstItem="RJt-Qu-QfQ" firstAttribute="centerY" secondItem="akb-s5-Dyr" secondAttribute="centerY" multiplier="1.03" id="81Y-Lh-gQY"/>
+                                    <constraint firstItem="YbL-h2-3oz" firstAttribute="trailing" secondItem="vTS-RX-eZr" secondAttribute="trailing" id="8Ln-x2-XED"/>
                                     <constraint firstItem="2xX-Gv-YHR" firstAttribute="leading" secondItem="0mu-P8-531" secondAttribute="trailing" multiplier="1.02" id="B3K-5S-NAO"/>
+                                    <constraint firstItem="3Si-gG-kyQ" firstAttribute="bottom" secondItem="8WO-Uh-gPc" secondAttribute="bottom" multiplier="1.02" id="DGM-To-Npy"/>
+                                    <constraint firstItem="8wY-9K-pBC" firstAttribute="trailing" secondItem="XTK-fX-K3f" secondAttribute="trailing" id="EHa-Bc-OeY"/>
                                     <constraint firstItem="HzG-nV-kii" firstAttribute="leading" secondItem="akb-s5-Dyr" secondAttribute="leading" id="Fvv-CQ-LxC"/>
                                     <constraint firstItem="cN8-iY-VcZ" firstAttribute="bottom" secondItem="8WO-Uh-gPc" secondAttribute="bottom" id="G5M-NY-mL0"/>
+                                    <constraint firstItem="3Si-gG-kyQ" firstAttribute="trailing" secondItem="8WO-Uh-gPc" secondAttribute="trailing" id="H71-vb-i2q"/>
                                     <constraint firstItem="RJt-Qu-QfQ" firstAttribute="leading" secondItem="akb-s5-Dyr" secondAttribute="leading" id="ICs-Rz-8DU"/>
                                     <constraint firstItem="aio-EB-YAM" firstAttribute="bottom" secondItem="cN8-iY-VcZ" secondAttribute="bottom" id="Ifi-9U-m3r"/>
                                     <constraint firstItem="aio-EB-YAM" firstAttribute="width" secondItem="cN8-iY-VcZ" secondAttribute="width" id="Jw6-UK-h0d"/>
                                     <constraint firstItem="tda-e1-yJK" firstAttribute="leading" secondItem="akb-s5-Dyr" secondAttribute="leadingMargin" id="K30-Eb-gjc"/>
                                     <constraint firstItem="8WO-Uh-gPc" firstAttribute="bottom" secondItem="0mu-P8-531" secondAttribute="bottom" id="KkX-HV-rUM"/>
                                     <constraint firstItem="yGE-nX-UEh" firstAttribute="leading" secondItem="akb-s5-Dyr" secondAttribute="leading" id="Mvx-El-G69"/>
+                                    <constraint firstItem="8wY-9K-pBC" firstAttribute="height" secondItem="XTK-fX-K3f" secondAttribute="height" multiplier="1.1" id="N9a-X4-k0H"/>
                                     <constraint firstItem="0mu-P8-531" firstAttribute="centerX" secondItem="akb-s5-Dyr" secondAttribute="centerX" id="OIE-nf-qaV"/>
                                     <constraint firstItem="nBu-NV-C5z" firstAttribute="width" secondItem="nBu-NV-C5z" secondAttribute="height" multiplier="1:1" id="OrO-Aa-gFZ"/>
                                     <constraint firstItem="XTK-fX-K3f" firstAttribute="width" secondItem="2xX-Gv-YHR" secondAttribute="width" id="Pbo-dF-ghE"/>
@@ -236,9 +289,18 @@
                                     <constraint firstItem="cN8-iY-VcZ" firstAttribute="width" secondItem="8WO-Uh-gPc" secondAttribute="width" id="TBc-Fg-is2"/>
                                     <constraint firstItem="0mu-P8-531" firstAttribute="bottom" secondItem="akb-s5-Dyr" secondAttribute="bottom" multiplier="0.97" id="TcR-hF-ruR"/>
                                     <constraint firstItem="HzG-nV-kii" firstAttribute="centerY" secondItem="akb-s5-Dyr" secondAttribute="centerY" multiplier="1.38" id="Tpo-xo-lU2"/>
+                                    <constraint firstItem="JQv-FY-DJR" firstAttribute="trailing" secondItem="2xX-Gv-YHR" secondAttribute="trailing" id="W35-4c-dZG"/>
+                                    <constraint firstItem="4xd-CQ-lrx" firstAttribute="bottom" secondItem="0mu-P8-531" secondAttribute="bottom" multiplier="1.02" id="XtY-hl-rbT"/>
+                                    <constraint firstItem="YbL-h2-3oz" firstAttribute="leading" secondItem="vTS-RX-eZr" secondAttribute="leading" id="YLf-wl-9dl"/>
+                                    <constraint firstItem="4xd-CQ-lrx" firstAttribute="height" secondItem="0mu-P8-531" secondAttribute="height" multiplier="1.1" id="YXZ-Ed-X4i"/>
+                                    <constraint firstItem="Mzm-Ch-pbR" firstAttribute="leading" secondItem="cN8-iY-VcZ" secondAttribute="leading" id="ZtW-9w-aD5"/>
                                     <constraint firstItem="XTK-fX-K3f" firstAttribute="leading" secondItem="2xX-Gv-YHR" secondAttribute="trailing" multiplier="1.02" id="aUk-Io-Ehq"/>
+                                    <constraint firstItem="8wY-9K-pBC" firstAttribute="leading" secondItem="XTK-fX-K3f" secondAttribute="leading" id="d4h-7r-vaN"/>
+                                    <constraint firstItem="EwZ-Py-2kI" firstAttribute="bottom" secondItem="aio-EB-YAM" secondAttribute="bottom" multiplier="1.02" id="dGf-sN-QCj"/>
                                     <constraint firstItem="2xX-Gv-YHR" firstAttribute="width" secondItem="0mu-P8-531" secondAttribute="width" id="eLo-go-NSv"/>
                                     <constraint firstItem="vTS-RX-eZr" firstAttribute="width" secondItem="XTK-fX-K3f" secondAttribute="width" id="eh3-D4-zu2"/>
+                                    <constraint firstItem="Mzm-Ch-pbR" firstAttribute="bottom" secondItem="cN8-iY-VcZ" secondAttribute="bottom" multiplier="1.02" id="gN7-Wu-ve0"/>
+                                    <constraint firstItem="3Si-gG-kyQ" firstAttribute="height" secondItem="8WO-Uh-gPc" secondAttribute="height" multiplier="1.1" id="hyT-tc-6eV"/>
                                     <constraint firstItem="vTS-RX-eZr" firstAttribute="leading" secondItem="XTK-fX-K3f" secondAttribute="trailing" multiplier="1.02" id="iqO-X2-dPg"/>
                                     <constraint firstItem="2xX-Gv-YHR" firstAttribute="bottom" secondItem="0mu-P8-531" secondAttribute="bottom" id="kur-ni-hBo"/>
                                     <constraint firstItem="8WO-Uh-gPc" firstAttribute="width" secondItem="0mu-P8-531" secondAttribute="width" id="lIx-P9-nFr"/>
@@ -246,7 +308,15 @@
                                     <constraint firstItem="nBu-NV-C5z" firstAttribute="centerY" secondItem="akb-s5-Dyr" secondAttribute="centerY" multiplier="0.7" id="mD1-kW-ApG"/>
                                     <constraint firstItem="vTS-RX-eZr" firstAttribute="bottom" secondItem="XTK-fX-K3f" secondAttribute="bottom" id="oUq-S6-vfm"/>
                                     <constraint firstItem="aio-EB-YAM" firstAttribute="trailing" secondItem="cN8-iY-VcZ" secondAttribute="leading" multiplier="0.98" id="p90-xK-Sg5"/>
+                                    <constraint firstItem="JQv-FY-DJR" firstAttribute="bottom" secondItem="2xX-Gv-YHR" secondAttribute="bottom" multiplier="1.02" id="rbE-rT-avW"/>
+                                    <constraint firstItem="8wY-9K-pBC" firstAttribute="bottom" secondItem="XTK-fX-K3f" secondAttribute="bottom" multiplier="1.02" id="rrU-Vr-I9z"/>
+                                    <constraint firstItem="EwZ-Py-2kI" firstAttribute="height" secondItem="aio-EB-YAM" secondAttribute="height" multiplier="1.1" id="tGD-4B-f95"/>
+                                    <constraint firstItem="YbL-h2-3oz" firstAttribute="bottom" secondItem="vTS-RX-eZr" secondAttribute="bottom" multiplier="1.02" id="uTr-sl-CBK"/>
+                                    <constraint firstItem="4xd-CQ-lrx" firstAttribute="trailing" secondItem="0mu-P8-531" secondAttribute="trailing" id="uUd-9o-TcP"/>
                                     <constraint firstItem="8WO-Uh-gPc" firstAttribute="trailing" secondItem="0mu-P8-531" secondAttribute="leading" multiplier="0.98" id="uiV-x4-trk"/>
+                                    <constraint firstItem="JQv-FY-DJR" firstAttribute="leading" secondItem="2xX-Gv-YHR" secondAttribute="leading" id="wDE-eo-D2c"/>
+                                    <constraint firstItem="Mzm-Ch-pbR" firstAttribute="height" secondItem="cN8-iY-VcZ" secondAttribute="height" multiplier="1.1" id="zZL-vv-Wto"/>
+                                    <constraint firstItem="4xd-CQ-lrx" firstAttribute="leading" secondItem="0mu-P8-531" secondAttribute="leading" id="zxJ-HU-s4W"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha7-Tf-v25" userLabel="HeaderView">
@@ -302,13 +372,6 @@
                                     <action selector="weeklyScoreTouched:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="mj8-Pn-MSf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-Kt-8TR">
-                                <rect key="frame" x="16" y="637" width="39" height="30"/>
-                                <state key="normal" title="menu"/>
-                                <connections>
-                                    <action selector="MenuButtonPressed:" destination="1m8-i6-Nd0" eventType="touchUpInside" id="vLT-R6-kic"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PN5-1H-y2j" userLabel="divider">
                                 <rect key="frame" x="185" y="524" width="5" height="32"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -340,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(days of the week / click for score per day)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snd-TH-VFI">
-                                <rect key="frame" x="86" y="448.5" width="241" height="18"/>
+                                <rect key="frame" x="86" y="462.5" width="241" height="18"/>
                                 <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -354,7 +417,7 @@
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" id="5RU-fp-6Y3"/>
                             <constraint firstItem="KSg-VM-jIC" firstAttribute="top" secondItem="akb-s5-Dyr" secondAttribute="top" id="89f-TP-6pV"/>
                             <constraint firstItem="KSg-VM-jIC" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="8TE-ff-eq9"/>
-                            <constraint firstItem="Snd-TH-VFI" firstAttribute="top" secondItem="akb-s5-Dyr" secondAttribute="bottom" multiplier="0.96" id="8fw-iz-nCh"/>
+                            <constraint firstItem="Snd-TH-VFI" firstAttribute="top" secondItem="akb-s5-Dyr" secondAttribute="bottom" multiplier="0.99" id="8fw-iz-nCh"/>
                             <constraint firstItem="8CH-1p-m8u" firstAttribute="top" secondItem="aQa-oW-HBg" secondAttribute="bottom" id="9HE-aI-FTE"/>
                             <constraint firstItem="8CH-1p-m8u" firstAttribute="centerX" secondItem="aQa-oW-HBg" secondAttribute="centerX" id="DoC-af-Lhj"/>
                             <constraint firstItem="qiC-ES-nGO" firstAttribute="centerX" secondItem="9RF-Qy-ygZ" secondAttribute="centerX" multiplier="0.7" id="Hff-aM-Uxn"/>
@@ -370,7 +433,6 @@
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="bottom" id="bsP-Wv-84l"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="cZn-vm-VtD"/>
                             <constraint firstItem="akb-s5-Dyr" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="coj-La-pYg"/>
-                            <constraint firstItem="ySS-Kt-8TR" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leadingMargin" id="cs7-2o-hsk"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="top" secondItem="nXH-4c-Gtu" secondAttribute="bottom" id="d6p-Cd-6jQ"/>
                             <constraint firstItem="KSg-VM-jIC" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" multiplier="0.1" id="frQ-fd-gKe"/>
                             <constraint firstItem="aQa-oW-HBg" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" id="hFC-gs-681"/>
@@ -386,7 +448,6 @@
                             <constraint firstItem="akb-s5-Dyr" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.4" id="tAb-RT-IQ8"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" id="ubF-57-OsP"/>
                             <constraint firstItem="9aR-s2-Zkl" firstAttribute="centerY" secondItem="9RF-Qy-ygZ" secondAttribute="centerY" multiplier="0.9" id="vcc-n0-qTh"/>
-                            <constraint firstItem="ySS-Kt-8TR" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="ve9-fa-NW1"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="xYx-BJ-Cdx"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="375:667" id="zG0-Z3-lpP"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.06" id="zML-uT-9Cw"/>
@@ -394,13 +455,14 @@
                     </view>
                     <connections>
                         <outlet property="WeeklyView" destination="akb-s5-Dyr" id="fGW-ac-x6W"/>
-                        <outlet property="dayFiveGraphButton" destination="8WO-Uh-gPc" id="vVF-iE-YSb"/>
-                        <outlet property="dayFourGraphButton" destination="0mu-P8-531" id="fnV-R3-Ov5"/>
-                        <outlet property="dayOneGraphButton" destination="vTS-RX-eZr" id="eH0-Kq-uES"/>
-                        <outlet property="daySevenGraphButton" destination="aio-EB-YAM" id="V0w-j3-3h1"/>
-                        <outlet property="daySixGraphButton" destination="cN8-iY-VcZ" id="qbp-Ve-3RU"/>
-                        <outlet property="dayThreeGraphButton" destination="2xX-Gv-YHR" id="EuR-zR-3wY"/>
-                        <outlet property="dayTwoGraphButton" destination="XTK-fX-K3f" id="w7t-FB-2Ne"/>
+                        <outlet property="dayFiveLabel" destination="3Si-gG-kyQ" id="1Sf-Zo-WcF"/>
+                        <outlet property="dayFourLabel" destination="4xd-CQ-lrx" id="Lc5-m6-XPp"/>
+                        <outlet property="dayOneLabel" destination="YbL-h2-3oz" id="MGN-wd-J8p"/>
+                        <outlet property="daySevenLabel" destination="EwZ-Py-2kI" id="5Pn-1v-Yd7"/>
+                        <outlet property="daySixLabel" destination="Mzm-Ch-pbR" id="a7u-VC-d2Z"/>
+                        <outlet property="dayThreeLabel" destination="JQv-FY-DJR" id="ZoT-9f-08k"/>
+                        <outlet property="dayTwoLabel" destination="8wY-9K-pBC" id="gdx-yL-zwe"/>
+                        <outlet property="footerView" destination="xh3-o7-Pt4" id="qM3-db-s6K"/>
                         <outlet property="headerView" destination="ha7-Tf-v25" id="Aah-AO-Btl"/>
                         <outlet property="maskView" destination="9RF-Qy-ygZ" id="00V-ig-DeF"/>
                         <outlet property="velocityScoreView" destination="n8T-sQ-eX3" id="nQU-0h-PMf"/>

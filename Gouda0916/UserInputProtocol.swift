@@ -62,7 +62,7 @@ extension UserInputProtocol {
         }
     }
     
-    
+    // Adds velocity score to history
     func updateVelocity(success: Bool) {
         
         var dailyInput: Double {
