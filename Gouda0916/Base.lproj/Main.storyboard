@@ -450,8 +450,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zb5-1i-Puv" userLabel="CompletedGoalView">
                                 <rect key="frame" x="51.666666666666657" y="128.66666666666669" width="310.66666666666663" height="184.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!You Completed Your Goal!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TE-4u-8pF">
-                                        <rect key="frame" x="39" y="35" width="232.66666666666663" height="40.666666666666686"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats! You Completed Your Goal!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TE-4u-8pF">
+                                        <rect key="frame" x="39" y="35" width="233" height="40.666666666666686"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -568,7 +568,7 @@
                                         <rect key="frame" x="0.0" y="28" width="166" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4n-fw-ZhA" id="P7U-Cg-yyO">
-                                            <rect key="frame" x="0.0" y="0.0" width="166" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-K8-Pta" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
