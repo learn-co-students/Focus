@@ -88,8 +88,6 @@ class Velocity {
         var thisWeekArray: [Int] = [0]
         var lastWeekArray: [Int] = [0]
         let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 > $1.0 })
-        print(sortedVelocityHistory)
-        
         
         let thisWeekStart = Date(timeIntervalSinceNow: -604800)
         let thisWeekEnd = Date()
@@ -107,19 +105,33 @@ class Velocity {
                 thisWeekArray.append(Int(value))
             } else if lastWeekRange.contains(key) {
                 lastWeekArray.append(Int(value))
+
             }
             
             switch week {
             case "This Week":
                 store.graphPoints = thisWeekArray
                 store.graphPoints.append(0)
-                print(store.graphPoints)
+                standardizeGraphPoints()
             case "Last Week":
                 store.graphPoints = lastWeekArray
                 store.graphPoints.append(0)
-                print(store.graphPoints)
+                standardizeGraphPoints()
             default:
                 break
+            }
+        }
+    }
+    
+    func standardizeGraphPoints() {
+        let pointCount = store.graphPoints.count
+        print("PointS: \(pointCount)")
+        let pointsNeeded = 9 - pointCount
+        
+        if pointCount < 9 {
+            for count in 1...pointsNeeded {
+                store.graphPoints.insert(0, at: count)
+                store.currentVelocityScore = Double(store.graphPoints[store.graphPoints.count - 2])
             }
         }
     }
