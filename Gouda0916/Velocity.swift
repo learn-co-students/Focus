@@ -38,50 +38,50 @@ class Velocity {
     
     init() {}
     
-    func updateVelocity(success: Bool) {
-        
-        var dailyInput: Double {
-            if success == true {
-                return 10
-            } else {
-                return 0
-            }
-        }
-        
-        for key in store.velocityHistory.keys {
-            if Calendar.current.isDateInToday(key) {
-                print("Score was already recorded today")
-                return
-            } else {
-                store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
-                // Test Data
-                print("Before Save and Fetch: \(store.velocityHistory)")
-                print("Score Added")
-            }
-        }
-    }
-    
-    func calculateVelocityScore(input: Double) -> Double {
-        
-        var tempArray: [Double] = [input]
-        var total: Double = 0
-        var score: Double = 0
-        
-        for (key, value) in store.velocityHistory {
-            if key == Velocity.yesterday {
-                tempArray.append(value)
-            } else if key == Velocity.twoDaysAgo {
-                tempArray.append(value)
-            }
-        }
-        
-        print("History Count: \(store.velocityHistory.count)")
-        print("TEMP ARRAY: \(tempArray)")
-        total = tempArray.reduce(0, +)
-        score = total / Double(tempArray.count)
-        
-        return score
-    }
+//    func updateVelocity(success: Bool) {
+//        
+//        var dailyInput: Double {
+//            if success == true {
+//                return 10
+//            } else {
+//                return 0
+//            }
+//        }
+//        
+//        for key in store.velocityHistory.keys {
+//            if Calendar.current.isDateInToday(key) {
+//                print("Score was already recorded today")
+//                return
+//            } else {
+//                store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
+//                // Test Data
+//                print("Before Save and Fetch: \(store.velocityHistory)")
+//                print("Score Added")
+//            }
+//        }
+//    }
+//    
+//    func calculateVelocityScore(input: Double) -> Double {
+//        
+//        var tempArray: [Double] = [input]
+//        var total: Double = 0
+//        var score: Double = 0
+//        
+//        for (key, value) in store.velocityHistory {
+//            if key == Velocity.yesterday {
+//                tempArray.append(value)
+//            } else if key == Velocity.twoDaysAgo {
+//                tempArray.append(value)
+//            }
+//        }
+//        
+//        print("History Count: \(store.velocityHistory.count)")
+//        print("TEMP ARRAY: \(tempArray)")
+//        total = tempArray.reduce(0, +)
+//        score = total / Double(tempArray.count)
+//        
+//        return score
+//    }
     
     func updateGraph(for week: String) {
         

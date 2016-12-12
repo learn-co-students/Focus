@@ -9,6 +9,7 @@
 import Foundation
 
 protocol UserInputProtocol {
+
     var store: DataStore { get }
 
 }

@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
+    let velocity = Velocity()
     
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var addGoalImageView: UIImageView!
@@ -50,9 +51,8 @@ class MainViewController: UIViewController {
         updateVelocityForCircle()
         completedGoalView.isHidden = true
         
-        
-        // Test
-        print("Pre Button Click: \(store.velocityHistory)")
+        //velocity.updateGraph(for: "This Week")
+        velocityPercentLabel.text = "\(store.currentVelocityScore)"
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
@@ -145,7 +145,7 @@ class MainViewController: UIViewController {
     }
     
     func updateVelocityForCircle() {
-        let roundedVelocity = Double(store.velocity).rounded()
+        let roundedVelocity = Double(store.currentVelocityScore).rounded()
         velocityPercentLabel.text = String(roundedVelocity)
         
         let velocityPercentage = store.velocity * 0.1
@@ -215,6 +215,8 @@ extension MainViewController: UserInputProtocol {
             })
             
         }
+        velocity.updateGraph(for: "This Week")
+        velocityPercentLabel.text = "\(store.currentVelocityScore)"
     }
     
     func setUpTextFieldForValidation() {
