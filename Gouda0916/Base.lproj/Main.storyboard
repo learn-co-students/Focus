@@ -447,11 +447,44 @@
                                     <action selector="logDayButtonTapped:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="1D1-5Z-Usg"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zb5-1i-Puv" userLabel="CompletedGoalView">
+                                <rect key="frame" x="51.666666666666657" y="128.66666666666669" width="310.66666666666663" height="184.00000000000006"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!You Completed Your Goal!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TE-4u-8pF">
+                                        <rect key="frame" x="39" y="35" width="232.66666666666663" height="40.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes check mark copy" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-fq-GCx">
+                                        <rect key="frame" x="137" y="119.66666666666667" width="36.666666666666686" height="36.666666666666643"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="r6Q-fq-GCx" secondAttribute="height" multiplier="1:1" id="z50-iS-Hzl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.72156862749999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="r6Q-fq-GCx" firstAttribute="centerY" secondItem="Zb5-1i-Puv" secondAttribute="centerY" multiplier="1.5" id="1q5-9i-YfD"/>
+                                    <constraint firstItem="r6Q-fq-GCx" firstAttribute="height" secondItem="Zb5-1i-Puv" secondAttribute="height" multiplier="0.2" id="57i-zh-k8z"/>
+                                    <constraint firstItem="9TE-4u-8pF" firstAttribute="width" secondItem="Zb5-1i-Puv" secondAttribute="width" multiplier="0.75" id="VIo-4d-hBK"/>
+                                    <constraint firstItem="9TE-4u-8pF" firstAttribute="centerX" secondItem="Zb5-1i-Puv" secondAttribute="centerX" id="eJv-Y5-dML"/>
+                                    <constraint firstItem="9TE-4u-8pF" firstAttribute="centerY" secondItem="Zb5-1i-Puv" secondAttribute="centerY" multiplier="0.6" id="fdu-rC-4WQ"/>
+                                    <constraint firstItem="r6Q-fq-GCx" firstAttribute="centerX" secondItem="Zb5-1i-Puv" secondAttribute="centerX" id="hfl-wF-cfM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zb5-1i-Puv" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" multiplier="0.75" id="002-OS-wva"/>
                             <constraint firstItem="3U2-Gu-6nt" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="3Qt-gq-eWq"/>
                             <constraint firstItem="4Os-cU-n6M" firstAttribute="centerX" secondItem="3U2-Gu-6nt" secondAttribute="centerX" multiplier="1.75" id="6tS-92-qde"/>
+                            <constraint firstItem="Zb5-1i-Puv" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" multiplier="0.6" id="9L9-dT-tEW"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="9mG-54-BOM"/>
                             <constraint firstItem="4Os-cU-n6M" firstAttribute="centerY" secondItem="3U2-Gu-6nt" secondAttribute="centerY" id="B9S-bR-ieS"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="HYP-C3-jaz"/>
@@ -464,7 +497,9 @@
                             <constraint firstItem="QHF-0g-VZg" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="eaj-lU-4kK"/>
                             <constraint firstItem="QHF-0g-VZg" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="ekG-yD-r30"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="hVv-eO-WqE"/>
+                            <constraint firstItem="Zb5-1i-Puv" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="jL2-Zi-9vh"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="jw1-yO-bEA"/>
+                            <constraint firstItem="Zb5-1i-Puv" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.25" id="k06-N1-pRn"/>
                             <constraint firstItem="QHF-0g-VZg" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="llg-sL-ZYa"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="q0j-Px-zDc"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="qea-W0-JRJ"/>
@@ -478,6 +513,8 @@
                         <outlet property="addGoalImageView" destination="1b1-ip-t9g" id="jTT-sW-Bqk"/>
                         <outlet property="addNewGoalView" destination="lxf-Ta-G6b" id="ijF-eD-ucb"/>
                         <outlet property="blackOverlayView" destination="QHF-0g-VZg" id="RlQ-za-gBD"/>
+                        <outlet property="completedGoalView" destination="Zb5-1i-Puv" id="fcY-QL-Jhv"/>
+                        <outlet property="completedYesCheckmarkImageView" destination="r6Q-fq-GCx" id="swt-j3-Lf5"/>
                         <outlet property="daysPercentLabel" destination="dsB-4n-R0T" id="3Nn-rq-S6z"/>
                         <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="RZ3-EJ-spd"/>
                         <outlet property="didYouSubmitTrailingConstraint" destination="enj-JM-C11" id="al8-Fc-GWC"/>
@@ -592,5 +629,6 @@
         <image name="focus logo" width="480" height="143"/>
         <image name="initial_landing_720" width="135" height="240"/>
         <image name="logoReflection" width="240" height="131"/>
+        <image name="yes check mark copy" width="600" height="600"/>
     </resources>
 </document>

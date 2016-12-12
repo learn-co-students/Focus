@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var userInputTextField: UITextField!
     @IBOutlet weak var blackOverlayView: UIView!
     @IBOutlet weak var logDayButton: UIButton!
+    @IBOutlet weak var completedGoalView: UIView!
+    @IBOutlet weak var completedYesCheckmarkImageView: UIImageView!
     
     @IBOutlet weak var didYouSubmitTrailingConstraint: NSLayoutConstraint!
     
@@ -46,7 +48,7 @@ class MainViewController: UIViewController {
         setUpMenuButtonGesture()
         setUpTextFieldForValidation()
         updateVelocityForCircle()
-        
+        completedGoalView.isHidden = true
         
         
         // Test
@@ -54,7 +56,15 @@ class MainViewController: UIViewController {
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
+        
+        let checkTapGR = UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped))
+        completedYesCheckmarkImageView.addGestureRecognizer(checkTapGR)
 
+    }
+    
+    func checkButtonTapped() {
+        completedGoalView.isHidden = true
+        NotificationCenter.default.post(name: .openMainVC, object: nil)
     }
     
     @IBAction func xButtonTapped(_ sender: Any) {
@@ -177,22 +187,27 @@ extension MainViewController: UserInputProtocol {
         updateVelocity(success: stayedUnderBudget)
         print(store.velocityHistory)
         
-    
-        incrementDayAndAmount(goal: store.goals.first!, textField: userInputTextField)
-        checkIfComplete(goal: store.goals.first!) { (success) in
-            if success {
-                print("⚡️YAYYYY YOU DID IT!!!!")
-            } else {
-                print("🐹YOU DIDNT REACH YOUR GOAL YET")
+        if let goal = store.goals.first {
+            
+            incrementDayAndAmount(goal: goal, textField: userInputTextField)
+            checkIfComplete(goal: goal) { (success) in
+                if success {
+                    completedGoalView.isHidden = false
+                } else {
+                    print("🐹YOU DIDNT REACH YOUR GOAL YET")
+                }
             }
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                self.didYouSubmitTrailingConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }, completion: { success in
+                self.userInputTextField.resignFirstResponder()
+                if goal.goalAmount > goal.currentAmountSaved {
+                    NotificationCenter.default.post(name: .openMainVC, object: nil)
+                }
+            })
+            
         }
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-            self.didYouSubmitTrailingConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        }, completion: { success in
-            self.userInputTextField.resignFirstResponder()
-            NotificationCenter.default.post(name: .openMainVC, object: nil)
-        })
     }
     
     func setUpTextFieldForValidation() {
