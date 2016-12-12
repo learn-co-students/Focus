@@ -20,21 +20,20 @@ class Velocity {
     let today = Date()
     
     // Temp
-    let yesterday = Date(timeIntervalSinceNow: -86400)
-    let twoDaysAgo = Date(timeIntervalSinceNow: -172800)
-    let threeDaysAgo = Date(timeIntervalSinceNow: -259200)
-    let fourDaysAgo = Date(timeIntervalSinceNow: -345600)
-    let fiveDaysAgo = Date(timeIntervalSinceNow: -432000)
-    let sixDaysAgo = Date(timeIntervalSinceNow: -518400)
-    let sevenDaysAgo = Date(timeIntervalSinceNow: -604800)
-    let eightDaysAgo = Date(timeIntervalSinceNow: -691200)
-    let nineDaysAgo = Date(timeIntervalSinceNow: -777600)
-    let tenDaysAgo = Date(timeIntervalSinceNow: -864000)
-    let elevenDaysAgo = Date(timeIntervalSinceNow: -950400)
-    let twelveDaysAgo = Date(timeIntervalSinceNow: -1.037e+6)
-    let thirteenDaysAgo = Date(timeIntervalSinceNow: -1.123e+6)
-    
-    
+    static let yesterday = Date(timeIntervalSinceNow: -86400)
+    static let twoDaysAgo = Date(timeIntervalSinceNow: -172800)
+    static let threeDaysAgo = Date(timeIntervalSinceNow: -259200)
+    static let fourDaysAgo = Date(timeIntervalSinceNow: -345600)
+    static let fiveDaysAgo = Date(timeIntervalSinceNow: -432000)
+    static let sixDaysAgo = Date(timeIntervalSinceNow: -518400)
+    static let sevenDaysAgo = Date(timeIntervalSinceNow: -604800)
+    static let eightDaysAgo = Date(timeIntervalSinceNow: -691200)
+    static let nineDaysAgo = Date(timeIntervalSinceNow: -777600)
+    static let tenDaysAgo = Date(timeIntervalSinceNow: -864000)
+    static let elevenDaysAgo = Date(timeIntervalSinceNow: -950400)
+    static let twelveDaysAgo = Date(timeIntervalSinceNow: -1.037e+6)
+    static let thirteenDaysAgo = Date(timeIntervalSinceNow: -1.123e+6)
+
     static let lastYear = Date(timeIntervalSinceNow: -3.154e+7)
     
     init() {}
@@ -69,9 +68,9 @@ class Velocity {
         var score: Double = 0
         
         for (key, value) in store.velocityHistory {
-            if key == yesterday {
+            if key == Velocity.yesterday {
                 tempArray.append(value)
-            } else if key == twoDaysAgo {
+            } else if key == Velocity.twoDaysAgo {
                 tempArray.append(value)
             }
         }

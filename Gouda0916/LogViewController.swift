@@ -14,57 +14,66 @@ class LogViewController: UIViewController {
 
     let weeklyGraphView = WeeklyGraphView()
     let velocity = Velocity()
-	
     var menuIsShowing = false
-
-    @IBOutlet weak var dayOneGraphButton: UIButton!
-    @IBOutlet weak var dayTwoGraphButton: UIButton!
-    @IBOutlet weak var dayThreeGraphButton: UIButton!
-    @IBOutlet weak var dayFourGraphButton: UIButton!
-    @IBOutlet weak var dayFiveGraphButton: UIButton!
-    @IBOutlet weak var daySixGraphButton: UIButton!
-    @IBOutlet weak var daySevenGraphButton: UIButton!
+    var isThisWeek: Bool = true
+    
+    @IBOutlet weak var dayOneLabel: UILabel!
+    @IBOutlet weak var dayTwoLabel: UILabel!
+    @IBOutlet weak var dayThreeLabel: UILabel!
+    @IBOutlet weak var dayFourLabel: UILabel!
+    @IBOutlet weak var dayFiveLabel: UILabel!
+    @IBOutlet weak var daySixLabel: UILabel!
+    @IBOutlet weak var daySevenLabel: UILabel!
+    
+    @IBOutlet weak var footerView: FooterView!
 
     // TODO: Fix Caplitalization
-    @IBOutlet weak var ContainerView: UIView!
     @IBOutlet weak var WeeklyView: WeeklyGraphView!
-    @IBOutlet weak var MonthlyView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var maskView: UIView!
 
     @IBOutlet weak var velocityScoreView: VelocityScoreView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateDailyScoreLabel(for: "This Week")
+        isThisWeek = true
+        velocityScoreView.velocityScoreLabel.text = "\(Double(store.velocity))"
+        
+        let menuGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
+        footerView.hamburgerMenuImageView.addGestureRecognizer(menuGesture)
+        
+        
         //updateViewShadow()
         navigationController?.navigationBar.isHidden = true
         
         // Test Data
 //        store.velocityHistory.removeAll()
 //        store.velocityHistory[Date()] = 5.0
-//        store.velocityHistory[velocity.yesterday] = 2.0
-//        store.velocityHistory[velocity.twoDaysAgo] = 5.0
-//        store.velocityHistory[velocity.threeDaysAgo] = 2.0
-//        store.velocityHistory[velocity.fourDaysAgo] = 5.0
-//        store.velocityHistory[velocity.fiveDaysAgo] = 2.0
-//        store.velocityHistory[velocity.sixDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.yesterday] = 2.0
+//        store.velocityHistory[Velocity.twoDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.threeDaysAgo] = 2.0
+//        store.velocityHistory[Velocity.fourDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.fiveDaysAgo] = 2.0
+//        store.velocityHistory[Velocity.sixDaysAgo] = 5.0
 //        
-//        store.velocityHistory[velocity.sevenDaysAgo] = 7.0
-//        store.velocityHistory[velocity.eightDaysAgo] = 5.0
-//        store.velocityHistory[velocity.nineDaysAgo] = 7.0
-//        store.velocityHistory[velocity.tenDaysAgo] = 5.0
-//        store.velocityHistory[velocity.elevenDaysAgo] = 7.0
-//        store.velocityHistory[velocity.twelveDaysAgo] = 5.0
-//        store.velocityHistory[velocity.thirteenDaysAgo] = 7.0
+//        store.velocityHistory[Velocity.sevenDaysAgo] = 7.0
+//        store.velocityHistory[Velocity.eightDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.nineDaysAgo] = 7.0
+//        store.velocityHistory[Velocity.tenDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.elevenDaysAgo] = 7.0
+//        store.velocityHistory[Velocity.twelveDaysAgo] = 5.0
+//        store.velocityHistory[Velocity.thirteenDaysAgo] = 7.0
 
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
-    @IBAction func MenuButtonPressed(_ sender: Any) {
+    
+    func menuButtonPressed(_ sender: Any) {
         print("menu button pressed")
         if !menuIsShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
@@ -77,73 +86,158 @@ class LogViewController: UIViewController {
     }
 
     @IBAction func dailyScoreButtonTouched(_ sender: UIButton) {
+        
+        let thisWeek = [Date(),
+                        Velocity.yesterday,
+                        Velocity.twoDaysAgo,
+                        Velocity.threeDaysAgo,
+                        Velocity.fourDaysAgo,
+                        Velocity.fiveDaysAgo,
+                        Velocity.sixDaysAgo]
+        
+        let lastWeek = [Velocity.sevenDaysAgo,
+                        Velocity.eightDaysAgo,
+                        Velocity.nineDaysAgo,
+                        Velocity.tenDaysAgo,
+                        Velocity.elevenDaysAgo,
+                        Velocity.twelveDaysAgo,
+                        Velocity.thirteenDaysAgo]
+        
+        var week: [Date]
+        
+        if isThisWeek {
+            week = thisWeek
+        } else {
+            week = lastWeek
+        }
 
         switch sender.tag {
         case 1:
             velocityScoreViewTransition(with: "Sunday")
-//            let dateFormatter = DateFormatter()
-//            let format = "EEE"
-//            dateFormatter.dateFormat = format
+            updateCurrentScoreLabel(withScoreFor: week[0])
         case 2:
             velocityScoreViewTransition(with: "Monday")
+            updateCurrentScoreLabel(withScoreFor: week[1])
         case 3:
             velocityScoreViewTransition(with: "Tuesday")
+            updateCurrentScoreLabel(withScoreFor: week[2])
         case 4:
             velocityScoreViewTransition(with: "Wednesday")
+            updateCurrentScoreLabel(withScoreFor: week[3])
         case 5:
             velocityScoreViewTransition(with: "Thursday")
+            updateCurrentScoreLabel(withScoreFor: week[4])
         case 6:
             velocityScoreViewTransition(with: "Friday")
+            updateCurrentScoreLabel(withScoreFor: week[5])
         case 7:
-            velocity.updateVelocity(success: true)
             velocityScoreViewTransition(with: "Saturday")
-            let calender = Calendar(identifier: .gregorian)
-            let weekDay = calender.component(.day, from: Date())
-            let day = calender.component(.day, from: Date())
-            let month = calender.component(.month, from: Date())
-            dayOneGraphButton.titleLabel?.text = "\(day)/\(month)"
-            daySevenGraphButton.titleLabel?.text = "\(weekDay)"
-            
+            updateCurrentScoreLabel(withScoreFor: week[6])
         default:
             print("Failed during sender tag collection")
         }
     }
 
     @IBAction func weeklyScoreTouched(_ sender: UIButton) {
-
         if let week = sender.currentTitle {
-            print("Week Sender title: \(week)")
+            
             self.WeeklyView.setNeedsDisplay()
             velocity.updateGraph(for: week)
+            updateDailyScoreLabel(for: week)
+            
+            if week == "This Week" {
+                isThisWeek = true
+            } else if week == "Last Week" {
+                isThisWeek = false
+            }
+            
         }
     }
-
-    func updateViewShadow() {
-        headerView.layer.masksToBounds = false
-        headerView.layer.shadowColor = UIColor.themeBlackColor.cgColor
-        headerView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        headerView.layer.shadowRadius = 3
-        headerView.layer.shadowOpacity = 0.5
-
-        WeeklyView.layer.masksToBounds = false
-        WeeklyView.layer.shadowColor = UIColor.themeBlackColor.cgColor
-        WeeklyView.layer.shadowOffset = CGSize(width: 0, height: -3)
-        WeeklyView.layer.shadowRadius = 3
-        WeeklyView.layer.shadowOpacity = 0.5
+    
+    func updateCurrentScoreLabel(withScoreFor date: Date) {
+        var score: Double = 0
+        
+        for (key, value) in store.velocityHistory {
+            let order = Calendar.current.compare(key, to: date, toGranularity: .day)
+            
+            switch order {
+            case .orderedDescending:
+                print("DESCENDING")
+            case .orderedAscending:
+                print("ASCENDING")
+            case .orderedSame:
+                score = value
+            }
+        }
+        
+        velocityScoreView.velocityScoreLabel.text = "\(score)"
+        
+    }
+    
+    func updateDailyScoreLabel(for week: String){
+        let calender = Calendar(identifier: .gregorian)
+        let today = calender.component(.day, from: Date())
+        let yesterday = calender.component(.day, from: Velocity.yesterday)
+        let twoDaysAgo = calender.component(.day, from: Velocity.twoDaysAgo)
+        let threeDaysAgo = calender.component(.day, from: Velocity.threeDaysAgo)
+        let fourDaysAgo = calender.component(.day, from: Velocity.fourDaysAgo)
+        let fiveDaysAgo = calender.component(.day, from: Velocity.fiveDaysAgo)
+        let sixDaysAgo = calender.component(.day, from: Velocity.sixDaysAgo)
+        let sevenDaysAgo = calender.component(.day, from: Velocity.sevenDaysAgo)
+        let eightDaysAgo = calender.component(.day, from: Velocity.eightDaysAgo)
+        let nineDaysAgo = calender.component(.day, from: Velocity.nineDaysAgo)
+        let tenDaysAgo = calender.component(.day, from: Velocity.tenDaysAgo)
+        let elevenDaysAgo = calender.component(.day, from: Velocity.elevenDaysAgo)
+        let twelveDaysAgo = calender.component(.day, from: Velocity.twelveDaysAgo)
+        let thirteenDaysAgo = calender.component(.day, from: Velocity.thirteenDaysAgo)
+        
+        if week == "This Week" {
+            dayOneLabel.text = "\(today)\(daySuffix(from: Date()))"
+            dayTwoLabel.text = "\(yesterday)\(daySuffix(from: Velocity.yesterday))"
+            dayThreeLabel.text = "\(twoDaysAgo)\(daySuffix(from: Velocity.twoDaysAgo))"
+            dayFourLabel.text = "\(threeDaysAgo)\(daySuffix(from: Velocity.threeDaysAgo))"
+            dayFiveLabel.text = "\(fourDaysAgo)\(daySuffix(from: Velocity.fourDaysAgo))"
+            daySixLabel.text = "\(fiveDaysAgo)\(daySuffix(from: Velocity.fiveDaysAgo))"
+            daySevenLabel.text = "\(sixDaysAgo)\(daySuffix(from: Velocity.sixDaysAgo))"
+        } else if week == "Last Week" {
+            dayOneLabel.text = "\(sevenDaysAgo)\(daySuffix(from: Velocity.sevenDaysAgo))"
+            dayTwoLabel.text = "\(eightDaysAgo)\(daySuffix(from: Velocity.eightDaysAgo))"
+            dayThreeLabel.text = "\(nineDaysAgo)\(daySuffix(from: Velocity.nineDaysAgo))"
+            dayFourLabel.text = "\(tenDaysAgo)\(daySuffix(from: Velocity.tenDaysAgo))"
+            dayFiveLabel.text = "\(elevenDaysAgo)\(daySuffix(from: Velocity.elevenDaysAgo))"
+            daySixLabel.text = "\(twelveDaysAgo)\(daySuffix(from: Velocity.twelveDaysAgo))"
+            daySevenLabel.text = "\(thirteenDaysAgo)\(daySuffix(from: Velocity.thirteenDaysAgo))"
+        }
+    }
+    
+    func daySuffix(from date: Date) -> String {
+        let calender = Calendar.current
+        let dayOfMonth = calender.component(.day, from: date)
+        
+        switch dayOfMonth {
+            case 1, 21, 31:
+                return "st"
+            case 2, 22:
+                return "nd"
+            case 3, 23:
+                return "rd"
+            default:
+                return "th"
+        }
     }
 
     func velocityScoreViewTransition(with labeltext: String) {
 
-        UIView.animateKeyframes(withDuration: 0.7, delay: 0.0, animations: {
+        UIView.animateKeyframes(withDuration: 0.3, delay: 0.0, animations: {
 
-            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.3, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1, animations: {
                 self.velocityScoreView.layer.opacity = 0
                 self.velocityScoreView.center.x += self.view.bounds.width
             })
-            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.1, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.1, animations: {
                 self.velocityScoreView.center.x -= self.view.bounds.width * 2
             })
-            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.3, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.1, animations: {
                 self.velocityScoreView.layer.opacity = 1
                 self.velocityScoreView.center.x = self.view.center.x
                 self.velocityScoreView.velocityScoreLabel.text = ""
