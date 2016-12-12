@@ -87,7 +87,7 @@ class Velocity {
         
         var thisWeekArray: [Int] = [0]
         var lastWeekArray: [Int] = [0]
-        let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 < $1.0 })
+        let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 > $1.0 })
         print(sortedVelocityHistory)
         
         
@@ -113,9 +113,11 @@ class Velocity {
             case "This Week":
                 store.graphPoints = thisWeekArray
                 store.graphPoints.append(0)
+                print(store.graphPoints)
             case "Last Week":
                 store.graphPoints = lastWeekArray
                 store.graphPoints.append(0)
+                print(store.graphPoints)
             default:
                 break
             }
