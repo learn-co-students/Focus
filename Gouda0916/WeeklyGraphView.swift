@@ -151,8 +151,8 @@ class WeeklyGraphView: UIView {
         linePath.move(to: CGPoint(x: margin, y: graphHeight / 2 + topBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight / 2 + topBorder))
         
-        linePath.move(to: CGPoint(x: margin, y: graphHeight / 2 + topBorder + bottomBorder))
-        linePath.addLine(to: CGPoint(x: width - margin, y: graphHeight / 2 + topBorder + bottomBorder))
+        linePath.move(to: CGPoint(x: margin, y: (graphHeight / 2) + (graphHeight / 4) + topBorder))
+        linePath.addLine(to: CGPoint(x: width - margin, y: (graphHeight / 2) + (graphHeight / 4) + topBorder))
         
         linePath.move(to: CGPoint(x: margin, y: height - bottomBorder))
         linePath.addLine(to: CGPoint(x: width - margin, y: height - bottomBorder))
@@ -168,28 +168,27 @@ class WeeklyGraphView: UIView {
         
         let linePath = UIBezierPath()
         
-        linePath.move(to: CGPoint(x: margin * 3 + 4, y: topBorder))
-        linePath.addLine(to: CGPoint(x: margin * 3 + 4, y: graphHeight + topBorder))
+        linePath.move(to: CGPoint(x: (width / 8.55) + margin, y: topBorder))
+        linePath.addLine(to: CGPoint(x: (width / 8.55) + margin, y: graphHeight + topBorder))
         
         linePath.move(to: CGPoint(x: (width / 4) + (margin / 2), y: topBorder))
         linePath.addLine(to: CGPoint(x: (width / 4) + (margin / 2), y: graphHeight + topBorder))
         
-        linePath.move(to: CGPoint(x: width / 2 - (margin * 2), y: topBorder))
-        linePath.addLine(to: CGPoint(x: width / 2 - (margin * 2), y: graphHeight + topBorder))
+        linePath.move(to: CGPoint(x: (width / 3) + margin, y: topBorder))
+        linePath.addLine(to: CGPoint(x: (width / 3) + margin, y: graphHeight + topBorder))
         
         // Center
         linePath.move(to: CGPoint(x: width / 2, y: topBorder))
         linePath.addLine(to: CGPoint(x: width / 2, y: graphHeight + topBorder))
         
-        linePath.move(to: CGPoint(x: width / 2 + (margin * 2), y: topBorder))
-        linePath.addLine(to: CGPoint(x: width / 2 + (margin * 2), y: graphHeight + topBorder))
+        linePath.move(to: CGPoint(x: width - (width / 3) - margin, y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - (width / 3) - margin, y: graphHeight + topBorder))
         
         linePath.move(to: CGPoint(x: width - (width / 4) - (margin / 2), y: topBorder))
         linePath.addLine(to: CGPoint(x: width - (width / 4) - (margin / 2), y: graphHeight + topBorder))
         
-        linePath.move(to: CGPoint(x: width - (margin * 3) - 4, y: topBorder))
-        linePath.addLine(to: CGPoint(x: width - (margin * 3) - 4, y: graphHeight + topBorder))
-        
+        linePath.move(to: CGPoint(x: width - (width / 8.55) - margin, y: topBorder))
+        linePath.addLine(to: CGPoint(x: width - (width / 8.55) - margin, y: graphHeight + topBorder))
         
         let lineColor = UIColor.themeDarkGrayColor.withAlphaComponent(0.2)
         lineColor.setStroke()

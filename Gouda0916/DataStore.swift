@@ -31,6 +31,7 @@ class DataStore {
     // Velocity Variables
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
     var velocityHistory: [Date : Double] = [Velocity.lastYear : 100]
+    var currentVelocityScore: Double = 0
 
 
 
