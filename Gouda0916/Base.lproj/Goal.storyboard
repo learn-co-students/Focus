@@ -526,6 +526,37 @@
                                 <rect key="frame" x="-375" y="68" width="375" height="233.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wE-Fg-syg" userLabel="CompletedGoalView">
+                                <rect key="frame" x="46.5" y="166.5" width="281" height="167"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!You Completed Your Goal!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-qd-msl">
+                                        <rect key="frame" x="35" y="40" width="211" height="21"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes check mark copy" translatesAutoresizingMaskIntoConstraints="NO" id="d6P-pm-d0i">
+                                        <rect key="frame" x="124" y="109" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="d6P-pm-d0i" secondAttribute="height" multiplier="1:1" id="sdY-99-tlI"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.72156862749999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="d6P-pm-d0i" firstAttribute="centerX" secondItem="9wE-Fg-syg" secondAttribute="centerX" id="2t1-oB-p74"/>
+                                    <constraint firstItem="d6P-pm-d0i" firstAttribute="height" secondItem="9wE-Fg-syg" secondAttribute="height" multiplier="0.2" id="59A-1h-MrG"/>
+                                    <constraint firstItem="MvF-qd-msl" firstAttribute="centerY" secondItem="9wE-Fg-syg" secondAttribute="centerY" multiplier="0.6" id="Jyi-Ep-LJl"/>
+                                    <constraint firstItem="MvF-qd-msl" firstAttribute="width" secondItem="9wE-Fg-syg" secondAttribute="width" multiplier="0.75" id="dAO-pJ-YDl"/>
+                                    <constraint firstItem="MvF-qd-msl" firstAttribute="centerX" secondItem="9wE-Fg-syg" secondAttribute="centerX" id="tDd-BQ-Lu2"/>
+                                    <constraint firstItem="d6P-pm-d0i" firstAttribute="centerY" secondItem="9wE-Fg-syg" secondAttribute="centerY" multiplier="1.5" id="tbU-vp-dDw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -542,6 +573,7 @@
                             <constraint firstItem="mvA-zA-QNa" firstAttribute="top" secondItem="Kvn-kU-byf" secondAttribute="bottom" id="JnL-BK-t0U"/>
                             <constraint firstItem="4cr-Vg-wvf" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.1" id="NuJ-AM-MzW"/>
                             <constraint firstItem="Kvn-kU-byf" firstAttribute="height" secondItem="Qco-Np-Fpw" secondAttribute="height" multiplier="0.2" id="OgG-cF-eaT"/>
+                            <constraint firstItem="9wE-Fg-syg" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" multiplier="0.75" id="OnU-qd-PPR"/>
                             <constraint firstItem="4cr-Vg-wvf" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="PFZ-zt-wTF"/>
                             <constraint firstItem="EuX-di-mvR" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="R06-oT-HVC"/>
                             <constraint firstItem="Kvn-kU-byf" firstAttribute="top" secondItem="Qco-Np-Fpw" secondAttribute="bottom" id="RGB-QW-dup"/>
@@ -552,10 +584,13 @@
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="top" secondItem="XQI-xd-F3t" secondAttribute="bottom" id="VYQ-Sq-tMo"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="WcB-e2-pFd"/>
                             <constraint firstItem="EuX-di-mvR" firstAttribute="bottom" secondItem="4cr-Vg-wvf" secondAttribute="top" id="XZ5-ps-vcx"/>
+                            <constraint firstItem="9wE-Fg-syg" firstAttribute="height" secondItem="ZsK-Uc-qJJ" secondAttribute="height" multiplier="0.25" id="ZQ1-ib-uI6"/>
+                            <constraint firstItem="9wE-Fg-syg" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="ZWz-wE-4qQ"/>
                             <constraint firstItem="ESJ-lp-FhS" firstAttribute="top" secondItem="mvA-zA-QNa" secondAttribute="top" id="ZlJ-pl-i7y"/>
                             <constraint firstItem="ESJ-lp-FhS" firstAttribute="width" secondItem="mvA-zA-QNa" secondAttribute="width" id="aDE-ym-8aM"/>
                             <constraint firstItem="4cr-Vg-wvf" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="cIm-TQ-gyP"/>
                             <constraint firstItem="yxt-wQ-ajW" firstAttribute="height" secondItem="4cr-Vg-wvf" secondAttribute="height" multiplier="0.4" id="dXe-M9-36L"/>
+                            <constraint firstItem="9wE-Fg-syg" firstAttribute="centerY" secondItem="ZsK-Uc-qJJ" secondAttribute="centerY" multiplier="0.75" id="etu-TD-kpg"/>
                             <constraint firstItem="mvA-zA-QNa" firstAttribute="width" secondItem="ZsK-Uc-qJJ" secondAttribute="width" id="fvx-Zh-FlN"/>
                             <constraint firstItem="mvA-zA-QNa" firstAttribute="centerX" secondItem="Kvn-kU-byf" secondAttribute="centerX" id="gfV-Qh-KxS"/>
                             <constraint firstItem="Qco-Np-Fpw" firstAttribute="centerX" secondItem="ZsK-Uc-qJJ" secondAttribute="centerX" id="ihr-rk-40N"/>
@@ -573,6 +608,8 @@
                     <connections>
                         <outlet property="collectionViewBlocker" destination="EuX-di-mvR" id="Xae-aM-CYE"/>
                         <outlet property="collectionViewContainerView" destination="5yW-lv-2se" id="4r3-gs-tUn"/>
+                        <outlet property="completedGoalCheckMarkImageView" destination="d6P-pm-d0i" id="mNn-9U-Pbk"/>
+                        <outlet property="completedGoalView" destination="9wE-Fg-syg" id="Hzb-2U-udm"/>
                         <outlet property="deleteImageView" destination="yxt-wQ-ajW" id="zqV-89-2ek"/>
                         <outlet property="footerView" destination="4cr-Vg-wvf" id="NYp-ON-ldL"/>
                         <outlet property="goalView" destination="yP6-pW-8u1" id="HL8-q7-4GP"/>
@@ -585,7 +622,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhd-R0-zwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3437.68115942029" y="456.52173913043481"/>
+            <point key="canvasLocation" x="3437.5999999999999" y="456.52173913043481"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="yes check mark copy" width="600" height="600"/>
+    </resources>
 </document>

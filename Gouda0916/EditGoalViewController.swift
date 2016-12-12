@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class EditGoalViewController: UIViewController {
+class EditGoalViewController: UIViewController, UserInputProtocol {
    
     let store = DataStore.sharedInstance
     var delegate: EditGoalDelegate?
@@ -31,6 +31,8 @@ class EditGoalViewController: UIViewController {
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var collectionViewContainerView: UIView!
     @IBOutlet weak var deleteImageView: UIImageView!
+    @IBOutlet weak var completedGoalCheckMarkImageView: UIImageView!
+    @IBOutlet weak var completedGoalView: UIView!
     
     //Collection View Cell Size and Spacing
     let screenWidth = UIScreen.main.bounds.width
@@ -44,6 +46,7 @@ class EditGoalViewController: UIViewController {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
+        completedGoalView.isHidden = true
         
         //sets bars to zero so they animate to progress in the view did appear
         goalView.savingsTrailingConstraint.constant = 0
@@ -99,6 +102,9 @@ class EditGoalViewController: UIViewController {
         
         let xIconGesture2 = UITapGestureRecognizer.init(target: self, action: #selector(noOrCancelButtonTapped))
         saveCancelView.xImageView.addGestureRecognizer(xIconGesture2)
+        
+        let completedGoalGesture = UITapGestureRecognizer.init(target: self, action: #selector(hideCompletedGoalView))
+        completedGoalCheckMarkImageView.addGestureRecognizer(completedGoalGesture)
     }
     
     //MARK: Button Actions
@@ -116,6 +122,12 @@ class EditGoalViewController: UIViewController {
                 }, completion: { success in self.currentEditOpen = edit })
             }
         }
+    }
+    
+    func hideCompletedGoalView() {
+        completedGoalView.isHidden = true
+        NotificationCenter.default.post(name: .openMainVC, object: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -184,6 +196,12 @@ class EditGoalViewController: UIViewController {
                 goal.willChangeValue(forKey: "goalAmount")
                 goal.goalAmount = Double(input)!
                 goal.didChangeValue(forKey: "goalAmount")
+                goalView.updateLabels()
+                checkIfComplete(goal: goal, notify: { (success) in
+                    if success {
+                        completedGoalView.isHidden = false
+                    }
+                })
             case .changePurchase:
                 goal.willChangeValue(forKey: "purchaseGoal")
                 goal.purchasGoal = input
@@ -208,7 +226,9 @@ class EditGoalViewController: UIViewController {
                 
             }
             
-            goalView.updateLabels()
+            if goal.currentAmountSaved < goal.goalAmount {
+                goalView.updateLabels()
+            }
             store.saveContext()
             
             

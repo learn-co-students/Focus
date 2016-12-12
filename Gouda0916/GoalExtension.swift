@@ -17,7 +17,6 @@ extension Goal {
         let amountNeededPerDay = (goalAmount - currentAmountSaved) / timeframe
         return dailyBudget - (amountNeededPerDay)
     }
-    
 
     func serializeGoalIntoDictionary() -> [String : Any] {
         var serializedGoal: [String : Any] = [ : ]
