@@ -59,6 +59,9 @@ class MainViewController: UIViewController {
         
         let checkTapGR = UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped))
         completedYesCheckmarkImageView.addGestureRecognizer(checkTapGR)
+        
+        let blackOverlayGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
+        blackOverlayView.addGestureRecognizer(blackOverlayGesture)
 
     }
     
@@ -94,6 +97,8 @@ class MainViewController: UIViewController {
     
     func menuButtonPressed(_ sender: Any) {
         if !menuIsShowing {
+            logDayButton.isEnabled = false
+            logDayButton.titleLabel?.textColor = UIColor.themeLightGrayColor
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
             UIView.animate(withDuration: 0.3) {
@@ -101,6 +106,8 @@ class MainViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }
         } else {
+            logDayButton.isEnabled = true
+            logDayButton.titleLabel?.textColor = UIColor.themeBlackColor
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuIsShowing = false
             UIView.animate(withDuration: 0.3) {
