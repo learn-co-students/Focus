@@ -52,7 +52,6 @@ class MainViewController: UIViewController {
         completedGoalView.isHidden = true
         checkIfProgressHasBeenLogged()
         
-
         //velocity.updateGraph(for: "This Week")
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
 
