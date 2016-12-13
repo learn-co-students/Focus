@@ -15,12 +15,12 @@ import CoreGraphics
 
 
 class MainViewController: UIViewController {
-    
+
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
     let velocity = Velocity()
-    
+
     @IBOutlet weak var viewForPercentLabels: UIView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var addGoalImageView: UIImageView!
@@ -36,44 +36,44 @@ class MainViewController: UIViewController {
     @IBOutlet weak var logDayButton: UIButton!
     @IBOutlet weak var completedGoalView: UIView!
     @IBOutlet weak var completedYesCheckmarkImageView: UIImageView!
-    
+
     @IBOutlet weak var viewForInfo: UIView!
-    
-    
+
+
     @IBAction func velocityInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
         infoLabel.text = "Velocity is a score out of ten based on your daily spending. It is "
-        
+
     }
-    
-    
+
+
     @IBAction func progressInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
         infoLabel.text = "Progress is ..."
     }
-    
-    
+
+
     @IBAction func daysInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
         infoLabel.text = " "
     }
-    
+
     @IBAction func exitInfoButtonClicked(_ sender: Any) {
         viewForPercentLabels.isHidden = false
         viewForInfo.isHidden = true
-        
-        
+
+
     }
-    
+
     @IBOutlet weak var infoLabel: UILabel!
-    
-    
+
+
     @IBOutlet weak var didYouSubmitTrailingConstraint: NSLayoutConstraint!
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -90,36 +90,40 @@ class MainViewController: UIViewController {
 
         checkIfProgressHasBeenLogged()
 
-        
-        //velocity.updateGraph(for: "This Week")
+
+
+        print("\(store.goals.first?.loggedGoalToday)")
+        print(60 * 60 * 24 * (store.goals.first?.dayCounter)!)
+
+        velocity.updateGraph(for: "This Week")
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
 
-        
+
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
-        
+
         let checkTapGR = UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped))
         completedYesCheckmarkImageView.addGestureRecognizer(checkTapGR)
         let blackOverlayGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         blackOverlayView.addGestureRecognizer(blackOverlayGesture)
-        
+
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         print("😎 \(store.goals)")
 
     }
-    
+
     func checkButtonTapped() {
         completedGoalView.isHidden = true
         NotificationCenter.default.post(name: .openMainVC, object: nil)
-        
+
         // Clear Velocity History
         store.velocityHistory = [Velocity.lastCentury : 100]
         store.velocity = 0
         velocity.updateGraph(for: "This Week")
     }
-    
+
     @IBAction func xButtonTapped(_ sender: Any) {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.didYouSubmitTrailingConstraint.constant = 0
@@ -128,15 +132,15 @@ class MainViewController: UIViewController {
             self.userInputTextField.resignFirstResponder()
         })
     }
-    
-    
+
+
     @IBAction func goToGoalVC(_ sender: UIButton) {
         print("TEST TEST TEST")
         NotificationCenter.default.post(name: .openGoalVC, object: nil)
     }
-    
+
     @IBAction func logDayButtonTapped(_ sender: Any) {
-        
+
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.didYouSubmitTrailingConstraint.constant = UIScreen.main.bounds.width
             self.view.layoutIfNeeded()
@@ -144,7 +148,7 @@ class MainViewController: UIViewController {
             self.userInputTextField.becomeFirstResponder()
         })
     }
-    
+
     func menuButtonPressed(_ sender: Any) {
         if !menuIsShowing {
             logDayButton.isEnabled = false
@@ -166,7 +170,7 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
+
     //UPDATES THE PROGRESS, WHEN DRAW RECT IS CALLED, INPUTS THE CGFLOAT TO THE DASH
     func calculateProgress() {
         print("print")
@@ -176,7 +180,7 @@ class MainViewController: UIViewController {
         store.progress = 812.0 * progressPercentage
         progressPercentLabel.text = "\(Int(progressPercentage * 100))%"
     }
-    
+
     func numberOfDaysLeft (startDate: Date, goalEntity: [Goal]) -> Int {
         let currentDate = Date()
         let timeSinceStartDateInSeconds = currentDate.timeIntervalSince((goalEntity.first?.startDate)! as Date)
@@ -185,7 +189,7 @@ class MainViewController: UIViewController {
         print(Int(daysLeft))
         return Int(daysLeft)
     }
-    
+
     func daysPercentCalculation() {
         if let first = store.goals.first {
             let dayPercentage = first.dayCounter/first.timeframe
@@ -193,24 +197,24 @@ class MainViewController: UIViewController {
             daysPercentLabel.text = "\(Int(dayPercentage * 100))%"
         }
     }
-    
+
     func updateVelocityForCircle() {
         let roundedVelocity = Double(store.currentVelocityScore).rounded()
         velocityPercentLabel.text = String(roundedVelocity)
-        
+
         let velocityPercentage = store.velocity * 0.1
         store.velocity = velocityPercentage * 552
-        
-        
-        
+
+
+
     }
-    
+
     func checkIfGoalExists() {
         if store.goals.isEmpty {
             logDayButton.isHidden = true
             addNewGoalView.isHidden = false
             footerView.hamburgerMenuImageView.isHidden = true
-            
+
         } else {
             //if today's entry is empty,
             addNewGoalView.isHidden = true
@@ -218,12 +222,12 @@ class MainViewController: UIViewController {
             logDayButton.isHidden = false
         }
     }
-    
+
     func setUpMenuButtonGesture() {
         let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(menuButtonPressed))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGR)
     }
-    
+
     func setGradient() {
         let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
         let endingColorOFGradient = UIColor.themeLightPrimaryBlueColor.cgColor
@@ -236,16 +240,16 @@ class MainViewController: UIViewController {
 
 //MARK: Handling user input
 extension MainViewController: UserInputProtocol {
-    
+
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         //sender.textField
         let stayedUnderBudget = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
-        
         updateVelocity(success: stayedUnderBudget)
-        print(store.velocityHistory)
-        
+
+
+
         if let goal = store.goals.first {
-            
+
             incrementDayAndAmount(goal: goal, textField: userInputTextField)
             checkIfComplete(goal: goal) { (success) in
                 if success {
@@ -263,12 +267,12 @@ extension MainViewController: UserInputProtocol {
                     NotificationCenter.default.post(name: .openMainVC, object: nil)
                 }
             })
-            
+
         }
         velocity.updateGraph(for: "This Week")
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
     }
-    
+
     func checkIfProgressHasBeenLogged() {
         if let first = store.goals.first {
             if let loggedGoalToday = first.loggedGoalToday {
@@ -278,16 +282,16 @@ extension MainViewController: UserInputProtocol {
             }
         }
     }
-    
+
     func setUpTextFieldForValidation() {
         userInputTextField.addTarget(self, action: #selector(checkForTextFieldEdit), for: UIControlEvents.editingChanged)
     }
-    
+
     func checkForTextFieldEdit(_ textField: UITextField) {
-        
+
         if let input = textField.text {
             let validInput = Double(input) != nil
-            
+
             //changes text field color
             if validInput {
                 textField.textColor = UIColor.themeBlackColor
