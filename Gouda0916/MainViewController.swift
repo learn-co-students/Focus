@@ -49,39 +49,27 @@ class MainViewController: UIViewController {
     @IBAction func velocityInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
-        infoLabel.text = "Velocity is a score out of ten based on your daily spending. It is "
+        infoLabel.text = "Velocity shows your average score over the past three days."
 
     }
     
-    func hideAndUnhideInfoButtons(_ addView: Bool) {
-        if addView {
-            daysInfoButton.isHidden = false
-            velocityInfoButton.isHidden = false
-            progressInfoButton.isHidden = false
-        } else {
-            daysInfoButton.isHidden = true
-            velocityInfoButton.isHidden = true
-            progressInfoButton.isHidden = true
-        }
-    }
-
+    
     @IBAction func progressInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
-        infoLabel.text = "Progress is ..."
+        infoLabel.text = "Progress shows the percentage of completion towards your goal."
     }
 
 
     @IBAction func daysInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
-        infoLabel.text = " "
+        infoLabel.text = "Days shows the percentage of days towards your timeframe."
     }
 
     @IBAction func exitInfoButtonClicked(_ sender: Any) {
         viewForPercentLabels.isHidden = false
         viewForInfo.isHidden = true
-
 
     }
 
@@ -129,6 +117,20 @@ class MainViewController: UIViewController {
 
     }
 
+    func hideAndUnhideInfoButtons(_ addView: Bool) {
+        if addView {
+            daysInfoButton.isHidden = false
+            velocityInfoButton.isHidden = false
+            progressInfoButton.isHidden = false
+        } else {
+            daysInfoButton.isHidden = true
+            velocityInfoButton.isHidden = true
+            progressInfoButton.isHidden = true
+        }
+    }
+
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         print("😎 \(store.goals)")
 

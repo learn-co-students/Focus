@@ -542,6 +542,11 @@
                                     <constraint firstItem="R86-YH-j1w" firstAttribute="width" secondItem="jUW-Q1-oKd" secondAttribute="width" multiplier="0.9" id="Twt-MO-gLh"/>
                                     <constraint firstItem="R86-YH-j1w" firstAttribute="centerY" secondItem="jUW-Q1-oKd" secondAttribute="centerY" id="d0n-0B-ZNB"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-ZA-GAn" userLabel="Days Info Button">
                                 <rect key="frame" x="315" y="600.33333333333348" width="36.666666666666686" height="36.666666666666629"/>
