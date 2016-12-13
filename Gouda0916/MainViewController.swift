@@ -53,12 +53,6 @@ class MainViewController: UIViewController {
         checkIfProgressHasBeenLogged()
         
 
-        print("😎 \(store.goals)")
-        
-        
-        print("\(store.goals.first?.loggedGoalToday)")
-        print(60 * 60 * 24 * (store.goals.first?.dayCounter)!)
-
         //velocity.updateGraph(for: "This Week")
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
 

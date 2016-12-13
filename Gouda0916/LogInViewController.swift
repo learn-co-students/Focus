@@ -19,6 +19,8 @@ class LogInViewController: UIViewController {
     var user1 = DataStore.sharedInstance.userName
     var emailPopulated = false
     var passwordPopulated = false
+    var loadingCircle: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    
     
     // Mark: Outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -43,6 +45,8 @@ class LogInViewController: UIViewController {
         self.passwordPopulated = false
         
         applyGradient()
+        
+        setUpActivityIndicator()
         
         passwordTextField.isSecureTextEntry = true
         
@@ -120,6 +124,8 @@ class LogInViewController: UIViewController {
             if let password = self.passwordTextField.text {
                 
                 self.user1.email = email
+                self.loadingCircle.isHidden = false
+                self.loadingCircle.startAnimating()
                 
                 FIRAuth.auth()!.signIn(withEmail: email, password: password) { (user, error) in
                     if error == nil {
@@ -242,8 +248,19 @@ class LogInViewController: UIViewController {
                 textFieldWithError.transform = CGAffineTransform(scaleX: 1.0, y:1.0)
             })
         })
+        self.loadingCircle.stopAnimating()
         self.loginButton.isEnabled = false
         self.loginButton.alpha = 0.3
+    }
+    
+    func setUpActivityIndicator() {
+        self.view.addSubview(loadingCircle)
+        loadingCircle.isHidden = true
+        loadingCircle.translatesAutoresizingMaskIntoConstraints = false
+        loadingCircle.centerXAnchor.constraint(equalTo: loginButton.centerXAnchor).isActive = true
+        loadingCircle.bottomAnchor.constraint(equalTo: emailTextField.topAnchor).isActive = true
+        loadingCircle.hidesWhenStopped = true
+        
     }
 }
 
