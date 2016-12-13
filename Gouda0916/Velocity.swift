@@ -86,12 +86,6 @@ class Velocity {
             }
         }
     }
-    
-    
-    
-    func saveVelocityHistoy() {}
-    
-    func fetchVelocityHistoy() {}
 }
 
 

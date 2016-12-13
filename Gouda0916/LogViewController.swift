@@ -12,7 +12,7 @@ class LogViewController: UIViewController {
     
     let store = DataStore.sharedInstance
     
-    let weeklyGraphView = WeeklyGraphView()
+    //let weeklyGraphView = WeeklyGraphView()
     let velocity = Velocity()
     let weeklyGraph = WeeklyGraphView()
     var menuIsShowing = false
@@ -32,7 +32,6 @@ class LogViewController: UIViewController {
     @IBOutlet weak var WeeklyView: WeeklyGraphView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var maskView: UIView!
-    
     @IBOutlet weak var velocityScoreView: VelocityScoreView!
     
     
@@ -76,7 +75,7 @@ class LogViewController: UIViewController {
     }
     
     func menuButtonPressed(_ sender: Any) {
-        print("menu button pressed")
+        
         if !menuIsShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
@@ -95,7 +94,6 @@ class LogViewController: UIViewController {
                         Velocity.fourDaysAgo,
                         Velocity.fiveDaysAgo,
                         Velocity.sixDaysAgo]
-        
         
         let lastWeek = [Velocity.sevenDaysAgo,
                         Velocity.eightDaysAgo,
@@ -157,6 +155,7 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func weeklyScoreTouched(_ sender: UIButton) {
+        
         if let week = sender.currentTitle {
             
             self.WeeklyView.setNeedsDisplay()
@@ -177,6 +176,7 @@ class LogViewController: UIViewController {
     }
     
     func updateCurrentScoreLabel(withScoreFor date: Date) {
+        
         var score: Double = 0
         
         for (key, value) in store.velocityHistory {
@@ -191,12 +191,12 @@ class LogViewController: UIViewController {
                 score = value
             }
         }
-        
+
         velocityScoreView.velocityScoreLabel.text = "\(score)"
-        
     }
     
     func updateDailyScoreLabel(for week: String){
+        
         let calender = Calendar(identifier: .gregorian)
         let today = calender.component(.day, from: Date())
         let yesterday = calender.component(.day, from: Velocity.yesterday)
@@ -233,6 +233,7 @@ class LogViewController: UIViewController {
     }
     
     func daySuffix(from date: Date) -> String {
+        
         let calender = Calendar.current
         let dayOfMonth = calender.component(.day, from: date)
         
@@ -280,7 +281,6 @@ extension Date {
     func dayOfTheWeek() -> String {
         
         var dayString = "Current"
-        
         let calendar = Calendar.current
         let components: DateComponents = calendar.dateComponents([.weekday], from: self)
         let dayInt = components.weekday
@@ -305,7 +305,6 @@ extension Date {
                 break
             }
         }
-        
         return dayString
     }
 }

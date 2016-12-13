@@ -59,7 +59,7 @@ class MainViewController: UIViewController {
         print("\(store.goals.first?.loggedGoalToday)")
         print(60 * 60 * 24 * (store.goals.first?.dayCounter)!)
 
-        //velocity.updateGraph(for: "This Week")
+        velocity.updateGraph(for: "This Week")
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
 
         
@@ -208,9 +208,9 @@ extension MainViewController: UserInputProtocol {
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         //sender.textField
         let stayedUnderBudget = checkForVelocity(goal: store.goals.first!, textField: userInputTextField)
-        
         updateVelocity(success: stayedUnderBudget)
-        print(store.velocityHistory)
+        
+        
         
         if let goal = store.goals.first {
             

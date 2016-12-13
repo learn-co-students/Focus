@@ -9,9 +9,9 @@
 import Foundation
 
 protocol UserInputProtocol {
-
+    
     var store: DataStore { get }
-
+    
 }
 
 extension UserInputProtocol {
@@ -74,6 +74,7 @@ extension UserInputProtocol {
             }
         }
         
+        
         for key in store.velocityHistory.keys {
             if Calendar.current.isDateInToday(key) {
                 print("Score was already recorded today")
@@ -84,6 +85,7 @@ extension UserInputProtocol {
                 print("Before Save and Fetch: \(store.velocityHistory)")
                 print("Score Added")
             }
+            
         }
     }
     
