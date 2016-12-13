@@ -32,6 +32,7 @@
 		11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */; };
 		11FEAF7F1DEDEE10003667AC /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FEAF7E1DEDEE10003667AC /* UserInputView.swift */; };
 		3BAEB514D0BD69D7D6A8BE6D /* Pods_Gouda0916.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A307D1060D5A448201322E4 /* Pods_Gouda0916.framework */; };
+		552AC69A1E008F4500BC2D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552AC6991E008F4500BC2D67 /* Assets.xcassets */; };
 		55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */; };
 		55CE54D21DF0EC08009524D0 /* TreatYourselfLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */; };
 		55CE54D41DF0EC20009524D0 /* TreatYourselfLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */; };
@@ -49,7 +50,6 @@
 		9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9052DE421DEF737D00B8F67A /* MainContainerViewController.swift */; };
 		90638F7C1DF8A00B003F64C1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90638F7B1DF8A00B003F64C1 /* UserNotifications.framework */; };
 		909105F11DF600EF00D3C6BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909105EF1DF600EF00D3C6BA /* Main.storyboard */; };
-		909105F51DF628E900D3C6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 909105F41DF628E900D3C6BA /* Assets.xcassets */; };
 		909EFE451DF6445C00F9C383 /* HamBurgMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909EFE441DF6445C00F9C383 /* HamBurgMenuViewController.swift */; };
 		909FE98F1DF5F88D0055645B /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909FE98D1DF5F88D0055645B /* Goal.storyboard */; };
 		90B1151B1DF62EE60002E969 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1151A1DF62EE60002E969 /* MainViewController.swift */; };
@@ -87,6 +87,7 @@
 		11FE917B1DDF4BE800E3EA4F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		11FEAF7C1DEDEDFD003667AC /* UserInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputView.xib; sourceTree = "<group>"; };
 		11FEAF7E1DEDEE10003667AC /* UserInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
+		552AC6991E008F4500BC2D67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55AE8A4A1DEC93F4008E2776 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		55CE54D11DF0EC08009524D0 /* TreatYourselfLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatYourselfLanding.swift; sourceTree = "<group>"; };
 		55CE54D31DF0EC20009524D0 /* TreatYourselfLandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatYourselfLandingView.swift; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		90638F7A1DF89E46003F64C1 /* Gouda0916.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gouda0916.entitlements; sourceTree = "<group>"; };
 		90638F7B1DF8A00B003F64C1 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		909105F01DF600EF00D3C6BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		909105F41DF628E900D3C6BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		909EFE441DF6445C00F9C383 /* HamBurgMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamBurgMenuViewController.swift; sourceTree = "<group>"; };
 		909FE98E1DF5F88D0055645B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gouda0916/Base.lproj/Goal.storyboard; sourceTree = "<group>"; };
 		90B1151A1DF62EE60002E969 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		116A9DC51DDCDC0800437479 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				909105F41DF628E900D3C6BA /* Assets.xcassets */,
+				552AC6991E008F4500BC2D67 /* Assets.xcassets */,
 				11FCAA141DDA6E160072C46A /* AppDelegate.swift */,
 				90DFD6461DEBA4A3003CDF17 /* SWRevealViewController.h */,
 				90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */,
@@ -334,8 +334,8 @@
 				70FF8BFE1DE5F4CF00660564 /* Velocity.storyboard in Resources */,
 				116E0BF11DF872FA00CF2B57 /* FooterView.xib in Resources */,
 				90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */,
-				909105F51DF628E900D3C6BA /* Assets.xcassets in Resources */,
 				70934DD71DE4C52000913625 /* VelocityScoreView.xib in Resources */,
+				552AC69A1E008F4500BC2D67 /* Assets.xcassets in Resources */,
 				11FEAF7D1DEDEDFD003667AC /* UserInputView.xib in Resources */,
 				70FA72591DF732C100FAC1BB /* MonthlyGraphView.xib in Resources */,
 				11FCAA221DDA6E170072C46A /* LaunchScreen.storyboard in Resources */,

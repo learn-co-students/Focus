@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8m-fx-17x">
-                                <rect key="frame" x="329.66666666666669" y="335.33333333333331" width="43" height="30"/>
+                                <rect key="frame" x="42" y="404.66666666666669" width="43" height="30"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                 <state key="normal" title="forgot?">
                                     <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,7 +98,6 @@
                             <constraint firstItem="XSe-PG-5bm" firstAttribute="width" secondItem="e4n-HD-aJ7" secondAttribute="width" id="5FT-xH-QKh"/>
                             <constraint firstItem="sk3-rM-xwC" firstAttribute="width" secondItem="EPN-3E-JP1" secondAttribute="width" id="7cu-mi-LvT"/>
                             <constraint firstItem="Qgm-cU-u1P" firstAttribute="centerX" secondItem="Zea-gr-H6S" secondAttribute="centerX" id="9VH-MS-WFw"/>
-                            <constraint firstItem="j8m-fx-17x" firstAttribute="trailing" secondItem="EPN-3E-JP1" secondAttribute="trailing" id="AmC-JA-GqK"/>
                             <constraint firstItem="Qp4-CU-DIf" firstAttribute="centerX" secondItem="Zea-gr-H6S" secondAttribute="centerX" id="BCQ-tW-mUJ"/>
                             <constraint firstItem="m9p-8m-kJj" firstAttribute="top" secondItem="bk3-kG-TSK" secondAttribute="bottom" id="GZ0-4M-chx"/>
                             <constraint firstItem="Qgm-cU-u1P" firstAttribute="height" secondItem="Zea-gr-H6S" secondAttribute="height" multiplier="0.2" id="GqE-vM-7zh"/>
@@ -107,10 +106,11 @@
                             <constraint firstItem="XSe-PG-5bm" firstAttribute="centerX" secondItem="e4n-HD-aJ7" secondAttribute="centerX" id="Oxf-Qx-pHt"/>
                             <constraint firstItem="sk3-rM-xwC" firstAttribute="top" secondItem="EPN-3E-JP1" secondAttribute="bottom" id="WPh-bj-uer"/>
                             <constraint firstItem="XSe-PG-5bm" firstAttribute="height" secondItem="e4n-HD-aJ7" secondAttribute="height" multiplier="0.05" id="cJd-rY-irX"/>
-                            <constraint firstItem="j8m-fx-17x" firstAttribute="top" secondItem="EPN-3E-JP1" secondAttribute="bottom" id="gt6-r0-q6v"/>
+                            <constraint firstItem="j8m-fx-17x" firstAttribute="top" secondItem="bk3-kG-TSK" secondAttribute="bottom" id="iTv-zS-8Z3"/>
                             <constraint firstItem="XSe-PG-5bm" firstAttribute="top" secondItem="e4n-HD-aJ7" secondAttribute="bottom" id="jaG-1J-Gkn"/>
                             <constraint firstItem="Qgm-cU-u1P" firstAttribute="width" secondItem="Zea-gr-H6S" secondAttribute="width" multiplier="0.8" id="rZk-Po-Wqg"/>
                             <constraint firstItem="Qgm-cU-u1P" firstAttribute="centerY" secondItem="Zea-gr-H6S" secondAttribute="centerY" multiplier="0.9" id="wT8-CD-TNb"/>
+                            <constraint firstItem="j8m-fx-17x" firstAttribute="leading" secondItem="bk3-kG-TSK" secondAttribute="leading" id="yzE-QR-ySa"/>
                             <constraint firstItem="Qp4-CU-DIf" firstAttribute="centerY" secondItem="Zea-gr-H6S" secondAttribute="centerY" multiplier="0.4" id="z5K-kb-4MR"/>
                             <constraint firstItem="Qp4-CU-DIf" firstAttribute="height" secondItem="Zea-gr-H6S" secondAttribute="height" multiplier="0.1" id="zzv-eZ-tuH"/>
                         </constraints>
@@ -261,12 +261,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xok-dq-4KX" userLabel="Velocity Percent">
-                                                <rect key="frame" x="215.33333333333334" y="138" width="12.333333333333314" height="22"/>
+                                                <rect key="frame" x="208" y="138" width="12.333333333333343" height="22"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="hi3-g1-gia">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hi3-g1-gia">
                                                 <rect key="frame" x="62" y="0.0" width="290" height="220"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c70-6N-YvJ" userLabel="Progress Label">
@@ -276,7 +276,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6H-Da-h3N" userLabel="Velocity Label">
-                                                        <rect key="frame" x="129.33333333333337" y="0.0" width="60.666666666666657" height="220"/>
+                                                        <rect key="frame" x="121.99999999999999" y="0.0" width="60.666666666666643" height="220"/>
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                                         <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -289,9 +289,13 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-sW-8Vi" userLabel="progress Info Button">
-                                                <rect key="frame" x="72.666666666666671" y="160" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-sW-8Vi" userLabel="progress Info Button">
+                                                <rect key="frame" x="84.666666666666671" y="160" width="22" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="WYK-WQ-Aol"/>
+                                                    <constraint firstAttribute="width" secondItem="OYN-sW-8Vi" secondAttribute="height" multiplier="89:80" id="cym-M5-1jQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="question_mark_gold_360"/>
                                                 <connections>
                                                     <action selector="progressInfoButton:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="4UX-F1-dQR"/>
                                                 </connections>
@@ -332,7 +336,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqd-1D-Jsx" userLabel="Velocity Info Button">
-                                        <rect key="frame" x="210.66666666666666" y="580" width="22" height="19"/>
+                                        <rect key="frame" x="203.33333333333334" y="580" width="22" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nqd-1D-Jsx" secondAttribute="height" multiplier="89:80" id="QKE-GU-k1t"/>
                                             <constraint firstAttribute="width" constant="22" id="mCj-1g-giG" userLabel="width = 400"/>
@@ -347,13 +351,13 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InfoLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R86-YH-j1w">
                                                 <rect key="frame" x="82.666666666666686" y="44" width="248.66666666666663" height="132"/>
-                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.82524245689655173" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k0-Cu-gQd">
-                                                <rect key="frame" x="301.33333333333331" y="44" width="30" height="30"/>
+                                                <rect key="frame" x="301.33333333333331" y="44" width="30" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -738,6 +742,7 @@
         <image name="focus logo" width="480" height="143"/>
         <image name="initial_landing_720" width="135" height="240"/>
         <image name="logoReflection" width="240" height="131"/>
+        <image name="question_mark_gold_360" width="480" height="480"/>
         <image name="question_mark_light_gray_480" width="480" height="480"/>
         <image name="question_mark_light_green_480" width="480" height="480"/>
         <image name="yes check mark copy" width="600" height="600"/>

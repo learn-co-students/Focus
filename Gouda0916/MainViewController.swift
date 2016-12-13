@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
     @IBAction func daysInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
-        infoLabel.text = "Days blah blah "
+        infoLabel.text = " "
     }
     
     @IBAction func exitInfoButtonClicked(_ sender: Any) {
