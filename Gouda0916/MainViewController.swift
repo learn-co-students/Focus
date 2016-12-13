@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var addGoalImageView: UIImageView!
     @IBOutlet weak var gradient: UIView!
-    @IBOutlet var addNewGoalView: UIView!
+    @IBOutlet weak var addNewGoalView: UIView!
     @IBOutlet weak var didYouSpendTodayView: UIView!
     @IBOutlet weak var footerView: FooterView!
     @IBOutlet weak var progressPercentLabel: UILabel!
@@ -40,6 +40,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var viewForInfo: UIView!
     
     
+    @IBOutlet weak var daysInfoButton: UIButton!
+    @IBOutlet weak var velocityInfoButton: UIButton!
+    @IBOutlet weak var progressInfoButton: UIButton!
+    
+    
     @IBAction func velocityInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
         viewForInfo.isHidden = false
@@ -47,6 +52,17 @@ class MainViewController: UIViewController {
         
     }
     
+    func hideAndUnhideInfoButtons(_ addView: Bool) {
+        if addView {
+            daysInfoButton.isHidden = false
+            velocityInfoButton.isHidden = false
+            progressInfoButton.isHidden = false
+        } else {
+            daysInfoButton.isHidden = true
+            velocityInfoButton.isHidden = true
+            progressInfoButton.isHidden = true
+        }
+    }
     
     @IBAction func progressInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
@@ -102,6 +118,8 @@ class MainViewController: UIViewController {
         completedYesCheckmarkImageView.addGestureRecognizer(checkTapGR)
         let blackOverlayGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         blackOverlayView.addGestureRecognizer(blackOverlayGesture)
+        
+        hideAndUnhideInfoButtons(addNewGoalView.isHidden)
         
     }
     
