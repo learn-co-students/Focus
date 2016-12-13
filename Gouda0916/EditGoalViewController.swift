@@ -45,6 +45,11 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView()
+
+    }
+    
+    func setUpView() {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
@@ -59,20 +64,23 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
         collectionViewBlocker.isHidden = true
         
         //gradient for collection view
-        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
-        let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
-        let gradient: CAGradientLayer = CAGradientLayer()
-        optionsCollectionView.backgroundColor = .clear
-        gradient.locations = [0.0, 0.5]
-        gradient.frame = collectionViewContainerView.bounds
-        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
-        self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)
+//        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+//        let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
+//        let gradient: CAGradientLayer = CAGradientLayer()
+//        optionsCollectionView.backgroundColor = .clear
+//        gradient.locations = [0.0, 0.5]
+//        gradient.frame = collectionViewContainerView.bounds
+//        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+//        self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)
         
-       
+        
         addGestures()
         setUpTextFieldForValidation()
         
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       optionsCollectionView.backgroundColor = UIColor.themePaleGreenColor
     }
     
     override func viewDidAppear(_ animated: Bool) {

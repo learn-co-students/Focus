@@ -42,6 +42,9 @@ class GoalViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
         footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
         footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+        
+        let blackCoverTG = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+        blackCoverView.addGestureRecognizer(blackCoverTG)
 
     
         if let delegate = delegate {
