@@ -68,6 +68,11 @@ class MainViewController: UIViewController {
     func checkButtonTapped() {
         completedGoalView.isHidden = true
         NotificationCenter.default.post(name: .openMainVC, object: nil)
+        
+        // Clear Velocity History
+        store.velocityHistory = [Velocity.lastCentury : 100]
+        store.velocity = 0
+        velocity.updateGraph(for: "This Week")
     }
     
     @IBAction func xButtonTapped(_ sender: Any) {

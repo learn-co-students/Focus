@@ -34,54 +34,9 @@ class Velocity {
     static let twelveDaysAgo = Date(timeIntervalSinceNow: -1.037e+6)
     static let thirteenDaysAgo = Date(timeIntervalSinceNow: -1.123e+6)
 
-    static let lastYear = Date(timeIntervalSinceNow: -3.154e+7)
+    static let lastCentury = Date(timeIntervalSinceNow: -3.154e+9)
     
     init() {}
-    
-//    func updateVelocity(success: Bool) {
-//        
-//        var dailyInput: Double {
-//            if success == true {
-//                return 10
-//            } else {
-//                return 0
-//            }
-//        }
-//        
-//        for key in store.velocityHistory.keys {
-//            if Calendar.current.isDateInToday(key) {
-//                print("Score was already recorded today")
-//                return
-//            } else {
-//                store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
-//                // Test Data
-//                print("Before Save and Fetch: \(store.velocityHistory)")
-//                print("Score Added")
-//            }
-//        }
-//    }
-//    
-//    func calculateVelocityScore(input: Double) -> Double {
-//        
-//        var tempArray: [Double] = [input]
-//        var total: Double = 0
-//        var score: Double = 0
-//        
-//        for (key, value) in store.velocityHistory {
-//            if key == Velocity.yesterday {
-//                tempArray.append(value)
-//            } else if key == Velocity.twoDaysAgo {
-//                tempArray.append(value)
-//            }
-//        }
-//        
-//        print("History Count: \(store.velocityHistory.count)")
-//        print("TEMP ARRAY: \(tempArray)")
-//        total = tempArray.reduce(0, +)
-//        score = total / Double(tempArray.count)
-//        
-//        return score
-//    }
     
     func updateGraph(for week: String) {
         
@@ -97,15 +52,11 @@ class Velocity {
         let lastWeekEnd = Date(timeInterval: -604800, since: Date())
         let lastWeekRange = (lastWeekStart...lastWeekEnd)
         
-        print("this week range: \(thisWeekRange)")
-        print("last week range: \(lastWeekRange)")
-        
         for (key, value) in sortedVelocityHistory {
             if thisWeekRange.contains(key) {
                 thisWeekArray.append(Int(value))
             } else if lastWeekRange.contains(key) {
                 lastWeekArray.append(Int(value))
-
             }
             
             switch week {

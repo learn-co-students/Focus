@@ -20,7 +20,6 @@ class WeeklyGraphView: UIView {
         super.init(coder: aDecoder)
     }
     
-    
     override func draw(_ rect: CGRect) {
         
         let rectWidth = rect.width
@@ -71,7 +70,7 @@ class WeeklyGraphView: UIView {
         clip(path: graphPath, height: rectHeight, bottomBorder: bottomBorder, columnXPoint: columnXPoint)
         context?.restoreGState()
         
-        //drawCirlceOn(columnXPoint: columnXPoint, columnYPoint: columnYPoint)
+        drawCirlceOn(columnXPoint: columnXPoint, columnYPoint: columnYPoint, index: store.pointIndex)
         
         horizontalGraphLines(margin: margin,
                              width: rectWidth,
@@ -125,17 +124,19 @@ class WeeklyGraphView: UIView {
         rectPath.fill()
     }
     
-    func drawCirlceOn(columnXPoint: (Int) -> CGFloat, columnYPoint: (Int) -> CGFloat) {
+    func drawCirlceOn(columnXPoint: (Int) -> CGFloat, columnYPoint: (Int) -> CGFloat, index: Int) {
+    
+        var point = CGPoint(x: columnXPoint(index), y: columnYPoint(store.graphPoints[index]))
+        point.x -= 5.0/2
+        point.y -= 5.0/2
         
-        for i in 1..<store.graphPoints.count - 1 {
-            var point = CGPoint(x: columnXPoint(i), y: columnYPoint(store.graphPoints[i]))
-            point.x -= 5.0/2
-            point.y -= 5.0/2
-            
-            let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 2.0, height: 2.0)))
-            UIColor.themeDarkGreenColor.setStroke()
-            circle.stroke()
-        }
+        let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: 5.0, height: 5.0)))
+        UIColor.themeAccentGoldColor.setStroke()
+        UIColor.themeAccentGoldColor.setFill()
+        
+        circle.stroke()
+        circle.fill()
+        
     }
     
     func horizontalGraphLines(margin: CGFloat, width: CGFloat, height: CGFloat, graphHeight: CGFloat, topBorder: CGFloat, bottomBorder: CGFloat) {
