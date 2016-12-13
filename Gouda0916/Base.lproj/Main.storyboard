@@ -419,10 +419,6 @@
                                     <constraint firstItem="Obh-k1-lgg" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" id="yjj-RX-T9i"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-0g-VZg" userLabel="BlackCover">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ta-G6b" userLabel="Add New Goal View Container">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
@@ -578,6 +574,10 @@
                                     <action selector="progressInfoButton:" destination="p1Q-z2-jo0" eventType="touchUpInside" id="4UX-F1-dQR"/>
                                 </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-0g-VZg" userLabel="BlackCover">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

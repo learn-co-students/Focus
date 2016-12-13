@@ -39,8 +39,6 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var viewForInfo: UIView!
 
-    
-    
     @IBOutlet weak var daysInfoButton: UIButton!
     @IBOutlet weak var velocityInfoButton: UIButton!
     @IBOutlet weak var progressInfoButton: UIButton!
