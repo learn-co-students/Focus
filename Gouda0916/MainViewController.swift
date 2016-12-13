@@ -49,21 +49,26 @@ class MainViewController: UIViewController {
         setUpTextFieldForValidation()
         updateVelocityForCircle()
         completedGoalView.isHidden = true
+        checkIfProgressHasBeenLogged()
+        
+        print("😎 \(store.goals)")
+        
+        
         print("\(store.goals.first?.loggedGoalToday)")
-        
-        
-        
-        // Test
-        print("Pre Button Click: \(store.velocityHistory)")
+        print(60 * 60 * 24 * (store.goals.first?.dayCounter)!)
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
         
         let checkTapGR = UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped))
         completedYesCheckmarkImageView.addGestureRecognizer(checkTapGR)
-        
         let blackOverlayGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         blackOverlayView.addGestureRecognizer(blackOverlayGesture)
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("😎 \(store.goals)")
 
     }
     
@@ -216,6 +221,16 @@ extension MainViewController: UserInputProtocol {
                 }
             })
             
+        }
+    }
+    
+    func checkIfProgressHasBeenLogged() {
+        if let first = store.goals.first {
+            if let loggedGoalToday = first.loggedGoalToday {
+                if !loggedGoalToday {
+                    logDayButtonTapped(logDayButton)
+                }
+            }
         }
     }
     

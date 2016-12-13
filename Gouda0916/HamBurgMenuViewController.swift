@@ -30,7 +30,7 @@ class HamburgerMenuViewController: UIViewController {
     
     func populateOptions() {
         let home = MenuOption(label: "home", image: #imageLiteral(resourceName: "home"))
-        let goal = MenuOption(label: "goal", image: #imageLiteral(resourceName: "goal icon"))
+        let goal = MenuOption(label: "goals", image: #imageLiteral(resourceName: "goal icon"))
         let velocity = MenuOption(label: "velocity", image: #imageLiteral(resourceName: "velocity icon"))
         
         options = [home, goal, velocity]
@@ -71,7 +71,7 @@ extension HamburgerMenuViewController: UITableViewDelegate, UITableViewDataSourc
         switch options[indexPath.row].label {
         case "home":
             NotificationCenter.default.post(name: .openMainVC, object: nil)
-        case "goal":
+        case "goals":
             NotificationCenter.default.post(name: .openGoalVC, object: nil)
         case "velocity":
             print("Going to VELOCITY OH SHIT")
