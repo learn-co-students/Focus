@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     let store = DataStore.sharedInstance
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
+    let velocity = Velocity()
     
     @IBOutlet weak var viewForPercentLabels: UIView!
     @IBOutlet weak var submitButton: UIButton!
@@ -84,26 +85,39 @@ class MainViewController: UIViewController {
         setUpTextFieldForValidation()
         updateVelocityForCircle()
         completedGoalView.isHidden = true
+
         viewForInfo.isHidden = true
+
+        checkIfProgressHasBeenLogged()
+
         
-        
-        // Test
-        print("Pre Button Click: \(store.velocityHistory)")
+        //velocity.updateGraph(for: "This Week")
+        velocityPercentLabel.text = "\(store.currentVelocityScore)"
+
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
         
         let checkTapGR = UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped))
         completedYesCheckmarkImageView.addGestureRecognizer(checkTapGR)
-        
         let blackOverlayGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         blackOverlayView.addGestureRecognizer(blackOverlayGesture)
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("😎 \(store.goals)")
+
+    }
+    
     func checkButtonTapped() {
         completedGoalView.isHidden = true
         NotificationCenter.default.post(name: .openMainVC, object: nil)
+        
+        // Clear Velocity History
+        store.velocityHistory = [Velocity.lastCentury : 100]
+        store.velocity = 0
+        velocity.updateGraph(for: "This Week")
     }
     
     @IBAction func xButtonTapped(_ sender: Any) {
@@ -181,7 +195,7 @@ class MainViewController: UIViewController {
     }
     
     func updateVelocityForCircle() {
-        let roundedVelocity = Double(store.velocity).rounded()
+        let roundedVelocity = Double(store.currentVelocityScore).rounded()
         velocityPercentLabel.text = String(roundedVelocity)
         
         let velocityPercentage = store.velocity * 0.1
@@ -250,6 +264,18 @@ extension MainViewController: UserInputProtocol {
                 }
             })
             
+        }
+        velocity.updateGraph(for: "This Week")
+        velocityPercentLabel.text = "\(store.currentVelocityScore)"
+    }
+    
+    func checkIfProgressHasBeenLogged() {
+        if let first = store.goals.first {
+            if let loggedGoalToday = first.loggedGoalToday {
+                if !loggedGoalToday {
+                    logDayButtonTapped(logDayButton)
+                }
+            }
         }
     }
     

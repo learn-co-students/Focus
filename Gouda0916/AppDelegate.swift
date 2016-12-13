@@ -40,15 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     //Creating trigger that sets calendar notifications and repeats at a specific time
     func scheduleNotification(at date: Date) {
-//        let calendar = Calendar(identifier: .gregorian)
-//        let components = calendar.dateComponents(in: .current, from: date)
-//        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (61), repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (60*60*24), repeats: true)
         
         let content = UNMutableNotificationContent()
         content.title = "Work Hard. Be Humble. Focus."
-        content.body = "Did you achieve your daily savings goal today? Click me to input and keep track of your savings amount!"
+        content.body = "Did you achieve your daily savings goal today? Click to input and keep track of your savings amount!"
         content.sound = UNNotificationSound.default()
         
         let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
@@ -125,5 +122,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("About to present.")
 
     }
- }
-
+}

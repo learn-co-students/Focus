@@ -26,6 +26,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="558" height="7"/>
                     <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxR-Ig-s9r" userLabel="bgColor">
+                    <rect key="frame" x="0.0" y="7" width="558" height="128"/>
+                    <color key="backgroundColor" red="0.41568627450000001" green="0.72156862749999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="lob-GF-fm3" userLabel="Hamburger Image View">
                     <rect key="frame" x="15" y="34.5" width="69" height="67.5"/>
                     <constraints>
@@ -39,18 +43,22 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7Zb-a2-wQ3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="6Bl-uB-7Du"/>
                 <constraint firstItem="7Zb-a2-wQ3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7q7-vS-LTY"/>
+                <constraint firstItem="GxR-Ig-s9r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FUJ-hm-oVz"/>
                 <constraint firstItem="lob-GF-fm3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="FoN-XH-bnF"/>
                 <constraint firstItem="84Z-5X-0Z2" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.75" id="FvQ-bh-MQp"/>
                 <constraint firstItem="84Z-5X-0Z2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I2J-dC-0UQ"/>
                 <constraint firstItem="84Z-5X-0Z2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TVg-Ae-M92"/>
                 <constraint firstItem="7Zb-a2-wQ3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.05" id="XwI-O4-8eX"/>
                 <constraint firstItem="lob-GF-fm3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="awE-E9-13L"/>
+                <constraint firstItem="GxR-Ig-s9r" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="dYh-1R-h4V"/>
                 <constraint firstItem="lob-GF-fm3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fRK-QE-MdR"/>
                 <constraint firstItem="7Zb-a2-wQ3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wza-No-Gx5"/>
+                <constraint firstItem="GxR-Ig-s9r" firstAttribute="top" secondItem="7Zb-a2-wQ3" secondAttribute="bottom" id="xs8-pC-coN"/>
+                <constraint firstAttribute="bottom" secondItem="GxR-Ig-s9r" secondAttribute="bottom" id="zYa-JD-W2w"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

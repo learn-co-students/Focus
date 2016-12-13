@@ -21,6 +21,8 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
     var editOptions: [Edit] = []
     var menuShowing = false
     
+    let velocity = Velocity()
+    
     @IBOutlet weak var saveCancelView: EditGoalView!
     @IBOutlet weak var yesNoView: YesNoView!
     @IBOutlet weak var goalView: GoalTableViewCellView!
@@ -43,6 +45,11 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView()
+
+    }
+    
+    func setUpView() {
         populateEditOptions()
         configureLayout()
         goalView.goal = self.goal
@@ -57,20 +64,23 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
         collectionViewBlocker.isHidden = true
         
         //gradient for collection view
-        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
-        let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
-        let gradient: CAGradientLayer = CAGradientLayer()
-        optionsCollectionView.backgroundColor = .clear
-        gradient.locations = [0.0, 0.5]
-        gradient.frame = collectionViewContainerView.bounds
-        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
-        self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)
+//        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+//        let endingColorOFGradient = UIColor.themePaleGreenColor.cgColor
+//        let gradient: CAGradientLayer = CAGradientLayer()
+//        optionsCollectionView.backgroundColor = .clear
+//        gradient.locations = [0.0, 0.5]
+//        gradient.frame = collectionViewContainerView.bounds
+//        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+//        self.collectionViewContainerView.layer.insertSublayer(gradient, at: 0)
         
-       
+        
         addGestures()
         setUpTextFieldForValidation()
         
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       optionsCollectionView.backgroundColor = UIColor.themePaleGreenColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -159,7 +169,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
             default:
                 view.endEditing(true)
                 self.saveCancelView.resignFirstResponder()
-                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                     self.saveCancelViewTrailingConstraint.constant -= self.screenWidth
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
@@ -192,6 +202,11 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 goal.didChangeValue(forKey: "isActiveGoal")
                 store.goals.remove(at: goalIndex)
                 store.goals.insert(goal, at: 0)
+                
+                // Clear Velocity History 
+                store.velocityHistory = [Velocity.lastCentury : 100]
+                store.velocity = 0
+                velocity.updateGraph(for: "This Week")
             case .changeGoal:
                 goal.willChangeValue(forKey: "goalAmount")
                 goal.goalAmount = Double(input)!
@@ -247,7 +262,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
             default:
                 view.endEditing(true)
                 self.saveCancelView.resignFirstResponder()
-                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                     self.saveCancelViewTrailingConstraint.constant -= self.screenWidth
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()

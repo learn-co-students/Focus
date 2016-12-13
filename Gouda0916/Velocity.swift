@@ -34,62 +34,15 @@ class Velocity {
     static let twelveDaysAgo = Date(timeIntervalSinceNow: -1.037e+6)
     static let thirteenDaysAgo = Date(timeIntervalSinceNow: -1.123e+6)
 
-    static let lastYear = Date(timeIntervalSinceNow: -3.154e+7)
+    static let lastCentury = Date(timeIntervalSinceNow: -3.154e+9)
     
     init() {}
-    
-    func updateVelocity(success: Bool) {
-        
-        var dailyInput: Double {
-            if success == true {
-                return 10
-            } else {
-                return 0
-            }
-        }
-        
-        for key in store.velocityHistory.keys {
-            if Calendar.current.isDateInToday(key) {
-                print("Score was already recorded today")
-                return
-            } else {
-                store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
-                // Test Data
-                print("Before Save and Fetch: \(store.velocityHistory)")
-                print("Score Added")
-            }
-        }
-    }
-    
-    func calculateVelocityScore(input: Double) -> Double {
-        
-        var tempArray: [Double] = [input]
-        var total: Double = 0
-        var score: Double = 0
-        
-        for (key, value) in store.velocityHistory {
-            if key == Velocity.yesterday {
-                tempArray.append(value)
-            } else if key == Velocity.twoDaysAgo {
-                tempArray.append(value)
-            }
-        }
-        
-        print("History Count: \(store.velocityHistory.count)")
-        print("TEMP ARRAY: \(tempArray)")
-        total = tempArray.reduce(0, +)
-        score = total / Double(tempArray.count)
-        
-        return score
-    }
     
     func updateGraph(for week: String) {
         
         var thisWeekArray: [Int] = [0]
         var lastWeekArray: [Int] = [0]
         let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 > $1.0 })
-        print(sortedVelocityHistory)
-        
         
         let thisWeekStart = Date(timeIntervalSinceNow: -604800)
         let thisWeekEnd = Date()
@@ -98,9 +51,6 @@ class Velocity {
         let lastWeekStart = Date(timeInterval: -1.21e+6, since: Date())
         let lastWeekEnd = Date(timeInterval: -604800, since: Date())
         let lastWeekRange = (lastWeekStart...lastWeekEnd)
-        
-        print("this week range: \(thisWeekRange)")
-        print("last week range: \(lastWeekRange)")
         
         for (key, value) in sortedVelocityHistory {
             if thisWeekRange.contains(key) {
@@ -113,13 +63,26 @@ class Velocity {
             case "This Week":
                 store.graphPoints = thisWeekArray
                 store.graphPoints.append(0)
-                print(store.graphPoints)
+                standardizeGraphPoints()
             case "Last Week":
                 store.graphPoints = lastWeekArray
                 store.graphPoints.append(0)
-                print(store.graphPoints)
+                standardizeGraphPoints()
             default:
                 break
+            }
+        }
+    }
+    
+    func standardizeGraphPoints() {
+        let pointCount = store.graphPoints.count
+        print("PointS: \(pointCount)")
+        let pointsNeeded = 9 - pointCount
+        
+        if pointCount < 9 {
+            for count in 1...pointsNeeded {
+                store.graphPoints.insert(0, at: count)
+                store.currentVelocityScore = Double(store.graphPoints[store.graphPoints.count - 2])
             }
         }
     }
