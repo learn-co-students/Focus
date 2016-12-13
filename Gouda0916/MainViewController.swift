@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     let rootRef = "https://gouda0916-4bb79.firebaseio.com/"
     var menuIsShowing = false
     
+    @IBOutlet weak var viewForPercentLabels: UIView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var addGoalImageView: UIImageView!
     @IBOutlet weak var gradient: UIView!
@@ -35,6 +36,39 @@ class MainViewController: UIViewController {
     @IBOutlet weak var completedGoalView: UIView!
     @IBOutlet weak var completedYesCheckmarkImageView: UIImageView!
     
+    @IBOutlet weak var viewForInfo: UIView!
+    
+    
+    @IBAction func velocityInfoButton(_ sender: Any) {
+        viewForPercentLabels.isHidden = true
+        viewForInfo.isHidden = false
+        infoLabel.text = "Velocity is a score out of ten based on your daily spending. It is "
+        
+    }
+    
+    
+    @IBAction func progressInfoButton(_ sender: Any) {
+        viewForPercentLabels.isHidden = true
+        viewForInfo.isHidden = false
+        infoLabel.text = "Progress is ..."
+    }
+    
+    
+    @IBAction func daysInfoButton(_ sender: Any) {
+        viewForPercentLabels.isHidden = true
+        viewForInfo.isHidden = false
+        infoLabel.text = "Days blah blah "
+    }
+    
+    @IBAction func exitInfoButtonClicked(_ sender: Any) {
+        viewForInfo.isHidden = true
+        progressPercentLabel.isHidden = false
+        
+    }
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    
     @IBOutlet weak var didYouSubmitTrailingConstraint: NSLayoutConstraint!
     
     
@@ -49,6 +83,7 @@ class MainViewController: UIViewController {
         setUpTextFieldForValidation()
         updateVelocityForCircle()
         completedGoalView.isHidden = true
+        viewForInfo.isHidden = true
         
         
         // Test
@@ -62,7 +97,7 @@ class MainViewController: UIViewController {
         
         let blackOverlayGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         blackOverlayView.addGestureRecognizer(blackOverlayGesture)
-
+        
     }
     
     func checkButtonTapped() {
