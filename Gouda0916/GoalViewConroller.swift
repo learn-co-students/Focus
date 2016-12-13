@@ -36,6 +36,7 @@ class GoalViewController: UIViewController {
             if goal.isActiveGoal == true {
                 store.goals.remove(at: index)
                 store.goals.insert(goal, at: 0)
+                break
             }
         }
         

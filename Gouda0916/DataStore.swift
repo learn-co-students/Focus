@@ -49,6 +49,15 @@ class DataStore {
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
         do {
             goals = try context.fetch(fetchRequest)
+            if !goals.isEmpty {
+                for (index, goal) in goals.enumerated() {
+                    if goal.isActiveGoal {
+                        goals.remove(at: index)
+                        goals.insert(goal, at: 0)
+                        break
+                    }
+                }
+            }
         }catch {
             print("couldnt get goals from fetch request")
         }
