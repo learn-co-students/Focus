@@ -21,6 +21,8 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
     var editOptions: [Edit] = []
     var menuShowing = false
     
+    let velocity = Velocity()
+    
     @IBOutlet weak var saveCancelView: EditGoalView!
     @IBOutlet weak var yesNoView: YesNoView!
     @IBOutlet weak var goalView: GoalTableViewCellView!
@@ -200,6 +202,11 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 goal.didChangeValue(forKey: "isActiveGoal")
                 store.goals.remove(at: goalIndex)
                 store.goals.insert(goal, at: 0)
+                
+                // Clear Velocity History 
+                store.velocityHistory = [Velocity.lastCentury : 100]
+                store.velocity = 0
+                velocity.updateGraph(for: "This Week")
             case .changeGoal:
                 goal.willChangeValue(forKey: "goalAmount")
                 goal.goalAmount = Double(input)!
