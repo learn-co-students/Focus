@@ -49,6 +49,8 @@ class MainViewController: UIViewController {
         setUpTextFieldForValidation()
         updateVelocityForCircle()
         completedGoalView.isHidden = true
+        print("\(store.goals.first?.loggedGoalToday)")
+        
         
         
         // Test

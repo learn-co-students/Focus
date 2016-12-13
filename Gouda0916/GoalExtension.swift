@@ -17,6 +17,15 @@ extension Goal {
         let amountNeededPerDay = (goalAmount - currentAmountSaved) / timeframe
         return dailyBudget - (amountNeededPerDay)
     }
+    
+    var loggedGoalToday: Bool? {
+        let sDate = self.startDate as! Date
+        print("😁 time since now in seconds \(sDate.timeIntervalSinceNow)")
+        print("\(self.dayCounter * 60 * 60 * 24)")
+        return sDate.timeIntervalSinceNow * -1 < self.dayCounter * 60 * 60 * 24
+        
+    }
+
 
     func serializeGoalIntoDictionary() -> [String : Any] {
         var serializedGoal: [String : Any] = [ : ]

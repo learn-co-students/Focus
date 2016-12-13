@@ -167,7 +167,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
             default:
                 view.endEditing(true)
                 self.saveCancelView.resignFirstResponder()
-                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                     self.saveCancelViewTrailingConstraint.constant -= self.screenWidth
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
@@ -255,7 +255,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
             default:
                 view.endEditing(true)
                 self.saveCancelView.resignFirstResponder()
-                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                     self.saveCancelViewTrailingConstraint.constant -= self.screenWidth
                     self.collectionViewBlocker.alpha = 0
                     self.view.layoutIfNeeded()
