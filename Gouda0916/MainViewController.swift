@@ -61,8 +61,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func exitInfoButtonClicked(_ sender: Any) {
+        viewForPercentLabels.isHidden = false
         viewForInfo.isHidden = true
-        progressPercentLabel.isHidden = false
+        
         
     }
     
