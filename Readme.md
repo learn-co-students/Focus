@@ -55,4 +55,13 @@ The current version of the app only includes markets in the New York City area, 
 ## UI Screen Shots:
 
 
-![alt tag](https://github.com/learn-co-students/Focus/blob/master/3_FOCUS_GoalPage.png)
+
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/1_FOCUS_LoginPage.png)
+
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/2_FOCUS_LandingPage.png)
+
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/3_FOCUS_GoalNavigationPage.png)
+
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/4_FOCUS_EditGoalPage.png)
+
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/5_FOCUS_VelocityPage.png)
