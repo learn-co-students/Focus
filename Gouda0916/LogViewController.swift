@@ -155,7 +155,6 @@ class LogViewController: UIViewController {
     }
     
     @IBAction func weeklyScoreTouched(_ sender: UIButton) {
-        
         if let week = sender.currentTitle {
             
             self.WeeklyView.setNeedsDisplay()
@@ -173,10 +172,10 @@ class LogViewController: UIViewController {
             }
             
         }
+        store.pointIndex = 7
     }
     
     func updateCurrentScoreLabel(withScoreFor date: Date) {
-        
         var score: Double = 0
         
         for (key, value) in store.velocityHistory {
@@ -196,7 +195,6 @@ class LogViewController: UIViewController {
     }
     
     func updateDailyScoreLabel(for week: String){
-        
         let calender = Calendar(identifier: .gregorian)
         let today = calender.component(.day, from: Date())
         let yesterday = calender.component(.day, from: Velocity.yesterday)
@@ -233,7 +231,6 @@ class LogViewController: UIViewController {
     }
     
     func daySuffix(from date: Date) -> String {
-        
         let calender = Calendar.current
         let dayOfMonth = calender.component(.day, from: date)
         
