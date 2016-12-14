@@ -5,6 +5,7 @@
 
 
 ## Team:
+
 [Doug Galante](https://github.com/Dougly)
 
 [Victoria Melendez](https://github.com/VAMelend)
@@ -16,6 +17,7 @@
 
 
 ## Description:
+
 Focus is an iOS mobile application that allows you to set financial goals and visually track them through incremental savings. 
 
 User Summary:
@@ -39,6 +41,7 @@ Jim is using Focus to calculate and track his daily spendings and savings to ach
 
 
 ## Resources:
+
 - Apple Local Push Notifications
 - Core Data
 - Firebase Authentication and Login
