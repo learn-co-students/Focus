@@ -367,7 +367,7 @@
                                                 <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You already entered todays spending." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-e9-hpf">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You already entered todays spending." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-e9-hpf">
                                                 <rect key="frame" x="91.333333333333314" y="213" width="231" height="17"/>
                                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -584,7 +584,7 @@
                                 </connections>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-0g-VZg" userLabel="BlackCover">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="642"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -596,6 +596,7 @@
                             <constraint firstItem="5lD-ZA-GAn" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.05" id="89t-BE-IEc"/>
                             <constraint firstItem="Zb5-1i-Puv" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" multiplier="0.6" id="9L9-dT-tEW"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="9mG-54-BOM"/>
+                            <constraint firstItem="QHF-0g-VZg" firstAttribute="bottom" secondItem="3U2-Gu-6nt" secondAttribute="top" id="B1v-9S-8W0"/>
                             <constraint firstItem="4Os-cU-n6M" firstAttribute="centerY" secondItem="3U2-Gu-6nt" secondAttribute="centerY" id="B9S-bR-ieS"/>
                             <constraint firstItem="jUW-Q1-oKd" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="ChK-nr-VxQ"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="HYP-C3-jaz"/>
@@ -610,7 +611,6 @@
                             <constraint firstItem="QHF-0g-VZg" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="d0l-aH-rNM"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="dNz-Fq-n1v"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="e6r-Hq-cRX"/>
-                            <constraint firstItem="QHF-0g-VZg" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" id="eaj-lU-4kK"/>
                             <constraint firstItem="QHF-0g-VZg" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="ekG-yD-r30"/>
                             <constraint firstItem="OYN-sW-8Vi" firstAttribute="centerX" secondItem="c70-6N-YvJ" secondAttribute="centerX" id="gLT-Mn-Uo3"/>
                             <constraint firstItem="lxf-Ta-G6b" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" id="hVv-eO-WqE"/>
@@ -620,8 +620,8 @@
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="jw1-yO-bEA"/>
                             <constraint firstItem="Zb5-1i-Puv" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" multiplier="0.25" id="k06-N1-pRn"/>
                             <constraint firstItem="nqd-1D-Jsx" firstAttribute="bottom" secondItem="l6H-Da-h3N" secondAttribute="bottom" id="lLd-yH-1xn"/>
-                            <constraint firstItem="QHF-0g-VZg" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="llg-sL-ZYa"/>
                             <constraint firstItem="jUW-Q1-oKd" firstAttribute="width" secondItem="mLC-qD-PCr" secondAttribute="width" multiplier="0.7" id="oWp-DG-8VT"/>
+                            <constraint firstItem="QHF-0g-VZg" firstAttribute="top" secondItem="o1j-Yz-yVh" secondAttribute="bottom" id="p8O-R9-QG1"/>
                             <constraint firstItem="q01-hH-8cJ" firstAttribute="centerX" secondItem="mLC-qD-PCr" secondAttribute="centerX" id="q0j-Px-zDc"/>
                             <constraint firstItem="MgV-GG-DJV" firstAttribute="height" secondItem="mLC-qD-PCr" secondAttribute="height" id="qea-W0-JRJ"/>
                             <constraint firstItem="jUW-Q1-oKd" firstAttribute="centerY" secondItem="mLC-qD-PCr" secondAttribute="centerY" multiplier="1.35" id="qnh-5M-PgI"/>
