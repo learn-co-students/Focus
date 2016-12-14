@@ -21,9 +21,9 @@
 Focus is an iOS mobile application that allows you to set financial goals and visually track them through incremental savings. 
 
 User Summary:
-1. Choose a goal and an area of your life that you can spend less on
-2. Enter your daily spending
-3. Monitor your progress
+1. Choose a goal and an area of your life that you can spend less on.
+2. Enter your daily spending.
+3. Monitor your progress.
 
 General users will receive daily notifications to enter then savings input. Focus will calculate, display, and track the progress of the active goal based on initial goal information created. The aim of Focus is to keep the user focused on one active goal at a time. The user has the option to edit their initial goal settings or to focus on another more immediate goal instead. The following example portrays a user experience scenario.
 
