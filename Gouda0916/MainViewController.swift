@@ -94,8 +94,12 @@ class MainViewController: UIViewController {
         checkIfProgressHasBeenLogged()
 
         velocity.updateGraph(for: "This Week")
+        
+         let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 > $1.0 })
+        if let currentDay = sortedVelocityHistory.first {
+        store.currentVelocityScore = currentDay.value
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
-
+        }
 
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(goToGoalVC))
         addGoalImageView.addGestureRecognizer(tapGR)
@@ -134,9 +138,8 @@ class MainViewController: UIViewController {
         NotificationCenter.default.post(name: .openMainVC, object: nil)
 
         // Clear Velocity History
-        store.velocityHistory = [Velocity.lastCentury : 100]
+        store.velocityHistory = [Velocity.lastCentury : 0]
         store.velocity = 0
-        velocity.updateGraph(for: "This Week")
     }
 
     @IBAction func xButtonTapped(_ sender: Any) {

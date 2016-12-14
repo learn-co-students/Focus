@@ -60,6 +60,10 @@ extension UserInputProtocol {
                 print("no queued goals")
             }
             store.saveContext()
+            // Clear Velocity History
+            store.velocityHistory = [Velocity.lastCentury : 0]
+            store.velocity = 0
+            //velocity.updateGraph(for: "This Week")
         }
     }
     

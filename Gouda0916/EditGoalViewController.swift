@@ -195,6 +195,10 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 delegate?.resetTableView()
                 store.persistentContainer.viewContext.delete(goal)
                 store.clearVelocity()
+                
+                // Clear Velocity History
+                store.velocityHistory = [Velocity.lastCentury : 0]
+                store.velocity = 0
                 if store.goals.first?.isActiveGoal != true {
                     store.goals.first?.isActiveGoal = true
                 }
@@ -209,9 +213,8 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 
                 // Clear Velocity History 
                 store.clearVelocity()
-                store.velocityHistory = [Velocity.lastCentury : 100]
+                store.velocityHistory = [Velocity.lastCentury : 0]
                 store.velocity = 0
-                velocity.updateGraph(for: "This Week")
             case .changeGoal:
                 goal.willChangeValue(forKey: "goalAmount")
                 goal.goalAmount = Double(input)!

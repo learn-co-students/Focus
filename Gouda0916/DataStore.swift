@@ -84,7 +84,7 @@ class DataStore {
         
         if velocityHistory.isEmpty {
             print("velocity is empty, adding a default value")
-            velocityHistory = [Velocity.lastCentury : 100]
+            velocityHistory = [Velocity.lastCentury : 0]
         }
         
         
@@ -157,42 +157,5 @@ class DataStore {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-    }
-    
-    func fetchVelocityHistory() {
-        print("********************************************************************* Data Fetched")
-        let defaultVelocity = UserDefaults.standard.dictionary(forKey: velocityPersistentKey)
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        //dateFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian) as Calendar!
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss +zzzz"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        //dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
-        var fetchedVelocityHistory = [Date : Double]()
-        
-        if let unwrappedVelocity = defaultVelocity {
-            for (key, value) in unwrappedVelocity {
-                let score = value as! Double
-                let date = dateFormatter.date(from: key)
-                if let unwrappedDate = date {
-                    fetchedVelocityHistory[unwrappedDate] = score
-                } else {
-                    print("Error************************* Couldn't Unwrap")
-                    fetchedVelocityHistory = [Velocity.lastCentury : 100]
-                }
-            }
-        }
-        print(fetchedVelocityHistory)
-        velocityHistory = fetchedVelocityHistory
-    }
-    
-    func saveVelocityHistory() {
-        var savedDict = [String : Any]()
-        
-        for (key, value) in velocityHistory {
-            savedDict["\(key)"] = value
-        }
-        UserDefaults.standard.set(savedDict, forKey: velocityPersistentKey)
-        print("********************************************************************* Data Saved")
     }
 }
