@@ -1,7 +1,7 @@
 # Focus
 
 ![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
-
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
 
 
 ## Team:
@@ -29,7 +29,7 @@ General users will receive daily notifications to enter then savings input. Focu
 
 
 
-## A day in the life of Jim:
+## Example User: A day in the life of Jim:
 
 Meet Jim!
 Jim spends $10 a day on lunch. 
