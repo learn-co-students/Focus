@@ -1,6 +1,6 @@
 # Focus
 
-*Get in touch at: StudioFocusApp@gmail.com
+*Get in touch at: studiofocusapp@gmail.com
 
 ![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
 
