@@ -1,5 +1,7 @@
 # Focus
 
+*Get in touch at: StudioFocusApp@gmail.com
+
 ![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
 
 
@@ -28,7 +30,7 @@ General users will receive daily notifications to enter then savings input. Focu
 
 
 
-## Example User: A day in the life of Jim:
+## User: A day in the life of Jim
 
 Meet Jim!
 Jim spends $10 a day on lunch. 
