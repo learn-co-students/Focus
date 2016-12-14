@@ -43,6 +43,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var velocityInfoButton: UIButton!
     @IBOutlet weak var progressInfoButton: UIButton!
     
+    
+    @IBOutlet weak var didSpendTodayLabel: UILabel!
+    @IBOutlet weak var alreadySpentTodayLabel: UILabel!
+    
    
     @IBAction func velocityInfoButton(_ sender: Any) {
         viewForPercentLabels.isHidden = true
@@ -148,6 +152,11 @@ class MainViewController: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: { success in
             self.userInputTextField.resignFirstResponder()
+            self.userInputTextField.isHidden = false
+            self.submitButton.isHidden = false
+            didSpendTodayLabel.isHidden = false
+            alreadySpentTodayLabel.isHidden = true
+            
         })
     }
 
@@ -165,7 +174,19 @@ class MainViewController: UIViewController {
         }, completion: { success in
             self.userInputTextField.becomeFirstResponder()
         })
+        
+        if let first = store.goals.first {
+            if let enteredSpending = first.loggedGoalToday {
+                if enteredSpending {
+                    userInputTextField.isHidden = true
+                    submitButton.isHidden = true
+                    didSpendTodayLabel.isHidden = true
+                    alreadySpentTodayLabel.isHidden = false
+                }
+            }
+        }
     }
+    
 
     func menuButtonPressed(_ sender: Any) {
         if !menuIsShowing {

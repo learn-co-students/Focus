@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vjJ-gG-U3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vjJ-gG-U3K">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -367,6 +367,12 @@
                                                 <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-e9-hpf">
+                                                <rect key="frame" x="41.333333333333314" y="356" width="331.33333333333337" height="24"/>
+                                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-gF-AYA">
                                                 <rect key="frame" x="184" y="260.33333333333331" width="48" height="32"/>
                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -392,12 +398,15 @@
                                         <constraints>
                                             <constraint firstItem="N5A-gr-X5E" firstAttribute="top" secondItem="WQ6-BZ-EPL" secondAttribute="top" id="2F1-bH-S4D"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="3Sg-m1-QPf"/>
+                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="width" secondItem="2PV-mj-7Iz" secondAttribute="width" multiplier="0.8" id="9aE-KN-rS7"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="Coc-fy-2Ih"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="0.75" id="MSj-Vs-QPB"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="centerX" secondItem="WQ6-BZ-EPL" secondAttribute="centerX" id="T1d-MI-JP2"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="centerY" secondItem="WQ6-BZ-EPL" secondAttribute="centerY" id="WeV-ck-eyp"/>
+                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="centerY" secondItem="2PV-mj-7Iz" secondAttribute="centerY" id="apu-AJ-NWG"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="height" secondItem="2PV-mj-7Iz" secondAttribute="height" multiplier="0.25" id="bcY-lZ-wal"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="centerY" secondItem="2PV-mj-7Iz" secondAttribute="centerY" multiplier="0.6" id="eQw-nL-w6z"/>
+                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="centerX" secondItem="2PV-mj-7Iz" secondAttribute="centerX" id="eg4-pg-tan"/>
                                             <constraint firstItem="rcc-gF-AYA" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="1.25" id="fTa-Gr-aIA"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="hWA-dL-cwc"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="width" secondItem="2PV-mj-7Iz" secondAttribute="width" multiplier="0.7" id="pid-LJ-KBh"/>
@@ -625,11 +634,13 @@
                     <connections>
                         <outlet property="addGoalImageView" destination="1b1-ip-t9g" id="jTT-sW-Bqk"/>
                         <outlet property="addNewGoalView" destination="lxf-Ta-G6b" id="ijF-eD-ucb"/>
+                        <outlet property="alreadySpentTodayLabel" destination="HeL-e9-hpf" id="bhW-4z-kQP"/>
                         <outlet property="blackOverlayView" destination="QHF-0g-VZg" id="RlQ-za-gBD"/>
                         <outlet property="completedGoalView" destination="Zb5-1i-Puv" id="fcY-QL-Jhv"/>
                         <outlet property="completedYesCheckmarkImageView" destination="r6Q-fq-GCx" id="swt-j3-Lf5"/>
                         <outlet property="daysInfoButton" destination="5lD-ZA-GAn" id="qG3-Ew-aCA"/>
                         <outlet property="daysPercentLabel" destination="dsB-4n-R0T" id="3Nn-rq-S6z"/>
+                        <outlet property="didSpendTodayLabel" destination="8UH-hf-AHY" id="6pL-Sn-7rN"/>
                         <outlet property="didYouSpendTodayView" destination="MgV-GG-DJV" id="RZ3-EJ-spd"/>
                         <outlet property="didYouSubmitTrailingConstraint" destination="enj-JM-C11" id="al8-Fc-GWC"/>
                         <outlet property="footerView" destination="3U2-Gu-6nt" id="xf0-ij-EKN"/>
