@@ -1,7 +1,7 @@
 # Focus
 
 ![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
-![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/3_FOCUS_GoalPage.png)
 
 
 ## Team:
