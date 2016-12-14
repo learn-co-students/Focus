@@ -195,6 +195,9 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 delegate?.resetTableView()
                 store.persistentContainer.viewContext.delete(goal)
                 store.clearVelocity()
+                if store.goals.first?.isActiveGoal != true {
+                    store.goals.first?.isActiveGoal = true
+                }
                 self.dismiss(animated: true, completion: nil)
             case .activate:
                 store.goals.first?.isActiveGoal = false
