@@ -34,6 +34,7 @@ class LogViewController: UIViewController {
     @IBOutlet weak var maskView: UIView!
     @IBOutlet weak var velocityScoreView: VelocityScoreView!
     
+    @IBOutlet weak var blackCoverView: UIView!
     
     
     override func viewDidLoad() {
@@ -79,9 +80,18 @@ class LogViewController: UIViewController {
         if !menuIsShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
+            UIView.animate(withDuration: 0.3) {
+                self.blackCoverView.alpha = 0.8
+                self.view.layoutIfNeeded()
+            }
+            
         } else {
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuIsShowing = false
+            UIView.animate(withDuration: 0.3) {
+                self.blackCoverView.alpha = 0.0
+                self.view.layoutIfNeeded()
+            }
         }
     }
     

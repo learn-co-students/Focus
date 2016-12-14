@@ -154,8 +154,8 @@ class MainViewController: UIViewController {
             self.userInputTextField.resignFirstResponder()
             self.userInputTextField.isHidden = false
             self.submitButton.isHidden = false
-            didSpendTodayLabel.isHidden = false
-            alreadySpentTodayLabel.isHidden = true
+            self.didSpendTodayLabel.isHidden = false
+            self.alreadySpentTodayLabel.isHidden = true
             
         })
     }

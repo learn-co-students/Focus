@@ -367,9 +367,9 @@
                                                 <color key="textColor" red="0.97773976620000003" green="1" blue="0.97108869210000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-e9-hpf">
-                                                <rect key="frame" x="41.333333333333314" y="356" width="331.33333333333337" height="24"/>
-                                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="20"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You already entered todays spending." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-e9-hpf">
+                                                <rect key="frame" x="91.333333333333314" y="213" width="231" height="17"/>
+                                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -397,18 +397,18 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="N5A-gr-X5E" firstAttribute="top" secondItem="WQ6-BZ-EPL" secondAttribute="top" id="2F1-bH-S4D"/>
+                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="centerX" secondItem="WQ6-BZ-EPL" secondAttribute="centerX" id="2jh-Db-WgH"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="3Sg-m1-QPf"/>
-                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="width" secondItem="2PV-mj-7Iz" secondAttribute="width" multiplier="0.8" id="9aE-KN-rS7"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="Coc-fy-2Ih"/>
                                             <constraint firstItem="8UH-hf-AHY" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="0.75" id="MSj-Vs-QPB"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="centerX" secondItem="WQ6-BZ-EPL" secondAttribute="centerX" id="T1d-MI-JP2"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="centerY" secondItem="WQ6-BZ-EPL" secondAttribute="centerY" id="WeV-ck-eyp"/>
-                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="centerY" secondItem="2PV-mj-7Iz" secondAttribute="centerY" id="apu-AJ-NWG"/>
+                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="centerY" secondItem="WQ6-BZ-EPL" secondAttribute="centerY" id="Z0r-p4-8Qn"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="height" secondItem="2PV-mj-7Iz" secondAttribute="height" multiplier="0.25" id="bcY-lZ-wal"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="centerY" secondItem="2PV-mj-7Iz" secondAttribute="centerY" multiplier="0.6" id="eQw-nL-w6z"/>
-                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="centerX" secondItem="2PV-mj-7Iz" secondAttribute="centerX" id="eg4-pg-tan"/>
                                             <constraint firstItem="rcc-gF-AYA" firstAttribute="centerY" secondItem="2fb-q6-V6b" secondAttribute="centerY" multiplier="1.25" id="fTa-Gr-aIA"/>
                                             <constraint firstItem="2fb-q6-V6b" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="hWA-dL-cwc"/>
+                                            <constraint firstItem="HeL-e9-hpf" firstAttribute="width" secondItem="WQ6-BZ-EPL" secondAttribute="width" multiplier="0.8" id="hmg-qo-dK3"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="width" secondItem="2PV-mj-7Iz" secondAttribute="width" multiplier="0.7" id="pid-LJ-KBh"/>
                                             <constraint firstItem="WQ6-BZ-EPL" firstAttribute="centerX" secondItem="2PV-mj-7Iz" secondAttribute="centerX" id="plD-qw-nob"/>
                                             <constraint firstItem="rcc-gF-AYA" firstAttribute="centerX" secondItem="2fb-q6-V6b" secondAttribute="centerX" id="q77-Ma-Fx0"/>

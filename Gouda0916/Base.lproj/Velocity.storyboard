@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1m8-i6-Nd0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1m8-i6-Nd0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -340,7 +340,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-o7-Pt4" userLabel="FooterView" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="601" width="375" height="66"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiC-ES-nGO">
                                 <rect key="frame" x="96" y="524" width="72" height="32"/>
@@ -408,6 +408,10 @@
                                 <color key="textColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJZ-KA-IhA" userLabel="blackCoverView">
+                                <rect key="frame" x="0.0" y="60" width="375" height="541"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -429,11 +433,13 @@
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="centerY" secondItem="o9X-36-OV1" secondAttribute="centerY" multiplier="1.8" id="UEx-mF-MX3"/>
                             <constraint firstItem="aQa-oW-HBg" firstAttribute="top" secondItem="akb-s5-Dyr" secondAttribute="top" id="UIA-rA-3zU"/>
                             <constraint firstItem="Snd-TH-VFI" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" multiplier="1.1" id="VBx-cO-iMr"/>
+                            <constraint firstItem="zJZ-KA-IhA" firstAttribute="bottom" secondItem="xh3-o7-Pt4" secondAttribute="top" id="YJm-Eg-dbX"/>
                             <constraint firstItem="9aR-s2-Zkl" firstAttribute="centerX" secondItem="9RF-Qy-ygZ" secondAttribute="centerX" multiplier="1.3" id="Zf3-uN-TPQ"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="bottom" id="bsP-Wv-84l"/>
                             <constraint firstItem="9RF-Qy-ygZ" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="cZn-vm-VtD"/>
                             <constraint firstItem="akb-s5-Dyr" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="coj-La-pYg"/>
                             <constraint firstItem="ha7-Tf-v25" firstAttribute="top" secondItem="nXH-4c-Gtu" secondAttribute="bottom" id="d6p-Cd-6jQ"/>
+                            <constraint firstItem="zJZ-KA-IhA" firstAttribute="trailing" secondItem="o9X-36-OV1" secondAttribute="trailing" id="dBZ-9p-ZID"/>
                             <constraint firstItem="KSg-VM-jIC" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" multiplier="0.1" id="frQ-fd-gKe"/>
                             <constraint firstItem="aQa-oW-HBg" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" id="hFC-gs-681"/>
                             <constraint firstItem="PN5-1H-y2j" firstAttribute="centerY" secondItem="9RF-Qy-ygZ" secondAttribute="centerY" multiplier="0.9" id="hlM-tY-1pV"/>
@@ -442,9 +448,11 @@
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="bottom" secondItem="0tY-lm-4XS" secondAttribute="top" id="j4h-fC-og6"/>
                             <constraint firstItem="0TX-ct-VWz" firstAttribute="centerY" secondItem="9RF-Qy-ygZ" secondAttribute="centerY" multiplier="0.96" id="k7G-Xf-MEV"/>
                             <constraint firstItem="n8T-sQ-eX3" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="mXR-b2-1Dg"/>
+                            <constraint firstItem="zJZ-KA-IhA" firstAttribute="top" secondItem="ha7-Tf-v25" secondAttribute="bottom" id="mgR-XN-82f"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="centerX" secondItem="o9X-36-OV1" secondAttribute="centerX" id="ox5-U6-EeG"/>
                             <constraint firstItem="PN5-1H-y2j" firstAttribute="centerX" secondItem="9RF-Qy-ygZ" secondAttribute="centerX" id="rx3-cx-sJv"/>
                             <constraint firstItem="akb-s5-Dyr" firstAttribute="centerY" secondItem="o9X-36-OV1" secondAttribute="centerY" id="s5I-RA-rja"/>
+                            <constraint firstItem="zJZ-KA-IhA" firstAttribute="leading" secondItem="o9X-36-OV1" secondAttribute="leading" id="sNb-wU-Jcj"/>
                             <constraint firstItem="akb-s5-Dyr" firstAttribute="height" secondItem="o9X-36-OV1" secondAttribute="height" multiplier="0.4" id="tAb-RT-IQ8"/>
                             <constraint firstItem="xh3-o7-Pt4" firstAttribute="width" secondItem="o9X-36-OV1" secondAttribute="width" id="ubF-57-OsP"/>
                             <constraint firstItem="9aR-s2-Zkl" firstAttribute="centerY" secondItem="9RF-Qy-ygZ" secondAttribute="centerY" multiplier="0.9" id="vcc-n0-qTh"/>
@@ -455,6 +463,7 @@
                     </view>
                     <connections>
                         <outlet property="WeeklyView" destination="akb-s5-Dyr" id="fGW-ac-x6W"/>
+                        <outlet property="blackCoverView" destination="zJZ-KA-IhA" id="rgE-Wy-r3f"/>
                         <outlet property="dayFiveLabel" destination="3Si-gG-kyQ" id="1Sf-Zo-WcF"/>
                         <outlet property="dayFourLabel" destination="4xd-CQ-lrx" id="Lc5-m6-XPp"/>
                         <outlet property="dayOneLabel" destination="YbL-h2-3oz" id="MGN-wd-J8p"/>
