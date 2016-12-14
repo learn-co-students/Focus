@@ -30,7 +30,7 @@ class DataStore {
     
     // Velocity Variables
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
-    var velocityHistory: [Date : Double] = []
+    var velocityHistory: [Date : Double] = [ : ]
     let velocityPersistentKey = "velocityHistory"
     var currentVelocityScore: Double = 0
     var pointIndex: Int = 7
@@ -87,6 +87,30 @@ class DataStore {
         }
         
         
+    }
+    
+    func clearVelocity() {
+        
+        let context = persistentContainer.viewContext
+        let velocityDateFetchRequest = NSFetchRequest<VelocityDate>(entityName: "VelocityDate")
+        let velocityScoreFetchRequest = NSFetchRequest<VelocityScore>(entityName: "VelocityScroe")
+        do {
+            let dates = try context.fetch(velocityDateFetchRequest)
+            for date in dates {
+                persistentContainer.viewContext.delete(date)
+            }
+        } catch {
+            print("coudnt delete velocity dates")
+        }
+        
+        do {
+            let scores = try context.fetch(velocityScoreFetchRequest)
+            for score in scores {
+                persistentContainer.viewContext.delete(score)
+            }
+        } catch {
+            print("coudnt delete velocity scores")
+        }
     }
     
     

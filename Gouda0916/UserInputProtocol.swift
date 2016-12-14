@@ -80,7 +80,17 @@ extension UserInputProtocol {
                 print("Score was already recorded today")
                 break
             } else {
-                store.velocityHistory[Date()] = calculateVelocityScore(input: dailyInput)
+                let date = Date()
+                let score = calculateVelocityScore(input: dailyInput)
+                store.velocityHistory[date] = score
+                
+                let context = store.persistentContainer.viewContext
+                let DateEntity = VelocityDate(context: context)
+                let ScoreEntity = VelocityScore(context: context)
+                DateEntity.date = date as NSDate?
+                ScoreEntity.score = score
+                DateEntity.score = ScoreEntity
+                store.saveContext()
                 // Test Data
                 print("Before Save and Fetch: \(store.velocityHistory)")
                 print("Score Added")
