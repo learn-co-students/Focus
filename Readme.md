@@ -1,6 +1,6 @@
 # Focus
 
-![alt tag](https://github.com/learn-co-students/ios-0916-team-puddingsmile/blob/master/xx.png)
+![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
 
 
 
