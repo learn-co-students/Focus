@@ -30,7 +30,7 @@ class DataStore {
     
     // Velocity Variables
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
-    var velocityHistory: [Date : Double] = [Velocity.lastCentury : 100]
+    var velocityHistory: [Date : Double] = []
     let velocityPersistentKey = "velocityHistory"
     var currentVelocityScore: Double = 0
     var pointIndex: Int = 7
@@ -64,9 +64,28 @@ class DataStore {
                 }
             }
             
-        }catch {
+        } catch {
             print("couldnt get goals from fetch request")
         }
+        
+        let velocityFetchRequest = NSFetchRequest<VelocityDate>(entityName: "VelocityDate")
+        do {
+            let dates = try context.fetch(velocityFetchRequest)
+            for date in dates {
+                let day = date.date as! Date
+                if let score = date.score?.score {
+                    velocityHistory[day] = score
+                }
+            }
+        } catch {
+            print("coudnt fetch velocityDates")
+        }
+        
+        if velocityHistory.isEmpty {
+            print("velocity is empty, adding a default value")
+            velocityHistory = [Velocity.lastCentury : 100]
+        }
+        
         
     }
     
