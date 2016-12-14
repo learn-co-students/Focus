@@ -77,6 +77,7 @@ class DataStore {
                     velocityHistory[day] = score
                 }
             }
+            
         } catch {
             print("coudnt fetch velocityDates")
         }
@@ -93,7 +94,7 @@ class DataStore {
         
         let context = persistentContainer.viewContext
         let velocityDateFetchRequest = NSFetchRequest<VelocityDate>(entityName: "VelocityDate")
-        let velocityScoreFetchRequest = NSFetchRequest<VelocityScore>(entityName: "VelocityScroe")
+        let velocityScoreFetchRequest = NSFetchRequest<VelocityScore>(entityName: "VelocityScore")
         do {
             let dates = try context.fetch(velocityDateFetchRequest)
             for date in dates {

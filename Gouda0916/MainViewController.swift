@@ -93,11 +93,6 @@ class MainViewController: UIViewController {
 
         checkIfProgressHasBeenLogged()
 
-
-
-        print("\(store.goals.first?.loggedGoalToday)")
-        print(60 * 60 * 24 * (store.goals.first?.dayCounter)!)
-
         velocity.updateGraph(for: "This Week")
         velocityPercentLabel.text = "\(store.currentVelocityScore)"
 
@@ -274,6 +269,7 @@ extension MainViewController: UserInputProtocol {
             checkIfComplete(goal: goal) { (success) in
                 if success {
                     completedGoalView.isHidden = false
+                    store.clearVelocity()
                 } else {
                     print("🐹YOU DIDNT REACH YOUR GOAL YET")
                 }

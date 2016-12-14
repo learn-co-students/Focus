@@ -194,6 +194,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 store.goals.remove(at: goalIndex)
                 delegate?.resetTableView()
                 store.persistentContainer.viewContext.delete(goal)
+                store.clearVelocity()
                 self.dismiss(animated: true, completion: nil)
             case .activate:
                 store.goals.first?.isActiveGoal = false
@@ -204,6 +205,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 store.goals.insert(goal, at: 0)
                 
                 // Clear Velocity History 
+                store.clearVelocity()
                 store.velocityHistory = [Velocity.lastCentury : 100]
                 store.velocity = 0
                 velocity.updateGraph(for: "This Week")
@@ -215,6 +217,7 @@ class EditGoalViewController: UIViewController, UserInputProtocol {
                 checkIfComplete(goal: goal, notify: { (success) in
                     if success {
                         completedGoalView.isHidden = false
+                        store.clearVelocity()
                     }
                 })
             case .changePurchase:
