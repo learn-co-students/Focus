@@ -1,7 +1,6 @@
 # Focus
 
 ![alt tag](https://github.com/learn-co-students/Focus/blob/master/logo.png)
-![alt tag](https://github.com/learn-co-students/Focus/blob/master/3_FOCUS_GoalPage.png)
 
 
 ## Team:
@@ -53,3 +52,7 @@ Jim is using Focus to calculate and track his daily spendings and savings to ach
 The current version of the app only includes markets in the New York City area, but with the help of our users, we hope to expand the list of markets to include cities all over the United States.
 
 
+## UI Screen Shots:
+
+
+(https://github.com/learn-co-students/Focus/blob/master/3_FOCUS_GoalPage.png)
