@@ -698,7 +698,7 @@
                                         <rect key="frame" x="0.0" y="28" width="166" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4n-fw-ZhA" id="P7U-Cg-yyO">
-                                            <rect key="frame" x="0.0" y="0.0" width="166" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="166" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-K8-Pta" customClass="CustomMenuCell" customModule="Gouda0916" customModuleProvider="target">
