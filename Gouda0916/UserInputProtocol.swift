@@ -9,28 +9,24 @@
 import Foundation
 
 protocol UserInputProtocol {
-    
     var store: DataStore { get }
-    
 }
 
 extension UserInputProtocol {
     
-    //returns true if user spent less than allocaed budget that day
     func checkForVelocity(goal: Goal, textField: UITextField) -> Bool {
         var stayedUnderBudget = false
         if let userInput = textField.text {
             if let amountSpent = Double(userInput) {
                 if amountSpent <= goal.alloctedDailyBudget! {
                     stayedUnderBudget = true
-                    
                 }
             }
         }
         return stayedUnderBudget
     }
     
-    //updates goal stats based on user input
+
     func incrementDayAndAmount(goal: Goal, textField: UITextField) {
         if let userInput = textField.text {
             if let amountSpent = Double(userInput) {
@@ -46,12 +42,12 @@ extension UserInputProtocol {
     }
     
     
-    //checks if the goal is complete, if it is it removes it and sets a new goal
     func checkIfComplete(goal: Goal, notify: (Bool) -> Void) {
         if goal.currentAmountSaved >= goal.goalAmount {
             notify(true)
             store.goals.remove(at: 0)
             store.persistentContainer.viewContext.delete(goal)
+            
             if let nextGoal = store.goals.first {
                 nextGoal.willChangeValue(forKey: "isActiveGoal")
                 nextGoal.isActiveGoal = true
@@ -59,17 +55,15 @@ extension UserInputProtocol {
             } else {
                 print("no queued goals")
             }
+            
             store.saveContext()
-            // Clear Velocity History
             store.velocityHistory = [Velocity.lastCentury : 0]
             store.velocity = 0
-            //velocity.updateGraph(for: "This Week")
         }
     }
     
-    // Adds velocity score to history
+
     func updateVelocity(success: Bool) {
-        
         var dailyInput: Double {
             if success == true {
                 return 10
@@ -77,7 +71,6 @@ extension UserInputProtocol {
                 return 0
             }
         }
-        
         
         for key in store.velocityHistory.keys {
             if Calendar.current.isDateInToday(key) {
@@ -87,7 +80,6 @@ extension UserInputProtocol {
                 let date = Date()
                 let score = calculateVelocityScore(input: dailyInput)
                 store.velocityHistory[date] = score
-                
                 let context = store.persistentContainer.viewContext
                 let DateEntity = VelocityDate(context: context)
                 let ScoreEntity = VelocityScore(context: context)
@@ -95,18 +87,13 @@ extension UserInputProtocol {
                 ScoreEntity.score = score
                 DateEntity.score = ScoreEntity
                 store.saveContext()
-                // Test Data
-                print("Before Save and Fetch: \(store.velocityHistory)")
-                print("Score Added")
             }
-            
         }
     }
     
     func calculateVelocityScore(input: Double) -> Double {
         let yesterday = Date(timeIntervalSinceNow: -86400)
         let twoDaysAgo = Date(timeIntervalSinceNow: -172800)
-        
         var tempArray: [Double] = [input]
         var total: Double = 0
         var score: Double = 0
@@ -119,12 +106,9 @@ extension UserInputProtocol {
             }
         }
         
-        print("History Count: \(store.velocityHistory.count)")
-        print("TEMP ARRAY: \(tempArray)")
         total = tempArray.reduce(0, +)
         score = total / Double(tempArray.count)
         store.velocity = CGFloat(score)
-        
         return score
     }
 }

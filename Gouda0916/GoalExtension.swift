@@ -10,7 +10,6 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-
 extension Goal {
     
     var alloctedDailyBudget: Double? {
@@ -18,16 +17,15 @@ extension Goal {
         return dailyBudget - (amountNeededPerDay)
     }
     
+    
     var loggedGoalToday: Bool? {
         let sDate = self.startDate as! Date
         return sDate.timeIntervalSinceNow * -1 < self.dayCounter * 60 * 60 * 24
     }
-
+    
 
     func serializeGoalIntoDictionary() -> [String : Any] {
-        
         var serializedGoal: [String : Any] = [ : ]
-        
         serializedGoal["goal"] = goalAmount
         serializedGoal["timeframe"] = timeframe
         serializedGoal["daily_budget"] = dailyBudget
@@ -40,7 +38,7 @@ extension Goal {
         
         if
             let startDate = startDate,
-            let endDate = endDate{
+            let endDate = endDate {
                 serializedGoal["start_date"] = "\(startDate)"
                 serializedGoal["end_date"] = "\(endDate)"
         }
