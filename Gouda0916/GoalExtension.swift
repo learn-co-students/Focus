@@ -20,14 +20,12 @@ extension Goal {
     
     var loggedGoalToday: Bool? {
         let sDate = self.startDate as! Date
-        print("😁 time since now in seconds \(sDate.timeIntervalSinceNow)")
-        print("\(self.dayCounter * 60 * 60 * 24)")
         return sDate.timeIntervalSinceNow * -1 < self.dayCounter * 60 * 60 * 24
-        
     }
 
 
     func serializeGoalIntoDictionary() -> [String : Any] {
+        
         var serializedGoal: [String : Any] = [ : ]
         
         serializedGoal["goal"] = goalAmount
@@ -39,6 +37,7 @@ extension Goal {
         serializedGoal["current_amount_saved"] = currentAmountSaved
         serializedGoal["allocated_daily_budget"] =  alloctedDailyBudget
         serializedGoal["is_active_goal"] = isActiveGoal
+        
         if
             let startDate = startDate,
             let endDate = endDate{
@@ -48,13 +47,4 @@ extension Goal {
         
         return serializedGoal
     }
-    //already have end dates (located in create goal view controller)
-    //take in two dates - date when goal starts, date when goal ends
-    //return the difference
-    
-    
-    
-    
-    
-    
 }
