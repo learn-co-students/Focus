@@ -97,13 +97,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ $20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Y-S0-KVt" userLabel="/ $20">
-                    <rect key="frame" x="437" y="181.5" width="32.5" height="18"/>
+                    <rect key="frame" x="437" y="180" width="32.5" height="18"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-44-cOu">
-                    <rect key="frame" x="416.5" y="181.5" width="20.5" height="18"/>
+                    <rect key="frame" x="416.5" y="180" width="20.5" height="18"/>
                     <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="15"/>
                     <color key="textColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -141,10 +141,10 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efx-PA-xAO" userLabel="Saving Goal">
-                    <rect key="frame" x="16" y="182.5" width="316.5" height="15.5"/>
+                    <rect key="frame" x="16" y="182.5" width="316.5" height="15"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSD-ZI-mib" userLabel="Savings">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="15.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="15"/>
                             <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -179,7 +179,7 @@
                     </constraints>
                 </imageView>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit button (1)" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-qd-E3m" userLabel="Edit Icon Image View">
-                    <rect key="frame" x="448.5" y="224.5" width="21" height="20.5"/>
+                    <rect key="frame" x="438" y="213" width="31.5" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qS3-qd-E3m" secondAttribute="height" multiplier="589:580" id="9i3-JC-1NQ"/>
                     </constraints>
@@ -197,7 +197,7 @@
                 <constraint firstItem="iR2-fr-cP8" firstAttribute="leading" secondItem="Wbp-mI-hGN" secondAttribute="leading" id="IF7-dX-RrX"/>
                 <constraint firstItem="E54-Sh-MAV" firstAttribute="leading" secondItem="iR2-fr-cP8" secondAttribute="leading" id="KT2-ch-Jux"/>
                 <constraint firstItem="9NA-U5-Up3" firstAttribute="bottom" secondItem="iR2-fr-cP8" secondAttribute="bottom" id="LJa-dU-yLX"/>
-                <constraint firstItem="qS3-qd-E3m" firstAttribute="top" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" constant="25" id="NIM-og-Rhl"/>
+                <constraint firstItem="qS3-qd-E3m" firstAttribute="top" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" constant="15" id="NIM-og-Rhl"/>
                 <constraint firstItem="XTg-ch-vr8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" multiplier="2" id="O9v-ai-kZj"/>
                 <constraint firstItem="5Rg-Xa-B3R" firstAttribute="bottom" secondItem="wiG-Kt-TZ2" secondAttribute="bottom" id="OxM-jc-vBf"/>
                 <constraint firstItem="S7l-44-cOu" firstAttribute="bottom" secondItem="Y8Y-S0-KVt" secondAttribute="bottom" id="POn-h4-SDW"/>
@@ -221,7 +221,7 @@
                 <constraint firstItem="An1-Gh-aIM" firstAttribute="top" secondItem="XTg-ch-vr8" secondAttribute="bottom" constant="5" id="itH-LU-OnA"/>
                 <constraint firstItem="wtD-Zi-cJw" firstAttribute="centerY" secondItem="E54-Sh-MAV" secondAttribute="centerY" id="iyg-Ka-TVb"/>
                 <constraint firstItem="Lqi-W2-TtL" firstAttribute="trailing" secondItem="wtD-Zi-cJw" secondAttribute="leading" id="kib-X9-S5K"/>
-                <constraint firstItem="qS3-qd-E3m" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="lnN-On-2GM"/>
+                <constraint firstItem="qS3-qd-E3m" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.12" id="lnN-On-2GM"/>
                 <constraint firstItem="T2m-eG-q24" firstAttribute="bottom" secondItem="Efx-PA-xAO" secondAttribute="top" constant="-2" id="pXM-Nk-cXt"/>
                 <constraint firstItem="9NA-U5-Up3" firstAttribute="leading" secondItem="iR2-fr-cP8" secondAttribute="trailing" id="zy7-Hm-8k3"/>
             </constraints>
@@ -232,6 +232,6 @@
     </objects>
     <resources>
         <image name="edit button (1)" width="589" height="580"/>
-        <image name="expand button" width="46" height="50"/>
+        <image name="expand button" width="700" height="700"/>
     </resources>
 </document>
