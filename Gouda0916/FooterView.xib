@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FooterView" customModule="Gouda0916" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="dUM-8X-JxC"/>
+                <outlet property="footerLogoImageView" destination="84Z-5X-0Z2" id="ioO-if-wWB"/>
                 <outlet property="hamburgerMenuImageView" destination="lob-GF-fm3" id="waH-HJ-Hk0"/>
             </connections>
         </placeholder>
@@ -36,7 +37,7 @@
                         <constraint firstAttribute="width" secondItem="lob-GF-fm3" secondAttribute="height" multiplier="65:64" id="y3H-W1-PPd"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-5X-0Z2" userLabel="Logo View">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-5X-0Z2" userLabel="Logo View">
                     <rect key="frame" x="224" y="17" width="110" height="101.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="84Z-5X-0Z2" secondAttribute="height" multiplier="114:105" id="Tii-6R-g70"/>
@@ -66,7 +67,7 @@
         </view>
     </objects>
     <resources>
-        <image name="hamburger" width="65" height="64"/>
+        <image name="hamburger" width="407" height="407"/>
         <image name="logo" width="114" height="105"/>
     </resources>
 </document>

@@ -12,7 +12,6 @@ class VelocityScoreView: UIView {
     
     let store = DataStore.sharedInstance
     let velocity = Velocity()
-    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var velocityScoreLabel: UILabel!
     @IBOutlet weak var velocityDayLabel: UILabel!
@@ -23,14 +22,14 @@ class VelocityScoreView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        //updateVelocityView()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-        //updateVelocityView()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("VelocityScoreView", owner: self, options: nil)
@@ -42,16 +41,15 @@ class VelocityScoreView: UIView {
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
+    
     func updateVelocityView() {
         velocityScoreView.layer.masksToBounds = true
         velocityScoreView.layer.cornerRadius = 5.0
-
         velocityScoreBGView.layer.cornerRadius = 5
         velocityScoreBGView.layer.shadowColor = UIColor.themeBlackColor.cgColor
         velocityScoreBGView.layer.shadowOpacity = 0.8
         velocityScoreBGView.layer.shadowOffset = CGSize(width: 0, height: 0)
         velocityScoreBGView.layer.shadowRadius = 3
-        
         velocityScoreLabel.text = "\(store.velocity)"
     }
 }

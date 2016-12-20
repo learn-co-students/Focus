@@ -12,16 +12,18 @@ class WeeklyGraphView: UIView {
     
     let store = DataStore.sharedInstance
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    
     override func draw(_ rect: CGRect) {
-        
         let rectWidth = rect.width
         let rectHeight = rect.height
         let context = UIGraphicsGetCurrentContext()
@@ -47,10 +49,8 @@ class WeeklyGraphView: UIView {
             y = graphHeight + topBorder - y
             return y
         }
-        
         UIColor.themeAccentGoldColor.setFill()
         UIColor.themeAccentGoldColor.setStroke()
-        
         // Points line
         let graphPath = UIBezierPath()
         // Move to the start of the line
@@ -88,7 +88,7 @@ class WeeklyGraphView: UIView {
     }
     
     func animate(graphPath: UIBezierPath) {
-        
+        let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         let pathLayer: CAShapeLayer = CAShapeLayer()
         
         pathLayer.frame = self.bounds
@@ -99,8 +99,6 @@ class WeeklyGraphView: UIView {
         pathLayer.lineJoin = kCALineCapRound
         
         self.layer.addSublayer(pathLayer)
-        
-        let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         
         pathAnimation.duration = 1.0
         pathAnimation.fromValue = 1.0
