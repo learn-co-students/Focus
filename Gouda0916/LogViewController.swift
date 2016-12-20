@@ -11,8 +11,6 @@ import UIKit
 class LogViewController: UIViewController {
     
     let store = DataStore.sharedInstance
-    
-    //let weeklyGraphView = WeeklyGraphView()
     let velocity = Velocity()
     let weeklyGraph = WeeklyGraphView()
     var menuIsShowing = false
@@ -25,62 +23,26 @@ class LogViewController: UIViewController {
     @IBOutlet weak var dayFiveLabel: UILabel!
     @IBOutlet weak var daySixLabel: UILabel!
     @IBOutlet weak var daySevenLabel: UILabel!
-    
     @IBOutlet weak var footerView: FooterView!
-    
-    // TODO: Fix Caplitalization
-    @IBOutlet weak var WeeklyView: WeeklyGraphView!
+    @IBOutlet weak var weeklyView: WeeklyGraphView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var maskView: UIView!
     @IBOutlet weak var velocityScoreView: VelocityScoreView!
-    
     @IBOutlet weak var blackCoverView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateDailyScoreLabel(for: "This Week")
-        store.pointIndex = 7
-        velocity.updateGraph(for: "This Week")
-        isThisWeek = true
-        
-        velocityScoreView.velocityScoreLabel.text = "\(store.currentVelocityScore)"
-        
-        let menuGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
-        footerView.hamburgerMenuImageView.addGestureRecognizer(menuGesture)
-        
-        let blackCoverTG = UITapGestureRecognizer.init(target: self, action: #selector(menuButtonPressed))
-        blackCoverView.addGestureRecognizer(blackCoverTG)
-
-        
-        navigationController?.navigationBar.isHidden = true
-        
-        // Test Data
-//        store.velocityHistory.removeAll()
-//        store.velocityHistory[Date()] = 1.0
-//        store.velocityHistory[Velocity.yesterday] = 2.0
-//        store.velocityHistory[Velocity.twoDaysAgo] = 5.0
-//        store.velocityHistory[Velocity.threeDaysAgo] = 2.0
-//        store.velocityHistory[Velocity.fourDaysAgo] = 5.0
-//        store.velocityHistory[Velocity.fiveDaysAgo] = 2.0
-//        store.velocityHistory[Velocity.sixDaysAgo] = 10.0
-//        
-//        store.velocityHistory[Velocity.sevenDaysAgo] = 1.0
-//        store.velocityHistory[Velocity.eightDaysAgo] = 5.0
-//        store.velocityHistory[Velocity.nineDaysAgo] = 7.0
-//        store.velocityHistory[Velocity.tenDaysAgo] = 5.0
-//        store.velocityHistory[Velocity.elevenDaysAgo] = 7.0
-//        store.velocityHistory[Velocity.twelveDaysAgo] = 5.0
-//        store.velocityHistory[Velocity.thirteenDaysAgo] = 10.0
+        setUpView()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
+    
     func menuButtonPressed(_ sender: Any) {
-        
         if !menuIsShowing {
             NotificationCenter.default.post(name: .unhideBar, object: nil)
             menuIsShowing = true
@@ -88,7 +50,6 @@ class LogViewController: UIViewController {
                 self.blackCoverView.alpha = 0.8
                 self.view.layoutIfNeeded()
             }
-            
         } else {
             NotificationCenter.default.post(name: .hideBar, object: nil)
             menuIsShowing = false
@@ -99,8 +60,8 @@ class LogViewController: UIViewController {
         }
     }
     
+    
     @IBAction func dailyScoreButtonTouched(_ sender: UIButton) {
-        
         let thisWeek = [Date(),
                         Velocity.yesterday,
                         Velocity.twoDaysAgo,
@@ -130,48 +91,46 @@ class LogViewController: UIViewController {
             velocityScoreViewTransition(for: week[6])
             updateCurrentScoreLabel(withScoreFor: week[6])
             store.pointIndex = 1
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
         case 2:
             velocityScoreViewTransition(for: week[5])
             updateCurrentScoreLabel(withScoreFor: week[5])
             store.pointIndex = 2
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
         case 3:
             velocityScoreViewTransition(for: week[4])
             updateCurrentScoreLabel(withScoreFor: week[4])
             store.pointIndex = 3
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
         case 4:
             velocityScoreViewTransition(for: week[3])
             updateCurrentScoreLabel(withScoreFor: week[3])
             store.pointIndex = 4
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
         case 5:
             velocityScoreViewTransition(for: week[2])
             updateCurrentScoreLabel(withScoreFor: week[2])
             store.pointIndex = 5
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
         case 6:
             velocityScoreViewTransition(for: week[1])
             updateCurrentScoreLabel(withScoreFor: week[1])
             store.pointIndex = 6
-            self.WeeklyView.setNeedsDisplay()
-            
-            print("Score: \(updateCurrentScoreLabel(withScoreFor: week[1]))")
+            self.weeklyView.setNeedsDisplay()
         case 7:
             velocityScoreViewTransition(for: week[0])
             updateCurrentScoreLabel(withScoreFor: week[0])
             store.pointIndex = 7
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
         default:
             print("Failed during sender tag collection")
         }
     }
     
+    
     @IBAction func weeklyScoreTouched(_ sender: UIButton) {
         if let week = sender.currentTitle {
-            
-            self.WeeklyView.setNeedsDisplay()
+            self.weeklyView.setNeedsDisplay()
             velocity.updateGraph(for: week)
             updateDailyScoreLabel(for: week)
             
@@ -184,10 +143,10 @@ class LogViewController: UIViewController {
                 velocityScoreViewTransition(for: Velocity.sevenDaysAgo)
                 updateCurrentScoreLabel(withScoreFor: Velocity.sevenDaysAgo)
             }
-            
         }
         store.pointIndex = 7
     }
+    
     
     func updateCurrentScoreLabel(withScoreFor date: Date) {
         var score: Double = 0
@@ -204,9 +163,10 @@ class LogViewController: UIViewController {
                 score = value
             }
         }
-
+        
         velocityScoreView.velocityScoreLabel.text = "\(score)"
     }
+    
     
     func updateDailyScoreLabel(for week: String){
         let calender = Calendar(identifier: .gregorian)
@@ -244,6 +204,7 @@ class LogViewController: UIViewController {
         }
     }
     
+    
     func daySuffix(from date: Date) -> String {
         let calender = Calendar.current
         let dayOfMonth = calender.component(.day, from: date)
@@ -260,10 +221,9 @@ class LogViewController: UIViewController {
         }
     }
     
+    
     func velocityScoreViewTransition(for date: Date) {
-        
         UIView.animateKeyframes(withDuration: 0.3, delay: 0.0, animations: {
-            
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.1, animations: {
                 self.velocityScoreView.layer.opacity = 0
                 self.velocityScoreView.center.x += self.view.bounds.width
@@ -285,37 +245,21 @@ class LogViewController: UIViewController {
             }
         })
     }
-}
-
-// Move to extension file
-extension Date {
-    func dayOfTheWeek() -> String {
-        
-        var dayString = "Current"
-        let calendar = Calendar.current
-        let components: DateComponents = calendar.dateComponents([.weekday], from: self)
-        let dayInt = components.weekday
-        
-        if let dayInt = dayInt {
-            switch dayInt {
-            case 1:
-                dayString = "Sunday"
-            case 2:
-                dayString = "Monday"
-            case 3:
-                dayString = "Tuesday"
-            case 4:
-                dayString = "Wednesday"
-            case 5:
-                dayString = "Thursday"
-            case 6:
-                dayString = "Friday"
-            case 7:
-                dayString = "Saturday"
-            default:
-                break
-            }
-        }
-        return dayString
+    
+    
+    func setUpView() {
+        updateDailyScoreLabel(for: "This Week")
+        store.pointIndex = 7
+        velocity.updateGraph(for: "This Week")
+        isThisWeek = true
+        velocityScoreView.velocityScoreLabel.text = "\(store.currentVelocityScore)"
+        let menuGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
+        footerView.hamburgerMenuImageView.addGestureRecognizer(menuGesture)
+        let blackCoverTG = UITapGestureRecognizer.init(target: self, action: #selector(menuButtonPressed))
+        blackCoverView.addGestureRecognizer(blackCoverTG)
+        navigationController?.navigationBar.isHidden = true
     }
 }
+
+
+

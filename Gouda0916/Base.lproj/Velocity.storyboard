@@ -462,7 +462,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="WeeklyView" destination="akb-s5-Dyr" id="fGW-ac-x6W"/>
                         <outlet property="blackCoverView" destination="zJZ-KA-IhA" id="rgE-Wy-r3f"/>
                         <outlet property="dayFiveLabel" destination="3Si-gG-kyQ" id="1Sf-Zo-WcF"/>
                         <outlet property="dayFourLabel" destination="4xd-CQ-lrx" id="Lc5-m6-XPp"/>
@@ -475,6 +474,7 @@
                         <outlet property="headerView" destination="ha7-Tf-v25" id="Aah-AO-Btl"/>
                         <outlet property="maskView" destination="9RF-Qy-ygZ" id="00V-ig-DeF"/>
                         <outlet property="velocityScoreView" destination="n8T-sQ-eX3" id="nQU-0h-PMf"/>
+                        <outlet property="weeklyView" destination="akb-s5-Dyr" id="KuL-1o-TVW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xY0-L3-ubH" userLabel="First Responder" sceneMemberID="firstResponder"/>
