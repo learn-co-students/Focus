@@ -15,19 +15,21 @@ struct User {
     var uid: String
     var email: String
     
+    
     init() {
         self.email = ""
         self.uid = ""
     }
+    
     
     init(authData: FIRUser) {
         uid = authData.uid
         email = authData.email!
     }
     
+    
     init(uid: String, email: String) {
         self.uid = uid
         self.email = email
     }
-    
 }

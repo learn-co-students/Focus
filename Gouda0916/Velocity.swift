@@ -34,7 +34,9 @@ class Velocity {
     static let thirteenDaysAgo = Date(timeIntervalSinceNow: -1.123e+6)
     static let lastCentury = Date(timeIntervalSinceNow: -3.154e+9)
     
+    
     init() {}
+    
     
     func updateGraph(for week: String) {
         
@@ -69,6 +71,7 @@ class Velocity {
             }
         }
     }
+    
     
     func standardizeGraphPoints() {
         let pointCount = store.graphPoints.count

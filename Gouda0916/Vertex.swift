@@ -9,8 +9,10 @@
 import Foundation
 
 public class Vertex {
+    
     var key: String?
     var neighbors: [Edge]
+    
     
     init() {
         self.neighbors = [Edge]()

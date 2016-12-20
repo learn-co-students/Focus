@@ -92,6 +92,7 @@ extension UserInputProtocol {
         }
     }
     
+    
     func calculateVelocityScore(input: Double) -> Double {
         let yesterday = Date(timeIntervalSinceNow: -86400)
         let twoDaysAgo = Date(timeIntervalSinceNow: -172800)

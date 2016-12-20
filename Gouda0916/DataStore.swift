@@ -12,23 +12,13 @@ import CoreGraphics
 
 class DataStore {
     
-    
     static let sharedInstance = DataStore()
-    
-    
-    
-    private init() {}
-    
     var goals: [Goal] = []
     var userName = User()
     var progress: Double = 0
     var velocity: CGFloat = 0
     var daysLeft: Double = 0
-    
-    //total days
     var days: CGFloat = 0
-    
-    // Velocity Variables
     var graphPoints = [0, 10, 8, 2, 9, 7, 10, 9, 0]
     var velocityHistory: [Date : Double] = [ : ]
     let velocityPersistentKey = "velocityHistory"
@@ -36,22 +26,14 @@ class DataStore {
     var pointIndex: Int = 7
     
     
-    
-    
-    
-    
-    //day counter = how many days have passed
-    //time frame = total days
-    //days left - how many days are left until the total days as indicated by user (calc prop) - goal extension
-    
-    
-    
-    
+    private init() {}
     
     
     func fetchData() {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+        let velocityFetchRequest = NSFetchRequest<VelocityDate>(entityName: "VelocityDate")
+    
         do {
             goals = try context.fetch(fetchRequest)
             if !goals.isEmpty {
@@ -63,12 +45,10 @@ class DataStore {
                     }
                 }
             }
-            
         } catch {
             print("couldnt get goals from fetch request")
         }
         
-        let velocityFetchRequest = NSFetchRequest<VelocityDate>(entityName: "VelocityDate")
         do {
             let dates = try context.fetch(velocityFetchRequest)
             for date in dates {
@@ -86,15 +66,14 @@ class DataStore {
             print("velocity is empty, adding a default value")
             velocityHistory = [Velocity.lastCentury : 0]
         }
-        
-        
     }
     
+    
     func clearVelocity() {
-        
         let context = persistentContainer.viewContext
         let velocityDateFetchRequest = NSFetchRequest<VelocityDate>(entityName: "VelocityDate")
         let velocityScoreFetchRequest = NSFetchRequest<VelocityScore>(entityName: "VelocityScore")
+        
         do {
             let dates = try context.fetch(velocityDateFetchRequest)
             for date in dates {
