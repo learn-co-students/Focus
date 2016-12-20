@@ -54,7 +54,6 @@
 		909FE98F1DF5F88D0055645B /* Goal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909FE98D1DF5F88D0055645B /* Goal.storyboard */; };
 		90B1151B1DF62EE60002E969 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1151A1DF62EE60002E969 /* MainViewController.swift */; };
 		90B968A61DDE0F83005FBD8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */; };
-		90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */; };
 		90DFD6481DEBA4A3003CDF17 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */; };
 		90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE84F91DEE1A2000673DD3 /* AppController.swift */; };
 		90FE84FC1DEE1A8400673DD3 /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FE84FB1DEE1A8400673DD3 /* StoryboardID.swift */; };
@@ -111,7 +110,6 @@
 		909FE98E1DF5F88D0055645B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gouda0916/Base.lproj/Goal.storyboard; sourceTree = "<group>"; };
 		90B1151A1DF62EE60002E969 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		90B968A51DDE0F83005FBD8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		90DFD6451DEBA4A2003CDF17 /* Gouda0916-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gouda0916-Bridging-Header.h"; sourceTree = "<group>"; };
 		90DFD6461DEBA4A3003CDF17 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		90DFD6471DEBA4A3003CDF17 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				11FCAA2D1DDA708C0072C46A /* GoalViewConroller.swift */,
 				11FCAA2F1DDA70A00072C46A /* LogViewController.swift */,
 				117221131DDD02D600A7A680 /* CreateGoalViewController.swift */,
-				90DFD6411DEB8CB4003CDF17 /* SettingsViewController.swift */,
 				1124084D1DE0E94300FDBC92 /* CustomGoalTableViewCell.swift */,
 			);
 			name = Controller;
@@ -422,7 +419,6 @@
 				90FE84FA1DEE1A2000673DD3 /* AppController.swift in Sources */,
 				909EFE451DF6445C00F9C383 /* HamBurgMenuViewController.swift in Sources */,
 				9052785A1DDF58CA0079E3DD /* User.swift in Sources */,
-				90DFD6421DEB8CB4003CDF17 /* SettingsViewController.swift in Sources */,
 				9052DE431DEF737D00B8F67A /* MainContainerViewController.swift in Sources */,
 				55CE54D21DF0EC08009524D0 /* TreatYourselfLanding.swift in Sources */,
 				55AE8A4B1DEC93F4008E2776 /* ColorExtension.swift in Sources */,
