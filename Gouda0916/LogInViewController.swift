@@ -14,77 +14,33 @@ import FirebaseAuth
 
 class LogInViewController: UIViewController {
     
-    // Mark: Constants
     let store = DataStore.sharedInstance
     var user1 = DataStore.sharedInstance.userName
     var emailPopulated = false
     var passwordPopulated = false
     var loadingCircle: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     
-    
-    // Mark: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var newUserButton: UIButton!
     
+    
     override func viewDidLoad(){
         super.viewDidLoad()
-        //set tags
-        
-        self.emailTextField.tag = 100
-        self.passwordTextField.tag = 101
-        
-        //set delegates
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
-        
-        //add layout constraint function
-        self.emailPopulated = false
-        self.passwordPopulated = false
-        
-        applyGradient()
-        
-        setUpActivityIndicator()
-        
-        passwordTextField.isSecureTextEntry = true
-        
-        FIRAuth.auth()!.addStateDidChangeListener() { auth, authenticatedEmail in
-            if authenticatedEmail != nil {
-                //not needed?
-                //guard let uid = authenticatedEmail?.uid else {return}
-            }
-            else if self.emailPopulated || self.passwordPopulated {
-                print("*** else if self.emailPopulated || self.passwordPopulated in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
-            }
-            else {  // enters here when authenticatedEmail = nil
-                print("*** else in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
-            }
-        }
-    } // end of view did load
-    
-    func applyGradient() {
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
-        
-        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
-        let endingColorOFGradient = UIColor.themeDarkGreenColor.cgColor
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
-        self.view.layer.insertSublayer(gradient, at: 0)
+        setUpView()
+        setUpFirebase()
     }
     
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-        /// to check if email & password are longer than however many characters
+        // to check if email & password are longer than however many characters
         switch emailTextField.tag {
         case 100, 101:   // check to see if email has a value
             if self.emailTextField.text!.utf16.count > 0 && self.passwordTextField.text!.utf16.count > 0 {
                 self.emailPopulated = true
                 self.passwordPopulated = true
-                print ("HELLLLLLLLLLLLLOOOOOOOO")
             }
             else {
                 self.emailPopulated = false
@@ -94,6 +50,7 @@ class LogInViewController: UIViewController {
         }
         return true
     }
+    
     
     func enableDisableSignIn(){
         if self.emailPopulated && self.passwordPopulated {
@@ -106,6 +63,7 @@ class LogInViewController: UIViewController {
         }
     }
     
+    
     func signInUser(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
@@ -114,15 +72,13 @@ class LogInViewController: UIViewController {
                 }
                 return
             }
-            print("user signed in")
         })
     }
     
-    //Mark: Buttons
+    
     @IBAction func loginButtonTouched(_ sender: AnyObject) {
         if let email = self.emailTextField.text {
             if let password = self.passwordTextField.text {
-                
                 self.user1.email = email
                 self.loadingCircle.isHidden = false
                 self.loadingCircle.startAnimating()
@@ -148,22 +104,14 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButtonTouched(_ sender: UIButton) {
-        
         let forgotPasswordAlert = UIAlertController(title: "Forgotten Password", message: "Enter your email address so we can send you info on how to reset your password.", preferredStyle: .alert)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("User pushed OK on alertController")
         }
-        
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             print("User pushed OK on alertController")
-            
             let emailField = forgotPasswordAlert.textFields![0] as UITextField
             print("the user entered \(emailField)")
-            
-            
-            //Not Needed?
-            //guard let email = emailField.text else { return }
         }
         
         forgotPasswordAlert.addTextField { (textfield) in
@@ -186,29 +134,19 @@ class LogInViewController: UIViewController {
                 print ("error")
             }
         }
-    
     }
     
     @IBAction func newUseButtonTouched(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Register",
-                                      message: "Register",
-                                      preferredStyle: .alert)
-        
+        let alert = UIAlertController(title: "Register", message: "Register", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { action in
-            
             guard let email = alert.textFields![0].text else { return }
             guard let password = alert.textFields![1].text else { return }
-            
-            print(email, password)
             
             FIRAuth.auth()!.createUser(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     FIRAuth.auth()!.signIn(withEmail: email, password: password)
                 }
-                
-                guard let uid = user?.uid else {
-                    return
-                }
+                guard let uid = user?.uid else { return }
                 
                 let ref = FIRDatabase.database().reference(withPath: "User")
                 let user = ref.child(uid)
@@ -253,6 +191,7 @@ class LogInViewController: UIViewController {
         self.loginButton.alpha = 0.3
     }
     
+    
     func setUpActivityIndicator() {
         self.view.addSubview(loadingCircle)
         loadingCircle.isHidden = true
@@ -260,9 +199,48 @@ class LogInViewController: UIViewController {
         loadingCircle.centerXAnchor.constraint(equalTo: loginButton.centerXAnchor).isActive = true
         loadingCircle.bottomAnchor.constraint(equalTo: emailTextField.topAnchor).isActive = true
         loadingCircle.hidesWhenStopped = true
-        
+    }
+    
+    
+    func setUpView() {
+        self.emailTextField.tag = 100
+        self.passwordTextField.tag = 101
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.emailPopulated = false
+        self.passwordPopulated = false
+        applyGradient()
+        setUpActivityIndicator()
+        passwordTextField.isSecureTextEntry = true
+    }
+    
+    func setUpFirebase() {
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, authenticatedEmail in
+            if authenticatedEmail != nil {
+                guard (authenticatedEmail?.uid) != nil else {return}
+            }
+            else if self.emailPopulated || self.passwordPopulated {
+                print("*** else if self.emailPopulated || self.passwordPopulated in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
+            }
+            else {  // enters here when authenticatedEmail = nil
+                print("*** else in FIRAuth.auth()!.addStateDidChangeListener(), authenticatedEmail = \(authenticatedEmail) ***")
+            }
+        }
+    }
+    
+    
+    func applyGradient() {
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName : UIColor.themeDarkGreenColor])
+        let startingColorOfGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let endingColorOFGradient = UIColor.themeDarkGreenColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [startingColorOfGradient , endingColorOFGradient]
+        self.view.layer.insertSublayer(gradient, at: 0)
     }
 }
+
 
 extension LogInViewController: UITextFieldDelegate {
     

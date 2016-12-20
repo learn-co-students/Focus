@@ -50,6 +50,10 @@ class LogViewController: UIViewController {
         let menuGesture = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         footerView.hamburgerMenuImageView.addGestureRecognizer(menuGesture)
         
+        let blackCoverTG = UITapGestureRecognizer.init(target: self, action: #selector(menuButtonPressed))
+        blackCoverView.addGestureRecognizer(blackCoverTG)
+
+        
         navigationController?.navigationBar.isHidden = true
         
         // Test Data

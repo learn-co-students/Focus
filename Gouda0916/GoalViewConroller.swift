@@ -19,8 +19,6 @@ class GoalViewController: UIViewController {
     var selectedRowIndex = -1
     var buttonTag = 0
     var menuShowing = false
-    
-    
     var menuIsShowing = false
     
     @IBOutlet weak var footerView: FooterView!
@@ -30,35 +28,9 @@ class GoalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
-        
-        for (index, goal) in store.goals.enumerated() {
-            if goal.isActiveGoal == true {
-                store.goals.remove(at: index)
-                store.goals.insert(goal, at: 0)
-                break
-            }
-        }
-        
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
-        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
-        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
-        
-        let blackCoverTG = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
-        blackCoverView.addGestureRecognizer(blackCoverTG)
-
-    
-        if let delegate = delegate {
-            delegate.backupFirebase(goals: store.goals)
-        } else {
-            print("didnt get the app delegate 🐰♥️")
-        }
-
+        setUpView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         if store.goals.isEmpty {
@@ -66,6 +38,7 @@ class GoalViewController: UIViewController {
         }
         goalTableView.reloadData()
     }
+    
     
     func pressedHamburger(sender: UITapGestureRecognizer) {
         if !menuShowing {
@@ -85,12 +58,14 @@ class GoalViewController: UIViewController {
         }
     }
     
+    
     func editIconTapped(_ sender: UITapGestureRecognizer) {
         if let senderView = sender.view {
             buttonTag = senderView.tag
         }
         performSegue(withIdentifier: "toEditGoal", sender: nil)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goalVCToCreateGoalVC" {
@@ -106,7 +81,29 @@ class GoalViewController: UIViewController {
         }
     }
     
+    
+    func setUpView() {
+        for (index, goal) in store.goals.enumerated() {
+            if goal.isActiveGoal == true {
+                store.goals.remove(at: index)
+                store.goals.insert(goal, at: 0)
+                break
+            }
+        }
+        
+        if let delegate = delegate {
+            delegate.backupFirebase(goals: store.goals)
+        }
+
+        navigationController?.navigationBar.isHidden = true
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+        footerView.hamburgerMenuImageView.addGestureRecognizer(tapGesture)
+        footerView.hamburgerMenuImageView.isUserInteractionEnabled = true
+        let blackCoverTG = UITapGestureRecognizer.init(target: self, action: #selector(pressedHamburger))
+        blackCoverView.addGestureRecognizer(blackCoverTG)
+    }
 }
+
 
 //MARK: Table View Delegate and Datasource
 extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
@@ -114,32 +111,31 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return store.goals.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! CustomGoalCell
         cell.floatingView.goal = store.goals[indexPath.row]
         cell.floatingView.editIconImageView.tag = indexPath.row
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(editIconTapped))
         cell.floatingView.editIconImageView.addGestureRecognizer(tapGesture)
-        
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         if indexPath.row == selectedRowIndex && thereIsCellExpanded || indexPath.row == 0 {
             return 260
         }
         return 100
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if selectedRowIndex != indexPath.row {
             thereIsCellExpanded = true
             selectedRowIndex = indexPath.row
@@ -150,8 +146,15 @@ extension GoalViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
-    
 }
+
+
+//MARK: Edit Gaol Delegate
+protocol EditGoalDelegate {
+    
+    func resetTableView()
+}
+
 
 extension GoalViewController: EditGoalDelegate {
     
@@ -162,11 +165,6 @@ extension GoalViewController: EditGoalDelegate {
     }
 }
 
-//MARK: edit Gaol Delegate
 
-protocol EditGoalDelegate {
-    
-    func resetTableView()
-    
-}
+
 
