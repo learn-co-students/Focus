@@ -12,10 +12,9 @@ import Firebase
 
 final class MainContainerViewController: UIViewController {
     
+    var actingVC: UIViewController!
     @IBOutlet weak var menuTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
-    var actingVC: UIViewController!
-    
     @IBOutlet weak var menu: UIView!
     
     
@@ -35,12 +34,14 @@ final class MainContainerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: .hideBar, object: nil)
     }
     
-    //// MARK: - Loading VC's
+    
+    // MARK: - Loading VC's
     func loadInitialViewController() {
         let id: StoryboardID = .mainVC
         self.actingVC = self.loadViewController(withID: id)
         self.add(viewController: self.actingVC, animated: true)
     }
+    
     
     func loadViewController(withID id: StoryboardID) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -48,61 +49,55 @@ final class MainContainerViewController: UIViewController {
     }
 }
 
+
 // MARK: - Displaying VC's
 extension MainContainerViewController {
     func add(viewController: UIViewController, animated: Bool = false) {
         self.addChildViewController(viewController)
         containerView.addSubview(viewController.view)
         containerView.alpha = 0.0
-    
         viewController.view.frame = containerView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.didMove(toParentViewController: self)
-        
         guard animated else { containerView.alpha = 1.0; return }
-        
         UIView.transition(with: containerView, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.containerView.alpha = 1.0
         }) { _ in }
     }
     
+    
     func unhideMenu() {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-            print("⚡️ unhide menu firing")
             self.menuTrailingConstraint.constant = self.view.bounds.width * 0.4
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
     
     func hideMenu() {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.menuTrailingConstraint.constant = 0
             self.view.layoutIfNeeded()
         }, completion: nil)
-
     }
     
+    
     func switchViewController(with notification: Notification) {
-        
         switch notification.name {
-            
         case Notification.Name.openMainVC:
-            print("Opening MAIN VC!!!!")
             switchToViewController(with: .mainVC)
             break
         case Notification.Name.openGoalVC:
-            print("Opening GOAL VC!!!!")
             switchToViewController(with: .goalVC)
             break
         case Notification.Name.openVelocityVC:
-            print("Opening VELOCITY VC!!!!")
             switchToViewController(with: .velocityVC)
-            
             break
         default:
             fatalError("\(#function) - Unable to match notficiation name.")
         }
     }
+    
     
     private func switchToViewController(with id: StoryboardID) {
         let existingVC = actingVC
@@ -112,7 +107,6 @@ extension MainContainerViewController {
         add(viewController: actingVC)
         actingVC.view.alpha = 0.0
         hideMenu()
-        
         UIView.animate(withDuration: 0.8, animations: {
             self.actingVC.view.alpha = 1.0
             existingVC?.view.alpha = 0.0
@@ -121,7 +115,6 @@ extension MainContainerViewController {
             existingVC?.removeFromParentViewController()
             self.actingVC.didMove(toParentViewController: self)
         }
-        
     }
 }
 

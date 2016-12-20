@@ -13,7 +13,6 @@ class CustomMenuCell: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
-    
     var menuOption: MenuOption? {
         didSet{
             label.text = self.menuOption?.label
@@ -21,15 +20,18 @@ class CustomMenuCell: UIView {
         }
     }
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    
     
     func commonInit() {
         Bundle.main.loadNibNamed("CustomMenuCell", owner: self, options: nil)

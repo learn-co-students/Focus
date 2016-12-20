@@ -16,17 +16,23 @@ class UserInputView: UIView {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
+    
     func commonInit() {
+        let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
+        let endingColorOFGradient = UIColor.themeLightPrimaryBlueColor.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
         Bundle.main.loadNibNamed("UserInputView", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,19 +40,9 @@ class UserInputView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        //floatingView.backgroundColor = UIColor.themePaleGreenColor
-        
-        let startingColorOfGradient = UIColor.themePaleGreenColor.cgColor
-        let endingColorOFGradient = UIColor.themeLightPrimaryBlueColor.cgColor
-        let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = contentView.bounds
         gradient.colors = [startingColorOfGradient , endingColorOFGradient]
         self.floatingView.layer.insertSublayer(gradient, at: 0)
     }
-    
-    
-    
-    
-    
 }
 

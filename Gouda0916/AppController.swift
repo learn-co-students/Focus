@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 
-
 final class AppController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     var actingVC: UIViewController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ final class AppController: UIViewController {
     }
 }
 
+
 // MARK: - Notficiation Observers
 extension AppController {
     func addNotificationObservers() {
@@ -29,6 +30,7 @@ extension AppController {
         NotificationCenter.default.addObserver(self, selector: #selector(switchViewController(with:)), name: .closeMainContainerVC, object: nil)
     }
 }
+
 
 // MARK: - Loading VC's
 extension AppController {
@@ -43,6 +45,7 @@ extension AppController {
         return storyboard.instantiateViewController(withIdentifier: id.rawValue)
     }
 }
+
 
 // MARK: - Displaying VC's
 extension AppController {
@@ -61,6 +64,7 @@ extension AppController {
         }) { _ in }
     }
     
+    
     func switchViewController(with notification: Notification) {
         switch notification.name {
         case Notification.Name.closeLoginVC:
@@ -71,6 +75,7 @@ extension AppController {
             fatalError("\(#function) - Unable to match notficiation name.")
         }
     }
+    
     
     private func switchToViewController(with id: StoryboardID) {
         let existingVC = actingVC
@@ -89,8 +94,8 @@ extension AppController {
             self.actingVC.didMove(toParentViewController: self)
         }
     }
-
 }
+
 
 // MARK: - Notification Extension
 extension Notification.Name {
@@ -103,6 +108,7 @@ extension Notification.Name {
     static let unhideBar = Notification.Name("unhide-bar")
     static let hideBar = Notification.Name("hide-bar")
 }
+
 
 // MARK: - UIView Extension
 extension UIView {

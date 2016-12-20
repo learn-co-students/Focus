@@ -13,11 +13,6 @@ import UIKit
 class TreatYourselfLandingView: UIView {
     
     override func draw(_ rect: CGRect) {
-        
         TreatYourselfLanding.drawCanvas1(frame: rect, resizing: .aspectFit)
-        
     }
-    
-    
-    
 }
