@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-
 extension UIColor {
+    
     static var themePaleGreenColor: UIColor {
         return UIColor(colorLiteralRed: 106/255, green: 184/255, blue: 174/255, alpha: 1)
     }
@@ -44,5 +44,4 @@ extension UIColor {
     static var themeLightGrayColor: UIColor {
         return UIColor(colorLiteralRed: 189/255, green: 189/255, blue: 189/255, alpha: 1)
     }
-    
 }

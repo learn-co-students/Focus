@@ -15,7 +15,6 @@ class Velocity {
     let store = DataStore.sharedInstance
     let defaults = UserDefaults.standard
     let defaultKey = "VelocityHistory"
-    
     let calendar = Calendar(identifier: .gregorian)
     let today = Date()
     
@@ -33,7 +32,6 @@ class Velocity {
     static let elevenDaysAgo = Date(timeIntervalSinceNow: -950400)
     static let twelveDaysAgo = Date(timeIntervalSinceNow: -1.037e+6)
     static let thirteenDaysAgo = Date(timeIntervalSinceNow: -1.123e+6)
-
     static let lastCentury = Date(timeIntervalSinceNow: -3.154e+9)
     
     init() {}
@@ -43,11 +41,9 @@ class Velocity {
         var thisWeekArray: [Int] = [0]
         var lastWeekArray: [Int] = [0]
         let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 > $1.0 })
-        
         let thisWeekStart = Date(timeIntervalSinceNow: -604800)
         let thisWeekEnd = Date()
         let thisWeekRange = (thisWeekStart...thisWeekEnd)
-        
         let lastWeekStart = Date(timeInterval: -1.21e+6, since: Date())
         let lastWeekEnd = Date(timeInterval: -604800, since: Date())
         let lastWeekRange = (lastWeekStart...lastWeekEnd)
@@ -76,7 +72,6 @@ class Velocity {
     
     func standardizeGraphPoints() {
         let pointCount = store.graphPoints.count
-        print("PointS: \(pointCount)")
         let pointsNeeded = 9 - pointCount
         
         if pointCount < 9 {
