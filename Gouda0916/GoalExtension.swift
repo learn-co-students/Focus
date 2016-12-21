@@ -42,7 +42,6 @@ extension Goal {
                 serializedGoal["start_date"] = "\(startDate)"
                 serializedGoal["end_date"] = "\(endDate)"
         }
-        
         return serializedGoal
     }
 }

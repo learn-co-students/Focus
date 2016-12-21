@@ -39,7 +39,6 @@ class Velocity {
     
     
     func updateGraph(for week: String) {
-        
         var thisWeekArray: [Int] = [0]
         var lastWeekArray: [Int] = [0]
         let sortedVelocityHistory = store.velocityHistory.sorted(by: { $0.0 > $1.0 })
